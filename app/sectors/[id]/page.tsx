@@ -6,6 +6,7 @@ import { CompanyLogo } from "@/components/CompanyLogo";
 import { Loader } from "@/components/Loader";
 import { SectorIcon } from "@/components/SectorIcon";
 import { SECTORS } from "@/lib/sectors";
+import { accentVars, sectorAccent } from "@/lib/accents";
 import { displayName } from "@/lib/report/company";
 import { companiesIn, genresIn, isSectorId, plainIndustry } from "@/lib/sectors-data";
 
@@ -51,15 +52,15 @@ async function Sector({
   };
 
   return (
-    <>
+    <div style={accentVars(sectorAccent(id))} className="contents">
       <Link href="/sectors" className="self-start text-[15px] font-semibold">
         ← All types of business
       </Link>
-      <div className="flex items-center gap-5">
-        <SectorIcon id={id} size={60} />
+      <div className="fathom-tint flex items-center gap-5 p-5 sm:p-7">
+        <SectorIcon id={id} size={64} />
         <div className="flex flex-col gap-1.5">
           <h1 className="font-display text-[34px] font-bold leading-[1.1] tracking-tight sm:text-[42px]">{SECTORS[id].name}</h1>
-          <p className="max-w-3xl text-[17px] leading-relaxed text-muted">{SECTORS[id].blurb}</p>
+          <p className="max-w-3xl text-[17px] leading-relaxed text-ink/80">{SECTORS[id].blurb}</p>
         </div>
       </div>
 
@@ -91,14 +92,14 @@ async function Sector({
               <li key={c.t}>
                 <Link
                   href={`/stock/${c.t}`}
-                  className="fathom-card flex items-center gap-3.5 px-4 py-3.5 text-ink no-underline transition-colors hover:border-mid"
+                  className="fathom-card fathom-lift flex items-center gap-3.5 px-4 py-3.5 text-ink no-underline"
                 >
                   <CompanyLogo name={displayName(c.n)} size={42} />
                   <span className="flex min-w-0 flex-1 flex-col">
                     <span className="fathom-grow max-w-full truncate text-[16px] font-semibold">{displayName(c.n)}</span>
                     <span className="truncate text-[13px] text-muted">{plainIndustry(c.d)}</span>
                   </span>
-                  <span className="flex-none rounded-lg bg-panel-2 px-2.5 py-1 text-[13px] font-semibold text-ocean">{c.t}</span>
+                  <span className="flex-none rounded-lg bg-[var(--a-soft)] px-2.5 py-1 text-[13px] font-semibold text-[var(--a-ink)]">{c.t}</span>
                 </Link>
               </li>
             ))}
@@ -114,10 +115,10 @@ async function Sector({
           )}
         </>
       )}
-    </>
+    </div>
   );
 }
 
 function chip(on: boolean) {
-  return `inline-flex min-h-9 items-center rounded-full px-3.5 text-[13px] font-semibold no-underline transition ${on ? "bg-ocean text-abyss" : "border border-line bg-white text-muted hover:border-mid hover:text-ink"}`;
+  return `inline-flex min-h-9 items-center rounded-full px-3.5 text-[13px] font-semibold no-underline transition ${on ? "bg-[var(--a-ink)] text-abyss" : "border border-line bg-white text-muted hover:border-[var(--a)] hover:bg-[var(--a-soft)] hover:text-[var(--a-ink)]"}`;
 }

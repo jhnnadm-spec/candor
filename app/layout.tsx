@@ -24,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
-        <header className="border-b border-line">
+        <header className="relative z-10 border-b border-white/60 bg-white/70 shadow-[0_1px_0_rgba(10,42,58,0.06)] backdrop-blur-xl">
           <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-3.5 lg:px-8">
             <Link href="/" className="no-underline" aria-label="Fathom home">
               <Logo size={32} />
@@ -38,9 +38,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </div>
         </header>
 
-        <main className="flex flex-1 flex-col">{children}</main>
+        <main className="flex flex-1 flex-col overflow-x-clip">{children}</main>
 
-        <footer className="border-t border-line">
+        <footer className="bg-white/60 backdrop-blur">
+          <div aria-hidden="true" className="h-1 w-full bg-gradient-to-r from-[#2f8fb3] via-[#8b6cf2] via-60% to-[#ff6f59]" />
           <div className="mx-auto flex max-w-[1180px] flex-col gap-2 px-5 py-8 text-sm leading-relaxed text-muted sm:flex-row sm:items-center sm:justify-between lg:px-8">
             <p>For information only. Not investment advice. Fathom never tells you to buy, sell or hold anything.</p>
             <Link href="/about" className="font-semibold">

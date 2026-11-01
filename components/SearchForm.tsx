@@ -7,7 +7,7 @@ export function SearchForm({ size = "large", autoFocus = false }: { size?: "larg
       method="get"
       role="search"
       className={`flex w-full flex-wrap gap-2 rounded-2xl border focus-within:border-mid ${
-        large ? "max-w-2xl border-[#c9d6dd] bg-white p-2" : "min-w-0 border-line bg-panel-2 p-0.5"
+        large ? "max-w-2xl border-white bg-white p-2 shadow-[0_18px_44px_-18px_rgba(47,143,179,0.55),0_0_0_1px_rgba(201,214,221,0.9)] transition-shadow focus-within:shadow-[0_18px_44px_-14px_rgba(139,108,242,0.55),0_0_0_2px_rgba(139,108,242,0.55)]" : "min-w-0 border-line bg-panel-2 p-0.5"
       }`}
     >
       <label htmlFor={`q-${size}`} className="sr-only">
@@ -30,7 +30,7 @@ export function SearchForm({ size = "large", autoFocus = false }: { size?: "larg
         />
       </div>
       {large && (
-        <button type="submit" className="flex-none cursor-pointer rounded-xl bg-ocean px-6 py-3.5 text-[17px] font-semibold text-abyss hover:bg-ocean-dark">
+        <button type="submit" className="flex-none cursor-pointer rounded-xl bg-gradient-to-r from-ocean to-[#5434c0] px-6 py-3.5 text-[17px] font-semibold text-abyss transition-[filter,transform] hover:brightness-110 active:scale-[0.98]">
           Search
         </button>
       )}

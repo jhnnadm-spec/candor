@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { getProgress, getWatchlist, STORE_EVENT, toggleWatch, type WatchItem } from "@/lib/client/store";
 import type { Snapshot } from "@/lib/report/snapshot";
 import { CompanyLogo } from "./CompanyLogo";
+import { accentAt, accentVars } from "@/lib/accents";
 
 const SUGGESTED = [
   { ticker: "AAPL", name: "Apple", site: "https://www.apple.com" },
@@ -47,7 +48,7 @@ export function WatchlistView() {
   if (list.length === 0) {
     return (
       <div className="fathom-card flex flex-col items-center gap-5 px-6 py-12 text-center">
-        <span aria-hidden="true" className="flex h-16 w-16 items-center justify-center rounded-full bg-panel-2 text-ocean">
+        <span aria-hidden="true" className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#ffb23e] to-[#ff6f59] text-white shadow-[0_10px_24px_-10px_#ff6f59]">
           <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round">
             <path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17.1l-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z" />
           </svg>
@@ -59,11 +60,12 @@ export function WatchlistView() {
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-2">
-          {SUGGESTED.map((c) => (
+          {SUGGESTED.map((c, i) => (
             <Link
               key={c.ticker}
               href={`/stock/${c.ticker}`}
-              className="inline-flex items-center gap-2 rounded-full border border-line bg-white py-1 pl-1 pr-3.5 text-[15px] font-semibold text-ink no-underline transition hover:border-mid"
+              style={accentVars(accentAt(i))}
+              className="fathom-lift inline-flex items-center gap-2 rounded-full border border-line bg-white py-1 pl-1 pr-3.5 text-[15px] font-semibold text-ink no-underline hover:bg-[var(--a-soft)] hover:text-[var(--a-ink)]"
             >
               <CompanyLogo name={c.name} website={c.site} size={28} />
               {c.name}
@@ -79,11 +81,11 @@ export function WatchlistView() {
 
   return (
     <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2 xl:grid-cols-3">
-      {list.map((w) => {
+      {list.map((w, i) => {
         const s = snaps[w.ticker];
         const understood = Object.keys(getProgress(w.ticker)).length;
         return (
-          <li key={w.ticker} className="fathom-card flex flex-col gap-4 p-6">
+          <li key={w.ticker} style={accentVars(accentAt(i))} className="fathom-card flex flex-col gap-4 p-6 shadow-[inset_0_4px_0_var(--a)]">
             <div className="flex items-start justify-between gap-3">
               <div className="flex min-w-0 items-center gap-3">
                 <CompanyLogo key={s ? "s" : "w"} name={s?.name ?? w.name} logo={s?.logo} website={s?.website} size={48} />

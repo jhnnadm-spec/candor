@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageTitle } from "@/components/PageTitle";
 import { SectorIcon } from "@/components/SectorIcon";
+import { accentVars, sectorAccent } from "@/lib/accents";
 import { displayName } from "@/lib/report/company";
 import { sectorSummaries } from "@/lib/sectors-data";
 
@@ -19,12 +20,14 @@ export default function SectorsPage() {
           <li key={s.id}>
             <Link
               href={`/sectors/${s.id}`}
-              className="fathom-card group flex h-full flex-col gap-3 p-5 text-ink no-underline transition-colors hover:border-mid"
+              style={accentVars(sectorAccent(s.id))}
+              className="fathom-card fathom-lift group relative flex h-full flex-col gap-3 overflow-hidden p-5 text-ink no-underline"
             >
+              <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1.5 bg-[var(--a)]" />
               <span className="flex items-center gap-3.5">
                 <SectorIcon id={s.id} size={44} />
                 <span className="flex flex-col leading-tight">
-                  <span className="font-display text-[19px] font-bold group-hover:text-ocean">{s.name}</span>
+                  <span className="font-display text-[19px] font-bold group-hover:text-[var(--a-ink)]">{s.name}</span>
                   {s.count > 0 && <span className="text-[13px] text-muted">{s.count.toLocaleString("en-US")} companies</span>}
                 </span>
               </span>
@@ -32,7 +35,7 @@ export default function SectorsPage() {
               {s.top.length > 0 && (
                 <span className="mt-auto flex flex-wrap gap-1.5">
                   {s.top.map((t) => (
-                    <span key={t.t} className="rounded-full bg-panel-2 px-2.5 py-1 text-[12px] font-semibold text-ocean">
+                    <span key={t.t} className="rounded-full bg-[var(--a-soft)] px-2.5 py-1 text-[12px] font-semibold text-[var(--a-ink)]">
                       {shortName(t.n)}
                     </span>
                   ))}

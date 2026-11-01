@@ -7,6 +7,7 @@
  */
 import { useRef, useState, type ReactNode } from "react";
 import { markStep } from "@/lib/client/store";
+import { accentVars, stepAccent } from "@/lib/accents";
 import { LEVELS, useDepth, type Level } from "./Depth";
 
 export function ResearchStep({
@@ -54,20 +55,35 @@ export function ResearchStep({
     <section
       ref={top}
       id={`step-${id}`}
+      style={accentVars(stepAccent(number - 1))}
       className="flex scroll-mt-20 flex-col gap-5 border-t border-line pt-10 first:border-t-0 first:pt-4"
       aria-labelledby={`step-${id}-title`}
     >
-      <header className="flex flex-col gap-2">
-        <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] font-semibold text-mid">
-          <span>
-            Question {number} of {total}
-          </span>
-          <span className="font-normal">{term}</span>
-        </p>
-        <h2 id={`step-${id}-title`} className="font-display text-[26px] font-bold leading-[1.15] tracking-tight sm:text-[32px]">
-          {question}
-        </h2>
-        <p className="text-[17px] leading-relaxed text-muted">{brief}</p>
+      <header className="flex gap-4">
+        <span
+          aria-hidden="true"
+          className="mt-0.5 flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-[color-mix(in_srgb,var(--a)_45%,var(--a-ink))] to-[var(--a-ink)] font-display text-[22px] font-bold text-white shadow-[0_10px_20px_-10px_var(--a)] sm:h-14 sm:w-14 sm:text-[26px]"
+        >
+          {number}
+        </span>
+        <div className="flex min-w-0 flex-col gap-2">
+          <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] font-semibold text-[var(--a-ink)]">
+            <span className="inline-flex items-center gap-2">
+              Question {number} of {total}
+              {/* Seven little dots, this question's lit up */}
+              <span aria-hidden="true" className="inline-flex gap-1">
+                {Array.from({ length: total }, (_, k) => (
+                  <span key={k} className={`h-1.5 rounded-full transition-all ${k === number - 1 ? "w-4 bg-[var(--a)]" : k < number - 1 ? "w-1.5 bg-[var(--a)] opacity-40" : "w-1.5 bg-line"}`} />
+                ))}
+              </span>
+            </span>
+            <span className="font-normal">{term}</span>
+          </p>
+          <h2 id={`step-${id}-title`} className="font-display text-[26px] font-bold leading-[1.15] tracking-tight sm:text-[32px]">
+            {question}
+          </h2>
+          <p className="text-[17px] leading-relaxed text-muted">{brief}</p>
+        </div>
       </header>
 
       <div key={level} className="fathom-fade flex flex-col gap-6">
@@ -79,16 +95,16 @@ export function ResearchStep({
           <button
             type="button"
             onClick={() => go(next)}
-            className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-line bg-white px-4 text-[15px] font-semibold text-ocean transition-colors hover:border-mid"
+            className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-[var(--a-ink)] px-5 text-[15px] font-semibold text-white shadow-[0_8px_18px_-10px_var(--a)] transition-[transform,filter] hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0"
           >
             Tell me more
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg className="transition-transform group-hover:translate-y-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m6 9 6 6 6-6" />
             </svg>
           </button>
         )}
         {level !== "surface" && (
-          <button type="button" onClick={() => go("surface")} className="min-h-11 rounded-xl px-3 text-[15px] font-semibold text-muted hover:text-ink">
+          <button type="button" onClick={() => go("surface")} className="min-h-11 rounded-full px-4 text-[15px] font-semibold text-muted transition-colors hover:bg-[var(--a-soft)] hover:text-[var(--a-ink)]">
             Show less
           </button>
         )}

@@ -32,6 +32,7 @@ import { billsGauge, cashVsDebt, compareFor, marginLines, moneyUses, pairFor, sa
 import { DotGrid, Meter, StatusBadge, TopicIcon } from "@/components/viz/Static";
 import { AtDepth, DepthProvider, DetailBar } from "@/components/Depth";
 import { CompanyLogo } from "@/components/CompanyLogo";
+import { accentVars, stepAccent } from "@/lib/accents";
 import { BigAnswer, KeepBar, LiteCard, MiniBars, MiniGauge, MiniPair, SaidAnswer, SourceChips, UsesBar } from "@/components/Lite";
 
 export async function generateMetadata(props: PageProps<"/stock/[ticker]">): Promise<Metadata> {
@@ -148,13 +149,16 @@ function Hero({ report, profile, company, lead }: { report: CompanyReport; profi
   if (profile?.headquarters) facts.push(`Based in ${profile.headquarters}`);
   if (profile?.employees) facts.push(`${compactCount(profile.employees.count)} people work there`);
   return (
-    <header id="top" className="flex scroll-mt-8 flex-col gap-5">
+    <header id="top" className="relative isolate flex scroll-mt-8 flex-col gap-5 overflow-hidden rounded-[28px] border border-white bg-white/75 p-5 shadow-[0_24px_60px_-34px_rgba(11,79,108,0.55)] backdrop-blur sm:p-8">
+      <span aria-hidden="true" className="absolute -right-16 -top-20 -z-10 h-56 w-56 rounded-full bg-[#7fc4d8] opacity-40 blur-3xl" />
+      <span aria-hidden="true" className="absolute -bottom-24 right-24 -z-10 h-48 w-48 rounded-full bg-[#c7b8fb] opacity-40 blur-3xl" />
+      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#2f8fb3] via-[#8b6cf2] to-[#ff6f59]" />
       <div className="flex items-center gap-4">
         <CompanyLogo name={c.name} logo={profile?.logo} website={profile?.website} size={60} />
         <div className="flex min-w-0 flex-col gap-1">
           <h1 className="font-display text-[34px] font-bold leading-[1.05] tracking-tight sm:text-[44px]">{company}</h1>
           <p className="flex flex-wrap items-center gap-2 text-[14px] text-muted">
-            <span className="rounded-md bg-panel-2 px-2 py-0.5 font-bold tracking-wide text-ocean" title="Its short code on the stock market (ticker)">
+            <span className="rounded-md bg-gradient-to-r from-ocean to-[#5434c0] px-2 py-0.5 font-bold tracking-wide text-white" title="Its short code on the stock market (ticker)">
               {c.ticker}
             </span>
             {c.industry && <span>{sentenceCase(c.industry)}</span>}
@@ -175,7 +179,8 @@ function Hero({ report, profile, company, lead }: { report: CompanyReport; profi
           <a
             href={`/stock/${encodeURIComponent(c.ticker)}/pdf`}
             download
-            className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-line bg-white px-4 text-[15px] font-semibold text-ocean no-underline transition-colors hover:border-mid"
+            style={accentVars(stepAccent(1))}
+            className="fathom-lift inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-white px-4 text-[15px] font-semibold text-[var(--a-ink)] no-underline hover:bg-[var(--a-soft)]"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M12 3v12" />
@@ -210,16 +215,27 @@ function sentenceCase(s: string): string {
 /** Before the questions: a plain list of what's ahead, each one a link. */
 function Contents({ company }: { company: string }) {
   return (
-    <nav aria-labelledby="contents-title" className="flex flex-col gap-3 rounded-2xl bg-mist p-5 sm:p-6">
+    <nav aria-labelledby="contents-title" className="flex flex-col gap-3">
       <h2 id="contents-title" className="text-[17px] font-semibold">
         7 questions about {company}
       </h2>
-      <ol className="m-0 grid list-none gap-x-6 gap-y-1 p-0 sm:grid-cols-2">
+      <ol className="m-0 grid list-none gap-2 p-0 sm:grid-cols-2">
         {STEPS.map((s, i) => (
-          <li key={s.id}>
-            <a href={`#step-${s.id}`} className="flex min-h-9 items-baseline gap-2.5 py-1 text-[15px] text-ink no-underline hover:text-ocean">
-              <span className="w-4 flex-none text-right font-semibold text-mid">{i + 1}</span>
-              <span>{s.title}</span>
+          <li key={s.id} style={accentVars(stepAccent(i))}>
+            <a
+              href={`#step-${s.id}`}
+              className="fathom-tint fathom-lift group flex min-h-12 items-center gap-3 rounded-2xl px-3 py-2 text-[15px] font-semibold text-ink no-underline hover:text-[var(--a-ink)]"
+            >
+              <span
+                aria-hidden="true"
+                className="fathom-icon-pop flex h-8 w-8 flex-none items-center justify-center rounded-xl bg-[var(--a-ink)] font-display text-[15px] font-bold text-white"
+              >
+                {i + 1}
+              </span>
+              <span className="flex-1">{s.title}</span>
+              <svg className="flex-none text-[var(--a-ink)] opacity-0 transition-[opacity,transform] group-hover:translate-x-0.5 group-hover:opacity-100" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="m9 6 6 6-6 6" />
+              </svg>
             </a>
           </li>
         ))}
@@ -237,7 +253,7 @@ function Said({ statement, visual }: { statement?: Statement; visual?: ReactNode
       <p className="text-[17px] leading-[1.65]">
         <RichText text={statement.text} />
       </p>
-      {visual && <div className="my-2 rounded-xl bg-[#f3f8fa] p-4">{visual}</div>}
+      {visual && <div className="my-2 rounded-xl bg-[var(--a-soft,#f3f8fa)] p-4">{visual}</div>}
       <div className="flex flex-wrap gap-x-4 gap-y-1">
         {statement.sources.map((s) => (
           <SourceLink key={s.url} href={s.url} label={s.label} />

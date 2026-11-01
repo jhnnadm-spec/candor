@@ -6,6 +6,7 @@
  */
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { accentAt, accentVars } from "@/lib/accents";
 
 type Match = { ticker: string; name: string };
 
@@ -42,15 +43,16 @@ export function ComparePicker({ chosen, max = 5 }: { chosen: Match[]; max?: numb
   return (
     <div className="flex flex-col gap-3">
       <div className="flex flex-wrap items-center gap-2">
-        {chosen.map((c) => (
-          <span key={c.ticker} className="inline-flex min-h-10 items-center gap-2 rounded-full border border-line bg-white py-1 pl-3.5 pr-1.5 text-[15px]">
+        {chosen.map((c, i) => (
+          <span key={c.ticker} style={accentVars(accentAt(i))} className="fathom-fade inline-flex min-h-10 items-center gap-2 rounded-full border border-[color-mix(in_srgb,var(--a)_35%,white)] bg-[var(--a-soft)] py-1 pl-2 pr-1.5 text-[15px]">
+            <span aria-hidden="true" className="h-2.5 w-2.5 flex-none rounded-full bg-[var(--a)]" />
             <span className="font-semibold">{c.name}</span>
-            <span className="text-[13px] font-bold text-ocean">{c.ticker}</span>
+            <span className="text-[13px] font-bold text-[var(--a-ink)]">{c.ticker}</span>
             <button
               type="button"
               onClick={() => go(chosen.filter((x) => x.ticker !== c.ticker).map((x) => x.ticker))}
               aria-label={`Remove ${c.name}`}
-              className="flex h-7 w-7 items-center justify-center rounded-full text-muted hover:bg-panel-2 hover:text-ink"
+              className="flex h-7 w-7 items-center justify-center rounded-full text-muted hover:bg-white hover:text-ink"
             >
               ×
             </button>

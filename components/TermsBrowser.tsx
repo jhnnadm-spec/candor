@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { glossaryKeys, lookupTerm } from "@/lib/glossary";
 import { searchTerms } from "@/lib/term-search";
 import { AnalystView } from "./Term";
+import { accentAt, accentVars } from "@/lib/accents";
 
 export function TermsBrowser({ initialQuery = "" }: { initialQuery?: string }) {
   const [query, setQuery] = useState(initialQuery);
@@ -51,16 +52,19 @@ export function TermsBrowser({ initialQuery = "" }: { initialQuery?: string }) {
 
       <ul className="grid grid-cols-1 items-start gap-3 md:grid-cols-2">
         {list.map(({ key, entry }, i) => (
-          <li key={key} id={key} className="scroll-mt-6">
-            <details open={openFirst && i === 0} className="fathom-card group p-6 [&_summary::-webkit-details-marker]:hidden">
+          <li key={key} id={key} className="scroll-mt-6" style={accentVars(accentAt(i))}>
+            <details
+              open={openFirst && i === 0}
+              className="fathom-card group p-6 shadow-[inset_4px_0_0_var(--a)] transition-[background-color,box-shadow] open:bg-[var(--a-soft)] hover:shadow-[inset_4px_0_0_var(--a),0_12px_26px_-18px_var(--a)] [&_summary::-webkit-details-marker]:hidden"
+            >
               <summary className="flex cursor-pointer list-none flex-col gap-1.5">
                 <span className="flex items-start justify-between gap-3">
-                  <span className="font-display text-xl font-bold leading-tight">{entry.term}</span>
+                  <span className="font-display text-xl font-bold leading-tight group-open:text-[var(--a-ink)]">{entry.term}</span>
                   <span className="flex flex-none items-center gap-2">
                     {entry.sides && (
                       <span className="rounded-full bg-[#fbe9e1] px-2 py-0.5 text-[12px] font-semibold text-[#9a4320]">both sides</span>
                     )}
-                    <span aria-hidden="true" className="text-muted transition-transform group-open:rotate-180">
+                    <span aria-hidden="true" className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--a-soft)] text-[var(--a-ink)] transition-transform group-open:rotate-180 group-open:bg-white">
                       ▾
                     </span>
                   </span>

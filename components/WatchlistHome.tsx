@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getWatchlist, STORE_EVENT, type WatchItem } from "@/lib/client/store";
 import { CompanyLogo } from "./CompanyLogo";
+import { accentAt, accentVars } from "@/lib/accents";
 
 export function WatchlistHome() {
   const [list, setList] = useState<WatchItem[] | null>(null);
@@ -29,11 +30,11 @@ export function WatchlistHome() {
         </Link>
       </div>
       <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
-        {list.map((w) => (
-          <li key={w.ticker}>
+        {list.map((w, i) => (
+          <li key={w.ticker} style={accentVars(accentAt(i))}>
             <Link
               href={`/stock/${w.ticker}`}
-              className="inline-flex items-center gap-2.5 rounded-xl border border-line bg-white py-2 pl-2 pr-4 text-[15px] font-semibold text-ink no-underline transition-colors hover:border-mid"
+              className="fathom-lift inline-flex items-center gap-2.5 rounded-2xl border border-line bg-white py-2 pl-2 pr-4 text-[15px] font-semibold text-ink no-underline shadow-[inset_0_-3px_0_var(--a)] hover:bg-[var(--a-soft)]"
             >
               <CompanyLogo name={w.name} size={30} />
               {w.name.replace(/,?\s+(Inc\.?|Corp(oration)?\.?|Co\.?|Company)$/i, "")}

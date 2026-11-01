@@ -3,6 +3,7 @@
  * The companies are in the address (/compare?t=KO,PEP), so the link saves and shares it.
  */
 import type { Metadata } from "next";
+import { accentAt, accentVars } from "@/lib/accents";
 import Link from "next/link";
 import { Suspense } from "react";
 import { ComparePicker } from "@/components/ComparePicker";
@@ -77,9 +78,9 @@ function Start() {
     <section className="flex flex-col gap-3">
       <h2 className="text-[17px] font-semibold">Add at least two companies, or try one of these:</h2>
       <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
-        {EXAMPLES.map((e) => (
-          <li key={e.t}>
-            <Link href={`/compare?t=${e.t}`} className="inline-flex min-h-10 items-center rounded-full bg-panel-2 px-4 text-[15px] font-semibold text-ocean no-underline hover:bg-surface">
+        {EXAMPLES.map((e, i) => (
+          <li key={e.t} style={accentVars(accentAt(i + 1))}>
+            <Link href={`/compare?t=${e.t}`} className="fathom-lift inline-flex min-h-10 items-center rounded-full border border-transparent bg-[var(--a-soft)] px-4 text-[15px] font-semibold text-[var(--a-ink)] no-underline">
               {e.label}
             </Link>
           </li>
@@ -137,9 +138,10 @@ function Table({ comparison: c }: { comparison: ReturnType<typeof buildCompariso
                 <th scope="col" className="sticky left-0 z-10 w-[260px] border-b-2 border-line bg-white py-3 pr-4 align-bottom text-[13px] font-semibold text-muted">
                   Figure
                 </th>
-                {c.companies.map((m) => (
-                  <th key={m.ticker} scope="col" className="border-b-2 border-line px-3 py-3 align-bottom">
-                    <Link href={`/stock/${m.ticker}`} className="fathom-grow text-[17px] font-bold text-ink">
+                {c.companies.map((m, i) => (
+                  <th key={m.ticker} scope="col" style={accentVars(accentAt(i))} className="border-b-[3px] border-[var(--a)] px-3 py-3 align-bottom">
+                    <Link href={`/stock/${m.ticker}`} className="fathom-grow inline-flex items-center gap-2 text-[17px] font-bold text-ink">
+                      <span aria-hidden="true" className="h-2.5 w-2.5 flex-none rounded-full bg-[var(--a)]" />
                       {m.company}
                     </Link>
                     <span className="block text-[12px] font-normal text-muted">
@@ -190,10 +192,13 @@ function PhoneRows({ groups, companies }: { groups: { id: string; title: string;
               <span className="-mt-1.5 text-[13px] text-muted">{r.plain}</span>
               <p className="text-[13px] leading-snug text-muted">{r.meaning}</p>
               <ul className="m-0 flex list-none flex-col p-0">
-                {r.cells.map((cell) => (
+                {r.cells.map((cell, ci) => (
                   <li key={cell.ticker} className="flex items-start justify-between gap-3 border-t border-line py-2.5">
                     <span className="flex flex-col">
-                      <span className="text-[15px] font-semibold">{name(cell.ticker)}</span>
+                      <span className="inline-flex items-center gap-2 text-[15px] font-semibold">
+                        <span aria-hidden="true" className="h-2.5 w-2.5 flex-none rounded-full" style={{ background: accentAt(ci).solid }} />
+                        {name(cell.ticker)}
+                      </span>
                       {cell.figure.status === "reported" ? (
                         <>
                           <span className="text-[12px] text-muted">

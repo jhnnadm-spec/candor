@@ -333,10 +333,10 @@ export function Lines({
 }
 
 /** A small headline number with a caption, for the top of a tile. */
-export function Headline({ value, caption, tone = "glow" }: { value: string; caption?: ReactNode; tone?: "glow" | "plain" }) {
+export function Headline({ value, caption }: { value: string; caption?: ReactNode; tone?: "glow" | "plain" }) {
   return (
     <div className="flex flex-col">
-      <span className={`font-display text-3xl font-bold tabular-nums ${tone === "glow" ? "text-ocean" : "text-ink"}`}>{value}</span>
+      <span className="font-display text-3xl font-bold tabular-nums text-ink">{value}</span>
       {caption && <span className="text-[13px] text-muted">{caption}</span>}
     </div>
   );

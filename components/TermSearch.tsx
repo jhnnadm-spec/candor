@@ -3,7 +3,7 @@
 /**
  * Look up a finance term by typing it: "pe ratio", "roe", "free cash flow".
  * Matching terms appear as you type; choosing one shows its full explanation,
- * including the analyst's view and the devil's advocate for key ratios.
+ * including how people usually read it and the devil's advocate for key ratios.
  */
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { lookupTerm } from "@/lib/glossary";

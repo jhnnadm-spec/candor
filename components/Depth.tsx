@@ -4,7 +4,7 @@
  * How much detail the reader wants, for the whole company page:
  *   Short:      the quick answer and a picture.
  *   Explained:  each answer explained, with the main numbers.
- *   Everything: every detail, with the analyst's view and the reports' own words.
+ *   Everything: every detail, with what people usually check and the reports' own words.
  * Each question can still show more on its own; changing the page-wide level resets them.
  * The choice is remembered in this browser only.
  * (In the code the levels keep their older names: surface, below and deep.)

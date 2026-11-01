@@ -32,7 +32,7 @@ export function LiteCard({
 
 /** The answer in a few words: a big figure and a short caption. */
 export function BigAnswer({ value, caption, tone = "ocean" }: { value: string; caption: string; tone?: "ocean" | "good" | "warn" }) {
-  const color = tone === "good" ? "text-[#14805a]" : tone === "warn" ? "text-[#b4532a]" : "text-ocean";
+  const color = tone === "good" ? "text-[#14805a]" : tone === "warn" ? "text-[#b4532a]" : "text-ink";
   return (
     <p className="flex flex-col gap-1">
       <span className={`font-display text-[40px] font-bold leading-none tracking-tight tabular-nums ${color}`}>{value}</span>

@@ -68,7 +68,7 @@ export function Forces({ forces, nodes, company }: { forces: Force[]; nodes: Map
           What could push its results up or down? <span className="font-sans text-[16px] font-normal text-muted">(key drivers)</span>
         </h2>
         <p className="text-[16px] leading-relaxed text-muted">
-          Analysts sort what affects a company into four groups: its own <TermName k="fundamentals" />, the wider economy
+          People usually sort what affects a company into four groups: its own <TermName k="fundamentals" />, the wider economy
           (<TermName k="macroeconomic-factors" />), how investors feel (<TermName k="market-sentiment" />) and forces
           outside its control (<TermName k="external-factors" />). Each card follows one driver from cause to consequence; tap a result
           to see where it sits on the map. The chains describe how these drivers usually work; anything about {company} itself
@@ -90,7 +90,7 @@ export function Forces({ forces, nodes, company }: { forces: Force[]; nodes: Map
             {g.forces.length === 0 ? (
               <p className="fathom-card p-4 text-[14px] text-muted">
                 {g.id === "outside"
-                  ? "Shown once the plain-English explanation of this company's reports has been written (use the button at the top)."
+                  ? "Shown once the plain-English version of this company's reports has been written. It's on its way."
                   : "No figures available for this yet."}
               </p>
             ) : (

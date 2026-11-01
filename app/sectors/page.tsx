@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageTitle } from "@/components/PageTitle";
 import { SectorIcon } from "@/components/SectorIcon";
-import { accentVars, BRAND } from "@/lib/accents";
+import { accentVars, sectorAccent } from "@/lib/accents";
 import { displayName } from "@/lib/report/company";
 import { sectorSummaries } from "@/lib/sectors-data";
 
@@ -20,7 +20,7 @@ export default function SectorsPage() {
           <li key={s.id}>
             <Link
               href={`/sectors/${s.id}`}
-              style={accentVars(BRAND)}
+              style={accentVars(sectorAccent(s.id))}
               className="fathom-card fathom-lift group relative flex h-full flex-col gap-3 overflow-hidden p-5 text-ink no-underline"
             >
               <span className="flex items-center gap-3.5">

@@ -22,7 +22,7 @@ export function Term({
   definition: string;
   why?: string;
   bracket?: string; // the real term, shown after the plain words when they differ
-  more?: Pick<GlossaryEntry, "analyst" | "reading" | "caveat" | "sides">; // the analyst's view, for key terms
+  more?: Pick<GlossaryEntry, "analyst" | "reading" | "caveat" | "sides">; // how people usually read it, for key terms
 }) {
   const [open, setOpen] = useState(false);
   const [pinned, setPinned] = useState(false); // opened by a tap or click, stays until closed
@@ -104,8 +104,8 @@ export function Term({
           setOpen(next);
           setPinned(next);
         }}
-        className={`inline cursor-help rounded-sm font-semibold text-ocean underline decoration-mid decoration-dotted decoration-2 underline-offset-4 transition-[font-size,color] duration-200 motion-reduce:transition-none ${
-          open ? "text-[1.08em] text-ocean-dark" : ""
+        className={`inline cursor-help rounded-sm font-semibold text-ink underline decoration-ocean/60 decoration-dotted decoration-2 underline-offset-4 transition-[font-size,color] duration-200 motion-reduce:transition-none ${
+          open ? "text-[1.08em] text-ocean" : ""
         }`}
       >
         {children}
@@ -121,7 +121,7 @@ export function Term({
             onMouseEnter={() => hoverTimer.current && clearTimeout(hoverTimer.current)}
             onMouseLeave={leave}
             style={{ position: "fixed", top: pos.top, left: pos.left, maxHeight: pos.maxHeight }}
-            className={`fathom-pop z-50 block overflow-y-auto rounded-xl border border-line bg-white p-4 text-left text-[15px] font-normal leading-relaxed text-ink shadow-[0_12px_32px_rgba(11,79,108,0.18)] ${
+            className={`fathom-pop z-50 block overflow-y-auto rounded-xl border border-line bg-white p-4 text-left text-[15px] font-normal leading-relaxed text-ink shadow-[0_12px_32px_rgba(12,15,20,0.16)] ${
               more ? "w-[400px] max-w-[90vw]" : "w-80 max-w-[85vw]"
             }`}
           >
@@ -141,7 +141,7 @@ export function Term({
   );
 }
 
-/** How an analyst reads a number, including the case against the obvious reading. */
+/** How people usually read a number, including the case against the obvious reading. */
 export function AnalystView({ analyst, reading, caveat, sides }: Pick<GlossaryEntry, "analyst" | "reading" | "caveat" | "sides">) {
   if (!analyst && !reading && !caveat && !sides) return null;
   const row = (label: string, text: string | undefined, tone: string) =>
@@ -153,7 +153,7 @@ export function AnalystView({ analyst, reading, caveat, sides }: Pick<GlossaryEn
     );
   return (
     <span className="mt-2.5 flex flex-col gap-2.5 border-t border-line pt-2.5">
-      {row("Why analysts check it", analyst, "text-ocean")}
+      {row("Why people check it", analyst, "text-ink")}
       {row("What the number can suggest", reading, "text-mid")}
       {row("Devil's advocate", caveat, "text-[#b4532a]")}
       {sides && <BothSides sides={sides} />}

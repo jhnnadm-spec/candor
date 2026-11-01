@@ -43,7 +43,7 @@ export function FundamentalGlance({ result }: { result: LensResult<FundamentalDa
 
       <details className="group rounded-2xl border border-line">
         <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-5 py-3 text-[16px] font-semibold text-ocean">
-          See all {rows.length} figures, grouped the way analysts read them
+          See all {rows.length} figures, grouped the way people usually read them
           <span aria-hidden="true" className="text-xl transition-transform group-open:rotate-45">
             +
           </span>
@@ -95,7 +95,7 @@ export function MetricCard({ row }: { row: MetricRow }) {
         </span>
         <span className="text-[13px] text-muted">{row.plain}</span>
       </div>
-      <span className={`font-display font-bold tabular-nums ${f.status === "reported" ? "text-[26px] text-ocean" : "text-[17px] text-muted"}`}>{figureValue(f)}</span>
+      <span className={`font-display font-bold tabular-nums ${f.status === "reported" ? "text-[26px] text-ink" : "text-[17px] text-muted"}`}>{figureValue(f)}</span>
       {row.reading && <p className="text-[15px] leading-snug">{row.reading}</p>}
       {f.status !== "reported" && <p className="text-[14px] leading-snug text-muted">{f.reason}</p>}
       <p className="text-[13px] leading-snug text-muted">{row.meaning}</p>

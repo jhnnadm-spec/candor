@@ -1,20 +1,17 @@
 "use client";
 
 /**
- * Lets a visitor ask Candor to write the plain-English explanation for a
- * company that doesn't have one yet (or whose explanation is out of date),
- * then waits and reloads the page when it's ready.
+ * Writes the plain-English explanation automatically. When someone opens a company
+ * that doesn't have one yet (or whose one is out of date), this asks for it once in
+ * the background, shows a slim "being written" line while it works, and reloads the
+ * page when it's ready. Nothing to click. If today's free AI allowance or this
+ * visitor's daily share is used up, it stays quiet: the company page still shows
+ * everything that comes straight from the reports.
  */
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-type Phase = "idle" | "sending" | "working" | "queued" | "visitor-limit" | "failed" | "slow";
-
-const STEPS = [
-  "Reading the annual and quarterly reports",
-  "Writing each point in plain English",
-  "Checking every point word-for-word against the reports",
-];
+type Phase = "idle" | "working" | "queued" | "done-quietly" | "slow";
 
 export function ExplainButton({
   ticker,
@@ -26,15 +23,32 @@ export function ExplainButton({
   update?: boolean; // an explanation exists but a newer report has been filed
 }) {
   const router = useRouter();
-  const [phase, setPhase] = useState<Phase>(initial === "none" ? "idle" : initial === "failed" ? "idle" : initial);
-  const [step, setStep] = useState(0);
+  const [phase, setPhase] = useState<Phase>(initial === "working" ? "working" : initial === "queued" ? "queued" : "idle");
+  const asked = useRef(false);
   const api = `/api/explain/${encodeURIComponent(ticker)}`;
 
-  // While it's being written: move through the steps, and check every few seconds whether it's done.
+  // Ask once, as soon as the page is open.
+  useEffect(() => {
+    if ((initial !== "none" && initial !== "failed") || asked.current) return;
+    asked.current = true;
+    (async () => {
+      try {
+        const res = await fetch(api, { method: "POST" });
+        const { result } = (await res.json()) as { result: string };
+        if (result === "claimed" || result === "already-working") setPhase("working");
+        else if (result === "already-ready") router.refresh();
+        else if (result === "queued") setPhase("queued");
+        else setPhase("done-quietly");
+      } catch {
+        setPhase("done-quietly");
+      }
+    })();
+  }, [initial, api, router]);
+
+  // While it's being written, check every few seconds and reload when it's done.
   useEffect(() => {
     if (phase !== "working") return;
     const started = Date.now();
-    const stepTimer = setInterval(() => setStep((s) => Math.min(s + 1, STEPS.length - 1)), 25_000);
     const poll = setInterval(async () => {
       if (Date.now() - started > 6 * 60_000) {
         setPhase("slow");
@@ -45,108 +59,36 @@ export function ExplainButton({
         const { status } = (await res.json()) as { status: string };
         if (status === "ready") router.refresh();
         else if (status === "queued") setPhase("queued");
-        else if (status === "failed") setPhase("failed");
+        else if (status === "failed") setPhase("done-quietly");
       } catch {
         // try again on the next tick
       }
     }, 6_000);
-    return () => {
-      clearInterval(stepTimer);
-      clearInterval(poll);
-    };
+    return () => clearInterval(poll);
   }, [phase, api, router]);
 
-  async function ask() {
-    setPhase("sending");
-    try {
-      const res = await fetch(api, { method: "POST" });
-      const { result } = (await res.json()) as { result: string };
-      if (result === "claimed" || result === "already-working") setPhase("working");
-      else if (result === "already-ready") router.refresh();
-      else if (result === "queued") setPhase("queued");
-      else if (result === "visitor-limit") setPhase("visitor-limit");
-      else setPhase("failed");
-    } catch {
-      setPhase("failed");
-    }
-  }
+  if (phase !== "working" && phase !== "queued") return null;
 
   return (
-    <section className="flex flex-col gap-3 rounded-2xl bg-panel p-6" aria-live="polite">
-      {(phase === "idle" || phase === "sending" || phase === "failed") && (
+    <p
+      aria-live="polite"
+      className="flex items-center gap-3 self-start rounded-full border border-line bg-white/80 py-2 pl-3 pr-4 text-[14px] text-muted backdrop-blur"
+    >
+      {phase === "working" ? (
         <>
-          <h2 className="font-display text-xl font-bold text-ink">
-            {update ? "A newer report has been filed" : "No plain-English explanation yet"}
-          </h2>
-          <p className="text-[16px] leading-relaxed text-muted">
-            {update
-              ? "The explanation below was written from an older report. Candor can rewrite it from the latest one."
-              : "Candor can write one now from the company's own reports: what it does, how it makes money, its edge, its industry and its risks. Every point is checked against the report it links to."}
-          </p>
-          {phase === "failed" && (
-            <p className="text-[15px] text-[#B42318]">That didn&apos;t work this time. Please try again later.</p>
-          )}
-          <div>
-            <button
-              type="button"
-              onClick={ask}
-              disabled={phase === "sending"}
-              className="rounded-xl bg-ocean px-5 py-3 text-[16px] font-semibold text-abyss transition hover:bg-ocean-dark disabled:opacity-60"
-            >
-              {phase === "sending" ? "Asking…" : update ? "Update the explanation" : "Write the plain-English explanation"}
-            </button>
-          </div>
-          <p className="text-[13px] text-muted">Takes about two minutes. Candor writes a few each day on a free AI allowance.</p>
-        </>
-      )}
-
-      {phase === "working" && (
-        <>
-          <h2 className="font-display text-xl font-bold text-ink">Preparing the explanation…</h2>
-          <ol className="flex flex-col gap-2">
-            {STEPS.map((s, i) => (
-              <li key={s} className={`flex items-center gap-2.5 text-[16px] ${i <= step ? "text-ink" : "text-muted"}`}>
-                <span
-                  className={`inline-block size-2.5 rounded-full ${i < step ? "bg-ocean" : i === step ? "animate-pulse bg-[#2F8FB3]" : "bg-line"}`}
-                />
-                {s}
-              </li>
+          <span aria-hidden="true" className="flex gap-1">
+            {[0, 1, 2].map((i) => (
+              <span key={i} className="h-1.5 w-1.5 animate-pulse rounded-full bg-ocean" style={{ animationDelay: `${i * 0.2}s` }} />
             ))}
-          </ol>
-          <p className="text-[13px] text-muted">
-            Usually one to three minutes. You can leave this page; it will be here when you come back.
-          </p>
+          </span>
+          {update ? "Updating the plain-English version from the newest report" : "Writing the plain-English version"} · usually 1 to 3 minutes
         </>
-      )}
-
-      {phase === "queued" && (
+      ) : (
         <>
-          <h2 className="font-display text-xl font-bold text-ink">In the queue</h2>
-          <p className="text-[16px] leading-relaxed text-muted">
-            Today&apos;s free AI allowance has been used, so this company is in line to be written in the next daily
-            run, usually within 24 hours. Come back tomorrow.
-          </p>
+          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-[#f59e0b]" />
+          {update ? "An update from the newest report is on its way" : "The plain-English version is on its way"}, usually within a day
         </>
       )}
-
-      {phase === "visitor-limit" && (
-        <>
-          <h2 className="font-display text-xl font-bold text-ink">Daily limit reached</h2>
-          <p className="text-[16px] leading-relaxed text-muted">
-            To share the free allowance fairly, each visitor can ask for a few new companies a day. Please try again
-            tomorrow.
-          </p>
-        </>
-      )}
-
-      {phase === "slow" && (
-        <>
-          <h2 className="font-display text-xl font-bold text-ink">Taking longer than usual</h2>
-          <p className="text-[16px] leading-relaxed text-muted">
-            It may still be writing. Refresh the page in a few minutes, or come back later.
-          </p>
-        </>
-      )}
-    </section>
+    </p>
   );
 }

@@ -16,10 +16,10 @@
   --color-ocean-dark: #1f45d6; /* blue on hover */
   --color-mist: #f7f8fa; /* quiet grey boxes */
 
-  /* A blue scale for charts and soft fills. */
+  /* A blue scale for charts and soft fills (plus one slate for labels). */
   --color-surface: #e6ecff;
   --color-shallow: #a9bcff;
-  --color-mid: #2a4fe0;
+  --color-mid: #475467; /* labels and small headings: a dark slate, not blue */
   --color-deep: #1f45d6;
 
   --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
@@ -50,34 +50,105 @@ body {
 }
 
 /*
-  Loading animation (components/Loader.tsx): a lens sweeps across grey jargon lines
-  and leaves plain, rounded blue lines behind it. The captions under it take turns
-  (the timing assumes three captions).
+  Loading animation (components/Loader.tsx): a floating card in front of a slowly
+  turning ring of colour, with a little bar chart rising and falling in a wave,
+  shimmering placeholder lines, captions taking turns and a thin running line.
 */
-@keyframes fathom-translate-reveal {
-  0%, 8% { clip-path: inset(0 100% 0 0); opacity: 1; }
-  58%, 86% { clip-path: inset(0 0 0 0); opacity: 1; }
-  100% { clip-path: inset(0 0 0 0); opacity: 0; }
+@keyframes candor-spin { to { transform: rotate(360deg); } }
+@keyframes candor-bar {
+  0%, 100% { transform: scaleY(0.28); }
+  50% { transform: scaleY(1); }
 }
-@keyframes fathom-translate-lens {
-  0%, 8% { left: 0%; opacity: 0; }
-  14% { opacity: 1; }
-  58% { left: calc(100% - 3px); opacity: 1; }
-  66%, 100% { left: calc(100% - 3px); opacity: 0; }
+@keyframes candor-shimmer {
+  from { background-position: 150% 0; }
+  to { background-position: -50% 0; }
+}
+@keyframes candor-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes candor-float-slow {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(4px) rotate(-1.5deg); }
+}
+@keyframes candor-progress {
+  from { transform: translateX(-110%); }
+  to { transform: translateX(320%); }
 }
 @keyframes fathom-loader-line {
   0% { opacity: 0; transform: translateY(6px); }
   3%, 31% { opacity: 1; transform: translateY(0); }
   33.3%, 100% { opacity: 0; transform: translateY(-6px); }
 }
-.fathom-translate-plain { animation: fathom-translate-reveal 2.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
-.fathom-translate-lens { animation: fathom-translate-lens 2.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.candor-aurora {
+  background: conic-gradient(from 0deg, #2d5bff, #7c5cff, #0ea5a4, #f59e0b, #f43f5e, #2d5bff);
+  filter: blur(34px);
+  opacity: 0.28;
+  animation: candor-spin 9s linear infinite;
+}
+.candor-bar { height: 100%; transform-origin: bottom; animation: candor-bar 1.5s ease-in-out infinite; }
+.candor-shimmer {
+  background: linear-gradient(90deg, #eef0f3 30%, #f8f9fb 50%, #eef0f3 70%);
+  background-size: 200% 100%;
+  animation: candor-shimmer 1.6s linear infinite;
+}
+.candor-float { animation: candor-float 4s ease-in-out infinite; }
+.candor-float-slow { animation: candor-float-slow 5s ease-in-out infinite; transform: rotate(-3deg); }
+.candor-progress { animation: candor-progress 1.6s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
 .fathom-loader-line { opacity: 0; animation-name: fathom-loader-line; animation-iteration-count: infinite; animation-timing-function: ease-out; }
 @media (prefers-reduced-motion: reduce) {
-  .fathom-translate-plain { animation: none; clip-path: none; }
-  .fathom-translate-lens { display: none; }
+  .candor-aurora, .candor-bar, .candor-shimmer, .candor-float, .candor-float-slow, .candor-progress { animation: none; }
   .fathom-loader-line { animation: none; opacity: 0; }
   .fathom-loader-line:first-child { opacity: 1; }
+}
+
+/*
+  The background on every page (components/AmbientBackground.tsx): a faint grid that
+  fades out down the page, and three very soft colour glows drifting slowly around
+  it, about a minute per loop. It sits behind everything and never moves for anyone
+  who has asked for less motion.
+*/
+@keyframes candor-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(18vw, 10vh) scale(1.15); }
+}
+@keyframes candor-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-16vw, 14vh) scale(0.9); }
+}
+@keyframes candor-drift-c {
+  0%, 100% { transform: translate(0, 0) scale(0.95); }
+  50% { transform: translate(10vw, -12vh) scale(1.1); }
+}
+.candor-ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+}
+.candor-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(12, 15, 20, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(12, 15, 20, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 80%);
+}
+.candor-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  will-change: transform;
+}
+.candor-orb-a { width: 46vw; height: 46vw; left: -12vw; top: -18vw; background: #2d5bff; opacity: 0.1; animation: candor-drift-a 70s ease-in-out infinite; }
+.candor-orb-b { width: 40vw; height: 40vw; right: -14vw; top: 4vh; background: #7c5cff; opacity: 0.08; animation: candor-drift-b 85s ease-in-out infinite; }
+.candor-orb-c { width: 36vw; height: 36vw; left: 30vw; top: 55vh; background: #0ea5a4; opacity: 0.06; animation: candor-drift-c 95s ease-in-out infinite; }
+@keyframes candor-caret { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.candor-caret { animation: candor-caret 1s steps(1) infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .candor-orb, .candor-caret { animation: none; }
 }
 
 /* Plain tiles: white with a thin edge. */

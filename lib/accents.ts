@@ -1,7 +1,7 @@
 /**
- * Candor's accents. The brand is near-black ink plus one electric blue, so almost
- * everything uses `blue`. The other colours exist only where things must be told
- * apart at a glance, such as the companies side by side on Compare.
+ * Candor's accents. The brand is near-black ink plus one electric blue. A small set of
+ * softer colours adds variety to pictures and icons (each question, each type of
+ * business) and tells things apart on Compare. Text stays mostly ink.
  * Each accent has three shades:
  *   solid: the colour itself (dots, bars, icon fills)
  *   soft:  a pale tint for backgrounds
@@ -35,6 +35,40 @@ export function accentAt(i: number): Accent {
 
 /** The brand accent, for everything that doesn't need telling apart. */
 export const BRAND = ACCENTS.blue;
+
+/** Each of the seven questions on a company page has its own colour for its icon. */
+const STEP_ACCENT: Record<string, AccentName> = {
+  business: "blue",
+  performance: "teal",
+  health: "rose",
+  cash: "amber",
+  management: "violet",
+  outlook: "slate",
+  value: "ink",
+};
+export function stepAccent(id: string): Accent {
+  return ACCENTS[STEP_ACCENT[id] ?? "blue"];
+}
+
+/** Each type of business keeps its own colour for its icon. */
+const SECTOR_ACCENT: Record<string, AccentName> = {
+  technology: "violet",
+  health: "rose",
+  banks: "blue",
+  insurance: "teal",
+  "real-estate": "amber",
+  energy: "amber",
+  utilities: "teal",
+  media: "rose",
+  shops: "amber",
+  consumer: "teal",
+  industrials: "slate",
+  materials: "slate",
+  services: "violet",
+};
+export function sectorAccent(id: string): Accent {
+  return ACCENTS[SECTOR_ACCENT[id] ?? "blue"];
+}
 
 /** Inline style that sets --a, --a-soft and --a-ink for everything inside. */
 export function accentVars(a: Accent): CSSProperties {

@@ -10,7 +10,7 @@ export default function TermsPage(props: PageProps<"/terms">) {
     <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-10 px-5 py-12 sm:py-16 lg:px-8">
       <PageTitle
         title="Money words, in plain English"
-        note="What each term means, why analysts check it, and when a high or low number is good or bad."
+        note="What each term means, why people check it, and when a high or low number is good or bad."
       />
       {/* The full list shows at once; a search from elsewhere (?q=pe ratio) narrows it as soon as it's read. */}
       <Suspense fallback={<TermsBrowser />}>

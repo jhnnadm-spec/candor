@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { CompanyLogo } from "@/components/CompanyLogo";
 import { HeroHeadline } from "@/components/HeroHeadline";
+import { HeroPreview } from "@/components/HeroPreview";
+import { HowArt } from "@/components/HowArt";
 import { SearchForm } from "@/components/SearchForm";
 import { SectorIcon } from "@/components/SectorIcon";
 import { SurpriseButton } from "@/components/SurpriseButton";
@@ -16,9 +18,9 @@ const POPULAR = [
 ];
 
 const HOW = [
-  { n: "01", title: "Search a company", text: "Type its name, like Nike, or its short code, like NKE." },
-  { n: "02", title: "Read the short answers", text: "Seven simple questions, each answered in a sentence or a picture." },
-  { n: "03", title: "Tap “Tell me more”", text: "Only when you're curious. You never have to read it all." },
+  { n: 1 as const, title: "Search a company", text: "Type its name, like Nike, or its short code, like NKE." },
+  { n: 2 as const, title: "Read the short answers", text: "Seven simple questions, each answered in a sentence or a picture." },
+  { n: 3 as const, title: "Tap “Tell me more”", text: "Only when you're curious. You never have to read it all." },
 ];
 
 export default function Home() {
@@ -27,11 +29,6 @@ export default function Home() {
     <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-20 px-5 pb-24 pt-14 sm:gap-28 sm:pt-24 lg:px-8">
       {/* Search first, on a faint grid with one soft glow of brand blue behind it */}
       <section className="relative isolate flex flex-col items-center gap-7 text-center">
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-[-20%] -top-24 bottom-[-30%] -z-10 [background-image:linear-gradient(to_right,#eef0f3_1px,transparent_1px),linear-gradient(to_bottom,#eef0f3_1px,transparent_1px)] [background-size:44px_44px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]"
-        />
-        <span aria-hidden="true" className="fathom-blob left-1/2 top-[45%] -z-10 h-48 w-[min(620px,90vw)] -translate-x-1/2 bg-[#2d5bff] opacity-[0.14] sm:h-64" />
         <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-[14px] font-medium text-muted">
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ocean" />
           Free. A source for every point.
@@ -57,6 +54,7 @@ export default function Home() {
           ))}
           <SurpriseButton tickers={surprise} />
         </div>
+        <HeroPreview />
       </section>
 
       <WatchlistHome />
@@ -68,9 +66,10 @@ export default function Home() {
         </h2>
         <ol className="m-0 grid list-none gap-px overflow-hidden rounded-2xl border border-line bg-line p-0 sm:grid-cols-3">
           {HOW.map((h) => (
-            <li key={h.n} className="group flex flex-col gap-3 bg-white p-6 transition-colors hover:bg-mist">
-              <span aria-hidden="true" className="font-mono text-[13px] font-medium text-ocean">
-                {h.n}
+            <li key={h.n} className="group flex flex-col gap-3 bg-white p-5 sm:p-6">
+              <HowArt step={h.n} />
+              <span aria-hidden="true" className="mt-2 text-[13px] font-medium tabular-nums text-muted">
+                Step {h.n}
               </span>
               <span className="text-[18px] font-semibold tracking-[-0.02em]">{h.title}</span>
               <span className="text-[15px] leading-relaxed text-muted">{h.text}</span>

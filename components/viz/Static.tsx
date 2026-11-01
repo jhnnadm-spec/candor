@@ -15,7 +15,7 @@ export function DotGrid({ value, label, color = "#2a78d6" }: { value: number; la
         ))}
       </div>
       <p className="text-[15px] leading-snug">
-        <strong className="font-display text-2xl font-bold text-ocean">${filled}</strong>
+        <strong className="font-display text-2xl font-bold text-ink">${filled}</strong>
         <span className="text-muted"> of every $100 of sales {label}</span>
       </p>
     </div>

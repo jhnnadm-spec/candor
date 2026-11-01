@@ -318,7 +318,7 @@ function Details({
       )}
       {brief ? (
         <p className="text-[13px] text-muted">
-          Click the box to keep this open and see why analysts check it, what the number can suggest, the devil&apos;s
+          Click the box to keep this open and see why people check it, what the number can suggest, the devil&apos;s
           advocate view{node.sides ? " (when a high or low figure is good or bad)" : ""}, and what it connects to.
         </p>
       ) : (

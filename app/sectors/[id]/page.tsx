@@ -6,7 +6,7 @@ import { CompanyLogo } from "@/components/CompanyLogo";
 import { Loader } from "@/components/Loader";
 import { SectorIcon } from "@/components/SectorIcon";
 import { SECTORS } from "@/lib/sectors";
-import { accentVars, BRAND } from "@/lib/accents";
+import { accentVars, sectorAccent } from "@/lib/accents";
 import { displayName } from "@/lib/report/company";
 import { companiesIn, genresIn, isSectorId, plainIndustry } from "@/lib/sectors-data";
 
@@ -52,7 +52,7 @@ async function Sector({
   };
 
   return (
-    <div style={accentVars(BRAND)} className="contents">
+    <div style={accentVars(sectorAccent(id))} className="contents">
       <Link href="/sectors" className="self-start text-[15px] font-semibold">
         ← All types of business
       </Link>

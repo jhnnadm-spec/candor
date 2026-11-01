@@ -7,7 +7,8 @@
  */
 import { useRef, useState, type ReactNode } from "react";
 import { markStep } from "@/lib/client/store";
-import { accentVars, BRAND } from "@/lib/accents";
+import { accentVars, stepAccent } from "@/lib/accents";
+import { StepIcon } from "./StepIcon";
 import { LEVELS, useDepth, type Level } from "./Depth";
 
 export function ResearchStep({
@@ -55,25 +56,22 @@ export function ResearchStep({
     <section
       ref={top}
       id={`step-${id}`}
-      style={accentVars(BRAND)}
+      style={accentVars(stepAccent(id))}
       className="flex scroll-mt-20 flex-col gap-5 border-t border-line pt-10 first:border-t-0 first:pt-4"
       aria-labelledby={`step-${id}-title`}
     >
       <header className="flex gap-4">
-        <span
-          aria-hidden="true"
-          className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-ink font-display text-[20px] font-semibold text-white sm:h-12 sm:w-12 sm:text-[22px]"
-        >
-          {number}
+        <span className="mt-1">
+          <StepIcon id={id} size={48} />
         </span>
         <div className="flex min-w-0 flex-col gap-2">
-          <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] font-semibold text-[var(--a-ink)]">
+          <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] font-semibold text-muted">
             <span className="inline-flex items-center gap-2">
               Question {number} of {total}
               {/* Seven little dots, this question's lit up */}
               <span aria-hidden="true" className="inline-flex gap-1">
                 {Array.from({ length: total }, (_, k) => (
-                  <span key={k} className={`h-1.5 rounded-full transition-all ${k === number - 1 ? "w-4 bg-[var(--a)]" : k < number - 1 ? "w-1.5 bg-[var(--a)] opacity-40" : "w-1.5 bg-line"}`} />
+                  <span key={k} className={`h-1.5 rounded-full transition-all ${k === number - 1 ? "w-4 bg-[var(--a)]" : k < number - 1 ? "w-1.5 bg-[#c5cbd6]" : "w-1.5 bg-line"}`} />
                 ))}
               </span>
             </span>

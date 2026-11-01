@@ -249,7 +249,7 @@ function aiNote(e: SavedExplanation) {
 function notWritten() {
   return (
     <Text style={s.note}>
-      This part hasn&apos;t been written for this company yet. It can be requested on the company&apos;s Candor page.
+      This part hasn&apos;t been written for this company yet. It will appear on the company&apos;s Candor page once it&apos;s ready.
     </Text>
   );
 }

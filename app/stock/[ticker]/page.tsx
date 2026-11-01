@@ -32,7 +32,8 @@ import { billsGauge, cashVsDebt, compareFor, marginLines, moneyUses, pairFor, sa
 import { DotGrid, Meter, StatusBadge, TopicIcon } from "@/components/viz/Static";
 import { AtDepth, DepthProvider, DetailBar } from "@/components/Depth";
 import { CompanyLogo } from "@/components/CompanyLogo";
-import { accentVars, BRAND } from "@/lib/accents";
+import { accentVars, BRAND, stepAccent } from "@/lib/accents";
+import { StepIcon } from "@/components/StepIcon";
 import { BigAnswer, KeepBar, LiteCard, MiniBars, MiniGauge, MiniPair, SaidAnswer, SourceChips, UsesBar } from "@/components/Lite";
 
 export async function generateMetadata(props: PageProps<"/stock/[ticker]">): Promise<Metadata> {
@@ -44,7 +45,7 @@ export default function StockPage(props: PageProps<"/stock/[ticker]">) {
   return (
     <div>
       <Suspense
-        fallback={<Loader steps={["Reading the latest reports from the SEC…", "Pulling out the key numbers…", "Putting it into plain English…"]} />}
+        fallback={<Loader steps={["Finding the company…", "Gathering the key numbers…", "Turning it into plain words…"]} />}
       >
         <Report params={props.params} />
       </Suspense>
@@ -218,15 +219,13 @@ function Contents({ company }: { company: string }) {
       </h2>
       <ol className="m-0 grid list-none gap-2 p-0 sm:grid-cols-2">
         {STEPS.map((s, i) => (
-          <li key={s.id} style={accentVars(BRAND)}>
+          <li key={s.id} style={accentVars(stepAccent(s.id))}>
             <a
               href={`#step-${s.id}`}
               className="fathom-card fathom-lift group flex min-h-12 items-center gap-3 rounded-2xl px-3 py-2 text-[15px] font-medium text-ink no-underline"
             >
-              <span
-                aria-hidden="true"
-                className="flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-white font-mono text-[13px] font-medium text-ocean shadow-[0_0_0_1px_#e7e9ee] transition-colors group-hover:bg-ink group-hover:text-white"
-              >
+              <StepIcon id={s.id} size={34} />
+              <span aria-hidden="true" className="w-4 flex-none text-[13px] font-medium tabular-nums text-muted">
                 {i + 1}
               </span>
               <span className="flex-1">{s.title}</span>
@@ -314,7 +313,7 @@ function AiNote({ e }: { e: SavedExplanation }) {
 function NotWritten() {
   return (
     <p className="text-[16px] leading-relaxed text-muted">
-      Not written yet for this company. Use the button at the top of the page to ask Candor to write it.
+      The plain-English version of this part is still being written. Check back soon.
     </p>
   );
 }
@@ -521,7 +520,7 @@ function liteFor(row: SurfaceRow, ctx: Ctx, key: string): ReactNode {
   }
   if (item.kind === "topic") {
     const claim = claimsFor(e, item)[0];
-    if (!claim) return e ? null : card(<p className="text-[16px] leading-relaxed text-muted">Not written yet. Use the button near the top to ask Candor to write it.</p>);
+    if (!claim) return e ? null : card(<p className="text-[16px] leading-relaxed text-muted">Still being written. Check back soon.</p>);
     return card(<SaidAnswer text={claim.text} />, [claim.source]);
   }
   return null;
@@ -574,16 +573,16 @@ function deeperBody(step: Step, ctx: Ctx, level: "below" | "deep", profile?: Com
   );
 }
 
-/** At Deep: why analysts look at this step, and what they look for. */
+/** At Deep: why people check this step, and what they usually look for. */
 function AnalystBox({ step }: { step: Step }) {
   return (
     <div className="grid gap-5 rounded-2xl bg-mist p-5 sm:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] sm:p-6">
       <div className="flex flex-col gap-1.5">
-        <p className="text-[14px] font-semibold text-mid">Why experts check this</p>
+        <p className="text-[14px] font-semibold text-mid">Why people check this</p>
         <p className="text-[16px] leading-relaxed">{step.why}</p>
       </div>
       <div className="flex flex-col gap-1.5">
-        <p className="text-[14px] font-semibold text-mid">What they look for</p>
+        <p className="text-[14px] font-semibold text-mid">What people usually look for</p>
         <ul className="m-0 flex list-none flex-col gap-1.5 p-0 text-[15px] leading-snug">
           {step.lookFor.map((l) => (
             <li key={l} className="flex gap-2.5">
@@ -636,7 +635,7 @@ function ProfileFacts({ profile: p }: { profile: CompanyProfile }) {
   if (facts.length === 0) return null;
   return (
     <section className="flex flex-col gap-3 rounded-2xl bg-mist p-5">
-      <h3 className="text-[14px] font-semibold text-ocean">At a glance</h3>
+      <h3 className="text-[14px] font-semibold text-mid">At a glance</h3>
       <dl className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
         {facts.map(([k, v]) => (
           <div key={k} className="flex flex-col">
@@ -654,7 +653,7 @@ function ProfileFacts({ profile: p }: { profile: CompanyProfile }) {
 function WikipediaIntro({ w }: { w: NonNullable<CompanyProfile["wikipedia"]> }) {
   return (
     <section className="flex flex-col gap-2.5 rounded-2xl bg-mist p-5">
-      <h3 className="text-[14px] font-semibold text-ocean">Background</h3>
+      <h3 className="text-[14px] font-semibold text-mid">Background</h3>
       <p className="text-[16px] leading-[1.65]">{w.extract}</p>
       <p className="text-[13px] text-muted">
         From the Wikipedia article{" "}
@@ -853,7 +852,7 @@ function MarketKey() {
             <dl className="flex flex-col gap-3">
               {g.terms.map((t) => (
                 <div key={t.term} className="flex flex-col gap-0.5">
-                  <dt className="text-[15px] font-semibold text-ocean">{t.term}</dt>
+                  <dt className="text-[15px] font-semibold text-ink">{t.term}</dt>
                   <dd className="text-[15px] leading-relaxed">
                     {t.plain}
                     {t.read && <span className="block text-muted">{t.read}</span>}
@@ -902,7 +901,7 @@ function Explained({ name, term, value, when, meaning, extra }: { name: string; 
     <li className="flex flex-col gap-1.5 border-t border-line py-5 first:border-0 first:pt-0">
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <h4 className="text-[17px] font-semibold">{name}</h4>
-        <span className="font-display text-2xl font-bold tabular-nums text-ocean">{value}</span>
+        <span className="font-display text-2xl font-bold tabular-nums text-ink">{value}</span>
       </div>
       {extra}
       <p className="text-[13px] text-muted">{when}</p>

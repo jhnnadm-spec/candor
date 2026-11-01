@@ -20,7 +20,7 @@ export function LiteCard({
   wide?: boolean;
 }) {
   return (
-    <article className={`fathom-card flex min-w-0 flex-col gap-4 p-5 ${wide ? "md:col-span-2" : ""}`}>
+    <article className={`flex min-w-0 flex-col gap-4 rounded-xl border border-line bg-white p-5 ${wide ? "md:col-span-2" : ""}`}>
       <header className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
         <h3 className="text-[15px] font-semibold text-muted">{question}</h3>
         {term && <span className="text-[13px]">{term}</span>}
@@ -33,7 +33,8 @@ export function LiteCard({
 
 /** The answer in a few words: a big figure and a short caption. */
 export function BigAnswer({ value, caption, tone = "ocean" }: { value: string; caption: string; tone?: "ocean" | "good" | "warn" }) {
-  const color = tone === "good" ? "text-[#0b6f6e]" : tone === "warn" ? "text-[#b4233c]" : "text-ink";
+  // Each part of the page paints its big answers in its own colour (set by ResearchStep); good and warning tones keep theirs.
+  const color = tone === "good" ? "text-[#0b6f6e]" : tone === "warn" ? "text-[#b4233c]" : "text-[var(--a-ink,#0c0f14)]";
   return (
     <p className="flex flex-col gap-1">
       <span className={`font-display text-[40px] font-bold leading-none tracking-tight tabular-nums ${color}`}>{value}</span>
@@ -111,7 +112,7 @@ export function MiniBars({ bars }: { bars: { label: string; value: number }[] })
                 className="fathom-grow-up block w-full rounded-t-[6px] transition-[filter] duration-200 group-hover:brightness-95"
                 style={{
                   height: `${Math.max(4, (b.value / max) * 100)}%`,
-                  background: last ? "linear-gradient(180deg, #2d5bff, #7c5cff)" : "linear-gradient(180deg, #dfe6ff, #cdd8ff)",
+                  background: last ? "var(--a, #2d5bff)" : "color-mix(in srgb, var(--a, #2d5bff) 22%, white)",
                   animationDelay: `${i * 60}ms`,
                 }}
               />
@@ -144,12 +145,12 @@ export function KeepBar({ kept }: { kept: number }) {
       <div className="flex h-5 gap-[3px] overflow-hidden rounded-full">
         <span
           title={`$${100 - pct} of every $100 went on costs`}
-          className="h-full rounded-l-full bg-[repeating-linear-gradient(135deg,#eef0f3_0_6px,#e4e7ec_6px_12px)] transition-[filter] hover:brightness-95"
+          className="h-full rounded-l-full bg-[#e5e7eb] transition-[filter] hover:brightness-95"
           style={{ width: `${100 - pct}%` }}
         />
         <span
           title={`$${pct} of every $100 was kept as profit`}
-          className="fathom-grow-right h-full rounded-r-full bg-gradient-to-r from-[#0ea5a4] to-[#2dd4bf] transition-[filter] hover:brightness-105"
+          className="fathom-grow-right h-full rounded-r-full bg-[#0ea5a4] transition-[filter] hover:brightness-105"
           style={{ width: `${pct}%` }}
         />
       </div>
@@ -168,10 +169,13 @@ export function MiniGauge({ value, mark = "$1 due" }: { value: number; mark?: st
   return (
     <figure className="m-0 flex flex-col gap-1.5" aria-label={`${value.toFixed(2)} on a scale from 0 to 2`}>
       <div className="relative h-5">
-        <div className="absolute inset-y-1 left-0 right-0 rounded-full bg-gradient-to-r from-[#fecdd3] via-[#fde68a] to-[#99f6e4]" />
-        <span className="absolute inset-y-0 left-1/2 w-px bg-ink/30" />
+        <div className="absolute inset-y-1 left-0 flex w-full gap-[2px] overflow-hidden rounded-full">
+          <span className="h-full w-1/2 bg-[#fde2e6]" />
+          <span className="h-full w-1/2 bg-[#d5f2f1]" />
+        </div>
+        <span className="absolute inset-y-0 left-1/2 w-[2px] -translate-x-1/2 bg-white" />
         <span
-          className="fathom-grow-right absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white shadow-[0_4px_10px_-2px_rgba(12,15,20,0.4)]"
+          className="fathom-grow-right absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white"
           style={{ left: `${pos}%`, background: enough ? "#0ea5a4" : "#f43f5e" }}
         />
       </div>
@@ -198,7 +202,7 @@ export function MiniPair({ items }: { items: { label: string; value: number; dis
           <span className="h-2.5 overflow-hidden rounded-full bg-panel-2">
             <span
               className="fathom-grow-right block h-full rounded-full transition-[filter] group-hover:brightness-105"
-              style={{ width: `${Math.max(3, (it.value / max) * 100)}%`, background: `linear-gradient(90deg, color-mix(in srgb, ${it.color} 55%, white), ${it.color})` }}
+              style={{ width: `${Math.max(3, (it.value / max) * 100)}%`, background: it.color }}
             />
           </span>
         </li>

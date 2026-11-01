@@ -33,7 +33,7 @@ export type Figure =
       sources: SourceRef[];
     }
   | {
-      status: "not-reported" | "not-comparable" | "needs-price";
+      status: "not-reported" | "not-comparable";
       reason: string; // in plain words, shown to the reader
     };
 

@@ -15,6 +15,7 @@
   --color-ocean: #2d5bff; /* the brand blue: links, key numbers, active states (name kept from the old theme) */
   --color-ocean-dark: #1f45d6; /* blue on hover */
   --color-mist: #f7f8fa; /* quiet grey boxes */
+  --color-page: #f3f4f6; /* the flat page background behind the white section panels */
 
   /* A blue scale for charts and soft fills (plus one slate for labels). */
   --color-surface: #e6ecff;
@@ -30,9 +31,9 @@ html {
   color-scheme: light;
 }
 
-/* Clean white pages: the words and numbers do the talking. */
+/* One plain, flat page colour. Sections sit on it as white panels, so each one is clearly separate. */
 body {
-  background-color: #ffffff;
+  background-color: var(--color-page);
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
@@ -105,65 +106,10 @@ body {
   .fathom-loader-line:first-child { opacity: 1; }
 }
 
-/*
-  The background on every page (components/AmbientBackground.tsx): a faint grid that
-  fades out down the page, and three very soft colour glows drifting slowly around
-  it, about a minute per loop. It sits behind everything and never moves for anyone
-  who has asked for less motion.
-*/
-@keyframes candor-drift-a {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(18vw, 10vh) scale(1.15); }
-}
-@keyframes candor-drift-b {
-  0%, 100% { transform: translate(0, 0) scale(1.1); }
-  50% { transform: translate(-16vw, 14vh) scale(0.9); }
-}
-@keyframes candor-drift-c {
-  0%, 100% { transform: translate(0, 0) scale(0.95); }
-  50% { transform: translate(10vw, -12vh) scale(1.1); }
-}
-.candor-ambient {
-  position: fixed;
-  inset: 0;
-  z-index: -10;
-  overflow: hidden;
-  pointer-events: none;
-}
-.candor-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(12, 15, 20, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(12, 15, 20, 0.045) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 80%);
-}
-.candor-orb {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(90px);
-  will-change: transform;
-}
-.candor-orb-a { width: 46vw; height: 46vw; left: -12vw; top: -18vw; background: #2d5bff; opacity: 0.15; animation: candor-drift-a 48s ease-in-out infinite; }
-.candor-orb-b { width: 40vw; height: 40vw; right: -14vw; top: 4vh; background: #7c5cff; opacity: 0.13; animation: candor-drift-b 60s ease-in-out infinite; }
-.candor-orb-c { width: 36vw; height: 36vw; left: 30vw; top: 55vh; background: #0ea5a4; opacity: 0.1; animation: candor-drift-c 70s ease-in-out infinite; }
-/* A field of fine dots that drifts slowly diagonally and breathes in and out, like light on water. */
-@keyframes candor-dots-drift { from { background-position: 0 0; } to { background-position: 280px 140px; } }
-@keyframes candor-dots-breathe { 0%, 100% { opacity: 0.55; } 50% { opacity: 1; } }
-.candor-dots {
-  position: absolute;
-  inset: -10%;
-  background-image: radial-gradient(rgba(45, 91, 255, 0.22) 1px, transparent 1.4px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse 70% 55% at 70% 20%, black 10%, transparent 70%), radial-gradient(ellipse 50% 45% at 15% 85%, black 5%, transparent 70%);
-  mask-composite: add;
-  animation: candor-dots-drift 90s linear infinite, candor-dots-breathe 14s ease-in-out infinite;
-}
 @keyframes candor-caret { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
 .candor-caret { animation: candor-caret 1s steps(1) infinite; }
 @media (prefers-reduced-motion: reduce) {
-  .candor-orb, .candor-caret, .candor-dots { animation: none; }
+  .candor-caret { animation: none; }
 }
 
 /* Plain tiles: white with a thin edge. */

@@ -3,11 +3,10 @@
 /**
  * The comparison as pictures. Pick a figure and each company's bar slides to its
  * place (with a zero line when any figure is below zero); point at a company to
- * follow it across every figure; the small strips underneath show all the figures
- * at once, and tapping one opens it above. Neutral throughout: it shows where each
+ * follow it across every figure. Neutral throughout: it shows where each
  * company sits, never which is better. Bars stay still for anyone who asked for less motion.
  */
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { accentAt } from "@/lib/accents";
 
 export type CompareVizCell = { ticker: string; value: number | null; display: string; mark?: "highest" | "lowest" };
@@ -53,7 +52,6 @@ export function CompareVisual({ companies, rows }: { companies: { ticker: string
   const [metric, setMetric] = useState(rows[0]?.id);
   const [hover, setHover] = useState<string | null>(null);
   const [pinned, setPinned] = useState<string | null>(null);
-  const chartRef = useRef<HTMLDivElement>(null);
   const focus = hover ?? pinned;
   const colour = useMemo(() => new Map(companies.map((c, i) => [c.ticker, accentAt(i)])), [companies]);
   const nameOf = (t: string) => companies.find((c) => c.ticker === t)?.company ?? t;
@@ -75,13 +73,10 @@ export function CompareVisual({ companies, rows }: { companies: { ticker: string
   const gap = gapText(row, nameOf);
   const dim = (t: string) => (focus && focus !== t ? 0.3 : 1);
 
-  function pick(id: string, fromStrip = false) {
-    setMetric(id);
-    if (fromStrip) chartRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
-  }
+  const pick = (id: string) => setMetric(id);
 
   return (
-    <section aria-labelledby="viz-title" className="overflow-hidden rounded-[28px] border border-line bg-white/85 backdrop-blur">
+    <section aria-labelledby="viz-title" className="overflow-hidden rounded-2xl border border-line bg-white">
       <div className="flex flex-wrap items-end justify-between gap-4 border-b border-line px-5 py-4 sm:px-7">
         <div>
           <h2 id="viz-title" className="font-display text-[22px] font-semibold tracking-[-0.03em]">
@@ -148,10 +143,10 @@ export function CompareVisual({ companies, rows }: { companies: { ticker: string
         </nav>
 
         {/* The chosen figure, as bars */}
-        <div ref={chartRef} className="flex scroll-mt-6 flex-col gap-5 p-5 sm:p-7">
+        <div className="flex flex-col gap-5 p-5 sm:p-7">
           <div aria-live="polite">
             <h3 className="font-display text-[26px] font-semibold leading-tight tracking-[-0.03em]">{row.name}</h3>
-            <p className="text-[15px] text-muted">In plain words: {row.plain.toLowerCase()}</p>
+            <p className="text-[15px] text-muted">{row.plain}.</p>
           </div>
 
           <ul className="relative m-0 flex list-none flex-col gap-4 p-0">
@@ -190,8 +185,7 @@ export function CompareVisual({ companies, rows }: { companies: { ticker: string
                         style={{
                           left: `${b.left * 100}%`,
                           width: `${Math.max(b.width * 100, 0.8)}%`,
-                          background: `linear-gradient(90deg, color-mix(in srgb, ${a.solid} 45%, white), ${a.solid})`,
-                          boxShadow: focus === c.ticker ? `0 6px 16px -6px ${a.solid}` : undefined,
+                          background: a.solid,
                         }}
                       />
                     )}
@@ -205,69 +199,6 @@ export function CompareVisual({ companies, rows }: { companies: { ticker: string
         </div>
       </div>
 
-      {/* Every figure at once */}
-      <div className="border-t border-line p-5 sm:p-7">
-        <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
-          <h3 className="text-[13px] font-semibold uppercase tracking-[0.08em] text-mid">Every figure at a glance</h3>
-          <span className="text-[13px] text-muted">Lowest on the left, highest on the right. Tap one to open it above.</span>
-        </div>
-        <ul className="m-0 grid list-none grid-cols-1 gap-2.5 p-0 sm:grid-cols-2 xl:grid-cols-3">
-          {rows.map((r) => {
-            const vals = r.cells.filter((c): c is CompareVizCell & { value: number } => c.value !== null);
-            const lo = Math.min(...vals.map((c) => c.value));
-            const hi = Math.max(...vals.map((c) => c.value));
-            const at = (v: number) => (hi === lo ? 0.5 : (v - lo) / (hi - lo));
-            const on = r.id === row.id;
-            return (
-              <li key={r.id}>
-                <button
-                  type="button"
-                  onClick={() => pick(r.id, true)}
-                  aria-pressed={on}
-                  className={`flex w-full flex-col gap-3 rounded-2xl border px-4 py-3 text-left transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 ${
-                    on ? "border-ink shadow-[0_14px_30px_-20px_rgba(12,15,20,0.6)]" : "border-line hover:border-ink/30"
-                  } bg-white`}
-                >
-                  <span className="flex items-baseline justify-between gap-3">
-                    <span className="text-[14px] font-semibold">{r.name}</span>
-                    <span className="text-[12px] text-muted">{r.groupTitle}</span>
-                  </span>
-                  <span aria-hidden="true" className="relative mx-2 h-4">
-                    <span className="absolute inset-x-0 top-1/2 h-[3px] -translate-y-1/2 rounded-full bg-gradient-to-r from-panel-2 via-[#e4e8f0] to-panel-2" />
-                    {vals.map((c) => {
-                      const a = colour.get(c.ticker)!;
-                      const big = focus === c.ticker;
-                      return (
-                        <span
-                          key={c.ticker}
-                          className="absolute top-1/2 rounded-full border-2 border-white transition-[left,width,height,opacity] duration-500"
-                          style={{
-                            left: `${at(c.value) * 100}%`,
-                            width: big ? 16 : 12,
-                            height: big ? 16 : 12,
-                            transform: "translate(-50%, -50%)",
-                            background: a.solid,
-                            opacity: dim(c.ticker),
-                            boxShadow: `0 2px 6px -2px ${a.solid}`,
-                            zIndex: big ? 2 : 1,
-                          }}
-                        />
-                      );
-                    })}
-                  </span>
-                  <span className="flex justify-between gap-2 text-[12px] tabular-nums text-muted">
-                    <span>{vals.find((c) => c.value === lo)?.display}</span>
-                    <span>{vals.find((c) => c.value === hi)?.display}</span>
-                  </span>
-                  <span className="sr-only">
-                    {vals.map((c) => `${nameOf(c.ticker)}: ${c.display}`).join("; ")}
-                  </span>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
     </section>
   );
 }

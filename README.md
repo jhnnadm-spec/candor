@@ -27,7 +27,7 @@ More folders arrive as the build continues: `lib/` for data and AI code,
 | Source | Used for |
 |---|---|
 | SEC EDGAR | Financial numbers, annual and quarterly reports, official announcements |
-| The GDELT Project | News headlines with links to the original articles |
+| The GDELT Project | Recent headlines from major publishers (WSJ, Reuters, Bloomberg, CNBC and others), with links to the original articles |
 | Wikipedia | Company background |
 | FRED | Economic context. This product uses the FRED® API but is not endorsed or certified by the Federal Reserve Bank of St. Louis. |
 
@@ -84,6 +84,10 @@ checks every point, and saves it in a free Supabase database.
 
 Each lens lives in `lib/lens/` and returns the same shape (`LensResult` in `lib/lens/types.ts`): figures with their period, currency and source links, plus a plain-English summary written from those figures only. Numbers are always worked out in code; the AI never produces figures.
 
-- **Fundamental** (`lib/lens/fundamental.ts`): sales, growth, margins, EBITDA, cash flow, net debt, debt-to-equity, current ratio, ROE and EPS from SEC filings. P/E and EV/EBITDA need a share price, so they're listed but not calculated: the TradingView price is display only.
+- **Fundamental** (`lib/lens/fundamental.ts`): sales, growth, margins, EBITDA, cash flow, net debt, debt-to-equity, current ratio, ROE and EPS from SEC filings. P/E and EV/EBITDA need a share price, which cand0r may not use in its own sums (the TradingView price is display only), so they're left out rather than shown empty.
 - **Compare** (`lib/compare/compare.ts`, page `/compare?t=KO,PEP`): 2 to 5 companies side by side, highest and lowest marked (never "better" or "worse"), warnings when figures aren't like for like, and "Not reported" instead of zero. The link is the saved comparison.
 - JSON for testing: `/api/lens/fundamental?t=KO` and `/api/lens/compare?t=KO,PEP`.
+
+## The downloadable report
+
+`/stock/AAPL/pdf` (`lib/pdf/ReportPdf.tsx`) is laid out like an equity research report in plain English: a front page with the company in one minute, key figures, what the figures show in its favour and what to keep an eye on, then numbered sections (business, growth and profit, financial health, cash, how it's run, industry and risks, how the numbers link, what changed, announcements), every figure with how it's worked out, the key terms (highlighted in the text) and numbered sources.

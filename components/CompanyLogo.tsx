@@ -25,7 +25,7 @@ export function CompanyLogo({
 
   return (
     <span
-      className="relative inline-flex flex-none items-center justify-center overflow-hidden border border-line bg-white shadow-[0_6px_20px_rgba(10,42,58,0.08)]"
+      className="relative inline-flex flex-none items-center justify-center overflow-hidden border border-line bg-white"
       style={{ width: size, height: size, borderRadius: radius }}
     >
       {src ? (
@@ -61,7 +61,7 @@ function favicon(website: string): string | undefined {
   }
 }
 
-/** "Coca Cola Co" → "CC", on a calm ocean gradient. */
+/** "Coca Cola Co" → "CC", on a flat brand-blue tile. */
 function Initials({ name, size }: { name: string; size: number }) {
   const words = name
     .replace(/[^A-Za-z0-9 ]/g, " ")
@@ -72,7 +72,7 @@ function Initials({ name, size }: { name: string; size: number }) {
     <span
       aria-label={`${name} (no logo available)`}
       role="img"
-      className="flex h-full w-full items-center justify-center bg-gradient-to-br from-shallow to-ocean font-display font-bold text-white"
+      className="flex h-full w-full items-center justify-center bg-ocean font-display font-bold text-white"
       style={{ fontSize: Math.round(size * 0.36) }}
     >
       {letters}

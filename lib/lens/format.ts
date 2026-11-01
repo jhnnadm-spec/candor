@@ -4,7 +4,7 @@ import type { Figure, Period } from "./types";
 
 /** $47.9 billion, 27.3%, 1.16, $2.86, by the figure's unit. */
 export function figureValue(f: Figure): string {
-  if (f.status !== "reported") return f.status === "needs-price" ? "Needs a share price" : "Not reported";
+  if (f.status !== "reported") return "Not reported";
   switch (f.unit) {
     case "per-share":
       return formatPerShare(f.value);

@@ -1,214 +1,332 @@
 "use client";
 
 /**
- * The company at a glance as a map: the company in the middle, and around it the
- * key ideas from its reports (sales, profit, cash, debt, the share price) with this
- * company's own figures. It stays quiet until you point at an idea; then the ideas it
- * feeds into light up, the links between them say how, and the panel explains it.
- * On phones the same ideas are a tidy set of chips above the same panel.
+ * The company at a glance: its main figures in four columns (sales and profit, cash,
+ * what it owns and owes, what it means for owners), with arrows for the sums that
+ * link them. The panel beside it works each sum out with the company's own numbers.
+ *
+ * How it responds:
+ *  - Pointing at a box shows that box and its links.
+ *  - Clicking a box keeps it in place: pointing at other boxes changes nothing, so the
+ *    reader can move to the panel freely. Clicking another box switches to that one.
+ *  - Clicking anywhere else on the page (or pressing Escape) lets go, and pointing at
+ *    boxes works again.
+ * On phones the boxes become a list of tappable chips above the same panel.
  */
-import { useMemo, useState } from "react";
-import { EDGES, type MapGroup, type MapNode } from "@/lib/report/concept-map";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { GROUPS, MAP_COLUMNS, type MapNode, type WorkedLink } from "@/lib/report/concept-map";
 
-const GROUP: Record<Exclude<MapGroup, "forces">, { name: string; color: string; soft: string; ink: string }> = {
-  sales: { name: "Sales and profit", color: "#2d5bff", soft: "#eef2ff", ink: "#1f45d6" },
-  cash: { name: "Cash", color: "#0ea5a4", soft: "#e6f7f7", ink: "#0b6f6e" },
-  balance: { name: "What it owns and owes", color: "#7c5cff", soft: "#f1edff", ink: "#5b3fd6" },
-  market: { name: "The share price", color: "#f59e0b", soft: "#fef6e7", ink: "#8a5300" },
-};
-const ORDER: Exclude<MapGroup, "forces">[] = ["sales", "cash", "balance", "market"];
-// The few ideas everyone should see first sit on the inner ring.
-const INNER = new Set(["revenue", "profit", "margin", "fcf", "cash", "debt", "eps", "pe"]);
+const W = 860;
+const COL_W = W / MAP_COLUMNS.length;
+const BOX_W = 176;
+const BOX_H = 58;
+const TOP = 12;
+const ROW = 80;
 
-const W = 1200;
-const H = 560;
-const CX = W / 2;
-const CY = H / 2;
+type Placed = MapNode & { cx: number; cy: number };
 
-type Placed = MapNode & { px: number; py: number; inner: boolean };
-
-function layout(nodes: MapNode[]): Placed[] {
-  const core = ORDER.flatMap((g) => nodes.filter((n) => n.group === g));
-  const ring = (list: MapNode[], rx: number, ry: number, offset: number, inner: boolean) =>
-    list.map((n, i) => {
-      const a = offset + (i / list.length) * Math.PI * 2;
-      return { ...n, px: CX + Math.cos(a) * rx, py: CY + Math.sin(a) * ry, inner };
-    });
-  const inner = core.filter((n) => INNER.has(n.id));
-  const outer = core.filter((n) => !INNER.has(n.id));
-  return [...ring(inner, 270, 150, -Math.PI * 0.62, true), ...ring(outer, 500, 232, -Math.PI * 0.55, false)];
+function place(nodes: MapNode[]): { placed: Placed[]; height: number } {
+  const placed = nodes.map((n) => ({ ...n, cx: n.x * COL_W + COL_W / 2, cy: TOP + BOX_H / 2 + n.y * ROW }));
+  const rows = Math.max(1, ...nodes.map((n) => n.y + 1));
+  return { placed, height: TOP * 2 + BOX_H + (rows - 1) * ROW };
 }
 
-export function KeyMap({ nodes, company, ticker, stepTitles }: { nodes: MapNode[]; company: string; ticker: string; stepTitles: Record<string, string> }) {
-  const placed = useMemo(() => layout(nodes.filter((n) => n.group !== "forces")), [nodes]);
-  const byId = useMemo(() => new Map(placed.map((n) => [n.id, n])), [placed]);
-  const [hover, setHover] = useState<string | null>(null);
-  const [picked, setPicked] = useState<string>("revenue");
-  const focus = hover ?? picked;
-  const sel = byId.get(focus) ?? placed[0];
-  const links = EDGES.filter((e) => (e.from === focus || e.to === focus) && byId.has(e.from) && byId.has(e.to));
-  const near = new Set(links.flatMap((e) => [e.from, e.to]));
-  const g = GROUP[sel.group as Exclude<MapGroup, "forces">];
-  // Each link bows gently away from the middle. What it means is written in the panel, so the map stays uncluttered.
-  const curves = links.map((e) => {
-    const a = byId.get(e.from)!;
-    const b = byId.get(e.to)!;
-    const mx = (a.px + b.px) / 2 + (CY - (a.py + b.py) / 2) * 0.18;
-    const my = (a.py + b.py) / 2 + ((a.px + b.px) / 2 - CX) * 0.08;
-    return { key: `${e.from}-${e.to}`, d: `M${a.px},${a.py} Q${mx},${my} ${b.px},${b.py}` };
-  });
+/** A smooth arrow between two boxes: across columns it runs edge to edge; within a column it bows out to the right. */
+function arrow(a: Placed, b: Placed): string {
+  if (a.x === b.x) {
+    const x = a.cx + BOX_W / 2;
+    const bow = 22 + Math.abs(b.y - a.y) * 6;
+    return `M${x},${a.cy} C${x + bow},${a.cy} ${x + bow},${b.cy} ${x + 4},${b.cy}`;
+  }
+  const right = a.x < b.x;
+  const x1 = a.cx + (right ? BOX_W / 2 : -BOX_W / 2);
+  const x2 = b.cx + (right ? -BOX_W / 2 - 4 : BOX_W / 2 + 4);
+  const dx = (x2 - x1) * 0.5;
+  return `M${x1},${a.cy} C${x1 + dx},${a.cy} ${x2 - dx},${b.cy} ${x2},${b.cy}`;
+}
 
-  const chip = (n: Placed, compact = false) => {
-    const gg = GROUP[n.group as Exclude<MapGroup, "forces">];
-    const on = n.id === focus;
-    const lit = near.has(n.id);
+export function KeyMap({
+  nodes,
+  links,
+  company,
+  stepTitles,
+}: {
+  nodes: MapNode[];
+  links: WorkedLink[];
+  company: string;
+  stepTitles: Record<string, string>;
+}) {
+  const { placed, height } = useMemo(() => place(nodes), [nodes]);
+  const byId = useMemo(() => new Map(placed.map((n) => [n.id, n])), [placed]);
+  const [hover, setHover] = useState<string>(placed[0]?.id ?? "revenue");
+  const [locked, setLocked] = useState<string | null>(null);
+  // Which link's written explanation is open: the first one, unless the reader picks another.
+  const [opened, setOpened] = useState<{ node: string; link: string } | null>(null);
+  const section = useRef<HTMLElement>(null);
+  const focus = locked ?? hover;
+  const sel = byId.get(focus) ?? placed[0];
+
+  // Once a box is kept in place, a click anywhere outside the boxes and the panel lets it go.
+  useEffect(() => {
+    if (!locked) return;
+    const release = (e: PointerEvent | KeyboardEvent) => {
+      if (e instanceof KeyboardEvent) {
+        if (e.key !== "Escape") return;
+      } else if ((e.target as Element | null)?.closest?.("[data-km-keep]")) {
+        return;
+      }
+      setHover(locked);
+      setLocked(null);
+    };
+    document.addEventListener("pointerdown", release);
+    document.addEventListener("keydown", release);
+    return () => {
+      document.removeEventListener("pointerdown", release);
+      document.removeEventListener("keydown", release);
+    };
+  }, [locked]);
+
+  // "Show on the map" buttons elsewhere on the page keep a box in place here.
+  useEffect(() => {
+    const show = (e: Event) => {
+      const id = (e as CustomEvent<string>).detail;
+      if (!byId.has(id)) return;
+      setLocked(id);
+      section.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    window.addEventListener("fathom:map-focus", show);
+    return () => window.removeEventListener("fathom:map-focus", show);
+  }, [byId]);
+
+  if (!sel) return null;
+  const visible = (id: string) => byId.has(id);
+  const active = links.filter((l) => l.nodes.includes(sel.id));
+  // Sums that work this box out come first, then the ones it feeds into.
+  active.sort((a, b) => Number(b.result === sel.id) - Number(a.result === sel.id));
+  const lit = new Set(active.flatMap((l) => l.nodes));
+  const edges = active.flatMap((l) => l.edges.filter(([f, t]) => visible(f) && visible(t)));
+  const g = GROUPS[sel.group];
+  const point = (id: string) => {
+    if (!locked) setHover(id);
+  };
+
+  const box = (n: Placed, compact = false) => {
+    const gg = GROUPS[n.group];
+    const on = n.id === sel.id;
+    const near = !on && lit.has(n.id);
     return (
       <button
+        key={n.id}
         type="button"
-        onMouseEnter={() => setHover(n.id)}
-        onMouseLeave={() => setHover(null)}
-        onFocus={() => setHover(n.id)}
-        onBlur={() => setHover(null)}
-        onClick={() => setPicked(n.id)}
-        aria-pressed={n.id === picked}
-        className={`inline-flex items-center gap-2 whitespace-nowrap rounded-full border transition-[background-color,border-color,box-shadow,opacity,transform] duration-200 ${
-          compact ? "px-3 py-1.5 text-[13px]" : n.inner ? "px-3.5 py-2 text-[14.5px] font-semibold" : "px-3 py-1.5 text-[13px] font-medium"
+        data-km-keep
+        onMouseEnter={() => point(n.id)}
+        // Also on movement, so a box already under the pointer responds as soon as a kept box is let go.
+        onMouseMove={() => point(n.id)}
+        onFocus={() => point(n.id)}
+        onClick={() => {
+          setLocked(n.id);
+          setHover(n.id);
+        }}
+        aria-pressed={locked === n.id}
+        aria-label={`${n.label}${n.value ? `: ${n.value}` : ""}. ${locked === n.id ? "Kept in place." : "Click to keep in place."}`}
+        className={`flex flex-col items-start justify-center rounded-xl border text-left transition-[background-color,border-color,color,opacity] duration-150 ${
+          compact ? "min-h-11 px-3 py-1.5" : "h-full w-full px-3"
         }`}
         style={{
-          background: on ? gg.ink : lit ? gg.soft : "rgba(255,255,255,0.92)",
-          borderColor: on ? gg.ink : lit ? gg.color : "#e7e9ee",
-          color: on ? "#fff" : "#0c0f14",
-          boxShadow: on ? `0 12px 24px -12px ${gg.color}` : "0 6px 16px -14px rgba(12,15,20,0.5)",
-          opacity: focus && !on && !lit && hover ? 0.45 : 1,
+          background: on ? gg.color : near ? gg.soft : "#ffffff",
+          borderColor: on ? gg.color : near ? gg.color : "var(--color-line)",
+          // Boxes stay solid white so arrows passing behind them never show through.
+          color: on ? "#ffffff" : near ? "var(--color-ink)" : "#8a909c",
         }}
       >
-        <span aria-hidden="true" className="h-2 w-2 flex-none rounded-full" style={{ background: on ? "#fff" : gg.color }} />
-        {n.label}
+        <span className="flex items-center gap-1.5 text-[13px] font-semibold leading-tight">
+          {!on && <span aria-hidden="true" className="h-2 w-2 flex-none rounded-full" style={{ background: gg.color, opacity: near ? 1 : 0.45 }} />}
+          {n.label}
+        </span>
+        <span className={`text-[12.5px] tabular-nums leading-tight ${on ? "text-white/85" : near ? "text-muted" : ""}`}>{n.short ?? "Not reported"}</span>
       </button>
     );
   };
 
   return (
-    <section aria-labelledby="keymap-title" className="overflow-hidden rounded-[28px] border border-line bg-white/80 backdrop-blur">
-      <div className="flex flex-wrap items-end justify-between gap-3 border-b border-line px-5 py-4 sm:px-7">
-        <div>
+    <section ref={section} id="map" data-part="At a glance" aria-labelledby="keymap-title" className="scroll-mt-20 overflow-hidden rounded-2xl border border-line bg-white">
+      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-4 sm:px-6">
+        <div className="min-w-0">
           <h2 id="keymap-title" className="font-display text-[22px] font-semibold tracking-[-0.03em]">
             {company} at a glance
           </h2>
-          <p className="text-[14px] text-muted">The key ideas in its reports and how they connect. Point at any one, or tap it to keep it open.</p>
+          <p className="text-[14px] text-muted">How its main figures link up, worked out with its own numbers.</p>
         </div>
-        <ul className="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 text-[13px] text-muted">
-          {ORDER.map((k) => (
-            <li key={k} className="inline-flex items-center gap-1.5">
-              <span aria-hidden="true" className="h-2 w-2 rounded-full" style={{ background: GROUP[k].color }} />
-              {GROUP[k].name}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div className="grid lg:grid-cols-[minmax(0,1fr)_340px]">
-        {/* The map (tablets and up) */}
-        <div className="relative hidden aspect-[1200/560] sm:block">
-          <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full" aria-hidden="true">
-            <defs>
-              <radialGradient id="km-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0" stopColor={g.color} stopOpacity="0.16" />
-                <stop offset="1" stopColor={g.color} stopOpacity="0" />
-              </radialGradient>
-            </defs>
-            <ellipse cx={CX} cy={CY} rx="500" ry="232" fill="none" stroke="#eef0f3" strokeDasharray="2 8" />
-            <ellipse cx={CX} cy={CY} rx="270" ry="150" fill="none" stroke="#eef0f3" strokeDasharray="2 8" />
-            <circle cx={CX} cy={CY} r="150" fill="url(#km-glow)" className="transition-[fill] duration-500" />
-            {/* quiet spokes from the company to every idea */}
-            {placed.map((n) => (
-              <line key={`s-${n.id}`} x1={CX} y1={CY} x2={n.px} y2={n.py} stroke="#e9ecf1" strokeWidth="1" />
-            ))}
-            {/* how the focused idea connects to others */}
-            {curves.map((c) => (
-              <path key={c.key} d={c.d} fill="none" stroke={g.color} strokeWidth="2" strokeLinecap="round" strokeDasharray="6 6" className="km-flow fathom-pop" />
-            ))}
-          </svg>
-          {/* the company in the middle */}
-          <div className="absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1" style={{ left: "50%", top: "50%" }}>
-            <span className="flex h-[78px] w-[78px] items-center justify-center rounded-full bg-ink font-display text-[17px] font-semibold tracking-[-0.02em] text-white shadow-[0_18px_40px_-18px_rgba(12,15,20,0.7)]">
-              {ticker}
-            </span>
-          </div>
-          {placed.map((n, i) => (
-            <div
-              key={n.id}
-              className="km-in absolute -translate-x-1/2 -translate-y-1/2"
-              style={{ left: `${(n.px / W) * 100}%`, top: `${(n.py / H) * 100}%`, animationDelay: `${i * 40}ms`, zIndex: n.id === focus ? 3 : near.has(n.id) ? 2 : 1 }}
-            >
-              {chip(n)}
-            </div>
-          ))}
-        </div>
-
-        {/* Phones: the same ideas as chips, grouped by colour */}
-        <div className="flex flex-col gap-3 px-5 pt-5 sm:hidden">
-          {ORDER.map((k) => (
-            <div key={k} className="flex flex-wrap gap-1.5">
-              {placed.filter((n) => n.group === k).map((n) => (
-                <span key={n.id}>{chip(n, true)}</span>
-              ))}
-            </div>
-          ))}
-        </div>
-
-        {/* What the focused idea means, and this company's figure */}
-        <aside aria-live="polite" className="flex flex-col gap-3 border-line p-5 sm:p-7 lg:border-l">
-          <span className="inline-flex items-center gap-2 self-start rounded-full px-2.5 py-1 text-[12px] font-semibold" style={{ background: g.soft, color: g.ink }}>
-            <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full" style={{ background: g.color }} />
-            {g.name}
-          </span>
-          <h3 className="font-display text-[24px] font-semibold leading-tight tracking-[-0.03em]">{sel.label}</h3>
-          <p className="-mt-1 text-[14px] text-muted">In plain words: {sel.plain.toLowerCase()}</p>
-          {sel.value && (
-            <p className="rounded-2xl px-4 py-3 text-[16px] leading-snug" style={{ background: g.soft }}>
-              <span className="block text-[12px] font-semibold uppercase tracking-wide" style={{ color: g.ink }}>
-                {company}
+        <p className="flex items-center gap-2 text-[13px]" aria-live="polite">
+          {locked ? (
+            <>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="5" y="11" width="14" height="10" rx="2" />
+                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+              </svg>
+              <span>
+                <strong className="font-semibold">{byId.get(locked)?.label}</strong> is kept in place. Click anywhere else to let go.
               </span>
-              <strong className="font-semibold text-ink">{sel.value}</strong>
-            </p>
+            </>
+          ) : (
+            <span className="text-muted">Point at a box to see how it links. Click a box to keep it in place.</span>
           )}
-          <p className="text-[15px] leading-relaxed">{sel.definition}</p>
-          {links.length > 0 && (
-            <div className="flex flex-col gap-1.5">
-              <span className="text-[12px] font-semibold uppercase tracking-wide text-muted">How it connects</span>
-              <ul className="m-0 flex list-none flex-col gap-1 p-0">
-                {links.map((e) => {
-                  const other = e.from === sel.id ? e.to : e.from;
-                  const og = GROUP[byId.get(other)!.group as Exclude<MapGroup, "forces">];
+        </p>
+      </header>
+
+      <div className="grid xl:grid-cols-[minmax(0,1fr)_400px]">
+        <div className="flex flex-col gap-3 p-4 sm:p-6">
+          {/* Column names */}
+          <div className="hidden grid-cols-4 sm:grid">
+            {MAP_COLUMNS.map((c) => (
+              <span key={c} className="flex items-center justify-center gap-1.5 px-2 text-center text-[12px] font-semibold uppercase tracking-[0.06em]" style={{ color: GROUPS[c].ink }}>
+                <span aria-hidden="true" className="h-2 w-2 flex-none rounded-full" style={{ background: GROUPS[c].color }} />
+                {GROUPS[c].name}
+              </span>
+            ))}
+          </div>
+
+          {/* The map (tablets and up) */}
+          <div className="relative hidden w-full sm:block" style={{ aspectRatio: `${W} / ${height}` }}>
+            <svg viewBox={`0 0 ${W} ${height}`} className="absolute inset-0 h-full w-full overflow-visible" aria-hidden="true">
+              <defs>
+                <marker id="km-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill={g.color} />
+                </marker>
+              </defs>
+              {MAP_COLUMNS.slice(1).map((_, i) => (
+                <line key={i} x1={(i + 1) * COL_W} x2={(i + 1) * COL_W} y1={4} y2={height - 4} stroke="var(--color-line)" strokeWidth="1" />
+              ))}
+              {edges.map(([f, t]) => (
+                <path key={`${f}-${t}`} d={arrow(byId.get(f)!, byId.get(t)!)} fill="none" stroke={g.color} strokeWidth="2" strokeLinecap="round" markerEnd="url(#km-arrow)" className="fathom-pop" />
+              ))}
+            </svg>
+            {placed.map((n) => (
+              <div
+                key={n.id}
+                className="absolute"
+                style={{
+                  left: `${((n.cx - BOX_W / 2) / W) * 100}%`,
+                  top: `${((n.cy - BOX_H / 2) / height) * 100}%`,
+                  width: `${(BOX_W / W) * 100}%`,
+                  height: `${(BOX_H / height) * 100}%`,
+                }}
+              >
+                {box(n)}
+              </div>
+            ))}
+          </div>
+
+          {/* Phones: the same boxes as chips, column by column */}
+          <div className="flex flex-col gap-3 sm:hidden">
+            {MAP_COLUMNS.map((c) => (
+              <div key={c} className="flex flex-col gap-1.5">
+                <span className="text-[12px] font-semibold uppercase tracking-[0.06em]" style={{ color: GROUPS[c].ink }}>
+                  {GROUPS[c].name}
+                </span>
+                <div className="flex flex-wrap gap-1.5">{placed.filter((n) => n.group === c).map((n) => box(n, true))}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* What the box is, and each sum it's part of */}
+        <aside data-km-keep aria-live="polite" className="flex flex-col gap-4 border-t border-line p-5 sm:p-6 xl:border-l xl:border-t-0">
+          <div className="flex flex-col gap-1">
+            <span className="inline-flex items-center gap-1.5 self-start rounded-full px-2.5 py-0.5 text-[12px] font-semibold" style={{ background: g.soft, color: g.ink }}>
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full" style={{ background: g.color }} />
+              {g.name}
+            </span>
+            <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-3">
+              <h3 className="font-display text-[24px] font-semibold leading-tight tracking-[-0.03em]">{sel.label}</h3>
+              <span className="font-display text-[24px] font-semibold tabular-nums" style={{ color: g.ink }}>
+                {sel.value ?? "Not reported"}
+              </span>
+            </div>
+            {sel.when && <span className="text-[13px] text-muted">{company}, {sel.when}</span>}
+          </div>
+          <p className="text-[15px] leading-relaxed">
+            <span className="font-semibold">What it is: </span>
+            {sel.plain}
+          </p>
+
+          {active.length > 0 && (
+            <div className="flex flex-col gap-3">
+              <span className="text-[12px] font-semibold uppercase tracking-[0.06em] text-muted">How it links</span>
+              <ol className="m-0 flex list-none flex-col gap-2.5 p-0">
+                {active.map((l, i) => {
+                  const open = opened?.node === sel.id ? opened.link === l.id : i === 0;
                   return (
-                    <li key={`${e.from}-${e.to}`}>
+                    <li key={l.id} className="flex flex-col gap-2 rounded-xl bg-mist p-3.5">
                       <button
                         type="button"
-                        onClick={() => setPicked(other)}
-                        className="group flex w-full items-start gap-2 rounded-xl px-2 py-1.5 text-left transition-colors hover:bg-panel-2"
+                        aria-expanded={open}
+                        onClick={() => setOpened({ node: sel.id, link: open ? "" : l.id })}
+                        className="flex items-start justify-between gap-3 text-left"
                       >
-                        <span aria-hidden="true" className="mt-[7px] h-2 w-2 flex-none rounded-full" style={{ background: og.color }} />
-                        <span className="text-[13.5px] leading-snug">
-                          <span className="font-semibold">
-                            {byId.get(e.from)?.label} <span aria-label="leads to">→</span> {byId.get(e.to)?.label}
-                          </span>
-                          {e.label && <span className="block text-muted">{e.label}</span>}
-                        </span>
+                        <span className="text-[12.5px] font-semibold text-muted">{l.rule}</span>
+                        <span className="flex-none text-[12px] font-semibold text-ink underline decoration-line underline-offset-2">{open ? "Hide" : "Explain"}</span>
                       </button>
+                      <Sum
+                        link={l}
+                        current={sel.id}
+                        onPick={(id) => {
+                          if (!byId.has(id)) return;
+                          setLocked(id);
+                          setHover(id);
+                        }}
+                      />
+                      {open && (
+                        <>
+                          <p className="fathom-pop text-[14px] leading-relaxed">{l.says}</p>
+                          {l.period && <span className="text-[12px] text-muted">Figures for the {l.period}.</span>}
+                        </>
+                      )}
                     </li>
                   );
                 })}
-              </ul>
+              </ol>
             </div>
           )}
+
           {stepTitles[sel.step] && (
             <a href={`#step-${sel.step}`} className="mt-auto self-start text-[14px] font-semibold no-underline hover:underline">
-              Read more in “{stepTitles[sel.step]}” →
+              More on this in “{stepTitles[sel.step]}” →
             </a>
           )}
         </aside>
       </div>
     </section>
+  );
+}
+
+/** A sum written out with figures: [Revenue $46.4 billion] − [Costs $43.3 billion] = [Net income $3.1 billion]. */
+function Sum({ link, current, onPick }: { link: WorkedLink; current: string; onPick: (id: string) => void }) {
+  return (
+    <div className="flex flex-wrap items-center gap-1.5">
+      {link.sum.map((p, i) =>
+        p.kind === "op" ? (
+          <span key={i} aria-hidden={p.text !== "vs"} className="px-0.5 text-[16px] font-semibold text-muted">
+            {p.text}
+          </span>
+        ) : p.node && p.node !== current ? (
+          <button
+            key={i}
+            type="button"
+            onClick={() => onPick(p.node!)}
+            className="flex flex-col rounded-lg border border-line bg-white px-2.5 py-1 text-left transition-colors hover:border-ink/40"
+            title={`Show ${p.label} on the map`}
+          >
+            <span className="text-[11.5px] leading-tight text-muted">{p.label}</span>
+            <span className="text-[13.5px] font-semibold tabular-nums leading-tight">{p.value ?? "–"}</span>
+          </button>
+        ) : (
+          <span key={i} className={`flex flex-col rounded-lg px-2.5 py-1 ${p.node === current ? "bg-ink text-white" : "border border-dashed border-line bg-white"}`}>
+            <span className={`text-[11.5px] leading-tight ${p.node === current ? "text-white/75" : "text-muted"}`}>{p.label}</span>
+            <span className="text-[13.5px] font-semibold tabular-nums leading-tight">{p.value ?? "–"}</span>
+          </span>
+        ),
+      )}
+    </div>
   );
 }

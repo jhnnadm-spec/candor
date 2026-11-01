@@ -107,14 +107,14 @@ const LEVEL_COLOR: Record<Level, string> = {
 };
 
 /** Three buttons in a row: Short, Explained, Everything, with a coloured pill sliding to the chosen one. */
-export function DepthSwitch() {
+export function DepthSwitch({ compact = false }: { compact?: boolean }) {
   const { level, setLevel } = useDepth();
   const i = LEVELS.indexOf(level);
   return (
     <div role="radiogroup" aria-label="How much detail to show" className="relative grid grid-cols-3 gap-1 rounded-full bg-panel-2 p-1">
       <span
         aria-hidden="true"
-        className="absolute bottom-1 top-1 left-1 rounded-full shadow-[0_4px_10px_-4px_rgba(12,15,20,0.45)] transition-[transform,background] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+        className="absolute bottom-1 top-1 left-1 rounded-full transition-[transform,background] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
         style={{ width: "calc((100% - 0.5rem - 0.5rem) / 3)", transform: `translateX(calc(${i * 100}% + ${i * 0.25}rem))`, background: LEVEL_COLOR[level] }}
       />
       {LEVELS.map((l) => {
@@ -127,10 +127,10 @@ export function DepthSwitch() {
             aria-checked={on}
             title={LEVEL_INFO[l].hint}
             onClick={() => setLevel(l)}
-            className={`relative flex min-h-11 flex-col items-center justify-center rounded-full px-2 leading-tight transition-colors ${on ? "text-white" : "text-muted hover:text-ink"}`}
+            className={`relative flex ${compact ? "min-h-9" : "min-h-11"} flex-col items-center justify-center rounded-full px-2 leading-tight transition-colors ${on ? "text-white" : "text-muted hover:text-ink"}`}
           >
-            <span className="text-[14px] font-semibold">{LEVEL_INFO[l].name}</span>
-            <span className={`hidden text-[11px] sm:block ${on ? "text-white/75" : "text-muted"}`}>{LEVEL_INFO[l].hint}</span>
+            <span className={`${compact ? "text-[13px]" : "text-[14px]"} font-semibold`}>{LEVEL_INFO[l].name}</span>
+            {!compact && <span className={`hidden text-[11px] sm:block ${on ? "text-white/75" : "text-muted"}`}>{LEVEL_INFO[l].hint}</span>}
           </button>
         );
       })}
@@ -139,7 +139,7 @@ export function DepthSwitch() {
 }
 
 /** How far down the page the reader is, from 0 to 1. */
-function useReadProgress(): number {
+export function useReadProgress(): number {
   const [p, setP] = useState(0);
   useEffect(() => {
     let frame = 0;
@@ -161,52 +161,4 @@ function useReadProgress(): number {
     };
   }, []);
   return p;
-}
-
-/**
- * A slim bar that stays at the top of a company page while reading, holding the detail
- * switch, with a blue line along its bottom edge that fills as the reader scrolls.
- */
-const CHANGE: Record<Level, string> = {
-  surface: "Showing the short answers only",
-  below: "Added the explanation and main numbers under each part",
-  deep: "Added every detail: the full figures and the reports' own words",
-};
-
-export function DetailBar() {
-  const { notice } = useDepth();
-  const progress = useReadProgress();
-  // Say what just changed, and where the reader still is, for a few seconds after a switch.
-  const [hidden, setHidden] = useState<number | undefined>();
-  useEffect(() => {
-    if (!notice) return;
-    const t = window.setTimeout(() => setHidden(notice.n), 4200);
-    return () => window.clearTimeout(t);
-  }, [notice]);
-  const fresh = notice && hidden !== notice.n;
-  return (
-    <div className="sticky top-0 z-20 -mx-5 border-b border-line bg-white/90 px-5 py-2.5 backdrop-blur-xl sm:mx-0 sm:rounded-b-2xl sm:px-4">
-      <div className="flex items-center justify-between gap-4">
-        <span className="hidden min-w-0 flex-1 text-[14px] sm:block" aria-live="polite">
-          {fresh ? (
-            <span key={notice.n} className="fathom-pop flex flex-col leading-snug">
-              <span className="font-semibold text-ink">{CHANGE[notice.level]}</span>
-              {notice.part && <span className="truncate text-muted">You&apos;re still on “{notice.part}”</span>}
-            </span>
-          ) : (
-            <span className="flex flex-col leading-snug">
-              <span className="font-semibold text-ink">How much detail?</span>
-              <span className="text-muted">Switch any time; you&apos;ll stay where you are.</span>
-            </span>
-          )}
-        </span>
-        <div className="w-full sm:w-[380px]">
-          <DepthSwitch />
-        </div>
-      </div>
-      <span aria-hidden="true" className="absolute inset-x-0 -bottom-px h-[3px] overflow-hidden sm:rounded-b-2xl">
-        <span className="block h-full origin-left bg-ocean" style={{ transform: `scaleX(${progress})` }} />
-      </span>
-    </div>
-  );
 }

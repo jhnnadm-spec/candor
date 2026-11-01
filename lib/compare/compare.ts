@@ -116,7 +116,6 @@ export function compareSummary(rows: CompareRow[], companies: LensResult<Fundame
     lines.push(`${nameOf(high.ticker)} ${hi} (${figureValue(high.figure)}); ${nameOf(low.ticker)} ${lo} (${figureValue(low.figure)}).`);
   }
   const missing = rows
-    .filter((r) => r.group !== "valuation")
     .flatMap((r) => r.cells.filter((c) => c.figure.status === "not-reported").map((c) => ({ r, c })));
   if (missing.length > 0) {
     const byCompany = [...new Set(missing.map((m) => m.c.ticker))];

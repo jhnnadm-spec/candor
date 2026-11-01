@@ -5,8 +5,7 @@
  * Every figure is worked out in code from reported numbers (lib/financials),
  * keeps its period and source, and is only combined with figures that cover
  * exactly the same period or date. Ratios that need a share price (P/E,
- * EV/EBITDA) are listed but not calculated: cand0r shows the price from
- * TradingView for display only and doesn't use it in its own sums.
+ * EV/EBITDA) are left out: cand0r has no share price it may use in its own sums.
  */
 import { formatDate, formatMoney, formatPercent, formatPerShare } from "../financials/format";
 import type { Comparison, CompanyNumbers, Figure as NumberFigure, Ratio } from "../financials/metrics";
@@ -28,11 +27,9 @@ export type FundamentalMetricId =
   | "debtToEquity"
   | "currentRatio"
   | "returnOnEquity"
-  | "eps"
-  | "peRatio"
-  | "evToEbitda";
+  | "eps";
 
-export type FundamentalGroupId = "size" | "profitability" | "cash" | "safety" | "returns" | "valuation";
+export type FundamentalGroupId = "size" | "profitability" | "cash" | "safety" | "returns";
 
 export type MetricRow = {
   id: FundamentalMetricId;
@@ -53,8 +50,7 @@ export const FUNDAMENTAL_GROUPS: { id: FundamentalGroupId; title: string; plain:
   { id: "profitability", title: "Profitability", plain: "How much of each sale it keeps" },
   { id: "cash", title: "Cash flow", plain: "How much real cash the business brings in" },
   { id: "safety", title: "Debt and safety", plain: "What it owes, and whether it can pay its bills" },
-  { id: "returns", title: "Returns", plain: "What it earns on the owners' money" },
-  { id: "valuation", title: "Valuation", plain: "What the stock market pays for it" },
+  { id: "returns", title: "Returns to owners", plain: "What it earns on the owners' money, and per share" },
 ];
 
 type Def = Omit<MetricRow, "figure" | "reading">;
@@ -64,7 +60,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "revenue",
     group: "size",
     name: "Revenue",
-    plain: "Sales",
+    plain: "Money customers paid for its products and services over the year, before any costs",
     term: "revenue",
     meaning: "Revenue is all the money a company takes in from what it sells, before any costs are paid.",
     formula: "Total sales for the financial year, as reported.",
@@ -73,7 +69,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "revenueGrowth",
     group: "size",
     name: "Revenue growth",
-    plain: "How fast sales grew",
+    plain: "How much the year's sales rose or fell compared with the year before",
     term: "revenue-growth",
     meaning: "Revenue growth is how much sales rose or fell compared with the year before, as a percentage.",
     formula: "(This year's sales − last year's sales) ÷ last year's sales.",
@@ -82,7 +78,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "grossMargin",
     group: "profitability",
     name: "Gross margin",
-    plain: "Left after the cost of what it sold",
+    plain: "Of each $100 of sales, what's left after the direct cost of making or buying what it sold",
     term: "gross-margin",
     meaning: "Gross margin is the share of each sale left after paying the direct cost of making or buying what was sold.",
     formula: "Gross profit ÷ sales, for the same year.",
@@ -91,7 +87,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "operatingMargin",
     group: "profitability",
     name: "Operating margin",
-    plain: "Left after running the business",
+    plain: "Of each $100 of sales, what's left after also paying staff, rent, marketing and research, before interest and tax",
     term: "operating-margin",
     meaning: "Operating margin is the share of each sale left after also paying to run the business (staff, offices, marketing), before interest and tax.",
     formula: "Operating income ÷ sales, for the same year.",
@@ -100,7 +96,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "netMargin",
     group: "profitability",
     name: "Net profit margin",
-    plain: "Kept as profit",
+    plain: "Of each $100 of sales, what's left as final profit after every cost, including interest and tax",
     term: "profit-margin",
     meaning: "Net profit margin is the share of each sale left as profit after every cost, including interest and tax.",
     formula: "Net income ÷ sales, for the same year.",
@@ -109,7 +105,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "ebitda",
     group: "profitability",
     name: "EBITDA",
-    plain: "Earnings of the main business",
+    plain: "Profit from the main business before interest, tax and the yearly wear-and-tear charge on its equipment",
     term: "ebitda",
     meaning:
       "EBITDA (earnings before interest, tax, depreciation and amortisation) is what the main business earned before interest, tax and the yearly wear-and-tear charge on its equipment.",
@@ -119,7 +115,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "operatingCashFlow",
     group: "cash",
     name: "Operating cash flow",
-    plain: "Cash the business brought in",
+    plain: "Cash the day-to-day business actually took in over the year, after paying suppliers, staff and tax",
     term: "cash-from-operations",
     meaning: "Operating cash flow is the cash the day-to-day business actually brought in during the year, which can differ from profit.",
     formula: "Net cash from operating activities, as reported.",
@@ -128,7 +124,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "freeCashFlow",
     group: "cash",
     name: "Free cash flow",
-    plain: "Spare cash",
+    plain: "Cash from the business minus spending on buildings and equipment: what's left to pay owners, repay debt or keep",
     term: "free-cash-flow",
     meaning: "Free cash flow is the cash left after paying for new buildings and equipment (capital expenditure): money it could use for owners, debt or growth.",
     formula: "Operating cash flow − capital expenditure, for the same year.",
@@ -137,7 +133,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "netDebt",
     group: "safety",
     name: "Net debt",
-    plain: "Borrowing minus cash",
+    plain: "Long-term borrowing minus cash; below zero means it holds more cash than long-term debt",
     term: "net-debt",
     meaning: "Net debt is long-term borrowing minus the cash the company holds; a negative figure means it holds more cash than it owes long-term.",
     formula: "Long-term debt − cash and cash equivalents, on the same date.",
@@ -146,7 +142,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "debtToEquity",
     group: "safety",
     name: "Debt-to-equity ratio",
-    plain: "Borrowing compared with owners' money",
+    plain: "Dollars borrowed long-term for each $1 that belongs to its shareholders (book value)",
     term: "debt-to-equity",
     meaning: "The debt-to-equity ratio compares long-term borrowing with the owners' money in the business (shareholders' equity): 1.0 means $1 borrowed for every $1 of owners' money.",
     formula: "Long-term debt ÷ shareholders' equity, on the same date.",
@@ -155,7 +151,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "currentRatio",
     group: "safety",
     name: "Current ratio",
-    plain: "Can it pay bills due soon",
+    plain: "What it expects to turn into cash within a year, for each $1 of bills due within a year",
     term: "current-ratio",
     meaning: "The current ratio compares what the company expects to turn into cash within a year with the bills it must pay within a year; above 1 means more is coming in than is due.",
     formula: "Current assets ÷ current liabilities, on the same date.",
@@ -164,7 +160,7 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "returnOnEquity",
     group: "returns",
     name: "Return on equity (ROE)",
-    plain: "Profit on the owners' money",
+    plain: "Profit made in the year for each $100 of shareholders' money in the business",
     term: "return-on-equity",
     meaning: "Return on equity (ROE) is the year's profit compared with the owners' money in the business (shareholders' equity).",
     formula: "Net income ÷ average shareholders' equity at the start and end of the year.",
@@ -173,35 +169,14 @@ export const FUNDAMENTAL_METRICS: Record<FundamentalMetricId, Def> = {
     id: "eps",
     group: "returns",
     name: "Earnings per share (EPS)",
-    plain: "Profit for each share",
+    plain: "The year's profit divided by the number of shares, counting shares staff awards could still create",
     term: "eps",
     meaning: "Earnings per share (EPS) is the year's profit divided by the number of shares, counting shares that could be created from options and similar rights (diluted).",
     formula: "Diluted earnings per share, as reported.",
   },
-  peRatio: {
-    id: "peRatio",
-    group: "valuation",
-    name: "P/E ratio",
-    plain: "Price compared with profit",
-    term: "pe-ratio",
-    meaning: "The P/E (price-to-earnings) ratio is the share price divided by earnings per share: how many dollars investors pay for each dollar of yearly profit.",
-    formula: "Share price ÷ earnings per share.",
-  },
-  evToEbitda: {
-    id: "evToEbitda",
-    group: "valuation",
-    name: "EV/EBITDA",
-    plain: "Whole-company price compared with earnings",
-    term: "ev-to-ebitda",
-    meaning: "EV/EBITDA compares the value of the whole company, including its debt minus its cash (enterprise value), with its EBITDA.",
-    formula: "(Market value + debt − cash) ÷ EBITDA.",
-  },
 };
 
 const ORDER = Object.keys(FUNDAMENTAL_METRICS) as FundamentalMetricId[];
-
-const NEEDS_PRICE =
-  "Needs a share price. cand0r shows the live price from TradingView for display only and doesn't use it in its own calculations, so this isn't worked out here.";
 
 // ---------------------------------------------------------------- building figures
 
@@ -277,8 +252,6 @@ export function fundamentalFigures(n: CompanyNumbers): Record<FundamentalMetricI
     currentRatio: ratioFigure(r.currentRatio, "ratio", "date") ?? missingReason(n, ["currentAssets", "currentLiabilities"]),
     returnOnEquity: ratioFigure(r.returnOnEquity, "percent", "year") ?? negEquity ?? missingReason(n, ["netIncome", "equity"]),
     eps: a.eps ? reported(a.eps.latest.value, "per-share", yearOf(a.eps.latest), [a.eps.latest]) : missingReason(n, ["eps"]),
-    peRatio: { status: "needs-price", reason: NEEDS_PRICE },
-    evToEbitda: { status: "needs-price", reason: NEEDS_PRICE },
   };
 }
 

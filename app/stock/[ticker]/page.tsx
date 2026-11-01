@@ -22,8 +22,8 @@ import { MARKET_TERMS } from "@/lib/report/market-terms";
 import { AREAS, claimsFor, leftOutNames, statementsFor, STEPS, SURFACE, type Block, type Item, type SurfaceRow } from "@/lib/report/outline";
 import { getCompanyProfile, type CompanyProfile } from "@/lib/profile/wiki";
 import { TermName } from "@/components/TermName";
-import { ConceptMap } from "@/components/ConceptMap";
-import { conceptMap } from "@/lib/report/concept-map";
+import { conceptMap, mapNodes, workedLinks } from "@/lib/report/concept-map";
+import { PageNav, type NavItem } from "@/components/PageNav";
 import { FundamentalGlance } from "@/components/FundamentalGlance";
 import { fundamentalFromReport } from "@/lib/lens/fundamental";
 import { Forces, ForcesSummary } from "@/components/Forces";
@@ -31,12 +31,11 @@ import { getMacro } from "@/lib/macro/data";
 import { buildForces } from "@/lib/report/forces";
 import { billsGauge, cashVsDebt, compareFor, marginLines, moneyUses, pairFor, salesHistory, salesSplit, SERIES, shareFor } from "@/lib/report/visuals";
 import { DotGrid, Meter, StatusBadge, TopicIcon } from "@/components/viz/Static";
-import { AtDepth, DepthProvider, DetailBar } from "@/components/Depth";
+import { AtDepth, DepthProvider } from "@/components/Depth";
 import { CompanyLogo } from "@/components/CompanyLogo";
 import { KeyMap } from "@/components/KeyMap";
 import { CompanySidebar } from "@/components/CompanySidebar";
 import { accentVars, BRAND, stepAccent } from "@/lib/accents";
-import { StepIcon } from "@/components/StepIcon";
 import { BigAnswer, KeepBar, LiteCard, MiniBars, MiniGauge, MiniPair, SaidAnswer, SourceChips, UsesBar } from "@/components/Lite";
 
 export async function generateMetadata(props: PageProps<"/stock/[ticker]">): Promise<Metadata> {
@@ -76,72 +75,67 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
   const [profile, macro] = await Promise.all([getCompanyProfile(report.company.cik), getMacro()]);
   const company = shortCompany(report.company.name);
   const forces = buildForces(company, report.numbers, e, macro);
-  const now = (id: string) => forces.find((f) => f.id === id)?.now?.text;
-  const mentioned = (id: string) => (forces.some((f) => f.id === id) ? `${company} mentions this in its own reports: see "What moves the results"` : undefined);
-  const nodes = conceptMap(report.numbers, {
-    rates: now("rates"),
-    inflation: now("inflation"),
-    demand: now("demand"),
-    sentiment: "Changes every day with news and mood: see the live share price under \"The share price\"",
-    competition: mentioned("competition"),
-    rules: mentioned("rules"),
-  });
+  const nodes = mapNodes(conceptMap(report.numbers));
+  const links = workedLinks(report.numbers);
   const lead = e?.topics.whatItDoes?.[0];
   const fundamentals = fundamentalFromReport(report);
   const ctx: Ctx = { report, e, level: "surface" };
 
   const stepTitles = Object.fromEntries(STEPS.map((s) => [s.id, s.title]));
+  const nav: NavItem[] = [
+    { id: "map", label: "At a glance" },
+    ...(fundamentals ? [{ id: "fundamentals", label: "Key numbers" }] : []),
+    ...STEPS.map((s, i) => ({ id: `step-${s.id}`, label: s.title, number: i + 1, color: stepAccent(s.id).solid })),
+    { id: "whole-picture", label: "What moves it" },
+    { id: "numbers", label: "All the numbers" },
+  ];
 
   return (
     <DepthProvider>
-      <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-10 px-5 pb-16 pt-8 sm:pt-12 lg:px-10">
+      <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-6 px-5 pb-16 pt-6 sm:pt-8 lg:px-10">
         <Hero report={report} profile={profile} company={company} lead={lead} />
         <ExplainStatus ticker={report.company.ticker} state={state} />
-        <KeyMap nodes={nodes} company={company} ticker={report.company.ticker} stepTitles={stepTitles} />
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[minmax(0,1fr)_380px] xl:gap-12">
-        <div className="flex min-w-0 flex-col gap-10">
-        <Contents company={company} />
-        {fundamentals && <FundamentalGlance result={fundamentals} />}
-        <DetailBar />
-        <div className="-mt-4 flex flex-col gap-14">
-          {STEPS.map((step, i) => (
-            <ResearchStep
-              key={step.id}
-              ticker={report.company.ticker}
-              id={step.id}
-              label={step.title}
-              number={i + 1}
-              total={STEPS.length}
-              question={step.question}
-              brief={step.brief}
-              term={<TermName k={step.term} />}
-              surface={surfaceBody(step, ctx, Boolean(lead))}
-              below={deeperBody(step, ctx, "below", profile)}
-              deep={deeperBody(step, ctx, "deep", profile)}
-            />
-          ))}
-          <section id="whole-picture" data-part="The whole picture" className="flex scroll-mt-20 flex-col gap-8 border-t border-line pt-10">
-            <AtDepth max="below">
-              <ForcesSummary forces={forces} company={company} />
-            </AtDepth>
-            <AtDepth only="deep">
-              <Forces forces={forces} nodes={nodes} company={company} />
-              <ConceptMap nodes={nodes} company={company} />
-            </AtDepth>
-          </section>
-          <section id="numbers" data-part="All the numbers" className="flex scroll-mt-20 flex-col gap-3 border-t border-line pt-10">
-            <h2 className="font-display text-[26px] font-bold tracking-tight">Want to dig further?</h2>
-            <AllNumbers report={report} />
-          </section>
-          <div className="flex flex-col gap-3">
-            {e && <AiNote e={e} />}
-            <Disclaimer />
+        <PageNav items={nav} />
+        <KeyMap nodes={nodes} links={links} company={company} stepTitles={stepTitles} />
+        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
+          <div className="flex min-w-0 flex-col gap-6">
+            {fundamentals && <FundamentalGlance result={fundamentals} />}
+            {STEPS.map((step, i) => (
+              <ResearchStep
+                key={step.id}
+                ticker={report.company.ticker}
+                id={step.id}
+                label={step.title}
+                number={i + 1}
+                total={STEPS.length}
+                question={step.question}
+                brief={step.brief}
+                term={<TermName k={step.term} />}
+                surface={surfaceBody(step, ctx, Boolean(lead))}
+                below={deeperBody(step, ctx, "below", profile)}
+                deep={deeperBody(step, ctx, "deep", profile)}
+              />
+            ))}
+            <section id="whole-picture" data-part="What moves it" className="flex scroll-mt-20 flex-col gap-6 rounded-2xl border border-line bg-white px-5 py-6 sm:px-6">
+              <AtDepth max="below">
+                <ForcesSummary forces={forces} company={company} />
+              </AtDepth>
+              <AtDepth only="deep">
+                <Forces forces={forces} nodes={nodes} company={company} />
+              </AtDepth>
+            </section>
+            <section id="numbers" data-part="All the numbers" className="flex scroll-mt-20 flex-col gap-3 rounded-2xl border border-line bg-white px-5 py-6 sm:px-6">
+              <div>
+                <h2 className="font-display text-[22px] font-semibold tracking-[-0.03em]">All the numbers</h2>
+                <p className="text-[14px] text-muted">{AREAS.find((a) => a.id === "numbers")!.why}</p>
+              </div>
+              <AllNumbers report={report} />
+            </section>
+            <PageNote e={e} />
           </div>
-        </div>
-        </div>
-        <aside aria-label={`More about ${company}`} className="lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto lg:pr-1 [scrollbar-width:thin]">
-          <CompanySidebar company={company} symbol={report.tradingViewSymbol} expected={report.expected} announcements={report.announcements} />
-        </aside>
+          <aside aria-label={`More about ${company}`} className="lg:sticky lg:top-20">
+            <CompanySidebar company={company} ticker={report.company.ticker} expected={report.expected} announcements={report.announcements} />
+          </aside>
         </div>
       </div>
     </DepthProvider>
@@ -163,7 +157,7 @@ function Hero({ report, profile, company, lead }: { report: CompanyReport; profi
   if (profile?.headquarters) facts.push(`Based in ${profile.headquarters}`);
   if (profile?.employees) facts.push(`${compactCount(profile.employees.count)} people work there`);
   return (
-    <header id="top" className="flex scroll-mt-8 flex-col gap-5">
+    <header id="top" className="flex scroll-mt-8 flex-col gap-4 rounded-2xl border border-line bg-white px-5 py-6 sm:px-7">
       <div className="flex items-center gap-4">
         <CompanyLogo name={c.name} logo={profile?.logo} website={profile?.website} size={60} />
         <div className="flex min-w-0 flex-col gap-1">
@@ -193,14 +187,14 @@ function Hero({ report, profile, company, lead }: { report: CompanyReport; profi
             href={`/stock/${encodeURIComponent(c.ticker)}/pdf`}
             download
             style={accentVars(BRAND)}
-            className="fathom-lift inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-white px-4 text-[15px] font-semibold text-ink no-underline"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-ink px-4 text-[15px] font-semibold text-white no-underline transition-colors hover:bg-ocean hover:text-white"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M12 3v12" />
               <path d="m7 10 5 5 5-5" />
               <path d="M5 21h14" />
             </svg>
-            Download PDF
+            Download the full report (PDF)
           </a>
         </div>
       )}
@@ -223,40 +217,6 @@ function compactCount(n: number): string {
 function sentenceCase(s: string): string {
   const t = s.toLowerCase().replace(/-/g, ": ");
   return t.charAt(0).toUpperCase() + t.slice(1);
-}
-
-/** Before the seven parts: a visual guide to what's ahead, each card a link to its part. */
-function Contents({ company }: { company: string }) {
-  return (
-    <nav aria-labelledby="contents-title" className="flex flex-col gap-4">
-      <div className="flex flex-col gap-1">
-        <h2 id="contents-title" className="font-display text-[26px] font-semibold tracking-[-0.03em]">
-          Inside {company}
-        </h2>
-        <p className="text-[15px] text-muted">Seven short parts, from what it does to what it&apos;s worth. Jump to any one.</p>
-      </div>
-      <ol className="m-0 grid list-none grid-cols-2 gap-3 p-0 sm:grid-cols-3 xl:grid-cols-4">
-        {STEPS.map((s, i) => (
-          <li key={s.id} style={accentVars(stepAccent(s.id))} className={i === 0 ? "col-span-2 sm:col-span-1" : ""}>
-            <a
-              href={`#step-${s.id}`}
-              className="fathom-card fathom-lift group relative flex h-full flex-col gap-3 overflow-hidden p-4 text-ink no-underline"
-            >
-              <span aria-hidden="true" className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-70" style={{ background: "var(--a)" }} />
-              <span className="flex items-center justify-between">
-                <StepIcon id={s.id} size={44} />
-                <span aria-hidden="true" className="font-mono text-[12px] text-muted">0{i + 1}</span>
-              </span>
-              <span className="flex flex-col gap-0.5">
-                <span className="text-[15px] font-semibold tracking-[-0.01em]">{s.title}</span>
-                <span className="text-[13px] leading-snug text-muted">{s.question}</span>
-              </span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </nav>
-  );
 }
 
 // ---------------------------------------------------------------- shared pieces
@@ -321,12 +281,13 @@ function Claims({ claims, quotes }: { claims: CheckedClaim[]; quotes?: boolean }
   );
 }
 
-function AiNote({ e }: { e: SavedExplanation }) {
+/** One slim line under the page: where everything came from, and that it isn't advice. */
+function PageNote({ e }: { e?: SavedExplanation }) {
   return (
-    <p className="text-[13px] leading-relaxed text-muted">
-      Points about the business, its industry and its risks were written by AI from the company&apos;s own reports on{" "}
-      {formatDate(e.generatedAt.slice(0, 10))}. Every point was checked word-for-word against the report it links to;
-      points that failed the check were removed. All numbers come straight from the reports (SEC EDGAR), not from AI. The share price and news come from TradingView.
+    <p className="px-1 text-[12px] leading-relaxed text-muted">
+      Numbers come straight from the company&apos;s SEC filings and are worked out in code.
+      {e && ` Points about the business, industry and risks were written by AI on ${formatDate(e.generatedAt.slice(0, 10))} and each was checked word-for-word against the report it links to.`}{" "}
+      For education only: not investment advice, no price targets, and never buy, sell or hold.
     </p>
   );
 }
@@ -696,15 +657,12 @@ function AllNumbers({ report }: { report: CompanyReport }) {
   const area = AREAS.find((a) => a.id === "numbers")!;
   const ctx: Ctx = { report, level: "deep" };
   return (
-    <details className="fathom-card group flex flex-col px-5 py-4 sm:px-6">
-      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4">
-        <span className="flex flex-col">
-          <span className="text-[18px] font-semibold">All the key numbers</span>
-          <span className="text-[14px] text-muted">{area.why}</span>
-        </span>
-        <span aria-hidden="true" className="text-2xl text-ink transition-transform group-open:rotate-45">
-          +
-        </span>
+    <details className="group flex flex-col rounded-xl border border-line px-4 py-2">
+      <summary className="flex min-h-10 cursor-pointer list-none items-center justify-between gap-4 text-[15px] font-semibold">
+        Show the ratios, what changed in a year, and the original reports
+        <svg className="flex-none transition-transform group-open:rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
       </summary>
       <div className="mt-5 flex flex-col gap-8">{area.deep.map((i, k) => renderItem(i, ctx, `numbers-${k}`))}</div>
     </details>
@@ -770,7 +728,7 @@ function BlockView({ block, report }: { block: Block; report: CompanyReport }) {
       const d = salesHistory(n)!;
       return (
         <ChartPanel title="Sales by year" note="Tap a year to see its sales.">
-          <Columns bars={d.bars} color="#c7d4ff" highlight={SERIES.blue} />
+          <Columns bars={d.bars} color="color-mix(in srgb, var(--a, #2d5bff) 22%, white)" highlight="var(--a, #2d5bff)" />
         </ChartPanel>
       );
     }
@@ -1132,16 +1090,6 @@ function OriginalReports({ report }: { report: CompanyReport }) {
 
 /** Official announcements and news headlines, folded away until wanted. */
 // ---------------------------------------------------------------- other states
-
-function Disclaimer() {
-  return (
-    <p className="text-sm leading-relaxed text-muted">
-      <strong className="font-semibold text-ink">Important information.</strong> This page explains the company&apos;s public
-      filings for educational purposes only. It is not investment advice or a recommendation to buy, sell or hold its shares,
-      and cand0r does not provide price targets. Please check the linked source documents before relying on any figure.
-    </p>
-  );
-}
 
 function Unsupported({ reason, name }: { reason: "foreign-filer" | "no-recent-reports"; name: string }) {
   return (

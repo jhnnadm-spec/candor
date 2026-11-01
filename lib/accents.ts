@@ -21,12 +21,14 @@ export const ACCENTS = {
   amber: { name: "amber", solid: "#f59e0b", soft: "#fef6e7", ink: "#8a5300" },
   rose: { name: "rose", solid: "#f43f5e", soft: "#feecef", ink: "#b4233c" },
   slate: { name: "slate", solid: "#64748b", soft: "#f1f3f6", ink: "#3f4a5a" },
+  sky: { name: "sky", solid: "#0ea5e9", soft: "#e6f6fd", ink: "#0369a1" },
+  green: { name: "green", solid: "#16a34a", soft: "#e8f6ec", ink: "#15803d" },
 } satisfies Record<string, Accent>;
 
 export type AccentName = keyof typeof ACCENTS;
 
 /** For telling things apart (Compare): a fixed order, so neighbours never share a colour. */
-export const ACCENT_ORDER: AccentName[] = ["blue", "violet", "teal", "amber", "rose", "slate", "ink"];
+export const ACCENT_ORDER: AccentName[] = ["blue", "amber", "teal", "rose", "violet", "sky", "green"];
 
 /** The nth distinct accent, wrapping round. */
 export function accentAt(i: number): Accent {
@@ -40,11 +42,11 @@ export const BRAND = ACCENTS.blue;
 const STEP_ACCENT: Record<string, AccentName> = {
   business: "blue",
   performance: "teal",
-  health: "rose",
+  health: "violet",
   cash: "amber",
-  management: "violet",
-  outlook: "slate",
-  value: "ink",
+  management: "sky",
+  outlook: "rose",
+  value: "green",
 };
 export function stepAccent(id: string): Accent {
   return ACCENTS[STEP_ACCENT[id] ?? "blue"];

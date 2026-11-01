@@ -28,7 +28,7 @@
   },
   "net-income": {
     "term": "Net income",
-    "definition": "The profit left after paying every cost, including wages, interest and taxes. Often called the bottom line.",
+    "definition": "The profit left over a period (such as a year or a quarter) after paying every cost, including wages, interest and taxes. Often called the bottom line.",
     "short": "net income",
     "why": "It's the money that's actually left for the owners after every bill is paid. A company can sell a lot and still make little or none.",
     "analyst": "Profit is what is left for the owners after every cost, so it's the basis for the earnings per share and P/E ratio that investors quote.",
@@ -52,7 +52,7 @@
   },
   "gross-margin": {
     "term": "Gross margin",
-    "definition": "The share of each dollar of sales left after paying the direct cost of making or buying what was sold. Higher means more is left for everything else.",
+    "definition": "Gross profit (sales minus the direct cost of making or buying what was sold) as a share of sales. A 40% gross margin means $40 of every $100 of sales is left to pay for everything else.",
     "short": "gross margin",
     "why": "It shows how much room a company has to pay for everything else. A high gross margin often means a strong brand or something hard to copy.",
     "analyst": "It shows how much is left from each sale after the direct cost of making or buying the product. People usually use it to judge pricing power and how costly the product is to make.",
@@ -77,7 +77,7 @@
   },
   "profit-margin": {
     "term": "Profit margin",
-    "definition": "The share of each dollar of sales left as profit after all costs and taxes.",
+    "definition": "Net income as a share of sales: what's left after every cost, including interest and tax. A 10% net profit margin means $10 of final profit for every $100 of sales.",
     "short": "net profit margin",
     "why": "It lets you compare companies of any size: $27 of profit per $100 of sales means the same thing for a small company and a giant.",
     "analyst": "It shows how much of each sale ends up as profit after all costs. People usually compare it over time and against competitors to see how efficient the company is.",
@@ -102,7 +102,7 @@
   },
   "operating-income": {
     "term": "Operating income",
-    "definition": "Profit from the company's main business, before interest and taxes.",
+    "definition": "Sales minus the cost of what was sold and the cost of running the business (staff, rent, marketing, research). It's the profit from the main business, before interest and tax.",
     "short": "operating income",
     "why": "It shows whether the core business makes money, separate from one-off gains or interest.",
     "analyst": "Operating profit shows what the main business earns before interest and tax. People usually use it to compare companies that borrow different amounts or pay different tax rates.",
@@ -115,7 +115,7 @@
   },
   "cash-from-operations": {
     "term": "Cash from operations",
-    "definition": "The cash the company's everyday business actually brought in during the period. It can differ from profit because of timing, such as customers paying later.",
+    "definition": "The cash that came in from customers minus the cash paid out to suppliers, staff, landlords, lenders (interest) and the tax office during the period. It differs from profit because of timing, such as customers paying later, and because some costs in profit, like wear and tear on equipment, aren't paid in cash.",
     "short": "operating cash flow",
     "why": "Profit is an accounting figure; this is real cash. A company that earns profit but brings in little cash can run into trouble.",
     "analyst": "Profit is an accounting figure; this is the cash the business actually brought in. People usually compare the two to check that profits turn into real money.",
@@ -237,7 +237,7 @@
   },
   "operating-margin": {
     "term": "Operating margin",
-    "definition": "The share of each dollar of sales left as profit from the main business, before interest and taxes.",
+    "definition": "Operating income as a share of sales: of each $100 of sales, what's left after paying for what was sold and for running the business, before interest and tax.",
     "short": "operating margin",
     "why": "It shows how profitable the main business is on its own, before borrowing costs and taxes.",
     "analyst": "It shows how much of each sale is left after running the business, before interest and tax. People usually treat it as a measure of how well the business itself is run.",
@@ -261,7 +261,7 @@
   },
   "eps": {
     "term": "Earnings per share (EPS)",
-    "definition": "The company's profit divided by the number of its shares. \"Diluted\" counts shares that could be created later, for example from employee stock awards.",
+    "definition": "Net income divided by the average number of shares during the period. \"Diluted\" EPS also counts shares that could still be created, for example from staff stock awards, so it's usually slightly lower.",
     "short": "EPS",
     "why": "It turns the company's profit into a per-share figure, so you can see what each share 'earns'. It's also half of the P/E ratio.",
     "analyst": "Earnings per share splits the profit across every share. People usually track it because it's what share prices are most often compared with, in the P/E ratio.",
@@ -286,7 +286,7 @@
   },
   "free-cash-flow": {
     "term": "Free cash flow",
-    "definition": "The cash the business brought in, minus what it spent on buildings, equipment and other long-term investments. It shows how much spare cash the company produced.",
+    "definition": "Operating cash flow minus capital expenditure: the cash left after the business pays for the buildings and equipment it needs. It's what the company can use to pay dividends, buy back shares, repay debt or save.",
     "short": "free cash flow",
     "why": "It's the money a company can actually choose what to do with: pay shareholders, pay off debt or grow. Many investors watch it more closely than profit.",
     "analyst": "Spare cash is what's left after the company has paid to keep and grow its buildings and equipment. People usually see it as the money truly available for owners, debt repayment or growth.",
@@ -310,7 +310,7 @@
   },
   "capital-expenditure": {
     "term": "Capital spending",
-    "definition": "Money spent on long-lasting things like factories, stores, data centres and equipment. Also called capital expenditure or capex.",
+    "definition": "Cash spent on long-lasting things the company will use for years, like factories, stores, data centres and equipment. Often shortened to capex.",
     "short": "capital expenditure",
     "why": "It's how a company invests in its future. Heavy spending can mean growth plans, or a business that needs a lot of upkeep.",
     "analyst": "This is spending on long-lasting things like factories, stores, data centres and machines. People usually look at it to see how much the business must reinvest just to keep going and grow.",
@@ -335,7 +335,7 @@
   },
   "current-ratio": {
     "term": "Current ratio",
-    "definition": "Short-term assets (cash and things expected to turn into cash within a year) divided by bills due within a year. Above 1 means it has more than enough to cover them.",
+    "definition": "Current assets (cash, money customers owe it, stock and anything else it expects to turn into cash within a year) divided by current liabilities (bills it must pay within a year). 1.5 means $1.50 coming in for every $1 due.",
     "short": "current ratio",
     "why": "It shows whether the company can comfortably pay what's due soon. Below 1 isn't automatically a problem, but it leaves less room for surprises.",
     "analyst": "It compares what the company can turn into cash within a year with the bills due within a year. People usually use it as a quick check on short-term safety.",
@@ -359,7 +359,7 @@
   },
   "debt-to-equity": {
     "term": "Debt-to-equity ratio",
-    "definition": "How much the company has borrowed compared with the money that belongs to its shareholders. Higher means it relies more on borrowing.",
+    "definition": "Long-term borrowing divided by shareholders' equity (what the accounts say belongs to the owners). 0.5 means $0.50 borrowed for every $1 of owners' money; higher means it relies more on borrowed money.",
     "short": "debt-to-equity ratio",
     "why": "Borrowing can help a company grow, but debt must be repaid with interest. The higher this is, the more a bad year can hurt.",
     "analyst": "It compares borrowed money with the owners' money in the business. People usually use it to judge how much the company relies on debt.",
@@ -386,7 +386,7 @@
   },
   "shareholders-equity": {
     "term": "Shareholders' equity",
-    "definition": "What would be left for shareholders if the company sold everything it owns and paid off everything it owes, based on its accounts.",
+    "definition": "Total assets minus total liabilities, as valued in the company's accounts (also called book value): what the accounts say belongs to the shareholders. It isn't the same as what the stock market says the company is worth.",
     "short": "shareholders' equity",
     "why": "It's the owners' share on paper. Many other measures, like return on equity, are worked out from it.",
     "analyst": "It's the value that would belong to the owners if all debts were paid from what the company owns, according to its accounts. People usually use it in ratios like return on equity.",
@@ -400,7 +400,7 @@
   },
   "return-on-equity": {
     "term": "Return on equity (ROE)",
-    "definition": "A year's profit divided by shareholders' equity. It shows how much profit the company made with the money that belongs to its shareholders.",
+    "definition": "Net income for a year divided by the average shareholders' equity over that year. A 20% ROE means $20 of profit for every $100 of owners' money in the business.",
     "short": "ROE",
     "why": "It shows how well a company turns its owners' money into profit. Higher is generally better, though heavy borrowing can push it up too.",
     "analyst": "It shows how much profit the company makes for each dollar the owners have in the business. People usually use it to judge how well management uses that money.",

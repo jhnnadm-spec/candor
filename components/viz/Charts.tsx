@@ -126,8 +126,7 @@ export function Columns({ bars, color, highlight }: { bars: Bar[]; color: string
               style={{
                 height: shown ? `${Math.max(3, (b.value / max) * 100)}%` : "0%",
                 transitionDelay: `${i * 70}ms`,
-                background: i === bars.length - 1 || i === active ? `linear-gradient(180deg, ${highlight}, color-mix(in srgb, ${highlight} 70%, #7c5cff))` : color,
-                boxShadow: i === active ? `0 10px 20px -12px ${highlight}` : undefined,
+                background: i === active ? highlight : color,
               }}
             >
               {i === active && (
@@ -171,10 +170,13 @@ export function BillsGauge({ value }: { value: number }) {
   return (
     <div className="flex flex-col gap-2">
       <div ref={ref} className="relative h-3 rounded-full bg-panel-2">
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#f43f5e]/45 via-[#f59e0b]/35 to-[#0ea5a4]/45" />
-        <div className="absolute -top-1.5 h-6 w-[3px] rounded bg-line" style={{ left: "calc(50% - 1px)" }} aria-hidden="true" />
+        <div className="absolute inset-0 flex gap-[2px] overflow-hidden rounded-full" aria-hidden="true">
+          <span className="h-full w-1/4 bg-[#f9b4c0]" />
+          <span className="h-full w-1/4 bg-[#fcd9a0]" />
+          <span className="h-full w-1/2 bg-[#a5e4e2]" />
+        </div>
         <div
-          className="absolute -top-2 h-7 w-2 rounded-full bg-ink shadow-[0_0_0_3px_#ffffff] transition-[left] duration-1000 ease-out motion-reduce:transition-none"
+          className="absolute -top-2 h-7 w-2 rounded-full border-2 border-white bg-ink transition-[left] duration-1000 ease-out motion-reduce:transition-none"
           style={{ left: `calc(${shown ? pos * 100 : 0}% - 4px)` }}
           role="img"
           aria-label={`$${value.toFixed(2)} for every $1 due within a year`}
@@ -290,20 +292,6 @@ export function Lines({
             </text>
           ));
         })()}
-        <defs>
-          {series.map((s, si) => (
-            <linearGradient key={s.name} id={`${id}-g${si}`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stopColor={s.color} stopOpacity="0.18" />
-              <stop offset="1" stopColor={s.color} stopOpacity="0" />
-            </linearGradient>
-          ))}
-        </defs>
-        {series.map((s, si) => {
-          const idx = s.values.map((v, i) => (v === undefined ? -1 : i)).filter((i) => i >= 0);
-          if (idx.length < 2 || si > 0) return null;
-          const area = `M${x(idx[0])},${y(bottom)} ` + idx.map((i) => `L${x(i)},${y(s.values[i]!)}`).join(" ") + ` L${x(idx.at(-1)!)},${y(bottom)} Z`;
-          return <path key={`area-${s.name}`} d={area} fill={`url(#${id}-g${si})`} style={{ opacity: shown ? 1 : 0, transition: "opacity 1s ease-out" }} />;
-        })}
         {series.map((s) => {
           const pts = s.values.map((v, i) => (v === undefined ? null : `${x(i)},${y(v)}`)).filter(Boolean);
           return (

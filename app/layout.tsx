@@ -6,7 +6,6 @@ import "@fontsource/inter-tight/500.css";
 import "@fontsource/inter-tight/600.css";
 import "@fontsource/inter-tight/700.css";
 import "./globals.css";
-import { AmbientBackground } from "@/components/AmbientBackground";
 import { Logo } from "@/components/Logo";
 import { HeaderSearch, NavLinks } from "@/components/NavLinks";
 import { SearchForm } from "@/components/SearchForm";
@@ -24,8 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
-        <AmbientBackground />
-        <header className="relative z-10 border-b border-line bg-white/85 backdrop-blur-xl">
+        <header className="relative z-10 border-b border-line bg-white">
           <div className="mx-auto flex max-w-[1360px] flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-3.5 lg:px-10">
             <Link href="/" className="no-underline" aria-label="cand0r home">
               <Logo size={26} />
@@ -41,28 +39,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         <main className="flex flex-1 flex-col overflow-x-clip">{children}</main>
 
-        <footer className="border-t border-line bg-white/75 backdrop-blur">
-          <div className="mx-auto flex max-w-[1360px] flex-col gap-8 px-5 py-10 lg:flex-row lg:items-start lg:justify-between lg:gap-16 lg:px-10">
-            <div className="flex max-w-3xl flex-col gap-3">
-              <Logo size={20} />
-              <p className="text-[13px] leading-relaxed text-muted">
-                <strong className="font-semibold text-ink">Important information.</strong> cand0r provides general information for
-                educational purposes only. Nothing on this website is investment, financial, legal or tax advice, or a
-                recommendation to buy, sell or hold any security. Figures are drawn from companies&apos; public filings with the US
-                Securities and Exchange Commission and other public sources; they may contain errors or be out of date and should be
-                checked against the original documents. Past results are not a reliable indicator of future performance. Consider
-                speaking to a licensed financial adviser before making any investment decision.
-              </p>
-              <p className="text-[12px] text-muted">
-                Market data and news widgets are provided by TradingView. cand0r is independent and is not affiliated with any
-                company it covers.
-              </p>
-            </div>
-            <nav aria-label="Footer" className="flex flex-none gap-x-8 gap-y-2 text-[14px] font-medium sm:flex-wrap lg:flex-col">
+        <footer className="border-t border-line bg-white">
+          <div className="mx-auto flex max-w-[1360px] flex-col gap-2 px-5 py-3 text-[12px] leading-snug text-muted lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:px-10">
+            <p className="m-0">
+              <strong className="font-semibold text-ink">cand0r</strong> is for education only, not investment, legal or tax advice, and never says buy, sell
+              or hold. Figures come from public SEC filings and may contain errors: check the linked sources.{" "}
+              <Link href="/about" className="text-muted">
+                More about this
+              </Link>
+            </p>
+            <nav aria-label="Footer" className="flex flex-none gap-x-5 font-medium">
               <Link href="/sectors">Browse</Link>
               <Link href="/compare">Compare</Link>
               <Link href="/terms">Dictionary</Link>
-              <Link href="/about">About cand0r</Link>
+              <Link href="/about">About</Link>
             </nav>
           </div>
         </footer>

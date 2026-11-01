@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 // Fonts are bundled with the app (no request to Google at build time).
-import "@fontsource/bricolage-grotesque/600.css";
-import "@fontsource/bricolage-grotesque/700.css";
-import "@fontsource/figtree/400.css";
-import "@fontsource/figtree/500.css";
-import "@fontsource/figtree/600.css";
+import "@fontsource/inter-tight/400.css";
+import "@fontsource/inter-tight/500.css";
+import "@fontsource/inter-tight/600.css";
+import "@fontsource/inter-tight/700.css";
 import "./globals.css";
 import { Logo } from "@/components/Logo";
 import { HeaderSearch, NavLinks } from "@/components/NavLinks";
@@ -13,8 +12,8 @@ import { SearchForm } from "@/components/SearchForm";
 
 export const metadata: Metadata = {
   title: {
-    default: "Fathom: company reports, explained",
-    template: "%s · Fathom",
+    default: "Candor: company reports, explained plainly",
+    template: "%s · Candor",
   },
   description:
     "Understand any US public company in plain English, with a source for every claim. For education only, not financial advice.",
@@ -24,10 +23,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
-        <header className="relative z-10 border-b border-white/60 bg-white/70 shadow-[0_1px_0_rgba(10,42,58,0.06)] backdrop-blur-xl">
+        <header className="relative z-10 border-b border-line bg-white/85 backdrop-blur-xl">
           <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-3.5 lg:px-8">
-            <Link href="/" className="no-underline" aria-label="Fathom home">
-              <Logo size={32} />
+            <Link href="/" className="no-underline" aria-label="Candor home">
+              <Logo size={26} />
             </Link>
             <NavLinks />
             <HeaderSearch>
@@ -40,12 +39,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         <main className="flex flex-1 flex-col overflow-x-clip">{children}</main>
 
-        <footer className="bg-white/60 backdrop-blur">
-          <div aria-hidden="true" className="h-1 w-full bg-gradient-to-r from-[#2f8fb3] via-[#8b6cf2] via-60% to-[#ff6f59]" />
+        <footer className="border-t border-line">
           <div className="mx-auto flex max-w-[1180px] flex-col gap-2 px-5 py-8 text-sm leading-relaxed text-muted sm:flex-row sm:items-center sm:justify-between lg:px-8">
-            <p>For information only. Not investment advice. Fathom never tells you to buy, sell or hold anything.</p>
+            <p>For information only. Not investment advice. Candor never tells you to buy, sell or hold anything.</p>
             <Link href="/about" className="font-semibold">
-              About Fathom
+              About Candor
             </Link>
           </div>
         </footer>

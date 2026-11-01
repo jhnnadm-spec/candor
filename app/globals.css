@@ -1,49 +1,42 @@
 @import "tailwindcss";
 
 /*
-  Fathom's colours and fonts, defined once and used everywhere.
+  Candor's colours and fonts, defined once and used everywhere.
   In the code, "bg-ocean" or "text-ink" refers to these.
 */
 @theme {
-  /* Glass: Fathom's colours, from the logo's four layers of water. */
-  --color-abyss: #ffffff; /* text on dark buttons, and the sticky bar behind the level tabs */
+  /* Candor: near-black ink, one electric blue, and quiet greys. */
+  --color-abyss: #ffffff; /* text on dark buttons */
   --color-panel: #ffffff; /* tiles */
-  --color-panel-2: #f1f5f7; /* inside tiles: chart tracks, inactive tabs, inputs */
-  --color-ink: #0a2a3a; /* main text */
-  --color-muted: #3d5a69; /* secondary text */
-  --color-line: #e3e9ed; /* dividers */
-  --color-ocean: #0b4f6c; /* deepest layer: links, key numbers, active tab, buttons */
-  --color-ocean-dark: #073447; /* buttons on hover */
-  --color-mist: #f6f8f9; /* quiet grey boxes */
+  --color-panel-2: #f4f5f7; /* inside tiles: chart tracks, inactive tabs, inputs */
+  --color-ink: #0c0f14; /* main text, the logo */
+  --color-muted: #5b6270; /* secondary text */
+  --color-line: #e7e9ee; /* dividers */
+  --color-ocean: #2d5bff; /* the brand blue: links, key numbers, active states (name kept from the old theme) */
+  --color-ocean-dark: #1f45d6; /* blue on hover */
+  --color-mist: #f7f8fa; /* quiet grey boxes */
 
-  /* The logo's water layers. */
-  --color-surface: #cde7f0;
-  --color-shallow: #7fc4d8;
-  --color-mid: #2f8fb3;
-  --color-deep: #0b4f6c;
+  /* A blue scale for charts and soft fills. */
+  --color-surface: #e6ecff;
+  --color-shallow: #a9bcff;
+  --color-mid: #2a4fe0;
+  --color-deep: #1f45d6;
 
-  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
   color-scheme: light;
 }
 
-/*
-  White pages with a few soft washes of colour around the edges, like light through
-  shallow water. They sit far behind the words and never move.
-*/
+/* Clean white pages: the words and numbers do the talking. */
 body {
   background-color: #ffffff;
-  background-image:
-    radial-gradient(900px 520px at 8% -6%, rgba(127, 196, 216, 0.28), transparent 70%),
-    radial-gradient(760px 480px at 96% 4%, rgba(255, 111, 89, 0.13), transparent 70%),
-    radial-gradient(820px 560px at 92% 92%, rgba(139, 108, 242, 0.10), transparent 70%),
-    radial-gradient(760px 520px at 4% 96%, rgba(31, 181, 140, 0.11), transparent 70%);
-  background-attachment: fixed;
   color: var(--color-ink);
   font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  letter-spacing: -0.005em;
 }
 
 /* Base link colours, in the base layer so a component's own colour can override them. */
@@ -124,7 +117,7 @@ body {
 */
 @layer components {
   .fathom-card {
-    border-radius: 18px;
+    border-radius: 16px;
     background: #ffffff;
     border: 1px solid var(--color-line);
   }
@@ -154,7 +147,7 @@ body {
   - .fathom-lift: rises a little and casts a coloured glow when pointed at or focused.
   - .fathom-tint: a pale card in its accent colour.
   - .fathom-icon-pop: an icon inside a .group gives a small happy bounce on hover.
-  - .fathom-rainbow: Fathom's gradient, for one or two words at most.
+  - .fathom-rainbow: Candor's gradient, for one or two words at most.
   - .fathom-blob: the slow, soft colour shapes behind the front page's headline.
   - .fathom-swap: a word swapping in from below (the front page's rotating company).
   Everything stays still for anyone who has asked their device for less motion.
@@ -169,9 +162,9 @@ body {
   }
   .fathom-lift:hover,
   .fathom-lift:focus-visible {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 30px -12px color-mix(in srgb, var(--a, #2f8fb3) 55%, transparent);
-    border-color: color-mix(in srgb, var(--a, #2f8fb3) 60%, white);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px -14px rgba(12, 15, 20, 0.28);
+    border-color: color-mix(in srgb, var(--a, #2d5bff) 45%, white);
   }
   .fathom-lift:active {
     transform: translateY(-1px);
@@ -179,8 +172,8 @@ body {
 
   .fathom-tint {
     border-radius: 18px;
-    background: var(--a-soft, #e3f2f8);
-    border: 1px solid color-mix(in srgb, var(--a, #2f8fb3) 22%, white);
+    background: var(--a-soft, #f4f5f7);
+    border: 1px solid color-mix(in srgb, var(--a, #2d5bff) 14%, white);
   }
 
   @keyframes fathom-icon-pop {
@@ -195,7 +188,7 @@ body {
   }
 
   .fathom-rainbow {
-    background: linear-gradient(100deg, #0b4f6c 0%, #2f8fb3 30%, #8b6cf2 62%, #ef5f9a 100%);
+    background: linear-gradient(100deg, #0c0f14 10%, #2d5bff 90%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -209,8 +202,8 @@ body {
   .fathom-blob {
     position: absolute;
     border-radius: 9999px;
-    filter: blur(48px);
-    opacity: 0.55;
+    filter: blur(70px);
+    opacity: 0.35;
     animation: fathom-blob 18s ease-in-out infinite;
     pointer-events: none;
   }

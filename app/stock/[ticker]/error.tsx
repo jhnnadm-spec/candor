@@ -5,7 +5,7 @@ export default function ReportError({ reset }: { error: Error; reset: () => void
     <div className="mx-auto flex max-w-3xl flex-col items-start gap-4 px-6 py-16">
       <h1 className="font-display text-3xl font-bold">We couldn&apos;t load this report</h1>
       <p className="text-[17px] leading-relaxed text-muted">
-        Fathom couldn&apos;t get the company&apos;s data from the SEC just now. This is usually temporary. Please try
+        Candor couldn&apos;t get the company&apos;s data from the SEC just now. This is usually temporary. Please try
         again in a minute.
       </p>
       <button

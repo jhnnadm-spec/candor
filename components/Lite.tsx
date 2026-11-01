@@ -19,9 +19,9 @@ export function LiteCard({
   wide?: boolean;
 }) {
   return (
-    <article className={`fathom-card flex min-w-0 flex-col gap-4 p-5 shadow-[inset_0_4px_0_var(--a,#2f8fb3),0_10px_24px_-18px_var(--a,#2f8fb3)] ${wide ? "md:col-span-2" : ""}`}>
+    <article className={`fathom-card flex min-w-0 flex-col gap-4 p-5 ${wide ? "md:col-span-2" : ""}`}>
       <header className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
-        <h3 className="text-[15px] font-semibold text-[var(--a-ink,#3d5a69)]">{question}</h3>
+        <h3 className="text-[15px] font-semibold text-muted">{question}</h3>
         {term && <span className="text-[13px]">{term}</span>}
       </header>
       <div className="flex flex-1 flex-col gap-4">{children}</div>

@@ -71,7 +71,7 @@ export function TermSearch({
         <label htmlFor={inputId} className="sr-only">
           {label}
         </label>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A6573" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5b6270" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
           <circle cx="11" cy="11" r="7" />
           <line x1="16.5" y1="16.5" x2="21" y2="21" />
         </svg>
@@ -105,7 +105,7 @@ export function TermSearch({
               setOpen(false);
             }
           }}
-          className="w-full bg-transparent py-2.5 text-[15px] text-ink outline-none placeholder:text-[#6B8592]"
+          className="w-full bg-transparent py-2.5 text-[15px] text-ink outline-none placeholder:text-[#7a818c]"
         />
       </form>
 

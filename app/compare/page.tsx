@@ -60,8 +60,8 @@ async function Compare({ searchParams }: { searchParams: Promise<Record<string, 
       <ComparePicker chosen={chosen} max={MAX_COMPANIES} />
       {missing.length > 0 && (
         <p className="rounded-2xl bg-mist p-4 text-[15px]">
-          Fathom can&apos;t compare {missingNames.join(", ")}: it either isn&apos;t a US-listed company, or it doesn&apos;t file the
-          yearly and quarterly reports (10-K and 10-Q) Fathom reads.
+          Candor can&apos;t compare {missingNames.join(", ")}: it either isn&apos;t a US-listed company, or it doesn&apos;t file the
+          yearly and quarterly reports (10-K and 10-Q) Candor reads.
         </p>
       )}
       {found.length < MIN_COMPANIES ? <Start /> : <Table comparison={buildComparison(found)} />}
@@ -78,9 +78,9 @@ function Start() {
     <section className="flex flex-col gap-3">
       <h2 className="text-[17px] font-semibold">Add at least two companies, or try one of these:</h2>
       <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
-        {EXAMPLES.map((e, i) => (
-          <li key={e.t} style={accentVars(accentAt(i + 1))}>
-            <Link href={`/compare?t=${e.t}`} className="fathom-lift inline-flex min-h-10 items-center rounded-full border border-transparent bg-[var(--a-soft)] px-4 text-[15px] font-semibold text-[var(--a-ink)] no-underline">
+        {EXAMPLES.map((e) => (
+          <li key={e.t}>
+            <Link href={`/compare?t=${e.t}`} className="fathom-lift inline-flex min-h-10 items-center rounded-full border border-line bg-white px-4 text-[15px] font-medium text-ink no-underline">
               {e.label}
             </Link>
           </li>
@@ -262,7 +262,7 @@ function Cell({ cell }: { cell: CompareCell }) {
           {f.sources[0] && <SourceLink href={f.sources[0].url} label={f.sources[0].name} />}
         </span>
       ) : (
-        <span className="mt-1 block max-w-[220px] text-[12px] leading-snug text-muted">{f.status === "needs-price" ? "Fathom doesn't use a share price in its sums yet." : f.reason}</span>
+        <span className="mt-1 block max-w-[220px] text-[12px] leading-snug text-muted">{f.status === "needs-price" ? "Candor doesn't use a share price in its sums yet." : f.reason}</span>
       )}
     </td>
   );

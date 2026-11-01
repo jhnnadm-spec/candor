@@ -1,5 +1,5 @@
 /**
- * The AI "slot". Fathom talks to any AI through this one small interface,
+ * The AI "slot". Candor talks to any AI through this one small interface,
  * so switching provider (or upgrading to a paid model) means adding one file,
  * not changing the app.
  */

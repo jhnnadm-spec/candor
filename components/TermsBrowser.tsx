@@ -1,11 +1,11 @@
 "use client";
 
-/** Every finance term Fathom explains, with a box to narrow them down as you type. */
+/** Every finance term Candor explains, with a box to narrow them down as you type. */
 import { useMemo, useState } from "react";
 import { glossaryKeys, lookupTerm } from "@/lib/glossary";
 import { searchTerms } from "@/lib/term-search";
 import { AnalystView } from "./Term";
-import { accentAt, accentVars } from "@/lib/accents";
+import { accentVars, BRAND } from "@/lib/accents";
 
 export function TermsBrowser({ initialQuery = "" }: { initialQuery?: string }) {
   const [query, setQuery] = useState(initialQuery);
@@ -26,7 +26,7 @@ export function TermsBrowser({ initialQuery = "" }: { initialQuery?: string }) {
         <label htmlFor="term-q" className="sr-only">
           Search finance terms
         </label>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A6573" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b6270" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
           <circle cx="11" cy="11" r="7" />
           <line x1="16.5" y1="16.5" x2="21" y2="21" />
         </svg>
@@ -38,7 +38,7 @@ export function TermsBrowser({ initialQuery = "" }: { initialQuery?: string }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Try P/E ratio, ROE, dividend yield or capex"
-          className="w-full bg-transparent py-3 text-lg text-ink outline-none placeholder:text-[#6B8592]"
+          className="w-full bg-transparent py-3 text-lg text-ink outline-none placeholder:text-[#7a818c]"
         />
       </form>
 
@@ -52,10 +52,10 @@ export function TermsBrowser({ initialQuery = "" }: { initialQuery?: string }) {
 
       <ul className="grid grid-cols-1 items-start gap-3 md:grid-cols-2">
         {list.map(({ key, entry }, i) => (
-          <li key={key} id={key} className="scroll-mt-6" style={accentVars(accentAt(i))}>
+          <li key={key} id={key} className="scroll-mt-6" style={accentVars(BRAND)}>
             <details
               open={openFirst && i === 0}
-              className="fathom-card group p-6 shadow-[inset_4px_0_0_var(--a)] transition-[background-color,box-shadow] open:bg-[var(--a-soft)] hover:shadow-[inset_4px_0_0_var(--a),0_12px_26px_-18px_var(--a)] [&_summary::-webkit-details-marker]:hidden"
+              className="fathom-card group p-6 transition-[background-color,border-color] open:border-[color-mix(in_srgb,var(--a)_35%,white)] hover:border-[#c5cbd6] [&_summary::-webkit-details-marker]:hidden"
             >
               <summary className="flex cursor-pointer list-none flex-col gap-1.5">
                 <span className="flex items-start justify-between gap-3">

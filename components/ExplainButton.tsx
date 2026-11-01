@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Lets a visitor ask Fathom to write the plain-English explanation for a
+ * Lets a visitor ask Candor to write the plain-English explanation for a
  * company that doesn't have one yet (or whose explanation is out of date),
  * then waits and reloads the page when it's ready.
  */
@@ -80,8 +80,8 @@ export function ExplainButton({
           </h2>
           <p className="text-[16px] leading-relaxed text-muted">
             {update
-              ? "The explanation below was written from an older report. Fathom can rewrite it from the latest one."
-              : "Fathom can write one now from the company's own reports: what it does, how it makes money, its edge, its industry and its risks. Every point is checked against the report it links to."}
+              ? "The explanation below was written from an older report. Candor can rewrite it from the latest one."
+              : "Candor can write one now from the company's own reports: what it does, how it makes money, its edge, its industry and its risks. Every point is checked against the report it links to."}
           </p>
           {phase === "failed" && (
             <p className="text-[15px] text-[#B42318]">That didn&apos;t work this time. Please try again later.</p>
@@ -96,7 +96,7 @@ export function ExplainButton({
               {phase === "sending" ? "Asking…" : update ? "Update the explanation" : "Write the plain-English explanation"}
             </button>
           </div>
-          <p className="text-[13px] text-muted">Takes about two minutes. Fathom writes a few each day on a free AI allowance.</p>
+          <p className="text-[13px] text-muted">Takes about two minutes. Candor writes a few each day on a free AI allowance.</p>
         </>
       )}
 

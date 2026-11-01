@@ -9,7 +9,7 @@
  *  - The logo and photos come from Wikimedia Commons, where every file is free to
  *    reuse under its licence. Photos are shown with their author and licence.
  *
- * Both are edited by volunteers, so Fathom labels them as background and never
+ * Both are edited by volunteers, so Candor labels them as background and never
  * uses them for financial figures. If Wikimedia can't be reached, nothing is shown.
  */
 import { cacheLife, cacheTag } from "next/cache";
@@ -39,7 +39,7 @@ export type Photo = {
   page: string; // the photo's page on Commons, with the full licence
 };
 
-const UA = "Fathom/1.0 (plain-English company explainer; https://github.com/jhnnadm-spec/fathom)";
+const UA = "Candor/1.0 (plain-English company explainer; https://github.com/jhnnadm-spec/fathom)";
 
 async function getJson(url: string): Promise<unknown> {
   const cached = await fromCache(url);

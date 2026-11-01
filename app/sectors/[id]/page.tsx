@@ -6,7 +6,7 @@ import { CompanyLogo } from "@/components/CompanyLogo";
 import { Loader } from "@/components/Loader";
 import { SectorIcon } from "@/components/SectorIcon";
 import { SECTORS } from "@/lib/sectors";
-import { accentVars, sectorAccent } from "@/lib/accents";
+import { accentVars, BRAND } from "@/lib/accents";
 import { displayName } from "@/lib/report/company";
 import { companiesIn, genresIn, isSectorId, plainIndustry } from "@/lib/sectors-data";
 
@@ -52,15 +52,15 @@ async function Sector({
   };
 
   return (
-    <div style={accentVars(sectorAccent(id))} className="contents">
+    <div style={accentVars(BRAND)} className="contents">
       <Link href="/sectors" className="self-start text-[15px] font-semibold">
         ← All types of business
       </Link>
-      <div className="fathom-tint flex items-center gap-5 p-5 sm:p-7">
+      <div className="flex items-center gap-5">
         <SectorIcon id={id} size={64} />
         <div className="flex flex-col gap-1.5">
           <h1 className="font-display text-[34px] font-bold leading-[1.1] tracking-tight sm:text-[42px]">{SECTORS[id].name}</h1>
-          <p className="max-w-3xl text-[17px] leading-relaxed text-ink/80">{SECTORS[id].blurb}</p>
+          <p className="max-w-3xl text-[17px] leading-relaxed text-muted">{SECTORS[id].blurb}</p>
         </div>
       </div>
 

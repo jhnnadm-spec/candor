@@ -8,7 +8,8 @@
  * widgets, which may only be shown on the website, so the PDF points there.
  */
 import path from "node:path";
-import { Circle, ClipPath, Defs, Document, Font, G, Line, Link, Page, Path, Rect, StyleSheet, Svg, Text, View } from "@react-pdf/renderer";
+import { MARK_PATH } from "@/components/Logo";
+import { Document, Font, Link, Page, Path, StyleSheet, Svg, Text, View } from "@react-pdf/renderer";
 import { cloneElement, Fragment, isValidElement, type ReactElement, type ReactNode } from "react";
 import type { DocumentProps } from "@react-pdf/renderer";
 import type { CheckedClaim, SavedExplanation } from "../explain/types";
@@ -35,15 +36,15 @@ Font.register({ family: "Bricolage", src: path.join(FONTS, "bricolage-700.woff")
 Font.registerHyphenationCallback((word) => [word]); // never split words across lines
 
 const C = {
-  ink: "#0A2A3A",
-  muted: "#55707E",
-  line: "#DCE8EE",
-  mist: "#F2F8FA",
-  ocean: "#0B4F6C",
-  mid: "#2F8FB3",
-  shallow: "#7FC4D8",
-  surface: "#CDE7F0",
-  label: "#2F7A99",
+  ink: "#0C0F14",
+  muted: "#5B6270",
+  line: "#E4E7EC",
+  mist: "#F5F6F8",
+  ocean: "#1F45D6",
+  mid: "#3B63F0",
+  shallow: "#A9BCFF",
+  surface: "#E6ECFF",
+  label: "#3B63F0",
 };
 
 const s = StyleSheet.create({
@@ -51,9 +52,9 @@ const s = StyleSheet.create({
   footer: { position: "absolute", bottom: 26, left: 48, right: 48, flexDirection: "row", justifyContent: "space-between", fontSize: 8, color: C.muted, borderTopWidth: 1, borderTopColor: C.line, paddingTop: 8 },
   brandRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: 26 },
   brand: { flexDirection: "row", alignItems: "center", gap: 7 },
-  brandName: { fontFamily: "Bricolage", fontWeight: 700, fontSize: 16 },
+  brandName: { fontFamily: "Figtree", fontWeight: 700, fontSize: 15, letterSpacing: -0.5 },
   title: { fontFamily: "Bricolage", fontWeight: 700, fontSize: 28, lineHeight: 1.15 },
-  chip: { alignSelf: "flex-start", backgroundColor: "#E1F0F5", color: C.ocean, fontWeight: 600, fontSize: 10, paddingVertical: 3, paddingHorizontal: 7, borderRadius: 5, marginTop: 8 },
+  chip: { alignSelf: "flex-start", backgroundColor: "#E6ECFF", color: C.ocean, fontWeight: 600, fontSize: 10, paddingVertical: 3, paddingHorizontal: 7, borderRadius: 5, marginTop: 8 },
   meta: { color: C.muted, fontSize: 10, marginTop: 5 },
   box: { backgroundColor: C.mist, borderRadius: 8, padding: 12, marginTop: 16, fontSize: 9.5, color: C.muted },
   strong: { fontWeight: 700, color: C.ink },
@@ -99,7 +100,7 @@ class SourceList {
 export type PdfInput = {
   report: CompanyReport;
   explanation?: SavedExplanation;
-  pageUrl: string; // the live page on the Fathom website
+  pageUrl: string; // the live page on the Candor website
   createdAt: Date;
 };
 
@@ -123,10 +124,10 @@ export function ReportPdf({ report, explanation: e, pageUrl, createdAt }: PdfInp
   const sources = sourcesSection(ctx);
 
   return (
-    <Document title={`${report.company.name} (${report.company.ticker}) explained · Fathom`} author="Fathom" subject="Plain-English company report" creator="Fathom" producer="Fathom">
+    <Document title={`${report.company.name} (${report.company.ticker}) explained · Candor`} author="Candor" subject="Plain-English company report" creator="Candor" producer="Candor">
       <Page size="A4" style={s.page}>
         <View fixed style={s.footer}>
-          <Text>Fathom · {report.company.ticker} · Not financial advice: for education only.</Text>
+          <Text>Candor · {report.company.ticker} · Not financial advice: for education only.</Text>
           <Text render={({ pageNumber, totalPages }) => `Page ${pageNumber} of ${totalPages}`} />
         </View>
         {body}
@@ -141,22 +142,10 @@ type Ctx = { report: CompanyReport; e?: SavedExplanation; src: SourceList; terms
 
 // ---------------------------------------------------------------- building blocks
 
-function LogoMark({ size = 22 }: { size?: number }) {
+function LogoMark({ size = 18 }: { size?: number }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 100 100">
-      <Defs>
-        <ClipPath id="fathom-clip">
-          <Rect x={6} y={6} width={88} height={88} rx={22} ry={22} />
-        </ClipPath>
-      </Defs>
-      <G clipPath="url(#fathom-clip)">
-        <Rect x={0} y={0} width={100} height={100} fill={C.surface} />
-        <Path d="M0 30 Q25 24 50 30 T100 30 V100 H0 Z" fill={C.shallow} />
-        <Path d="M0 52 Q25 46 50 52 T100 52 V100 H0 Z" fill={C.mid} />
-        <Path d="M0 74 Q25 68 50 74 T100 74 V100 H0 Z" fill={C.ocean} />
-      </G>
-      <Line x1={66} y1={14} x2={66} y2={76} stroke="#FFFFFF" strokeWidth={3} strokeLinecap="round" strokeDasharray="1 7" />
-      <Circle cx={66} cy={82} r={6} fill="#FFFFFF" />
+      <Path d={MARK_PATH} fill={C.ink} />
     </Svg>
   );
 }
@@ -260,7 +249,7 @@ function aiNote(e: SavedExplanation) {
 function notWritten() {
   return (
     <Text style={s.note}>
-      This part hasn&apos;t been written for this company yet. It can be requested on the company&apos;s Fathom page.
+      This part hasn&apos;t been written for this company yet. It can be requested on the company&apos;s Candor page.
     </Text>
   );
 }
@@ -309,7 +298,7 @@ function cover(ctx: Ctx, created: string, pageUrl: string) {
       <View style={s.brandRow}>
         <View style={s.brand}>
           <LogoMark />
-          <Text style={s.brandName}>Fathom</Text>
+          <Text style={s.brandName}>candor</Text>
         </View>
         <Text style={{ fontSize: 9, color: C.muted }}>Company report · created {created}</Text>
       </View>
@@ -329,7 +318,7 @@ function cover(ctx: Ctx, created: string, pageUrl: string) {
       <View style={s.box}>
         <Text>
           <Text style={s.strong}>Not financial advice. </Text>
-          Fathom explains public information for education only. It does not recommend buying, selling or holding any
+          Candor explains public information for education only. It does not recommend buying, selling or holding any
           investment, and does not give price targets.
         </Text>
         <Text style={{ marginTop: 6 }}>
@@ -448,7 +437,7 @@ function blockPdf(ctx: Ctx, block: Block, pageUrl: string): ReactNode {
         <Text style={s.box}>
           <Text style={s.strong}>Left out on purpose: </Text>
           {leftOut.join(", ")}. The company either doesn&apos;t report {leftOut.length > 1 ? "these" : "this"} in SEC&apos;s
-          standard data, or the latest figure isn&apos;t available yet. Fathom leaves a number out rather than guess.
+          standard data, or the latest figure isn&apos;t available yet. Candor leaves a number out rather than guess.
         </Text>
       );
     }
@@ -476,7 +465,7 @@ function blockPdf(ctx: Ctx, block: Block, pageUrl: string): ReactNode {
           <Link src={pageUrl} style={s.link}>
             {pageUrl.replace(/^https?:\/\//, "")}
           </Link>
-          . Fathom doesn&apos;t give target prices or say whether to buy, sell or hold.
+          . Candor doesn&apos;t give target prices or say whether to buy, sell or hold.
         </Text>
       );
   }
@@ -694,7 +683,7 @@ function glossarySection(ctx: Ctx) {
 function sourcesSection(ctx: Ctx) {
   return section(
     "Sources",
-    "Fathom doesn't create financial data. Every figure and point above comes from these documents, filed by the company with the US Securities and Exchange Commission (SEC EDGAR). Figures are read from the financial data tagged in those reports.",
+    "Candor doesn't create financial data. Every figure and point above comes from these documents, filed by the company with the US Securities and Exchange Commission (SEC EDGAR). Figures are read from the financial data tagged in those reports.",
     <>
       {ctx.src.items.map((it, i) => (
         <View key={it.url + it.label} style={{ flexDirection: "row", marginBottom: 4 }} wrap={false}>

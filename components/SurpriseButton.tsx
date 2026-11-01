@@ -19,7 +19,7 @@ export function SurpriseButton({ tickers }: { tickers: string[] }) {
     <button
       type="button"
       onClick={go}
-      className="group inline-flex min-h-11 items-center gap-2 rounded-full border border-[#f3c9e9] bg-gradient-to-r from-[#fff4dc] via-[#fde9f1] to-[#efeafe] px-4 text-[15px] font-semibold text-[#5434c0] transition-transform hover:-translate-y-0.5 active:translate-y-0"
+      className="group inline-flex min-h-11 items-center gap-2 rounded-full border border-dashed border-[#c5cbd6] bg-white px-4 text-[15px] font-semibold text-ink transition-[transform,border-color,color] hover:-translate-y-0.5 hover:border-ocean hover:text-ocean active:translate-y-0"
     >
       <svg
         width="18"

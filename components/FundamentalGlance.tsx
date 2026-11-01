@@ -1,6 +1,6 @@
 /**
  * The Fundamental lens on a company page: the key figures from its latest
- * yearly report, each worked out by Fathom and explained in everyday words,
+ * yearly report, each worked out by Candor and explained in everyday words,
  * with its period and source. Six headline figures show first; the rest open up.
  */
 import Link from "next/link";
@@ -23,7 +23,7 @@ export function FundamentalGlance({ result }: { result: LensResult<FundamentalDa
           {company}&apos;s numbers at a glance
         </h2>
         <p className="text-[15px] leading-relaxed text-muted">
-          The key figures from its latest yearly report to the SEC, worked out by Fathom and explained in everyday words. Point
+          The key figures from its latest yearly report to the SEC, worked out by Candor and explained in everyday words. Point
           at any underlined term to see what it means, and how a high or a low figure can be read both ways.
         </p>
       </div>
@@ -67,7 +67,7 @@ export function FundamentalGlance({ result }: { result: LensResult<FundamentalDa
             );
           })}
           <p className="text-[13px] leading-relaxed text-muted">
-            Every figure is in US dollars as the company reported it, under US accounting rules (US GAAP). Fathom only combines
+            Every figure is in US dollars as the company reported it, under US accounting rules (US GAAP). Candor only combines
             figures that cover exactly the same period or date, and shows &quot;Not reported&quot; rather than a zero when one is
             missing.
           </p>

@@ -32,7 +32,7 @@ import { billsGauge, cashVsDebt, compareFor, marginLines, moneyUses, pairFor, sa
 import { DotGrid, Meter, StatusBadge, TopicIcon } from "@/components/viz/Static";
 import { AtDepth, DepthProvider, DetailBar } from "@/components/Depth";
 import { CompanyLogo } from "@/components/CompanyLogo";
-import { accentVars, stepAccent } from "@/lib/accents";
+import { accentVars, BRAND } from "@/lib/accents";
 import { BigAnswer, KeepBar, LiteCard, MiniBars, MiniGauge, MiniPair, SaidAnswer, SourceChips, UsesBar } from "@/components/Lite";
 
 export async function generateMetadata(props: PageProps<"/stock/[ticker]">): Promise<Metadata> {
@@ -149,16 +149,13 @@ function Hero({ report, profile, company, lead }: { report: CompanyReport; profi
   if (profile?.headquarters) facts.push(`Based in ${profile.headquarters}`);
   if (profile?.employees) facts.push(`${compactCount(profile.employees.count)} people work there`);
   return (
-    <header id="top" className="relative isolate flex scroll-mt-8 flex-col gap-5 overflow-hidden rounded-[28px] border border-white bg-white/75 p-5 shadow-[0_24px_60px_-34px_rgba(11,79,108,0.55)] backdrop-blur sm:p-8">
-      <span aria-hidden="true" className="absolute -right-16 -top-20 -z-10 h-56 w-56 rounded-full bg-[#7fc4d8] opacity-40 blur-3xl" />
-      <span aria-hidden="true" className="absolute -bottom-24 right-24 -z-10 h-48 w-48 rounded-full bg-[#c7b8fb] opacity-40 blur-3xl" />
-      <span aria-hidden="true" className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#2f8fb3] via-[#8b6cf2] to-[#ff6f59]" />
+    <header id="top" className="flex scroll-mt-8 flex-col gap-5">
       <div className="flex items-center gap-4">
         <CompanyLogo name={c.name} logo={profile?.logo} website={profile?.website} size={60} />
         <div className="flex min-w-0 flex-col gap-1">
-          <h1 className="font-display text-[34px] font-bold leading-[1.05] tracking-tight sm:text-[44px]">{company}</h1>
+          <h1 className="font-display text-[36px] font-semibold leading-[1.02] tracking-[-0.04em] sm:text-[48px]">{company}</h1>
           <p className="flex flex-wrap items-center gap-2 text-[14px] text-muted">
-            <span className="rounded-md bg-gradient-to-r from-ocean to-[#5434c0] px-2 py-0.5 font-bold tracking-wide text-white" title="Its short code on the stock market (ticker)">
+            <span className="rounded-md bg-ink px-2 py-0.5 font-semibold tracking-wide text-white" title="Its short code on the stock market (ticker)">
               {c.ticker}
             </span>
             {c.industry && <span>{sentenceCase(c.industry)}</span>}
@@ -179,8 +176,8 @@ function Hero({ report, profile, company, lead }: { report: CompanyReport; profi
           <a
             href={`/stock/${encodeURIComponent(c.ticker)}/pdf`}
             download
-            style={accentVars(stepAccent(1))}
-            className="fathom-lift inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-white px-4 text-[15px] font-semibold text-[var(--a-ink)] no-underline hover:bg-[var(--a-soft)]"
+            style={accentVars(BRAND)}
+            className="fathom-lift inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-white px-4 text-[15px] font-semibold text-ink no-underline"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M12 3v12" />
@@ -221,14 +218,14 @@ function Contents({ company }: { company: string }) {
       </h2>
       <ol className="m-0 grid list-none gap-2 p-0 sm:grid-cols-2">
         {STEPS.map((s, i) => (
-          <li key={s.id} style={accentVars(stepAccent(i))}>
+          <li key={s.id} style={accentVars(BRAND)}>
             <a
               href={`#step-${s.id}`}
-              className="fathom-tint fathom-lift group flex min-h-12 items-center gap-3 rounded-2xl px-3 py-2 text-[15px] font-semibold text-ink no-underline hover:text-[var(--a-ink)]"
+              className="fathom-card fathom-lift group flex min-h-12 items-center gap-3 rounded-2xl px-3 py-2 text-[15px] font-medium text-ink no-underline"
             >
               <span
                 aria-hidden="true"
-                className="fathom-icon-pop flex h-8 w-8 flex-none items-center justify-center rounded-xl bg-[var(--a-ink)] font-display text-[15px] font-bold text-white"
+                className="flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-white font-mono text-[13px] font-medium text-ocean shadow-[0_0_0_1px_#e7e9ee] transition-colors group-hover:bg-ink group-hover:text-white"
               >
                 {i + 1}
               </span>
@@ -253,7 +250,7 @@ function Said({ statement, visual }: { statement?: Statement; visual?: ReactNode
       <p className="text-[17px] leading-[1.65]">
         <RichText text={statement.text} />
       </p>
-      {visual && <div className="my-2 rounded-xl bg-[var(--a-soft,#f3f8fa)] p-4">{visual}</div>}
+      {visual && <div className="my-2 rounded-xl bg-mist p-4">{visual}</div>}
       <div className="flex flex-wrap gap-x-4 gap-y-1">
         {statement.sources.map((s) => (
           <SourceLink key={s.url} href={s.url} label={s.label} />
@@ -317,7 +314,7 @@ function AiNote({ e }: { e: SavedExplanation }) {
 function NotWritten() {
   return (
     <p className="text-[16px] leading-relaxed text-muted">
-      Not written yet for this company. Use the button at the top of the page to ask Fathom to write it.
+      Not written yet for this company. Use the button at the top of the page to ask Candor to write it.
     </p>
   );
 }
@@ -524,7 +521,7 @@ function liteFor(row: SurfaceRow, ctx: Ctx, key: string): ReactNode {
   }
   if (item.kind === "topic") {
     const claim = claimsFor(e, item)[0];
-    if (!claim) return e ? null : card(<p className="text-[16px] leading-relaxed text-muted">Not written yet. Use the button near the top to ask Fathom to write it.</p>);
+    if (!claim) return e ? null : card(<p className="text-[16px] leading-relaxed text-muted">Not written yet. Use the button near the top to ask Candor to write it.</p>);
     return card(<SaidAnswer text={claim.text} />, [claim.source]);
   }
   return null;
@@ -544,7 +541,7 @@ function surfaceBody(step: Step, ctx: Ctx, leadShown: boolean): ReactNode {
       {cards}
       {step.id === "value" && (
         <LiteCard question="What does the stock market pay for it?" term={<TermName k="share-price" />} wide>
-          <p className="text-[16px] text-muted">The share price over the past year. It moves every trading day; Fathom never says whether it&apos;s right.</p>
+          <p className="text-[16px] text-muted">The share price over the past year. It moves every trading day; Candor never says whether it&apos;s right.</p>
           <PriceChart symbol={ctx.report.tradingViewSymbol} />
         </LiteCard>
       )}
@@ -567,7 +564,7 @@ function deeperBody(step: Step, ctx: Ctx, level: "below" | "deep", profile?: Com
         {step.id === "business" && profile?.wikipedia && level === "below" && <WikipediaIntro w={profile.wikipedia} />}
         {step.areas.map((a) => areaLayer(a, level === "deep" && sameLayers ? "below" : level, ctx, step.areas.length > 1))}
         {step.id === "value" && (
-          <ChartPanel title="Share price over the past year" note="The price moves every trading day. Fathom shows it for context; it doesn't say whether the price is right.">
+          <ChartPanel title="Share price over the past year" note="The price moves every trading day. Candor shows it for context; it doesn't say whether the price is right.">
             <PriceChart symbol={report.tradingViewSymbol} />
           </ChartPanel>
         )}
@@ -638,7 +635,7 @@ function ProfileFacts({ profile: p }: { profile: CompanyProfile }) {
     ]);
   if (facts.length === 0) return null;
   return (
-    <section className="flex flex-col gap-3 rounded-2xl bg-[#f3f8fa] p-5">
+    <section className="flex flex-col gap-3 rounded-2xl bg-mist p-5">
       <h3 className="text-[14px] font-semibold text-ocean">At a glance</h3>
       <dl className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">
         {facts.map(([k, v]) => (
@@ -656,7 +653,7 @@ function ProfileFacts({ profile: p }: { profile: CompanyProfile }) {
 /** The opening of the company's Wikipedia article, credited as its licence requires. */
 function WikipediaIntro({ w }: { w: NonNullable<CompanyProfile["wikipedia"]> }) {
   return (
-    <section className="flex flex-col gap-2.5 rounded-2xl bg-[#f3f8fa] p-5">
+    <section className="flex flex-col gap-2.5 rounded-2xl bg-mist p-5">
       <h3 className="text-[14px] font-semibold text-ocean">Background</h3>
       <p className="text-[16px] leading-[1.65]">{w.extract}</p>
       <p className="text-[13px] text-muted">
@@ -668,7 +665,7 @@ function WikipediaIntro({ w }: { w: NonNullable<CompanyProfile["wikipedia"]> }) 
         <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
           CC BY-SA 4.0
         </a>
-        . Background only: Fathom&apos;s numbers come from the company&apos;s own reports.
+        . Background only: Candor&apos;s numbers come from the company&apos;s own reports.
       </p>
     </section>
   );
@@ -825,7 +822,7 @@ function BlockView({ block, report }: { block: Block; report: CompanyReport }) {
             Two numbers people look at most: <RichText text="[[market-cap|market value]]" /> (what the whole company is
             worth on the stock market) and the <RichText text="[[pe-ratio|P/E ratio]]" /> (the share price compared with
             a year of profit per share; a higher number means buyers are paying more for each dollar of profit).
-            They&apos;re shown as TradingView provides them. Fathom doesn&apos;t give target prices or say whether to buy,
+            They&apos;re shown as TradingView provides them. Candor doesn&apos;t give target prices or say whether to buy,
             sell or hold.
           </p>
           <MarketData symbol={report.tradingViewSymbol} />
@@ -847,7 +844,7 @@ function MarketKey() {
       </summary>
       <div className="flex flex-col gap-6 pb-2 pt-4">
         <p className="text-[15px] leading-relaxed text-muted">
-          These numbers come from TradingView and change every trading day. Fathom can&apos;t read them, so here is what
+          These numbers come from TradingView and change every trading day. Candor can&apos;t read them, so here is what
           each label means and how to read it.
         </p>
         {MARKET_TERMS.map((g) => (
@@ -874,7 +871,7 @@ function MarketKey() {
 /** A raised panel that holds one chart. */
 function ChartPanel({ title, note, children }: { title: string; note?: string; children: ReactNode }) {
   return (
-    <div className="flex flex-col gap-3 rounded-2xl bg-[#f3f8fa] p-5">
+    <div className="flex flex-col gap-3 rounded-2xl bg-mist p-5">
       <div className="flex flex-col gap-0.5">
         <h3 className="text-[15px] font-semibold">{title}</h3>
         {note && <p className="text-[13px] text-muted">{note}</p>}
@@ -1091,7 +1088,7 @@ function LeftOut({ report }: { report: CompanyReport }) {
     <p className="rounded-2xl bg-mist px-5 py-4 text-[15px] leading-relaxed text-muted">
       <strong className="text-ink">Left out on purpose:</strong> {leftOut.join(", ")}. The company either doesn&apos;t
       report {leftOut.length > 1 ? "these" : "this"} in SEC&apos;s standard data, or the latest figure isn&apos;t available
-      yet. Fathom leaves a number out rather than guess.
+      yet. Candor leaves a number out rather than guess.
     </p>
   );
 }
@@ -1157,7 +1154,7 @@ function MoreInfo({ report }: { report: CompanyReport }) {
 function Disclaimer() {
   return (
     <p className="text-sm leading-relaxed text-muted">
-      <strong className="font-semibold text-ink">For information only. Not investment advice.</strong> Fathom explains public
+      <strong className="font-semibold text-ink">For information only. Not investment advice.</strong> Candor explains public
       information for education. It never says whether to buy, sell or hold any investment, and never gives price targets.
     </p>
   );
@@ -1168,11 +1165,11 @@ function Unsupported({ reason, name }: { reason: "foreign-filer" | "no-recent-re
     <div className="text-[17px] leading-relaxed">
       {reason === "foreign-filer" ? (
         <p>
-          {name} is based outside the US and files a different kind of annual report with the SEC. Fathom doesn&apos;t
+          {name} is based outside the US and files a different kind of annual report with the SEC. Candor doesn&apos;t
           cover these yet.
         </p>
       ) : (
-        <p>{name} hasn&apos;t filed an annual or quarterly report with the SEC in the last two years, so there is nothing for Fathom to explain.</p>
+        <p>{name} hasn&apos;t filed an annual or quarterly report with the SEC in the last two years, so there is nothing for Candor to explain.</p>
       )}
     </div>
   );

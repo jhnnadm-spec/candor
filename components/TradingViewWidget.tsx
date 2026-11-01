@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
  * Embeds one of TradingView's free widgets.
  *
  * TradingView's terms require their attribution to stay as designed, and their
- * data is for display only. Fathom shows the widget next to its own explanations
+ * data is for display only. Candor shows the widget next to its own explanations
  * but never copies, stores or reuses TradingView's numbers.
  */
 export function TradingViewWidget({

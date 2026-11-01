@@ -68,11 +68,11 @@ export function AtDepth({ min, max, only, children }: { min?: Level; max?: Level
   return <>{children}</>;
 }
 
-/** The three levels' colours: paler water for less, deeper water for more. */
+/** The sliding pill: ink for the first two levels, brand blue for "Everything". */
 const LEVEL_COLOR: Record<Level, string> = {
-  surface: "linear-gradient(135deg, #0b7a8a, #1d7fa6)",
-  below: "linear-gradient(135deg, #1d7fa6, #0b4f6c)",
-  deep: "linear-gradient(135deg, #6d4fd6, #0b4f6c)",
+  surface: "#0c0f14",
+  below: "#0c0f14",
+  deep: "#2d5bff",
 };
 
 /** Three buttons in a row: Short, Explained, Everything, with a coloured pill sliding to the chosen one. */
@@ -83,7 +83,7 @@ export function DepthSwitch() {
     <div role="radiogroup" aria-label="How much detail to show" className="relative grid grid-cols-3 gap-1 rounded-full bg-panel-2 p-1">
       <span
         aria-hidden="true"
-        className="absolute bottom-1 top-1 left-1 rounded-full shadow-[0_6px_14px_-6px_rgba(11,79,108,0.7)] transition-[transform,background] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+        className="absolute bottom-1 top-1 left-1 rounded-full shadow-[0_4px_10px_-4px_rgba(12,15,20,0.45)] transition-[transform,background] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
         style={{ width: "calc((100% - 0.5rem - 0.5rem) / 3)", transform: `translateX(calc(${i * 100}% + ${i * 0.25}rem))`, background: LEVEL_COLOR[level] }}
       />
       {LEVELS.map((l) => {
@@ -133,7 +133,7 @@ function useReadProgress(): number {
 
 /**
  * A slim bar that stays at the top of a company page while reading, holding the detail
- * switch, with a colourful line along its bottom edge that fills as the reader scrolls.
+ * switch, with a blue line along its bottom edge that fills as the reader scrolls.
  */
 export function DetailBar() {
   const { level } = useDepth();
@@ -150,7 +150,7 @@ export function DetailBar() {
       </div>
       <span aria-hidden="true" className="absolute inset-x-0 -bottom-px h-[3px] overflow-hidden sm:rounded-b-2xl">
         <span
-          className="block h-full origin-left bg-gradient-to-r from-[#16b3c7] via-[#8b6cf2] to-[#ff6f59]"
+          className="block h-full origin-left bg-ocean"
           style={{ transform: `scaleX(${progress})` }}
         />
       </span>

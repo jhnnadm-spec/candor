@@ -1,6 +1,5 @@
-/** A simple line icon for each sector, on a circle in the sector's own colour. Decoration only. */
+/** A simple line icon for each sector on a soft grey tile that turns brand blue when its link is pointed at. Decoration only. */
 import type { ReactNode } from "react";
-import { sectorAccent } from "@/lib/accents";
 
 const ICONS: Record<string, ReactNode> = {
   technology: (
@@ -42,12 +41,11 @@ const ICONS: Record<string, ReactNode> = {
 export function SectorIcon({ id, size = 44 }: { id: string; size?: number }) {
   const icon = ICONS[id];
   if (!icon) return null;
-  const a = sectorAccent(id);
   return (
     <span
       aria-hidden="true"
-      className="fathom-icon-pop inline-flex flex-none items-center justify-center rounded-full"
-      style={{ width: size, height: size, color: "#ffffff", background: `linear-gradient(140deg, color-mix(in srgb, ${a.solid} 55%, ${a.ink}), ${a.ink})`, boxShadow: `0 6px 14px -6px ${a.solid}` }}
+      className="fathom-icon-pop inline-flex flex-none items-center justify-center rounded-[30%] bg-panel-2 text-ink transition-colors duration-200 group-hover:bg-ocean group-hover:text-white group-focus-visible:bg-ocean group-focus-visible:text-white"
+      style={{ width: size, height: size }}
     >
       <svg width={size * 0.52} height={size * 0.52} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
         {icon}

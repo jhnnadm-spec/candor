@@ -1,6 +1,6 @@
 /**
  * GET  /api/explain/AAPL  → is an explanation ready, being written, or queued?
- * POST /api/explain/AAPL  → ask Fathom to write one (within the daily limits).
+ * POST /api/explain/AAPL  → ask Candor to write one (within the daily limits).
  */
 import { headers } from "next/headers";
 import { after, NextResponse } from "next/server";

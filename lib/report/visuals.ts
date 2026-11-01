@@ -1,11 +1,11 @@
 /**
- * The numbers behind Fathom's charts, worked out from the same SEC figures as
+ * The numbers behind Candor's charts, worked out from the same SEC figures as
  * the sentences. Each chart gets plain data; the drawing happens in components/viz.
  */
 import { formatDate, formatMoney, formatPerShare } from "../financials/format";
 import type { CompanyNumbers, Comparison } from "../financials/metrics";
 
-/** Chart colours, checked for colour-blind readers on Fathom's light glass tiles (in this order). */
+/** Chart colours, checked for colour-blind readers on Candor's light glass tiles (in this order). */
 export const SERIES = {
   blue: "#2a78d6",
   magenta: "#d55181",

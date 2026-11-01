@@ -1,7 +1,9 @@
 /**
- * Fathom's accent colours: the logo's ocean blues plus the bright colours of a reef.
+ * Candor's accents. The brand is near-black ink plus one electric blue, so almost
+ * everything uses `blue`. The other colours exist only where things must be told
+ * apart at a glance, such as the companies side by side on Compare.
  * Each accent has three shades:
- *   solid: the bright colour itself (dots, bars, icon circles)
+ *   solid: the colour itself (dots, bars, icon fills)
  *   soft:  a pale tint for backgrounds
  *   ink:   a darker shade that is easy to read as text on white or on `soft`
  * Components set them as CSS variables (--a, --a-soft, --a-ink) with `accentVars()`,
@@ -12,58 +14,27 @@ import type { CSSProperties } from "react";
 export type Accent = { name: string; solid: string; soft: string; ink: string };
 
 export const ACCENTS = {
-  ocean: { name: "ocean", solid: "#2f8fb3", soft: "#e3f2f8", ink: "#0b4f6c" },
-  coral: { name: "coral", solid: "#ff6f59", soft: "#ffece8", ink: "#b2361f" },
-  sun: { name: "sun", solid: "#ffb23e", soft: "#fff4dc", ink: "#8a4f00" },
-  kelp: { name: "kelp", solid: "#1fb58c", soft: "#e2f6ef", ink: "#0b6e52" },
-  lilac: { name: "lilac", solid: "#8b6cf2", soft: "#efeafe", ink: "#5434c0" },
-  pink: { name: "pink", solid: "#ef5f9a", soft: "#fde9f1", ink: "#a8245b" },
-  teal: { name: "teal", solid: "#16b3c7", soft: "#e0f6f9", ink: "#0a6b78" },
+  blue: { name: "blue", solid: "#2d5bff", soft: "#eef2ff", ink: "#1f45d6" },
+  ink: { name: "ink", solid: "#0c0f14", soft: "#f4f5f7", ink: "#0c0f14" },
+  violet: { name: "violet", solid: "#7c5cff", soft: "#f1edff", ink: "#5b3fd6" },
+  teal: { name: "teal", solid: "#0ea5a4", soft: "#e6f7f7", ink: "#0b6f6e" },
+  amber: { name: "amber", solid: "#f59e0b", soft: "#fef6e7", ink: "#8a5300" },
+  rose: { name: "rose", solid: "#f43f5e", soft: "#feecef", ink: "#b4233c" },
+  slate: { name: "slate", solid: "#64748b", soft: "#f1f3f6", ink: "#3f4a5a" },
 } satisfies Record<string, Accent>;
 
 export type AccentName = keyof typeof ACCENTS;
 
-/** A fixed order, so neighbours on a page never share a colour. */
-export const ACCENT_ORDER: AccentName[] = ["ocean", "coral", "kelp", "sun", "lilac", "pink", "teal"];
+/** For telling things apart (Compare): a fixed order, so neighbours never share a colour. */
+export const ACCENT_ORDER: AccentName[] = ["blue", "violet", "teal", "amber", "rose", "slate", "ink"];
 
-/** The nth accent, wrapping round. */
+/** The nth distinct accent, wrapping round. */
 export function accentAt(i: number): Accent {
   return ACCENTS[ACCENT_ORDER[((i % ACCENT_ORDER.length) + ACCENT_ORDER.length) % ACCENT_ORDER.length]];
 }
 
-/** Each type of business keeps its own colour everywhere it appears. */
-const SECTOR_ACCENT: Record<string, AccentName> = {
-  technology: "lilac",
-  health: "pink",
-  banks: "ocean",
-  insurance: "teal",
-  "real-estate": "sun",
-  energy: "coral",
-  utilities: "sun",
-  media: "pink",
-  shops: "coral",
-  consumer: "kelp",
-  industrials: "ocean",
-  materials: "kelp",
-  services: "lilac",
-};
-
-export function sectorAccent(id: string): Accent {
-  return ACCENTS[SECTOR_ACCENT[id] ?? "ocean"];
-}
-
-/** The menu: one colour per page. */
-export const NAV_ACCENT: Record<string, AccentName> = {
-  "/sectors": "kelp",
-  "/compare": "coral",
-  "/watchlist": "sun",
-  "/terms": "lilac",
-};
-
-/** The seven questions on a company page, each in its own colour. */
-export function stepAccent(i: number): Accent {
-  return accentAt(i);
-}
+/** The brand accent, for everything that doesn't need telling apart. */
+export const BRAND = ACCENTS.blue;
 
 /** Inline style that sets --a, --a-soft and --a-ink for everything inside. */
 export function accentVars(a: Accent): CSSProperties {

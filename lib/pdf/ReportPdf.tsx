@@ -16,8 +16,8 @@
  * Live market data (share price, market value) changes every day, so it stays on the website.
  */
 import path from "node:path";
-import { MARK_PATH } from "@/components/Logo";
-import { Document, Font, Link, Page, Path, StyleSheet, Svg, Text, View } from "@react-pdf/renderer";
+import { MARK_BAR_HEIGHT, MARK_BARS } from "@/components/Logo";
+import { Document, Font, Link, Page, Rect, StyleSheet, Svg, Text, View } from "@react-pdf/renderer";
 import { Fragment, type ReactElement, type ReactNode } from "react";
 import type { DocumentProps } from "@react-pdf/renderer";
 import type { CheckedClaim, SavedExplanation, TopicId } from "../explain/types";
@@ -201,10 +201,13 @@ function topic(ctx: Ctx, id: TopicId, title: string, max?: number, color?: strin
   );
 }
 
-function LogoMark({ size = 16, color = C.ink }: { size?: number; color?: string }) {
+/** The cand0r mark: three flat bars, one per level of detail. */
+function LogoMark({ size = 16 }: { size?: number }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 100 100">
-      <Path d={MARK_PATH} fill={color} />
+      {MARK_BARS.map((b) => (
+        <Rect key={b.y} x={0} y={b.y} width={b.width} height={MARK_BAR_HEIGHT} fill={b.color} />
+      ))}
     </Svg>
   );
 }
@@ -412,8 +415,8 @@ function frontPage(ctx: Ctx, created: string, pageUrl: string) {
     <View>
       <View style={s.band}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
-          <LogoMark color="#FFFFFF" />
-          <Text style={{ fontWeight: 700, fontSize: 13 }}>cand0r</Text>
+          <LogoMark size={15} />
+          <Text style={{ fontWeight: 700, fontSize: 13, color: "#D9DCE2" }}>cand0r</Text>
         </View>
         <Text style={{ fontSize: 8.5 }}>Company research report · plain-English edition · {created}</Text>
       </View>

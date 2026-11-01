@@ -1,24 +1,31 @@
 /**
- * The cand0r mark: a solid circle with one slot cut into it, so it reads as a "C"
- * and as an opening: nothing hidden. One shape, one colour, so it holds up from a
- * favicon to a billboard. It takes its colour from the text around it.
+ * The cand0r mark: three flat bars that get longer, one for each level of detail on a
+ * company page (Short, Explained, Everything). Square corners, one solid colour each,
+ * so it holds up from a favicon to a billboard.
  */
-export const MARK_PATH = "M95.21 41.5A46 46 0 1 0 95.21 58.5H53.5A8.5 8.5 0 0 1 53.5 41.5Z";
+export const MARK_BARS = [
+  { y: 0, width: 46, color: "#2D5BFF" }, // Short
+  { y: 36, width: 73, color: "#0EA5A4" }, // Explained
+  { y: 72, width: 100, color: "#F59E0B" }, // Everything
+] as const;
+export const MARK_BAR_HEIGHT = 28;
 
 export function LogoMark({ size = 28 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" aria-hidden="true">
-      <path d={MARK_PATH} fill="currentColor" />
+      {MARK_BARS.map((b) => (
+        <rect key={b.y} x={0} y={b.y} width={b.width} height={MARK_BAR_HEIGHT} fill={b.color} />
+      ))}
     </svg>
   );
 }
 
-/** The mark with the name "cand0r" on its right (lowercase, with a zero for the o). */
+/** The mark with the name "cand0r" on its right (lowercase, with a zero for the o), in grey. */
 export function Logo({ size = 28 }: { size?: number }) {
   return (
-    <span className="inline-flex items-center text-ink" style={{ gap: size * 0.3 }}>
+    <span className="inline-flex items-center" style={{ gap: size * 0.35, color: "#4B5260" }}>
       <LogoMark size={size} />
-      <span className="font-display font-semibold leading-none tracking-[-0.045em]" style={{ fontSize: size * 1.06 }}>
+      <span className="font-display font-semibold leading-none tracking-[-0.04em]" style={{ fontSize: size * 1.09 }}>
         cand0r
       </span>
     </span>

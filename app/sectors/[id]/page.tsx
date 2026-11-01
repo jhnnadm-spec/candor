@@ -120,5 +120,5 @@ async function Sector({
 }
 
 function chip(on: boolean) {
-  return `inline-flex min-h-9 items-center rounded-full px-3.5 text-[13px] font-semibold no-underline transition ${on ? "bg-[var(--a-ink)] text-abyss" : "border border-line bg-white text-muted hover:border-[var(--a)] hover:bg-[var(--a-soft)] hover:text-[var(--a-ink)]"}`;
+  return `inline-flex min-h-9 items-center rounded-sm px-3.5 text-[13px] font-semibold no-underline transition ${on ? "bg-[var(--a-ink)] text-abyss" : "border border-line bg-white text-muted hover:border-[var(--a)] hover:bg-[var(--a-soft)] hover:text-[var(--a-ink)]"}`;
 }

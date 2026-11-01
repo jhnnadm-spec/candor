@@ -22,7 +22,7 @@ export function WatchButton({ ticker, name }: { ticker: string; name: string }) 
       type="button"
       onClick={() => setOn(toggleWatch(ticker, name))}
       aria-pressed={on ?? false}
-      className={`group inline-flex min-h-11 items-center gap-2 rounded-full px-4 text-[15px] font-semibold transition-[background-color,border-color,transform] active:scale-[0.97] ${
+      className={`group inline-flex min-h-11 items-center gap-2 rounded-sm px-4 text-[15px] font-semibold transition-[background-color,border-color,transform] active:scale-[0.97] ${
         on
           ? "bg-ocean text-white hover:bg-ocean-dark"
           : "border border-line bg-white text-ink hover:border-ink"

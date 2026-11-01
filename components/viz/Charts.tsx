@@ -122,7 +122,7 @@ export function Columns({ bars, color, highlight }: { bars: Bar[]; color: string
             className="group flex h-full flex-1 cursor-pointer flex-col justify-end focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean"
           >
             <span
-              className="relative block w-full rounded-t-[6px] transition-[height,filter,transform] duration-700 ease-out group-hover:brightness-105 motion-reduce:transition-none"
+              className="relative block w-full rounded-t-[1px] transition-[height,filter,transform] duration-700 ease-out group-hover:brightness-105 motion-reduce:transition-none"
               style={{
                 height: shown ? `${Math.max(3, (b.value / max) * 100)}%` : "0%",
                 transitionDelay: `${i * 70}ms`,
@@ -169,14 +169,14 @@ export function BillsGauge({ value }: { value: number }) {
   const pos = Math.max(0, Math.min(2, value)) / 2; // 0 to 2 across the track
   return (
     <div className="flex flex-col gap-2">
-      <div ref={ref} className="relative h-3 rounded-full bg-panel-2">
-        <div className="absolute inset-0 flex gap-[2px] overflow-hidden rounded-full" aria-hidden="true">
+      <div ref={ref} className="relative h-3 rounded-sm bg-panel-2">
+        <div className="absolute inset-0 flex gap-[2px] overflow-hidden rounded-sm" aria-hidden="true">
           <span className="h-full w-1/4 bg-[#f9b4c0]" />
           <span className="h-full w-1/4 bg-[#fcd9a0]" />
           <span className="h-full w-1/2 bg-[#a5e4e2]" />
         </div>
         <div
-          className="absolute -top-2 h-7 w-2 rounded-full border-2 border-white bg-ink transition-[left] duration-1000 ease-out motion-reduce:transition-none"
+          className="absolute -top-2 h-7 w-2 rounded-sm border-2 border-white bg-ink transition-[left] duration-1000 ease-out motion-reduce:transition-none"
           style={{ left: `calc(${shown ? pos * 100 : 0}% - 4px)` }}
           role="img"
           aria-label={`$${value.toFixed(2)} for every $1 due within a year`}
@@ -204,9 +204,9 @@ export function PairBars({ items }: { items: { label: string; value: number; dis
             <span className="text-muted">{it.label}</span>
             <span className="font-semibold tabular-nums">{it.display}</span>
           </div>
-          <div className="h-3 rounded-full bg-panel-2">
+          <div className="h-3 rounded-sm bg-panel-2">
             <div
-              className="h-3 rounded-full transition-[width] duration-700 ease-out motion-reduce:transition-none"
+              className="h-3 rounded-sm transition-[width] duration-700 ease-out motion-reduce:transition-none"
               style={{ width: shown ? `${Math.max(2, (it.value / max) * 100)}%` : "0%", background: it.color, transitionDelay: `${i * 120}ms` }}
             />
           </div>
@@ -328,7 +328,7 @@ export function Lines({
             type="button"
             onClick={() => setActive(i)}
             aria-pressed={i === active}
-            className={`min-h-9 rounded-full px-3 text-[13px] font-semibold transition-colors ${i === active ? "bg-ink text-abyss" : "bg-panel-2 text-muted hover:text-ink"}`}
+            className={`min-h-9 rounded-sm px-3 text-[13px] font-semibold transition-colors ${i === active ? "bg-ink text-abyss" : "bg-panel-2 text-muted hover:text-ink"}`}
           >
             {yr.label}
           </button>

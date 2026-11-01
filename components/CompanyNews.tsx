@@ -34,7 +34,7 @@ export async function CompanyNews({ name, ticker }: { name: string; ticker: stri
         <ul className="m-0 flex list-none flex-wrap gap-1.5 p-0">
           {more.map((m) => (
             <li key={m.name}>
-              <a href={m.url} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full border border-line px-2.5 py-1 text-[12px] font-medium text-ink no-underline transition-colors hover:border-ink/40">
+              <a href={m.url} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-sm border border-line px-2.5 py-1 text-[12px] font-medium text-ink no-underline transition-colors hover:border-ink/40">
                 {m.name}
               </a>
             </li>

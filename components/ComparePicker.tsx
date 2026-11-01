@@ -44,15 +44,15 @@ export function ComparePicker({ chosen, max = 5 }: { chosen: Match[]; max?: numb
     <div className="flex flex-col gap-3">
       <div className="flex flex-wrap items-center gap-2">
         {chosen.map((c, i) => (
-          <span key={c.ticker} style={accentVars(accentAt(i))} className="fathom-fade inline-flex min-h-10 items-center gap-2 rounded-full border border-[color-mix(in_srgb,var(--a)_35%,white)] bg-[var(--a-soft)] py-1 pl-2 pr-1.5 text-[15px]">
-            <span aria-hidden="true" className="h-2.5 w-2.5 flex-none rounded-full bg-[var(--a)]" />
+          <span key={c.ticker} style={accentVars(accentAt(i))} className="fathom-fade inline-flex min-h-10 items-center gap-2 rounded-sm border border-[color-mix(in_srgb,var(--a)_35%,white)] bg-[var(--a-soft)] py-1 pl-2 pr-1.5 text-[15px]">
+            <span aria-hidden="true" className="h-2.5 w-2.5 flex-none rounded-sm bg-[var(--a)]" />
             <span className="font-semibold">{c.name}</span>
             <span className="text-[13px] font-bold text-[var(--a-ink)]">{c.ticker}</span>
             <button
               type="button"
               onClick={() => go(chosen.filter((x) => x.ticker !== c.ticker).map((x) => x.ticker))}
               aria-label={`Remove ${c.name}`}
-              className="flex h-7 w-7 items-center justify-center rounded-full text-muted hover:bg-white hover:text-ink"
+              className="flex h-7 w-7 items-center justify-center rounded-sm text-muted hover:bg-white hover:text-ink"
             >
               ×
             </button>
@@ -81,7 +81,7 @@ export function ComparePicker({ chosen, max = 5 }: { chosen: Match[]; max?: numb
           className="min-h-12 rounded-xl border border-line bg-white px-4 text-[16px] outline-none focus:border-mid disabled:bg-mist"
         />
         {q.trim() && matches.length > 0 && (
-          <ul className="absolute left-0 right-0 top-full z-20 mt-1 flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-[0_10px_30px_rgba(11,79,108,0.12)]">
+          <ul className="absolute left-0 right-0 top-full z-20 mt-1 flex flex-col overflow-hidden rounded-xl border border-line bg-white">
             {matches.map((m) => (
               <li key={m.ticker}>
                 <button type="button" onClick={() => add(m.ticker)} className="flex min-h-11 w-full items-center justify-between gap-3 px-4 text-left hover:bg-mist">

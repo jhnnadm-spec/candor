@@ -187,7 +187,7 @@ function Hero({ report, profile, company, lead }: { report: CompanyReport; profi
             href={`/stock/${encodeURIComponent(c.ticker)}/pdf`}
             download
             style={accentVars(BRAND)}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full bg-ink px-4 text-[15px] font-semibold text-white no-underline transition-colors hover:bg-ocean hover:text-white"
+            className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-ink px-4 text-[15px] font-semibold text-white no-underline transition-colors hover:bg-ocean hover:text-white"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M12 3v12" />
@@ -568,7 +568,7 @@ function AnalystBox({ step }: { step: Step }) {
         <ul className="m-0 flex list-none flex-col gap-1.5 p-0 text-[15px] leading-snug">
           {step.lookFor.map((l) => (
             <li key={l} className="flex gap-2.5">
-              <span aria-hidden="true" className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full bg-mid" />
+              <span aria-hidden="true" className="mt-[7px] h-1.5 w-1.5 flex-none rounded-sm bg-mid" />
               {l}
             </li>
           ))}

@@ -65,7 +65,7 @@ export function SourceChips({ sources }: { sources: { url: string; label: string
           target="_blank"
           rel="noopener noreferrer"
           title={`Source: ${s.label} (opens the original document)`}
-          className="inline-flex items-center gap-1 rounded-full bg-panel-2 px-2.5 py-1 text-[12px] font-semibold text-muted no-underline transition-colors hover:bg-surface hover:text-ocean"
+          className="inline-flex items-center gap-1 rounded-sm bg-panel-2 px-2.5 py-1 text-[12px] font-semibold text-muted no-underline transition-colors hover:bg-surface hover:text-ocean"
         >
           {shortSource(s.label)}
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -109,7 +109,7 @@ export function MiniBars({ bars }: { bars: { label: string; value: number }[] })
           return (
             <span key={b.label} className="group relative flex h-full flex-1 items-end">
               <span
-                className="fathom-grow-up block w-full rounded-t-[6px] transition-[filter] duration-200 group-hover:brightness-95"
+                className="fathom-grow-up block w-full rounded-t-[1px] transition-[filter] duration-200 group-hover:brightness-95"
                 style={{
                   height: `${Math.max(4, (b.value / max) * 100)}%`,
                   background: last ? "var(--a, #2d5bff)" : "color-mix(in srgb, var(--a, #2d5bff) 22%, white)",
@@ -142,15 +142,15 @@ export function KeepBar({ kept }: { kept: number }) {
   const pct = Math.max(0, Math.min(100, Math.round(kept)));
   return (
     <figure className="m-0 flex flex-col gap-2" aria-label={`$${pct} kept as profit, $${100 - pct} spent on costs, out of every $100 of sales`}>
-      <div className="flex h-5 gap-[3px] overflow-hidden rounded-full">
+      <div className="flex h-5 gap-[3px] overflow-hidden rounded-sm">
         <span
           title={`$${100 - pct} of every $100 went on costs`}
-          className="h-full rounded-l-full bg-[#e5e7eb] transition-[filter] hover:brightness-95"
+          className="h-full rounded-l-sm bg-[#e5e7eb] transition-[filter] hover:brightness-95"
           style={{ width: `${100 - pct}%` }}
         />
         <span
           title={`$${pct} of every $100 was kept as profit`}
-          className="fathom-grow-right h-full rounded-r-full bg-[#0ea5a4] transition-[filter] hover:brightness-105"
+          className="fathom-grow-right h-full rounded-r-sm bg-[#0ea5a4] transition-[filter] hover:brightness-105"
           style={{ width: `${pct}%` }}
         />
       </div>
@@ -169,13 +169,13 @@ export function MiniGauge({ value, mark = "$1 due" }: { value: number; mark?: st
   return (
     <figure className="m-0 flex flex-col gap-1.5" aria-label={`${value.toFixed(2)} on a scale from 0 to 2`}>
       <div className="relative h-5">
-        <div className="absolute inset-y-1 left-0 flex w-full gap-[2px] overflow-hidden rounded-full">
+        <div className="absolute inset-y-1 left-0 flex w-full gap-[2px] overflow-hidden rounded-sm">
           <span className="h-full w-1/2 bg-[#fde2e6]" />
           <span className="h-full w-1/2 bg-[#d5f2f1]" />
         </div>
         <span className="absolute inset-y-0 left-1/2 w-[2px] -translate-x-1/2 bg-white" />
         <span
-          className="fathom-grow-right absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white"
+          className="fathom-grow-right absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-sm border-[3px] border-white"
           style={{ left: `${pos}%`, background: enough ? "#0ea5a4" : "#f43f5e" }}
         />
       </div>
@@ -199,9 +199,9 @@ export function MiniPair({ items }: { items: { label: string; value: number; dis
             <span className="text-muted transition-colors group-hover:text-ink">{it.label.replace(/\s*\(.*\)$/, "")}</span>
             <span className="font-semibold tabular-nums">{it.display}</span>
           </span>
-          <span className="h-2.5 overflow-hidden rounded-full bg-panel-2">
+          <span className="h-2.5 overflow-hidden rounded-sm bg-panel-2">
             <span
-              className="fathom-grow-right block h-full rounded-full transition-[filter] group-hover:brightness-105"
+              className="fathom-grow-right block h-full rounded-sm transition-[filter] group-hover:brightness-105"
               style={{ width: `${Math.max(3, (it.value / max) * 100)}%`, background: it.color }}
             />
           </span>
@@ -216,12 +216,12 @@ export function UsesBar({ segments }: { segments: { label: string; value: number
   const total = segments.reduce((s, x) => s + x.value, 0) || 1;
   return (
     <figure className="m-0 flex flex-col gap-2.5">
-      <div className="flex h-5 gap-[3px] overflow-hidden rounded-full">
+      <div className="flex h-5 gap-[3px] overflow-hidden rounded-sm">
         {segments.map((s) => (
           <span
             key={s.label}
             title={`${s.label.replace(/\s*\(.*\)$/, "")}: ${s.display}`}
-            className="fathom-grow-right h-full transition-[filter] first:rounded-l-full last:rounded-r-full hover:brightness-110"
+            className="fathom-grow-right h-full transition-[filter] first:rounded-l-sm last:rounded-r-sm hover:brightness-110"
             style={{ width: `${(s.value / total) * 100}%`, background: s.color }}
           />
         ))}
@@ -229,7 +229,7 @@ export function UsesBar({ segments }: { segments: { label: string; value: number
       <ul className="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 text-[13px]">
         {segments.map((s) => (
           <li key={s.label} className="flex items-center gap-1.5">
-            <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ background: s.color }} />
+            <span aria-hidden="true" className="h-2.5 w-2.5 rounded-sm" style={{ background: s.color }} />
             <span className="text-muted">{s.label.replace(/\s*\(.*\)$/, "")}</span>
             <span className="font-semibold tabular-nums">{s.display}</span>
           </li>

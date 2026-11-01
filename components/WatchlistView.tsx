@@ -65,13 +65,13 @@ export function WatchlistView() {
               key={c.ticker}
               href={`/stock/${c.ticker}`}
               style={accentVars(BRAND)}
-              className="fathom-lift inline-flex items-center gap-2 rounded-full border border-line bg-white py-1 pl-1 pr-3.5 text-[15px] font-semibold text-ink no-underline hover:bg-[var(--a-soft)] hover:text-[var(--a-ink)]"
+              className="fathom-lift inline-flex items-center gap-2 rounded-sm border border-line bg-white py-1 pl-1 pr-3.5 text-[15px] font-semibold text-ink no-underline hover:bg-[var(--a-soft)] hover:text-[var(--a-ink)]"
             >
               <CompanyLogo name={c.name} website={c.site} size={28} />
               {c.name}
             </Link>
           ))}
-          <Link href="/sectors" className="inline-flex min-h-[38px] items-center rounded-full px-3.5 text-[15px] font-semibold">
+          <Link href="/sectors" className="inline-flex min-h-[38px] items-center rounded-sm px-3.5 text-[15px] font-semibold">
             Browse by type of business →
           </Link>
         </div>
@@ -135,8 +135,8 @@ export function WatchlistView() {
                   {understood} of {STEP_COUNT} questions
                 </span>
               </div>
-              <div className="h-1.5 rounded-full bg-panel-2">
-                <div className="h-1.5 rounded-full bg-mid" style={{ width: `${(understood / STEP_COUNT) * 100}%` }} />
+              <div className="h-1.5 rounded-sm bg-panel-2">
+                <div className="h-1.5 rounded-sm bg-mid" style={{ width: `${(understood / STEP_COUNT) * 100}%` }} />
               </div>
             </div>
             <Link

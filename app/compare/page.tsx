@@ -82,7 +82,7 @@ function Start() {
       <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
         {EXAMPLES.map((e) => (
           <li key={e.t}>
-            <Link href={`/compare?t=${e.t}`} className="fathom-lift inline-flex min-h-10 items-center rounded-full border border-line bg-white px-4 text-[15px] font-medium text-ink no-underline">
+            <Link href={`/compare?t=${e.t}`} className="fathom-lift inline-flex min-h-10 items-center rounded-sm border border-line bg-white px-4 text-[15px] font-medium text-ink no-underline">
               {e.label}
             </Link>
           </li>
@@ -180,7 +180,7 @@ function SideBySide({ groups, companies }: { groups: Group[]; companies: Company
               {companies.map((m, i) => (
                 <th key={m.ticker} scope="col" className="px-4 py-3 align-bottom">
                   <Link href={`/stock/${m.ticker}`} className="fathom-grow inline-flex items-center gap-2 text-[15px] font-semibold text-ink no-underline">
-                    <span aria-hidden="true" className="h-2.5 w-2.5 flex-none rounded-full" style={{ background: accentAt(i).solid }} />
+                    <span aria-hidden="true" className="h-2.5 w-2.5 flex-none rounded-sm" style={{ background: accentAt(i).solid }} />
                     {m.company}
                   </Link>
                   <span className="block pl-[18px] text-[12px] font-normal text-muted">{m.ticker}</span>
@@ -245,7 +245,7 @@ function SideBySide({ groups, companies }: { groups: Group[]; companies: Company
                     {r.cells.map((cell, i) => (
                       <li key={cell.ticker} className="grid grid-cols-[110px_minmax(0,1fr)] items-start gap-3">
                         <span className="inline-flex items-center gap-1.5 pt-0.5 text-[13px] font-semibold">
-                          <span aria-hidden="true" className="h-2 w-2 flex-none rounded-full" style={{ background: accentAt(i).solid }} />
+                          <span aria-hidden="true" className="h-2 w-2 flex-none rounded-sm" style={{ background: accentAt(i).solid }} />
                           {companies[i]?.company ?? cell.ticker}
                         </span>
                         <Value cell={cell} color={accentAt(i).solid} top={top} />
@@ -291,9 +291,9 @@ function Value({ cell, color, top }: { cell: CompareCell; color: string; top: nu
         )}
       </span>
       {top > 0 && (
-        <span aria-hidden="true" className="block h-1.5 w-full max-w-[150px] overflow-hidden rounded-full bg-panel-2">
+        <span aria-hidden="true" className="block h-1.5 w-full max-w-[150px] overflow-hidden rounded-sm bg-panel-2">
           <span
-            className="fathom-grow-right block h-full rounded-full"
+            className="fathom-grow-right block h-full rounded-sm"
             style={{ width: `${Math.max(3, (Math.abs(f.value) / top) * 100)}%`, background: f.value < 0 ? "#f43f5e" : color }}
           />
         </span>
@@ -322,7 +322,7 @@ function Sources({ groups, companies }: { groups: Group[]; companies: Company[] 
           return (
             <li key={m.ticker} className="flex flex-col gap-1 text-[13px]">
               <span className="inline-flex items-center gap-1.5 font-semibold">
-                <span aria-hidden="true" className="h-2 w-2 rounded-full" style={{ background: accentAt(i).solid }} />
+                <span aria-hidden="true" className="h-2 w-2 rounded-sm" style={{ background: accentAt(i).solid }} />
                 {m.company}
                 {yearEndText(m.fiscalYearEnd) && <span className="font-normal text-muted">· year ends {yearEndText(m.fiscalYearEnd)}</span>}
               </span>

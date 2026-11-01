@@ -5,6 +5,14 @@
   In the code, "bg-ocean" or "text-ink" refers to these.
 */
 @theme {
+  /* Corners: nearly square, to match the logo's flat bars. Every rounded-* class uses these. */
+  --radius-xs: 1px;
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 3px;
+  --radius-xl: 4px;
+  --radius-2xl: 4px;
+  --radius-3xl: 6px;
   /* cand0r: near-black ink, one electric blue, and quiet greys. */
   --color-abyss: #ffffff; /* text on dark buttons */
   --color-panel: #ffffff; /* tiles */
@@ -54,58 +62,36 @@ body {
 }
 
 /*
-  Loading animation (components/Loader.tsx): a floating card in front of a slowly
-  turning ring of colour, with a little bar chart rising and falling in a wave,
-  shimmering placeholder lines, captions taking turns and a thin running line.
+  Loading animation (components/Loader.tsx): the logo's three bars grow out from the
+  left one after another and fall back, while captions take turns. Placeholder boxes
+  elsewhere shimmer softly.
 */
-@keyframes candor-spin { to { transform: rotate(360deg); } }
-@keyframes candor-bar {
-  0%, 100% { transform: scaleY(0.28); }
-  50% { transform: scaleY(1); }
+@keyframes candor-logo-bar {
+  0%, 12% { transform: scaleX(0.12); }
+  45%, 70% { transform: scaleX(1); }
+  100% { transform: scaleX(0.12); }
 }
 @keyframes candor-shimmer {
   from { background-position: 150% 0; }
   to { background-position: -50% 0; }
-}
-@keyframes candor-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-@keyframes candor-float-slow {
-  0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(4px) rotate(-1.5deg); }
-}
-@keyframes candor-progress {
-  from { transform: translateX(-110%); }
-  to { transform: translateX(320%); }
 }
 @keyframes fathom-loader-line {
   0% { opacity: 0; transform: translateY(6px); }
   3%, 31% { opacity: 1; transform: translateY(0); }
   33.3%, 100% { opacity: 0; transform: translateY(-6px); }
 }
-.candor-aurora {
-  background: conic-gradient(from 0deg, #2d5bff, #7c5cff, #0ea5a4, #f59e0b, #f43f5e, #2d5bff);
-  filter: blur(34px);
-  opacity: 0.28;
-  animation: candor-spin 9s linear infinite;
-}
-.candor-bar { height: 100%; transform-origin: bottom; animation: candor-bar 1.5s ease-in-out infinite; }
+.candor-logo-bar { transform-origin: left; animation: candor-logo-bar 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
 .candor-shimmer {
   background: linear-gradient(90deg, #eef0f3 30%, #f8f9fb 50%, #eef0f3 70%);
   background-size: 200% 100%;
   animation: candor-shimmer 1.6s linear infinite;
 }
-.candor-float { animation: candor-float 4s ease-in-out infinite; }
-.candor-float-slow { animation: candor-float-slow 5s ease-in-out infinite; transform: rotate(-3deg); }
-.candor-progress { animation: candor-progress 1.6s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
 .fathom-loader-line { opacity: 0; animation-name: fathom-loader-line; animation-iteration-count: infinite; animation-timing-function: ease-out; }
 @media (prefers-reduced-motion: reduce) {
-  .candor-aurora, .candor-bar, .candor-shimmer, .candor-float, .candor-float-slow, .candor-progress { animation: none; }
+  .candor-logo-bar, .candor-shimmer { animation: none; }
   .fathom-loader-line { animation: none; opacity: 0; }
   .fathom-loader-line:first-child { opacity: 1; }
 }
-
 @keyframes candor-caret { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
 .candor-caret { animation: candor-caret 1s steps(1) infinite; }
 @media (prefers-reduced-motion: reduce) {
@@ -149,7 +135,7 @@ body {
 */
 @layer components {
   .fathom-card {
-    border-radius: 16px;
+    border-radius: 4px;
     background: #ffffff;
     border: 1px solid var(--color-line);
   }
@@ -203,7 +189,7 @@ body {
   }
 
   .fathom-tint {
-    border-radius: 18px;
+    border-radius: 4px;
     background: var(--a-soft, #f4f5f7);
     border: 1px solid color-mix(in srgb, var(--a, #2d5bff) 14%, white);
   }
@@ -284,5 +270,5 @@ body {
   20% { box-shadow: 0 0 0 10px rgba(45, 91, 255, 0.07); background-color: rgba(45, 91, 255, 0.05); }
   100% { box-shadow: 0 0 0 10px rgba(45, 91, 255, 0); background-color: rgba(45, 91, 255, 0); }
 }
-.part-flash { animation: part-flash 1.6s ease-out; border-radius: 20px; }
+.part-flash { animation: part-flash 1.6s ease-out; border-radius: 4px; }
 @media (prefers-reduced-motion: reduce) { .part-flash { animation: none; } }

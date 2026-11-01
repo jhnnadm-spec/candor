@@ -72,20 +72,20 @@ export function ExplainButton({
   return (
     <p
       aria-live="polite"
-      className="flex items-center gap-3 self-start rounded-full border border-line bg-white/80 py-2 pl-3 pr-4 text-[14px] text-muted backdrop-blur"
+      className="flex items-center gap-3 self-start rounded-sm border border-line bg-white py-2 pl-3 pr-4 text-[14px] text-muted"
     >
       {phase === "working" ? (
         <>
           <span aria-hidden="true" className="flex gap-1">
             {[0, 1, 2].map((i) => (
-              <span key={i} className="h-1.5 w-1.5 animate-pulse rounded-full bg-ocean" style={{ animationDelay: `${i * 0.2}s` }} />
+              <span key={i} className="h-1.5 w-1.5 animate-pulse rounded-sm bg-ocean" style={{ animationDelay: `${i * 0.2}s` }} />
             ))}
           </span>
           {update ? "Updating the plain-English version from the newest report" : "Writing the plain-English version"} · usually 1 to 3 minutes
         </>
       ) : (
         <>
-          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-[#f59e0b]" />
+          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-sm bg-[#f59e0b]" />
           {update ? "An update from the newest report is on its way" : "The plain-English version is on its way"}, usually within a day
         </>
       )}

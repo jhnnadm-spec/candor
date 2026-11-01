@@ -51,8 +51,8 @@ export default function Home() {
       {/* Search on the left, a live translator on the right */}
       <section className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
         <div className="flex flex-col items-start gap-7">
-          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-[14px] font-medium text-muted">
-            <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ocean" />
+          <p className="inline-flex items-center gap-2 rounded-sm border border-line bg-white px-3.5 py-1.5 text-[14px] font-medium text-muted">
+            <span aria-hidden="true" className="h-1.5 w-1.5 rounded-sm bg-ocean" />
             Free. A source for every point.
           </p>
           <HeroHeadline />
@@ -71,7 +71,7 @@ export default function Home() {
                 <Link
                   key={c.ticker}
                   href={`/stock/${c.ticker}`}
-                  className="fathom-lift inline-flex items-center gap-2 rounded-full border border-line bg-white py-1 pl-1 pr-3.5 text-[15px] font-medium text-ink no-underline"
+                  className="fathom-lift inline-flex items-center gap-2 rounded-sm border border-line bg-white py-1 pl-1 pr-3.5 text-[15px] font-medium text-ink no-underline"
                 >
                   <CompanyLogo name={c.name} website={c.site} size={26} />
                   {c.name}

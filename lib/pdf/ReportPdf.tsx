@@ -79,7 +79,7 @@ const s = StyleSheet.create({
   page: { paddingTop: 40, paddingBottom: 60, paddingHorizontal: 44, fontFamily: "Figtree", fontSize: 10, color: C.ink },
   body: { fontSize: 10, lineHeight: 1.45 },
   footer: { position: "absolute", bottom: 24, left: 44, right: 44, flexDirection: "row", justifyContent: "space-between", fontSize: 7.5, color: C.muted, borderTopWidth: 1, borderTopColor: C.line, paddingTop: 7 },
-  band: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", backgroundColor: C.ink, color: "#FFFFFF", paddingVertical: 9, paddingHorizontal: 12, borderRadius: 6 },
+  band: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", backgroundColor: C.ink, color: "#FFFFFF", paddingVertical: 9, paddingHorizontal: 12, borderRadius: 2 },
   title: { fontFamily: "Bricolage", fontWeight: 700, fontSize: 24, lineHeight: 1.15, marginTop: 12 },
   meta: { color: C.muted, fontSize: 9, marginTop: 3 },
   h: { fontFamily: "Bricolage", fontWeight: 700, fontSize: 11.5, marginTop: 12, marginBottom: 4 },
@@ -163,7 +163,7 @@ const refText = (refs: number[]) => (refs.length > 0 ? ` ${refs.map((r) => `[${r
 function bullet(ctx: Ctx, text: string, refs: number[] = [], quote?: string, color: string = C.blue) {
   return (
     <View key={text} style={{ flexDirection: "row", gap: 6, marginBottom: 5 }} wrap={false}>
-      <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: color, marginTop: 4.5 }} />
+      <View style={{ width: 5, height: 5, borderRadius: 0, backgroundColor: color, marginTop: 4.5 }} />
       <View style={{ flex: 1 }}>
         <Text>
           {rich(ctx, text)}
@@ -226,7 +226,7 @@ function section(num: string, title: string, intro: string, color: string, child
       <KeepMarker />
       <View wrap={false} minPresenceAhead={150} style={{ borderBottomWidth: 2, borderBottomColor: color, paddingBottom: 6, marginBottom: 6 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-          <View style={{ backgroundColor: color, borderRadius: 4, width: 20, height: 20, alignItems: "center", justifyContent: "center" }}>
+          <View style={{ backgroundColor: color, borderRadius: 1, width: 20, height: 20, alignItems: "center", justifyContent: "center" }}>
             <Text style={{ color: "#FFFFFF", fontWeight: 700, fontSize: 10 }}>{num}</Text>
           </View>
           <Text style={{ fontFamily: "Bricolage", fontWeight: 700, fontSize: 16 }}>{title}</Text>
@@ -251,7 +251,7 @@ function notWritten() {
 function hbars(title: string, rows: { label: string; value: number; display: string; color: string }[], note?: string) {
   const max = Math.max(...rows.map((x) => Math.abs(x.value)), 1);
   return (
-    <View style={{ backgroundColor: C.mist, borderRadius: 6, padding: 10, marginVertical: 6 }} wrap={false}>
+    <View style={{ backgroundColor: C.mist, borderRadius: 2, padding: 10, marginVertical: 6 }} wrap={false}>
       <Text style={s.label}>{title}</Text>
       {rows.map((x) => (
         <View key={x.label} style={{ flexDirection: "row", alignItems: "center", marginTop: 5 }}>
@@ -271,7 +271,7 @@ function hbars(title: string, rows: { label: string; value: number; display: str
 function columns(title: string, bars: { label: string; value: number; display: string }[], color: string, soft: string) {
   const max = Math.max(...bars.map((b) => b.value), 1);
   return (
-    <View style={{ backgroundColor: C.mist, borderRadius: 6, padding: 10, marginVertical: 6 }} wrap={false}>
+    <View style={{ backgroundColor: C.mist, borderRadius: 2, padding: 10, marginVertical: 6 }} wrap={false}>
       <Text style={s.label}>{title}</Text>
       <View style={{ flexDirection: "row", alignItems: "flex-end", height: 96, gap: 8, marginTop: 8 }}>
         {bars.map((b, i) => (
@@ -296,9 +296,9 @@ function columns(title: string, bars: { label: string; value: number; display: s
 function stacked(title: string, parts: { label: string; value: number; display: string; color: string }[], note?: string) {
   const total = parts.reduce((a, p) => a + p.value, 0) || 1;
   return (
-    <View style={{ backgroundColor: C.mist, borderRadius: 6, padding: 10, marginVertical: 6 }} wrap={false}>
+    <View style={{ backgroundColor: C.mist, borderRadius: 2, padding: 10, marginVertical: 6 }} wrap={false}>
       <Text style={s.label}>{title}</Text>
-      <View style={{ flexDirection: "row", height: 14, marginTop: 7, borderRadius: 3, overflow: "hidden", gap: 1.5 }}>
+      <View style={{ flexDirection: "row", height: 14, marginTop: 7, borderRadius: 0, overflow: "hidden", gap: 1.5 }}>
         {parts.map((p) => (
           <View key={p.label} style={{ width: `${(p.value / total) * 100}%`, backgroundColor: p.color }} />
         ))}
@@ -423,7 +423,7 @@ function frontPage(ctx: Ctx, created: string, pageUrl: string) {
 
       <Text style={s.title}>{company.name}</Text>
       <View style={{ flexDirection: "row", gap: 6, marginTop: 6, alignItems: "center" }}>
-        <Text style={{ backgroundColor: C.blueSoft, color: C.blueInk, fontWeight: 700, fontSize: 9, paddingVertical: 2, paddingHorizontal: 6, borderRadius: 4 }}>
+        <Text style={{ backgroundColor: C.blueSoft, color: C.blueInk, fontWeight: 700, fontSize: 9, paddingVertical: 2, paddingHorizontal: 6, borderRadius: 1 }}>
           {company.ticker}
           {company.exchanges[0] ? ` · ${company.exchanges[0]}` : ""}
         </Text>
@@ -468,7 +468,7 @@ function frontPage(ctx: Ctx, created: string, pageUrl: string) {
         </View>
 
         {/* Key figures sidebar */}
-        <View style={{ width: 178, backgroundColor: C.mist, borderRadius: 6, padding: 10 }}>
+        <View style={{ width: 178, backgroundColor: C.mist, borderRadius: 2, padding: 10 }}>
           <Text style={s.label}>Key figures</Text>
           {fundamentals ? (
             FUNDAMENTAL_GROUPS.map((g) => {
@@ -500,13 +500,13 @@ function frontPage(ctx: Ctx, created: string, pageUrl: string) {
 
       {(favour.length > 0 || watch.length > 0 || risks.length > 0) && (
         <View style={{ flexDirection: "row", gap: 12, marginTop: 12, fontSize: 9, lineHeight: 1.4 }} wrap={false}>
-          <View style={{ flex: 1, backgroundColor: C.greenSoft, borderRadius: 6, padding: 9 }}>
+          <View style={{ flex: 1, backgroundColor: C.greenSoft, borderRadius: 2, padding: 9 }}>
             <Text style={[s.label, { color: C.green }]}>What the figures show in its favour</Text>
             <View style={{ marginTop: 4 }}>
               {favour.length > 0 ? favour.slice(0, 3).map((h) => bullet(ctx, h.text, [], undefined, C.green)) : <Text style={s.note}>Nothing stood out from the figures.</Text>}
             </View>
           </View>
-          <View style={{ flex: 1, backgroundColor: C.amberSoft, borderRadius: 6, padding: 9 }}>
+          <View style={{ flex: 1, backgroundColor: C.amberSoft, borderRadius: 2, padding: 9 }}>
             <Text style={[s.label, { color: C.amberInk }]}>What to keep an eye on</Text>
             <View style={{ marginTop: 4 }}>
               {watch.slice(0, Math.max(1, 3 - risks.length)).map((h) => bullet(ctx, h.text, [], undefined, C.amber))}
@@ -892,7 +892,7 @@ function sourcesSection(ctx: Ctx, pageUrl: string) {
 
 function disclaimer() {
   return (
-    <View style={{ backgroundColor: C.mist, borderRadius: 6, padding: 10, marginTop: 16 }} wrap={false}>
+    <View style={{ backgroundColor: C.mist, borderRadius: 2, padding: 10, marginTop: 16 }} wrap={false}>
       <Text style={[s.label, { color: C.ink }]}>Important information</Text>
       <Text style={{ fontSize: 8, color: C.muted, marginTop: 3 }}>
         This report explains a company&apos;s public filings for educational purposes only. It is not investment, financial, legal or tax advice, and it is not a

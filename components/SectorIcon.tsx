@@ -45,7 +45,7 @@ export function SectorIcon({ id, size = 44 }: { id: string; size?: number }) {
   return (
     <span
       aria-hidden="true"
-      className="fathom-icon-pop inline-flex flex-none items-center justify-center rounded-[30%] bg-[var(--a-soft)] text-[var(--a-ink)] transition-colors duration-200 group-hover:bg-[var(--a-ink)] group-hover:text-white group-focus-visible:bg-[var(--a-ink)] group-focus-visible:text-white"
+      className="fathom-icon-pop inline-flex flex-none items-center justify-center rounded-md bg-[var(--a-soft)] text-[var(--a-ink)] transition-colors duration-200 group-hover:bg-[var(--a-ink)] group-hover:text-white group-focus-visible:bg-[var(--a-ink)] group-focus-visible:text-white"
       style={{ ...accentVars(sectorAccent(id)), width: size, height: size }}
     >
       <svg width={size * 0.52} height={size * 0.52} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">

@@ -35,8 +35,8 @@ function Links({ path }: { path: string }) {
             key={l.href}
             href={l.href}
             aria-current={on ? "page" : undefined}
-            className={`inline-flex min-h-10 items-center rounded-full px-3 no-underline transition-colors sm:px-3.5 ${
-              on ? "bg-ink text-white hover:text-white" : "text-muted hover:bg-panel-2 hover:text-ink"
+            className={`inline-flex min-h-10 items-center rounded-sm px-3 no-underline transition-colors sm:px-3.5 ${
+              on ? "bg-white text-ink hover:text-ink" : "text-[#A3AAB8] hover:bg-[#1C212A] hover:text-white"
             }`}
           >
             {l.label}

@@ -127,7 +127,7 @@ function ForceCard({ f, nodeName, company }: { f: Force; nodeName: (id: string) 
               <span className="flex flex-col items-center">
                 <span
                   aria-hidden="true"
-                  className={`mt-1 h-2.5 w-2.5 flex-none rounded-full ${i === 0 ? "bg-shallow" : i === 1 ? "bg-mid" : "bg-ocean"}`}
+                  className={`mt-1 h-2.5 w-2.5 flex-none rounded-sm ${i === 0 ? "bg-shallow" : i === 1 ? "bg-mid" : "bg-ocean"}`}
                 />
                 {i < 2 && <span aria-hidden="true" className="mt-0.5 w-px flex-1 bg-line" />}
               </span>

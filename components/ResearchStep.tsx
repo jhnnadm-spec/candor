@@ -90,7 +90,7 @@ export function ResearchStep({
             <button
               type="button"
               onClick={() => go(next)}
-              className="group inline-flex min-h-10 items-center gap-2 rounded-full px-4 text-[14px] font-semibold text-white transition-[filter] hover:brightness-110"
+              className="group inline-flex min-h-10 items-center gap-2 rounded-sm px-4 text-[14px] font-semibold text-white transition-[filter] hover:brightness-110"
               style={{ background: accent.solid === "#f59e0b" ? accent.ink : accent.solid }}
             >
               {next === "below" ? "Explain it with the numbers" : "Show every detail"}
@@ -100,7 +100,7 @@ export function ResearchStep({
             </button>
           )}
           {level !== "surface" && (
-            <button type="button" onClick={() => go("surface")} className="min-h-10 rounded-full px-4 text-[14px] font-semibold text-muted transition-colors hover:bg-[var(--a-soft)] hover:text-[var(--a-ink)]">
+            <button type="button" onClick={() => go("surface")} className="min-h-10 rounded-sm px-4 text-[14px] font-semibold text-muted transition-colors hover:bg-[var(--a-soft)] hover:text-[var(--a-ink)]">
               Back to the short answer
             </button>
           )}

@@ -99,11 +99,14 @@ export function AtDepth({ min, max, only, children }: { min?: Level; max?: Level
   return <>{children}</>;
 }
 
-/** The sliding pill: ink for the first two levels, brand blue for "Everything". */
-const LEVEL_COLOR: Record<Level, string> = {
-  surface: "#0c0f14",
-  below: "#0c0f14",
-  deep: "#2d5bff",
+/**
+ * Each level wears its bar's colour from the logo (blue, teal, amber, from shortest to
+ * longest), with text dark or white so it stays easy to read on that colour.
+ */
+const LEVEL_COLOR: Record<Level, { bg: string; text: string; hint: string; bar: number }> = {
+  surface: { bg: "#2D5BFF", text: "#FFFFFF", hint: "rgba(255,255,255,0.8)", bar: 8 },
+  below: { bg: "#0EA5A4", text: "#0C0F14", hint: "rgba(12,15,20,0.72)", bar: 13 },
+  deep: { bg: "#F59E0B", text: "#0C0F14", hint: "rgba(12,15,20,0.72)", bar: 18 },
 };
 
 /** Three buttons in a row: Short, Explained, Everything, with a coloured pill sliding to the chosen one. */
@@ -111,11 +114,11 @@ export function DepthSwitch({ compact = false }: { compact?: boolean }) {
   const { level, setLevel } = useDepth();
   const i = LEVELS.indexOf(level);
   return (
-    <div role="radiogroup" aria-label="How much detail to show" className="relative grid grid-cols-3 gap-1 rounded-full bg-panel-2 p-1">
+    <div role="radiogroup" aria-label="How much detail to show" className="relative grid grid-cols-3 gap-1 rounded-sm bg-panel-2 p-1">
       <span
         aria-hidden="true"
-        className="absolute bottom-1 top-1 left-1 rounded-full transition-[transform,background] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
-        style={{ width: "calc((100% - 0.5rem - 0.5rem) / 3)", transform: `translateX(calc(${i * 100}% + ${i * 0.25}rem))`, background: LEVEL_COLOR[level] }}
+        className="absolute bottom-1 top-1 left-1 rounded-sm transition-[transform,background] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+        style={{ width: "calc((100% - 0.5rem - 0.5rem) / 3)", transform: `translateX(calc(${i * 100}% + ${i * 0.25}rem))`, background: LEVEL_COLOR[level].bg }}
       />
       {LEVELS.map((l) => {
         const on = l === level;
@@ -127,10 +130,19 @@ export function DepthSwitch({ compact = false }: { compact?: boolean }) {
             aria-checked={on}
             title={LEVEL_INFO[l].hint}
             onClick={() => setLevel(l)}
-            className={`relative flex ${compact ? "min-h-9" : "min-h-11"} flex-col items-center justify-center rounded-full px-2 leading-tight transition-colors ${on ? "text-white" : "text-muted hover:text-ink"}`}
+            className={`relative flex ${compact ? "min-h-9 px-1" : "min-h-11 px-2"} flex-col items-center justify-center rounded-sm leading-tight transition-colors ${on ? "" : "text-muted hover:text-ink"}`}
+            style={on ? { color: LEVEL_COLOR[l].text } : undefined}
           >
-            <span className={`${compact ? "text-[13px]" : "text-[14px]"} font-semibold`}>{LEVEL_INFO[l].name}</span>
-            {!compact && <span className={`hidden text-[11px] sm:block ${on ? "text-white/75" : "text-muted"}`}>{LEVEL_INFO[l].hint}</span>}
+            <span className={`flex items-center ${compact ? "gap-1 text-[13px]" : "gap-1.5 text-[14px]"} font-semibold`}>
+              {/* A small bar as long as this level's bar in the logo */}
+              <span aria-hidden="true" className="h-[5px] flex-none" style={{ width: compact ? Math.round(LEVEL_COLOR[l].bar * 0.65) : LEVEL_COLOR[l].bar, background: on ? "currentColor" : LEVEL_COLOR[l].bg }} />
+              {LEVEL_INFO[l].name}
+            </span>
+            {!compact && (
+              <span className="hidden text-[11px] sm:block" style={{ color: on ? LEVEL_COLOR[l].hint : undefined }}>
+                {LEVEL_INFO[l].hint}
+              </span>
+            )}
           </button>
         );
       })}

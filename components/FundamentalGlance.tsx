@@ -63,7 +63,7 @@ export function FundamentalGlance({ result }: { result: LensResult<FundamentalDa
               return (
                 <div key={g.id} className="flex flex-col gap-1">
                   <h3 className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.06em]" style={{ color: a.ink }}>
-                    <span aria-hidden="true" className="h-2 w-2 rounded-full" style={{ background: a.solid }} />
+                    <span aria-hidden="true" className="h-2 w-2 rounded-sm" style={{ background: a.solid }} />
                     {g.title}
                   </h3>
                   <ul className="m-0 flex list-none flex-col p-0">

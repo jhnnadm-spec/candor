@@ -34,7 +34,7 @@ export default function SectorsPage() {
               {s.top.length > 0 && (
                 <span className="mt-auto flex flex-wrap gap-1.5">
                   {s.top.map((t) => (
-                    <span key={t.t} className="rounded-full bg-[var(--a-soft)] px-2.5 py-1 text-[12px] font-semibold text-[var(--a-ink)]">
+                    <span key={t.t} className="rounded-sm bg-[var(--a-soft)] px-2.5 py-1 text-[12px] font-semibold text-[var(--a-ink)]">
                       {shortName(t.n)}
                     </span>
                   ))}

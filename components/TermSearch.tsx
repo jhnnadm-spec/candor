@@ -114,7 +114,7 @@ export function TermSearch({
           id={listId}
           role="listbox"
           aria-label="Matching terms"
-          className="fathom-pop absolute left-0 right-0 top-[50px] z-30 flex flex-col overflow-hidden rounded-xl border border-line bg-white py-1 shadow-[0_12px_32px_rgba(11,79,108,0.18)]"
+          className="fathom-pop absolute left-0 right-0 top-[50px] z-30 flex flex-col overflow-hidden rounded-xl border border-line bg-white py-1"
         >
           {matches.map((m, i) => (
             <li
@@ -142,7 +142,7 @@ export function TermSearch({
       )}
 
       {entry && shown && (
-        <div className="fathom-pop flex flex-col rounded-2xl border border-line bg-white p-5 shadow-[0_8px_24px_rgba(11,79,108,0.08)]" aria-live="polite">
+        <div className="fathom-pop flex flex-col rounded-2xl border border-line bg-white p-5" aria-live="polite">
           <div className="flex items-start justify-between gap-3">
             <h3 className="font-display text-xl font-bold leading-tight">{entry.term}</h3>
             <button type="button" onClick={() => setShown(null)} className="text-[13px] font-semibold text-muted hover:text-ink">

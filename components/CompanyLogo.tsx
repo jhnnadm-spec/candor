@@ -21,7 +21,7 @@ export function CompanyLogo({
   const sources = [logo, website && favicon(website)].filter((s): s is string => Boolean(s));
   const [failed, setFailed] = useState(0);
   const src = sources[failed];
-  const radius = Math.round(size * 0.28);
+  const radius = Math.max(3, Math.round(size * 0.08));
 
   return (
     <span

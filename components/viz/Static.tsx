@@ -26,7 +26,7 @@ export function DotGrid({ value, label, color = "#2d5bff" }: { value: number; la
 export function StatusBadge({ ok, children }: { ok: boolean; children: ReactNode }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 self-start rounded-full px-3 py-1.5 text-[14px] font-semibold ${
+      className={`inline-flex items-center gap-2 self-start rounded-sm px-3 py-1.5 text-[14px] font-semibold ${
         ok ? "bg-[#dff3ea] text-[#0f6b4c]" : "bg-[#fdecd8] text-[#8a4b0f]"
       }`}
     >
@@ -128,8 +128,8 @@ export function TopicIcon({ name }: { name: string }) {
 export function Meter({ value, color = "#2d5bff" }: { value: number; color?: string }) {
   const pct = Math.max(0, Math.min(100, value * 100));
   return (
-    <div className="h-2.5 w-full rounded-full bg-panel-2" role="img" aria-label={`${Math.round(pct)}% of 100%`}>
-      <div className="h-2.5 rounded-full" style={{ width: `${pct}%`, background: color }} />
+    <div className="h-2.5 w-full rounded-sm bg-panel-2" role="img" aria-label={`${Math.round(pct)}% of 100%`}>
+      <div className="h-2.5 rounded-sm" style={{ width: `${pct}%`, background: color }} />
     </div>
   );
 }

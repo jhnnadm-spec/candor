@@ -59,13 +59,13 @@ export function PageNav({ items }: { items: NavItem[] }) {
                   href={`#${it.id}`}
                   data-nav={it.id}
                   aria-current={on ? "location" : undefined}
-                  className={`flex min-h-9 items-center gap-1.5 rounded-full px-3 text-[13px] font-semibold no-underline transition-colors ${on ? "text-white" : "text-muted hover:bg-panel-2 hover:text-ink"}`}
+                  className={`flex min-h-9 items-center gap-1.5 rounded-sm px-3 text-[13px] font-semibold no-underline transition-colors ${on ? "text-white" : "text-muted hover:bg-panel-2 hover:text-ink"}`}
                   style={on ? { background: it.color ?? "var(--color-ink)" } : undefined}
                 >
                   {it.number !== undefined && (
                     <span
                       aria-hidden="true"
-                      className="flex h-[18px] w-[18px] items-center justify-center rounded-full text-[10.5px] font-bold"
+                      className="flex h-[18px] w-[18px] items-center justify-center rounded-sm text-[10.5px] font-bold"
                       style={on ? { background: "rgba(255,255,255,0.25)", color: "#fff" } : { background: it.color, color: "#fff" }}
                     >
                       {it.number}
@@ -77,7 +77,7 @@ export function PageNav({ items }: { items: NavItem[] }) {
             );
           })}
         </ol>
-        <div className="hidden w-[270px] flex-none md:block">
+        <div className="hidden w-[288px] flex-none md:block">
           <DepthSwitch compact />
         </div>
       </div>

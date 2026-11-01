@@ -98,7 +98,7 @@ export function CompareVisual({ companies, rows }: { companies: { ticker: string
                 onFocus={() => setHover(c.ticker)}
                 onBlur={() => setHover(null)}
                 onClick={() => setPinned(on ? null : c.ticker)}
-                className="inline-flex min-h-9 items-center gap-2 rounded-full border px-3 text-[13.5px] font-semibold transition-[background-color,border-color,color,opacity] duration-200"
+                className="inline-flex min-h-9 items-center gap-2 rounded-sm border px-3 text-[13.5px] font-semibold transition-[background-color,border-color,color,opacity] duration-200"
                 style={{
                   background: on ? a.ink : focus === c.ticker ? a.soft : "#fff",
                   borderColor: on ? a.ink : focus === c.ticker ? a.solid : "#e7e9ee",
@@ -106,7 +106,7 @@ export function CompareVisual({ companies, rows }: { companies: { ticker: string
                   opacity: dim(c.ticker) < 1 ? 0.55 : 1,
                 }}
               >
-                <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ background: on ? "#fff" : a.solid }} />
+                <span aria-hidden="true" className="h-2.5 w-2.5 rounded-sm" style={{ background: on ? "#fff" : a.solid }} />
                 {c.company}
               </button>
             );
@@ -129,7 +129,7 @@ export function CompareVisual({ companies, rows }: { companies: { ticker: string
                       type="button"
                       aria-pressed={on}
                       onClick={() => pick(r.id)}
-                      className={`rounded-full border px-3 py-1.5 text-[13.5px] font-medium transition-[background-color,border-color,color,transform] duration-200 hover:-translate-y-0.5 ${
+                      className={`rounded-sm border px-3 py-1.5 text-[13.5px] font-medium transition-[background-color,border-color,color,transform] duration-200 hover:-translate-y-0.5 ${
                         on ? "border-ink bg-ink text-white" : "border-line bg-white text-ink hover:border-ink/40"
                       }`}
                     >
@@ -168,7 +168,7 @@ export function CompareVisual({ companies, rows }: { companies: { ticker: string
                 >
                   <span className="flex items-baseline justify-between gap-3">
                     <span className="inline-flex items-center gap-2 text-[15px] font-semibold">
-                      <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ background: a.solid }} />
+                      <span aria-hidden="true" className="h-2.5 w-2.5 rounded-sm" style={{ background: a.solid }} />
                       {nameOf(c.ticker)}
                       {c.mark && (
                         <span className="rounded-md px-1.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-wide" style={{ background: a.soft, color: a.ink }}>
@@ -178,10 +178,10 @@ export function CompareVisual({ companies, rows }: { companies: { ticker: string
                     </span>
                     <span className={`font-display tabular-nums ${c.value === null ? "text-[14px] text-muted" : "text-[20px] font-semibold"}`}>{c.value === null ? "Not reported" : c.display}</span>
                   </span>
-                  <span className="relative h-3.5 overflow-hidden rounded-full bg-panel-2">
+                  <span className="relative h-3.5 overflow-hidden rounded-sm bg-panel-2">
                     {b && (
                       <span
-                        className="fathom-grow-right absolute inset-y-0 rounded-full transition-[left,width] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+                        className="fathom-grow-right absolute inset-y-0 rounded-sm transition-[left,width] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
                         style={{
                           left: `${b.left * 100}%`,
                           width: `${Math.max(b.width * 100, 0.8)}%`,

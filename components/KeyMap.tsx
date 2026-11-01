@@ -140,7 +140,7 @@ export function KeyMap({
         }}
       >
         <span className="flex items-center gap-1.5 text-[13px] font-semibold leading-tight">
-          {!on && <span aria-hidden="true" className="h-2 w-2 flex-none rounded-full" style={{ background: gg.color, opacity: near ? 1 : 0.45 }} />}
+          {!on && <span aria-hidden="true" className="h-2 w-2 flex-none rounded-sm" style={{ background: gg.color, opacity: near ? 1 : 0.45 }} />}
           {n.label}
         </span>
         <span className={`text-[12.5px] tabular-nums leading-tight ${on ? "text-white/85" : near ? "text-muted" : ""}`}>{n.short ?? "Not reported"}</span>
@@ -180,7 +180,7 @@ export function KeyMap({
           <div className="hidden grid-cols-4 sm:grid">
             {MAP_COLUMNS.map((c) => (
               <span key={c} className="flex items-center justify-center gap-1.5 px-2 text-center text-[12px] font-semibold uppercase tracking-[0.06em]" style={{ color: GROUPS[c].ink }}>
-                <span aria-hidden="true" className="h-2 w-2 flex-none rounded-full" style={{ background: GROUPS[c].color }} />
+                <span aria-hidden="true" className="h-2 w-2 flex-none rounded-sm" style={{ background: GROUPS[c].color }} />
                 {GROUPS[c].name}
               </span>
             ))}
@@ -233,8 +233,8 @@ export function KeyMap({
         {/* What the box is, and each sum it's part of */}
         <aside data-km-keep aria-live="polite" className="flex flex-col gap-4 border-t border-line p-5 sm:p-6 xl:border-l xl:border-t-0">
           <div className="flex flex-col gap-1">
-            <span className="inline-flex items-center gap-1.5 self-start rounded-full px-2.5 py-0.5 text-[12px] font-semibold" style={{ background: g.soft, color: g.ink }}>
-              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full" style={{ background: g.color }} />
+            <span className="inline-flex items-center gap-1.5 self-start rounded-sm px-2.5 py-0.5 text-[12px] font-semibold" style={{ background: g.soft, color: g.ink }}>
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-sm" style={{ background: g.color }} />
               {g.name}
             </span>
             <div className="mt-1 flex flex-wrap items-baseline justify-between gap-x-3">

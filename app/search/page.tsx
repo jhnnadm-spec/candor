@@ -50,7 +50,7 @@ async function Results({ searchParams }: { searchParams: Promise<Record<string, 
               <span className="flex items-center justify-between gap-3">
                 <span className="fathom-grow text-[17px] font-semibold text-ink">{t.entry.term}</span>
                 {t.entry.sides && (
-                  <span className="flex-none rounded-full bg-[#fbe9e1] px-2 py-0.5 text-[12px] font-semibold text-[#9a4320]">both sides</span>
+                  <span className="flex-none rounded-sm bg-[#fbe9e1] px-2 py-0.5 text-[12px] font-semibold text-[#9a4320]">both sides</span>
                 )}
               </span>
               <span className="text-[15px] leading-relaxed text-muted">{t.entry.definition}</span>

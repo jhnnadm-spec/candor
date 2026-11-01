@@ -66,18 +66,12 @@ export function JargonTranslator({ terms }: { terms: JargonTerm[] }) {
 
   return (
     <div className="relative w-full">
-      {/* a soft glow in this word's colour */}
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute -inset-6 -z-10 rounded-[48px] opacity-60 blur-3xl transition-colors duration-700"
-        style={{ background: `radial-gradient(60% 60% at 70% 30%, ${accent.soft}, transparent 70%)` }}
-      />
-      <div className="flex flex-col gap-5 rounded-[28px] border border-line bg-white/90 p-5 shadow-[0_40px_80px_-48px_rgba(12,15,20,0.45)] backdrop-blur sm:p-7">
+      <div className="flex flex-col gap-5 rounded-xl border border-line bg-white p-5 sm:p-7">
         <div className="flex items-center justify-between gap-3">
           <span className="inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.08em] text-muted">
             <span aria-hidden="true" className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-60 motion-reduce:hidden" style={{ background: accent.solid }} />
-              <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: accent.solid }} />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-sm opacity-60 motion-reduce:hidden" style={{ background: accent.solid }} />
+              <span className="relative inline-flex h-2 w-2 rounded-sm" style={{ background: accent.solid }} />
             </span>
             Finance, translated
           </span>
@@ -94,7 +88,7 @@ export function JargonTranslator({ terms }: { terms: JargonTerm[] }) {
                 type="button"
                 onClick={() => pick(n)}
                 aria-pressed={on}
-                className="rounded-full border px-3 py-1.5 font-mono text-[13px] transition-[background-color,border-color,color,transform] duration-200 hover:-translate-y-0.5"
+                className="rounded-sm border px-3 py-1.5 font-mono text-[13px] transition-[background-color,border-color,color,transform] duration-200 hover:-translate-y-0.5"
                 style={on ? { background: a.ink, borderColor: a.ink, color: "#fff" } : { background: "#fff", borderColor: "#e7e9ee", color: "#0c0f14" }}
               >
                 {x.label}

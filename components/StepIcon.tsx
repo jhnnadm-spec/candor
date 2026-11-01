@@ -69,7 +69,7 @@ export function StepIcon({ id, size = 48 }: { id: string; size?: number }) {
   return (
     <span
       aria-hidden="true"
-      style={{ width: size, height: size, background: a.solid, borderRadius: Math.round(size * 0.28) }}
+      style={{ width: size, height: size, background: a.solid, borderRadius: Math.max(3, Math.round(size * 0.08)) }}
       className="inline-flex flex-none items-center justify-center text-white"
     >
       <svg width={size * 0.52} height={size * 0.52} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

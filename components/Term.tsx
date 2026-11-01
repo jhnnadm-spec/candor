@@ -121,7 +121,7 @@ export function Term({
             onMouseEnter={() => hoverTimer.current && clearTimeout(hoverTimer.current)}
             onMouseLeave={leave}
             style={{ position: "fixed", top: pos.top, left: pos.left, maxHeight: pos.maxHeight }}
-            className={`fathom-pop z-50 block overflow-y-auto rounded-xl border border-line bg-white p-4 text-left text-[15px] font-normal leading-relaxed text-ink shadow-[0_12px_32px_rgba(12,15,20,0.16)] ${
+            className={`fathom-pop z-50 block overflow-y-auto rounded-xl border border-line bg-white p-4 text-left text-[15px] font-normal leading-relaxed text-ink ${
               more ? "w-[400px] max-w-[90vw]" : "w-80 max-w-[85vw]"
             }`}
           >
@@ -166,7 +166,7 @@ export function BothSides({ sides }: { sides: NonNullable<GlossaryEntry["sides"]
   const mark = (good: boolean) => (
     <span
       aria-hidden="true"
-      className={`mt-[3px] flex h-4 w-4 flex-none items-center justify-center rounded-full text-[11px] font-bold leading-none text-white ${
+      className={`mt-[3px] flex h-4 w-4 flex-none items-center justify-center rounded-sm text-[11px] font-bold leading-none text-white ${
         good ? "bg-[#14805a]" : "bg-[#b4532a]"
       }`}
     >

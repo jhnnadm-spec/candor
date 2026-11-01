@@ -20,10 +20,13 @@ export function LogoMark({ size = 28 }: { size?: number }) {
   );
 }
 
-/** The mark with the name "cand0r" on its right (lowercase, with a zero for the o), in grey. */
-export function Logo({ size = 28 }: { size?: number }) {
+/**
+ * The mark with the name "cand0r" on its right (lowercase, with a zero for the o): dark
+ * grey lettering on light backgrounds, light grey on dark ones (the header).
+ */
+export function Logo({ size = 28, tone = "light" }: { size?: number; tone?: "light" | "dark" }) {
   return (
-    <span className="inline-flex items-center" style={{ gap: size * 0.35, color: "#4B5260" }}>
+    <span className="inline-flex items-center" style={{ gap: size * 0.35, color: tone === "dark" ? "#D9DCE2" : "#4B5260" }}>
       <LogoMark size={size} />
       <span className="font-display font-semibold leading-none tracking-[-0.04em]" style={{ fontSize: size * 1.09 }}>
         cand0r

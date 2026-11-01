@@ -1,6 +1,6 @@
 "use client";
 
-/** Every finance term Candor explains, with a box to narrow them down as you type. */
+/** Every finance term cand0r explains, with a box to narrow them down as you type. */
 import { useMemo, useState } from "react";
 import { glossaryKeys, lookupTerm } from "@/lib/glossary";
 import { searchTerms } from "@/lib/term-search";

@@ -1,6 +1,6 @@
 /**
  * A plain-English key to the terms in TradingView's market data box.
- * Candor can't read the numbers inside that box (TradingView only allows it
+ * cand0r can't read the numbers inside that box (TradingView only allows it
  * to be displayed), so instead it explains what each label means and how to read it.
  */
 export type MarketTerm = { term: string; plain: string; read?: string };

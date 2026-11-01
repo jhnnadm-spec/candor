@@ -1,8 +1,8 @@
 /**
  * Saving and loading AI explanations in Supabase.
  *
- * Only Candor's server talks to the database, using the secret key in
- * SUPABASE_SECRET_KEY. If Supabase isn't set up, Candor still works: it just
+ * Only cand0r's server talks to the database, using the secret key in
+ * SUPABASE_SECRET_KEY. If Supabase isn't set up, cand0r still works: it just
  * can't write explanations on demand.
  */
 import type { SavedExplanation } from "../explain/types";

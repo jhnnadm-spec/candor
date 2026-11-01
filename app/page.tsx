@@ -35,7 +35,7 @@ export default function Home() {
         </p>
         <HeroHeadline />
         <p className="max-w-xl text-[19px] leading-relaxed text-muted">
-          Pick a US company. Candor explains it one simple question at a time.
+          Pick a US company. cand0r explains it one simple question at a time.
         </p>
         <div className="flex w-full justify-center">
           <SearchForm />

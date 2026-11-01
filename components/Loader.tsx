@@ -1,5 +1,5 @@
 /**
- * Candor's loading animation: a card floats in front of a slowly turning glow of
+ * cand0r's loading animation: a card floats in front of a slowly turning glow of
  * colour, and its little bar chart rises and falls in a wave while placeholder
  * lines shimmer, as if the answer is being put together. Below it, the steps take
  * turns and a thin line runs along. Pure CSS (keyframes in globals.css), and still

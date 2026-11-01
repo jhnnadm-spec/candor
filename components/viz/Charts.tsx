@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * Candor's interactive charts. Every one answers to hover, tap and keyboard,
+ * cand0r's interactive charts. Every one answers to hover, tap and keyboard,
  * shows its values as text too (labels or a table), and draws gently into
  * place once when it first appears.
  */

@@ -32,10 +32,10 @@ export function leftOutNames(n?: CompanyNumbers): string[] {
 // ---------------------------------------------------------------- what each level shows
 
 /**
- * Candor explains the whole company at every level; only the amount of detail changes.
+ * cand0r explains the whole company at every level; only the amount of detail changes.
  *   Surface: one or two very plain sentences per question.
  *   Below:   each area explained, with the main numbers.
- *   Deep:    everything Candor has, including tables and the reports' exact words.
+ *   Deep:    everything cand0r has, including tables and the reports' exact words.
  * The web page and the PDF are both drawn from this outline, so they always match.
  */
 
@@ -210,7 +210,7 @@ export const AREAS: Area[] = [
   {
     id: "value",
     title: "Share price and value",
-    why: "What the stock market says the whole company is worth today. Candor shows this for context only; it doesn't say whether the price is right.",
+    why: "What the stock market says the whole company is worth today. cand0r shows this for context only; it doesn't say whether the price is right.",
     below: [{ kind: "block", block: "marketData" }],
     deep: [{ kind: "block", block: "marketData" }],
   },
@@ -327,6 +327,6 @@ export const STEPS: { id: string; title: string; question: string; areas: string
     question: "What does the stock market think it's worth?",
     areas: ["value"],
     term: "valuation",
-    why: "So far you've looked at the business itself. The share price is what the stock market will pay for a piece of it. Measures like market value (market capitalisation) and the P/E ratio compare that price with the company's size and profit, so you can see how much the market expects from it. Candor never says whether the price is right.",
+    why: "So far you've looked at the business itself. The share price is what the stock market will pay for a piece of it. Measures like market value (market capitalisation) and the P/E ratio compare that price with the company's size and profit, so you can see how much the market expects from it. cand0r never says whether the price is right.",
   },
 ];

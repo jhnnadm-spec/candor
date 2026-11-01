@@ -540,7 +540,7 @@ function surfaceBody(step: Step, ctx: Ctx, leadShown: boolean): ReactNode {
       {cards}
       {step.id === "value" && (
         <LiteCard question="What does the stock market pay for it?" term={<TermName k="share-price" />} wide>
-          <p className="text-[16px] text-muted">The share price over the past year. It moves every trading day; Candor never says whether it&apos;s right.</p>
+          <p className="text-[16px] text-muted">The share price over the past year. It moves every trading day; cand0r never says whether it&apos;s right.</p>
           <PriceChart symbol={ctx.report.tradingViewSymbol} />
         </LiteCard>
       )}
@@ -563,7 +563,7 @@ function deeperBody(step: Step, ctx: Ctx, level: "below" | "deep", profile?: Com
         {step.id === "business" && profile?.wikipedia && level === "below" && <WikipediaIntro w={profile.wikipedia} />}
         {step.areas.map((a) => areaLayer(a, level === "deep" && sameLayers ? "below" : level, ctx, step.areas.length > 1))}
         {step.id === "value" && (
-          <ChartPanel title="Share price over the past year" note="The price moves every trading day. Candor shows it for context; it doesn't say whether the price is right.">
+          <ChartPanel title="Share price over the past year" note="The price moves every trading day. cand0r shows it for context; it doesn't say whether the price is right.">
             <PriceChart symbol={report.tradingViewSymbol} />
           </ChartPanel>
         )}
@@ -664,7 +664,7 @@ function WikipediaIntro({ w }: { w: NonNullable<CompanyProfile["wikipedia"]> }) 
         <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
           CC BY-SA 4.0
         </a>
-        . Background only: Candor&apos;s numbers come from the company&apos;s own reports.
+        . Background only: cand0r&apos;s numbers come from the company&apos;s own reports.
       </p>
     </section>
   );
@@ -821,7 +821,7 @@ function BlockView({ block, report }: { block: Block; report: CompanyReport }) {
             Two numbers people look at most: <RichText text="[[market-cap|market value]]" /> (what the whole company is
             worth on the stock market) and the <RichText text="[[pe-ratio|P/E ratio]]" /> (the share price compared with
             a year of profit per share; a higher number means buyers are paying more for each dollar of profit).
-            They&apos;re shown as TradingView provides them. Candor doesn&apos;t give target prices or say whether to buy,
+            They&apos;re shown as TradingView provides them. cand0r doesn&apos;t give target prices or say whether to buy,
             sell or hold.
           </p>
           <MarketData symbol={report.tradingViewSymbol} />
@@ -843,7 +843,7 @@ function MarketKey() {
       </summary>
       <div className="flex flex-col gap-6 pb-2 pt-4">
         <p className="text-[15px] leading-relaxed text-muted">
-          These numbers come from TradingView and change every trading day. Candor can&apos;t read them, so here is what
+          These numbers come from TradingView and change every trading day. cand0r can&apos;t read them, so here is what
           each label means and how to read it.
         </p>
         {MARKET_TERMS.map((g) => (
@@ -1087,7 +1087,7 @@ function LeftOut({ report }: { report: CompanyReport }) {
     <p className="rounded-2xl bg-mist px-5 py-4 text-[15px] leading-relaxed text-muted">
       <strong className="text-ink">Left out on purpose:</strong> {leftOut.join(", ")}. The company either doesn&apos;t
       report {leftOut.length > 1 ? "these" : "this"} in SEC&apos;s standard data, or the latest figure isn&apos;t available
-      yet. Candor leaves a number out rather than guess.
+      yet. cand0r leaves a number out rather than guess.
     </p>
   );
 }
@@ -1153,7 +1153,7 @@ function MoreInfo({ report }: { report: CompanyReport }) {
 function Disclaimer() {
   return (
     <p className="text-sm leading-relaxed text-muted">
-      <strong className="font-semibold text-ink">For information only. Not investment advice.</strong> Candor explains public
+      <strong className="font-semibold text-ink">For information only. Not investment advice.</strong> cand0r explains public
       information for education. It never says whether to buy, sell or hold any investment, and never gives price targets.
     </p>
   );
@@ -1164,11 +1164,11 @@ function Unsupported({ reason, name }: { reason: "foreign-filer" | "no-recent-re
     <div className="text-[17px] leading-relaxed">
       {reason === "foreign-filer" ? (
         <p>
-          {name} is based outside the US and files a different kind of annual report with the SEC. Candor doesn&apos;t
+          {name} is based outside the US and files a different kind of annual report with the SEC. cand0r doesn&apos;t
           cover these yet.
         </p>
       ) : (
-        <p>{name} hasn&apos;t filed an annual or quarterly report with the SEC in the last two years, so there is nothing for Candor to explain.</p>
+        <p>{name} hasn&apos;t filed an annual or quarterly report with the SEC in the last two years, so there is nothing for cand0r to explain.</p>
       )}
     </div>
   );

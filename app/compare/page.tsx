@@ -60,8 +60,8 @@ async function Compare({ searchParams }: { searchParams: Promise<Record<string, 
       <ComparePicker chosen={chosen} max={MAX_COMPANIES} />
       {missing.length > 0 && (
         <p className="rounded-2xl bg-mist p-4 text-[15px]">
-          Candor can&apos;t compare {missingNames.join(", ")}: it either isn&apos;t a US-listed company, or it doesn&apos;t file the
-          yearly and quarterly reports (10-K and 10-Q) Candor reads.
+          cand0r can&apos;t compare {missingNames.join(", ")}: it either isn&apos;t a US-listed company, or it doesn&apos;t file the
+          yearly and quarterly reports (10-K and 10-Q) cand0r reads.
         </p>
       )}
       {found.length < MIN_COMPANIES ? <Start /> : <Table comparison={buildComparison(found)} />}
@@ -262,7 +262,7 @@ function Cell({ cell }: { cell: CompareCell }) {
           {f.sources[0] && <SourceLink href={f.sources[0].url} label={f.sources[0].name} />}
         </span>
       ) : (
-        <span className="mt-1 block max-w-[220px] text-[12px] leading-snug text-muted">{f.status === "needs-price" ? "Candor doesn't use a share price in its sums yet." : f.reason}</span>
+        <span className="mt-1 block max-w-[220px] text-[12px] leading-snug text-muted">{f.status === "needs-price" ? "cand0r doesn't use a share price in its sums yet." : f.reason}</span>
       )}
     </td>
   );

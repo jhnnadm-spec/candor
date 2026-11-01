@@ -100,7 +100,7 @@ class SourceList {
 export type PdfInput = {
   report: CompanyReport;
   explanation?: SavedExplanation;
-  pageUrl: string; // the live page on the Candor website
+  pageUrl: string; // the live page on the cand0r website
   createdAt: Date;
 };
 
@@ -124,10 +124,10 @@ export function ReportPdf({ report, explanation: e, pageUrl, createdAt }: PdfInp
   const sources = sourcesSection(ctx);
 
   return (
-    <Document title={`${report.company.name} (${report.company.ticker}) explained · Candor`} author="Candor" subject="Plain-English company report" creator="Candor" producer="Candor">
+    <Document title={`${report.company.name} (${report.company.ticker}) explained · cand0r`} author="cand0r" subject="Plain-English company report" creator="cand0r" producer="cand0r">
       <Page size="A4" style={s.page}>
         <View fixed style={s.footer}>
-          <Text>Candor · {report.company.ticker} · Not financial advice: for education only.</Text>
+          <Text>cand0r · {report.company.ticker} · Not financial advice: for education only.</Text>
           <Text render={({ pageNumber, totalPages }) => `Page ${pageNumber} of ${totalPages}`} />
         </View>
         {body}
@@ -249,7 +249,7 @@ function aiNote(e: SavedExplanation) {
 function notWritten() {
   return (
     <Text style={s.note}>
-      This part hasn&apos;t been written for this company yet. It will appear on the company&apos;s Candor page once it&apos;s ready.
+      This part hasn&apos;t been written for this company yet. It will appear on the company&apos;s cand0r page once it&apos;s ready.
     </Text>
   );
 }
@@ -298,7 +298,7 @@ function cover(ctx: Ctx, created: string, pageUrl: string) {
       <View style={s.brandRow}>
         <View style={s.brand}>
           <LogoMark />
-          <Text style={s.brandName}>candor</Text>
+          <Text style={s.brandName}>cand0r</Text>
         </View>
         <Text style={{ fontSize: 9, color: C.muted }}>Company report · created {created}</Text>
       </View>
@@ -318,7 +318,7 @@ function cover(ctx: Ctx, created: string, pageUrl: string) {
       <View style={s.box}>
         <Text>
           <Text style={s.strong}>Not financial advice. </Text>
-          Candor explains public information for education only. It does not recommend buying, selling or holding any
+          cand0r explains public information for education only. It does not recommend buying, selling or holding any
           investment, and does not give price targets.
         </Text>
         <Text style={{ marginTop: 6 }}>
@@ -437,7 +437,7 @@ function blockPdf(ctx: Ctx, block: Block, pageUrl: string): ReactNode {
         <Text style={s.box}>
           <Text style={s.strong}>Left out on purpose: </Text>
           {leftOut.join(", ")}. The company either doesn&apos;t report {leftOut.length > 1 ? "these" : "this"} in SEC&apos;s
-          standard data, or the latest figure isn&apos;t available yet. Candor leaves a number out rather than guess.
+          standard data, or the latest figure isn&apos;t available yet. cand0r leaves a number out rather than guess.
         </Text>
       );
     }
@@ -465,7 +465,7 @@ function blockPdf(ctx: Ctx, block: Block, pageUrl: string): ReactNode {
           <Link src={pageUrl} style={s.link}>
             {pageUrl.replace(/^https?:\/\//, "")}
           </Link>
-          . Candor doesn&apos;t give target prices or say whether to buy, sell or hold.
+          . cand0r doesn&apos;t give target prices or say whether to buy, sell or hold.
         </Text>
       );
   }
@@ -683,7 +683,7 @@ function glossarySection(ctx: Ctx) {
 function sourcesSection(ctx: Ctx) {
   return section(
     "Sources",
-    "Candor doesn't create financial data. Every figure and point above comes from these documents, filed by the company with the US Securities and Exchange Commission (SEC EDGAR). Figures are read from the financial data tagged in those reports.",
+    "cand0r doesn't create financial data. Every figure and point above comes from these documents, filed by the company with the US Securities and Exchange Commission (SEC EDGAR). Figures are read from the financial data tagged in those reports.",
     <>
       {ctx.src.items.map((it, i) => (
         <View key={it.url + it.label} style={{ flexDirection: "row", marginBottom: 4 }} wrap={false}>

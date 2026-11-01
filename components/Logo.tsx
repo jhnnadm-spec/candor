@@ -1,5 +1,5 @@
 /**
- * The Candor mark: a solid circle with one slot cut into it, so it reads as a "C"
+ * The cand0r mark: a solid circle with one slot cut into it, so it reads as a "C"
  * and as an opening: nothing hidden. One shape, one colour, so it holds up from a
  * favicon to a billboard. It takes its colour from the text around it.
  */
@@ -13,13 +13,13 @@ export function LogoMark({ size = 28 }: { size?: number }) {
   );
 }
 
-/** The mark with the name "candor" on its right, in lowercase. */
+/** The mark with the name "cand0r" on its right (lowercase, with a zero for the o). */
 export function Logo({ size = 28 }: { size?: number }) {
   return (
     <span className="inline-flex items-center text-ink" style={{ gap: size * 0.3 }}>
       <LogoMark size={size} />
       <span className="font-display font-semibold leading-none tracking-[-0.045em]" style={{ fontSize: size * 1.06 }}>
-        candor
+        cand0r
       </span>
     </span>
   );

@@ -1,11 +1,11 @@
-# Candor
+# cand0r
 
-Candor helps anyone understand US public companies in plain English.
-You search for a company, and Candor gathers information from public sources
+cand0r helps anyone understand US public companies in plain English.
+You search for a company, and cand0r gathers information from public sources
 that allow it to be shared, explains it at three depths, and links every point
 back to where it came from.
 
-Candor is for education only. It is not financial advice and never says buy,
+cand0r is for education only. It is not financial advice and never says buy,
 sell or hold.
 
 ## How the project is organised
@@ -14,7 +14,7 @@ sell or hold.
 |---|---|
 | `app/` | The website's pages. Each folder is a web address: `app/about/page.tsx` is `/about`. |
 | `app/layout.tsx` | The frame around every page: header, footer and fonts. |
-| `app/globals.css` | Candor's colours and fonts, defined once. |
+| `app/globals.css` | cand0r's colours and fonts, defined once. |
 | `components/` | Reusable building blocks, such as the logo. |
 | `.github/workflows/` | Instructions for GitHub's robot, which checks the code on every change. |
 | `.env.example` | A list of the private settings (keys) the app needs, with no real values. |
@@ -55,7 +55,7 @@ GitHub, Vercel rebuilds and publishes it automatically.
 ## Explanations for any company (Supabase)
 
 Companies without a saved explanation show a **Write the plain-English
-explanation** button. Candor then writes one with the free Cloudflare AI,
+explanation** button. cand0r then writes one with the free Cloudflare AI,
 checks every point, and saves it in a free Supabase database.
 
 - Limits (to stay free): about 6 new explanations a day in total, and 3 new
@@ -74,7 +74,7 @@ checks every point, and saves it in a free Supabase database.
   industry code it gives the SEC, with yearly sales from SEC data so bigger
   companies come first. Runs on the 2nd of each month (about 20 minutes) and
   saves `content/sectors.json`.
-- **Watchlist**: saved in each visitor's browser only. No accounts, nothing stored by Candor.
+- **Watchlist**: saved in each visitor's browser only. No accounts, nothing stored by cand0r.
 - **Background facts**: chief executive, founding year, headquarters, employees
   and website come from Wikidata (CC0, free to reuse); the short introduction
   comes from Wikipedia (CC BY-SA 4.0, credited on the page). They're labelled as

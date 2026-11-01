@@ -29,7 +29,7 @@ export async function GET(req: Request, ctx: RouteContext<"/api/lens/[lens]">) {
     const results = await Promise.all(tickers.map(run));
     const found = results.filter((r) => r !== null);
     const missing = tickers.filter((_, i) => !results[i]);
-    if (found.length < MIN_COMPANIES) return NextResponse.json({ error: "Candor needs at least two companies it can explain to compare.", missing }, { status: 400 });
+    if (found.length < MIN_COMPANIES) return NextResponse.json({ error: "cand0r needs at least two companies it can explain to compare.", missing }, { status: 400 });
     return NextResponse.json({ ...buildComparison(found), missing, disclaimer: "For information only. Not investment advice." });
   }
 

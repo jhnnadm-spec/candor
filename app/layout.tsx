@@ -13,8 +13,8 @@ import { SearchForm } from "@/components/SearchForm";
 
 export const metadata: Metadata = {
   title: {
-    default: "Candor: company reports, explained plainly",
-    template: "%s · Candor",
+    default: "cand0r: company reports, explained plainly",
+    template: "%s · cand0r",
   },
   description:
     "Understand any US public company in plain English, with a source for every claim. For education only, not financial advice.",
@@ -27,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <AmbientBackground />
         <header className="relative z-10 border-b border-line bg-white/85 backdrop-blur-xl">
           <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-3.5 lg:px-8">
-            <Link href="/" className="no-underline" aria-label="Candor home">
+            <Link href="/" className="no-underline" aria-label="cand0r home">
               <Logo size={26} />
             </Link>
             <NavLinks />
@@ -43,9 +43,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         <footer className="border-t border-line bg-white/70 backdrop-blur">
           <div className="mx-auto flex max-w-[1180px] flex-col gap-2 px-5 py-8 text-sm leading-relaxed text-muted sm:flex-row sm:items-center sm:justify-between lg:px-8">
-            <p>For information only. Not investment advice. Candor never tells you to buy, sell or hold anything.</p>
+            <p>For information only. Not investment advice. cand0r never tells you to buy, sell or hold anything.</p>
             <Link href="/about" className="font-semibold">
-              About Candor
+              About cand0r
             </Link>
           </div>
         </footer>

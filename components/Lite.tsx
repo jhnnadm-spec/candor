@@ -4,6 +4,7 @@
  * full, interactive charts are one level down.
  */
 import type { ReactNode } from "react";
+import { Emph } from "./Emph";
 
 export function LiteCard({
   question,
@@ -32,7 +33,7 @@ export function LiteCard({
 
 /** The answer in a few words: a big figure and a short caption. */
 export function BigAnswer({ value, caption, tone = "ocean" }: { value: string; caption: string; tone?: "ocean" | "good" | "warn" }) {
-  const color = tone === "good" ? "text-[#14805a]" : tone === "warn" ? "text-[#b4532a]" : "text-ink";
+  const color = tone === "good" ? "text-[#0b6f6e]" : tone === "warn" ? "text-[#b4233c]" : "text-ink";
   return (
     <p className="flex flex-col gap-1">
       <span className={`font-display text-[40px] font-bold leading-none tracking-tight tabular-nums ${color}`}>{value}</span>
@@ -43,7 +44,11 @@ export function BigAnswer({ value, caption, tone = "ocean" }: { value: string; c
 
 /** The answer in one sentence, for questions about the business itself. */
 export function SaidAnswer({ text }: { text: string }) {
-  return <p className="text-[19px] font-medium leading-[1.5] text-ink">{text}</p>;
+  return (
+    <p className="text-[19px] font-medium leading-[1.5] text-ink/85">
+      <Emph text={text} />
+    </p>
+  );
 }
 
 /** Small "Source" links that open the original document. */
@@ -82,23 +87,43 @@ function shortSource(label: string): string {
 
 // ---------------------------------------------------------------- small pictures
 
-/** Sales by year as simple bars, the latest one darker. */
+/** "$391.0bn" style, for the small labels on Surface pictures. */
+function compactMoney(v: number): string {
+  const a = Math.abs(v);
+  const sign = v < 0 ? "−" : "";
+  if (a >= 1e12) return `${sign}$${(a / 1e12).toFixed(2)}tn`;
+  if (a >= 1e9) return `${sign}$${(a / 1e9).toFixed(1)}bn`;
+  if (a >= 1e6) return `${sign}$${(a / 1e6).toFixed(0)}m`;
+  return `${sign}$${Math.round(a).toLocaleString("en-US")}`;
+}
+
+/** Sales by year as bars: the latest one in full colour; point at any bar to see its figure. */
 export function MiniBars({ bars }: { bars: { label: string; value: number }[] }) {
   const max = Math.max(...bars.map((b) => b.value), 1);
   return (
-    <figure className="m-0 flex flex-col gap-1.5" aria-label={`Sales by year, ${bars.map((b) => b.label).join(", ")}`}>
-      <div className="flex h-20 items-end gap-1.5">
-        {bars.map((b, i) => (
-          <span
-            key={b.label}
-            className="fathom-grow-up flex-1 rounded-t-md"
-            style={{
-              height: `${Math.max(4, (b.value / max) * 100)}%`,
-              background: i === bars.length - 1 ? "var(--color-ocean)" : "var(--color-surface)",
-              animationDelay: `${i * 60}ms`,
-            }}
-          />
-        ))}
+    <figure className="m-0 flex flex-col gap-1.5" aria-label={`Sales by year: ${bars.map((b) => `${b.label} ${compactMoney(b.value)}`).join(", ")}`}>
+      <div className="flex h-24 items-end gap-1.5 pt-5">
+        {bars.map((b, i) => {
+          const last = i === bars.length - 1;
+          return (
+            <span key={b.label} className="group relative flex h-full flex-1 items-end">
+              <span
+                className="fathom-grow-up block w-full rounded-t-[6px] transition-[filter] duration-200 group-hover:brightness-95"
+                style={{
+                  height: `${Math.max(4, (b.value / max) * 100)}%`,
+                  background: last ? "linear-gradient(180deg, #2d5bff, #7c5cff)" : "linear-gradient(180deg, #dfe6ff, #cdd8ff)",
+                  animationDelay: `${i * 60}ms`,
+                }}
+              />
+              <span
+                className={`pointer-events-none absolute left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-ink px-1.5 py-0.5 text-[10.5px] font-semibold text-white transition-opacity duration-150 ${last ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                style={{ bottom: `calc(${Math.max(4, (b.value / max) * 100)}% + 4px)` }}
+              >
+                {compactMoney(b.value)}
+              </span>
+            </span>
+          );
+        })}
       </div>
       <div className="flex gap-1.5 text-[11px] text-muted">
         {bars.map((b) => (
@@ -116,13 +141,21 @@ export function KeepBar({ kept }: { kept: number }) {
   const pct = Math.max(0, Math.min(100, Math.round(kept)));
   return (
     <figure className="m-0 flex flex-col gap-2" aria-label={`$${pct} kept as profit, $${100 - pct} spent on costs, out of every $100 of sales`}>
-      <div className="flex h-4 overflow-hidden rounded-full bg-surface">
-        <span className="h-full bg-surface" style={{ width: `${100 - pct}%` }} />
-        <span className="fathom-grow-right h-full rounded-full bg-[#199e70]" style={{ width: `${pct}%` }} />
+      <div className="flex h-5 gap-[3px] overflow-hidden rounded-full">
+        <span
+          title={`$${100 - pct} of every $100 went on costs`}
+          className="h-full rounded-l-full bg-[repeating-linear-gradient(135deg,#eef0f3_0_6px,#e4e7ec_6px_12px)] transition-[filter] hover:brightness-95"
+          style={{ width: `${100 - pct}%` }}
+        />
+        <span
+          title={`$${pct} of every $100 was kept as profit`}
+          className="fathom-grow-right h-full rounded-r-full bg-gradient-to-r from-[#0ea5a4] to-[#2dd4bf] transition-[filter] hover:brightness-105"
+          style={{ width: `${pct}%` }}
+        />
       </div>
       <div className="flex justify-between text-[12px] text-muted">
         <span>${100 - pct} on costs</span>
-        <span className="font-semibold text-[#14805a]">${pct} kept</span>
+        <span className="font-semibold text-[#0b6f6e]">${pct} kept</span>
       </div>
     </figure>
   );
@@ -134,12 +167,12 @@ export function MiniGauge({ value, mark = "$1 due" }: { value: number; mark?: st
   const enough = value >= 1;
   return (
     <figure className="m-0 flex flex-col gap-1.5" aria-label={`${value.toFixed(2)} on a scale from 0 to 2`}>
-      <div className="relative h-4">
-        <div className="absolute inset-y-1 left-0 right-0 rounded-full bg-gradient-to-r from-[#f6d9cc] via-[#e3f0f5] to-[#cdeedf]" />
-        <span className="absolute inset-y-0 left-1/2 w-px bg-muted/50" />
+      <div className="relative h-5">
+        <div className="absolute inset-y-1 left-0 right-0 rounded-full bg-gradient-to-r from-[#fecdd3] via-[#fde68a] to-[#99f6e4]" />
+        <span className="absolute inset-y-0 left-1/2 w-px bg-ink/30" />
         <span
-          className={`absolute top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white shadow ${enough ? "bg-[#14805a]" : "bg-[#b4532a]"}`}
-          style={{ left: `${pos}%` }}
+          className="fathom-grow-right absolute top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-white shadow-[0_4px_10px_-2px_rgba(12,15,20,0.4)]"
+          style={{ left: `${pos}%`, background: enough ? "#0ea5a4" : "#f43f5e" }}
         />
       </div>
       <div className="flex justify-between text-[11px] text-muted">
@@ -155,15 +188,18 @@ export function MiniGauge({ value, mark = "$1 due" }: { value: number; mark?: st
 export function MiniPair({ items }: { items: { label: string; value: number; display: string; color: string }[] }) {
   const max = Math.max(...items.map((i) => i.value), 1);
   return (
-    <ul className="m-0 flex list-none flex-col gap-2.5 p-0">
+    <ul className="m-0 flex list-none flex-col gap-3 p-0">
       {items.map((it) => (
-        <li key={it.label} className="flex flex-col gap-1">
+        <li key={it.label} className="group flex flex-col gap-1">
           <span className="flex justify-between gap-3 text-[13px]">
-            <span className="text-muted">{it.label.replace(/\s*\(.*\)$/, "")}</span>
+            <span className="text-muted transition-colors group-hover:text-ink">{it.label.replace(/\s*\(.*\)$/, "")}</span>
             <span className="font-semibold tabular-nums">{it.display}</span>
           </span>
-          <span className="h-2 overflow-hidden rounded-full bg-panel-2">
-            <span className="fathom-grow-right block h-full rounded-full" style={{ width: `${Math.max(3, (it.value / max) * 100)}%`, background: it.color }} />
+          <span className="h-2.5 overflow-hidden rounded-full bg-panel-2">
+            <span
+              className="fathom-grow-right block h-full rounded-full transition-[filter] group-hover:brightness-105"
+              style={{ width: `${Math.max(3, (it.value / max) * 100)}%`, background: `linear-gradient(90deg, color-mix(in srgb, ${it.color} 55%, white), ${it.color})` }}
+            />
           </span>
         </li>
       ))}
@@ -171,14 +207,19 @@ export function MiniPair({ items }: { items: { label: string; value: number; dis
   );
 }
 
-/** What the money went on, as one bar with a short key. */
+/** What the money went on, as one bar with a short key; point at a part to see it. */
 export function UsesBar({ segments }: { segments: { label: string; value: number; display: string; color: string }[] }) {
   const total = segments.reduce((s, x) => s + x.value, 0) || 1;
   return (
     <figure className="m-0 flex flex-col gap-2.5">
-      <div className="flex h-4 gap-0.5 overflow-hidden rounded-full">
+      <div className="flex h-5 gap-[3px] overflow-hidden rounded-full">
         {segments.map((s) => (
-          <span key={s.label} className="fathom-grow-right h-full first:rounded-l-full last:rounded-r-full" style={{ width: `${(s.value / total) * 100}%`, background: s.color }} />
+          <span
+            key={s.label}
+            title={`${s.label.replace(/\s*\(.*\)$/, "")}: ${s.display}`}
+            className="fathom-grow-right h-full transition-[filter] first:rounded-l-full last:rounded-r-full hover:brightness-110"
+            style={{ width: `${(s.value / total) * 100}%`, background: s.color }}
+          />
         ))}
       </div>
       <ul className="m-0 flex list-none flex-wrap gap-x-4 gap-y-1 p-0 text-[13px]">

@@ -42,7 +42,7 @@ export function FundamentalGlance({ result }: { result: LensResult<FundamentalDa
       </ul>
 
       <details className="group rounded-2xl border border-line">
-        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-5 py-3 text-[16px] font-semibold text-ocean">
+        <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-5 py-3 text-[16px] font-semibold text-ink">
           See all {rows.length} figures, grouped the way people usually read them
           <span aria-hidden="true" className="text-xl transition-transform group-open:rotate-45">
             +
@@ -76,7 +76,7 @@ export function FundamentalGlance({ result }: { result: LensResult<FundamentalDa
 
       <Link
         href={`/compare?t=${encodeURIComponent(result.ticker)}`}
-        className="inline-flex min-h-11 items-center gap-2 self-start rounded-xl border border-line bg-white px-4 text-[15px] font-semibold text-ocean no-underline transition-colors hover:border-mid"
+        className="inline-flex min-h-11 items-center gap-2 self-start rounded-xl border border-line bg-white px-4 text-[15px] font-semibold text-ink no-underline transition-colors hover:border-mid"
       >
         Compare {company} side by side with other companies
         <span aria-hidden="true">→</span>

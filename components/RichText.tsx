@@ -3,6 +3,7 @@ import { bracketFor, lookupTerm } from "@/lib/glossary";
 
 export { bracketFor };
 import { Term } from "./Term";
+import { Emph } from "./Emph";
 
 /**
  * Shows a sentence, turning markers like [[net-income|kept as profit]] into
@@ -15,7 +16,7 @@ export function RichText({ text }: { text: string }) {
     <>
       {parts.map((part, i) => {
         const m = part.match(/^\[\[([^|\]]+)\|([^\]]+)\]\]$/);
-        if (!m) return <Fragment key={i}>{part}</Fragment>;
+        if (!m) return <Emph key={i} text={part} />;
         const entry = lookupTerm(m[1]);
         if (!entry) return <Fragment key={i}>{m[2]}</Fragment>;
         return (

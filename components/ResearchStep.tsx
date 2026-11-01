@@ -16,6 +16,7 @@ export function ResearchStep({
   id,
   number,
   total,
+  label,
   question,
   brief,
   term,
@@ -56,18 +57,19 @@ export function ResearchStep({
     <section
       ref={top}
       id={`step-${id}`}
+      data-part={label ?? question}
       style={accentVars(stepAccent(id))}
       className="flex scroll-mt-20 flex-col gap-5 border-t border-line pt-10 first:border-t-0 first:pt-4"
       aria-labelledby={`step-${id}-title`}
     >
       <header className="flex gap-4">
-        <span className="mt-1">
-          <StepIcon id={id} size={48} />
+        <span className="group mt-1">
+          <StepIcon id={id} size={52} />
         </span>
         <div className="flex min-w-0 flex-col gap-2">
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[14px] font-semibold text-muted">
             <span className="inline-flex items-center gap-2">
-              Question {number} of {total}
+              Part {number} of {total}
               {/* Seven little dots, this question's lit up */}
               <span aria-hidden="true" className="inline-flex gap-1">
                 {Array.from({ length: total }, (_, k) => (

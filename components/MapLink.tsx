@@ -6,7 +6,7 @@ export function MapLink({ id, children }: { id: string; children: React.ReactNod
     <button
       type="button"
       onClick={() => window.dispatchEvent(new CustomEvent("fathom:map-focus", { detail: id }))}
-      className="fathom-grow inline-flex min-h-8 items-center gap-1 rounded-full bg-surface/60 px-2.5 text-[13px] font-semibold text-ocean hover:bg-surface"
+      className="fathom-grow inline-flex min-h-8 items-center gap-1 rounded-full bg-surface/60 px-2.5 text-[13px] font-semibold text-ink hover:bg-surface"
       title="Show on the map"
     >
       {children}

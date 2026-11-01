@@ -33,10 +33,10 @@ export type MapEdge = { from: string; to: string; label: string };
 
 export const GROUPS: Record<MapGroup, { name: string; color: string }> = {
   forces: { name: "Key drivers from outside (dashed links)", color: "#6b7f8e" },
-  sales: { name: "Sales and profit", color: "#2a78d6" },
-  cash: { name: "Cash", color: "#199e70" },
-  balance: { name: "What it owns and owes", color: "#6250d6" },
-  market: { name: "The share price", color: "#eb6834" },
+  sales: { name: "Sales and profit", color: "#2d5bff" },
+  cash: { name: "Cash", color: "#0ea5a4" },
+  balance: { name: "What it owns and owes", color: "#7c5cff" },
+  market: { name: "The share price", color: "#f59e0b" },
 };
 
 const LAYOUT: { id: string; label: string; plain: string; key: string; group: MapGroup; x: number; y: number; step: string }[] = [
@@ -83,8 +83,8 @@ export const EDGES: MapEdge[] = [
   { from: "revenue", to: "margin", label: "profit is compared with sales" },
   { from: "profit", to: "margin", label: "profit ÷ sales" },
   { from: "profit", to: "opcash", label: "profit isn't the same as cash" },
-  { from: "opcash", to: "fcf", label: "cash in…" },
-  { from: "capex", to: "fcf", label: "…minus equipment spending" },
+  { from: "opcash", to: "fcf", label: "the cash it brought in is the starting point" },
+  { from: "capex", to: "fcf", label: "spending on equipment is taken away" },
   { from: "fcf", to: "dividends", label: "can be paid out" },
   { from: "fcf", to: "buybacks", label: "can buy back shares" },
   { from: "cash", to: "current", label: "helps pay bills due soon" },
@@ -125,9 +125,9 @@ export function conceptMap(n?: CompanyNumbers, readings: Record<string, string |
     equity: b?.equity && `${formatMoney(b.equity.latest.value)}${on(b.equity.latest.end)}`,
     roe: r?.returnOnEquity && `${formatShare(r.returnOnEquity.value)}${year(r.returnOnEquity.end)}`,
     eps: a?.eps && `${formatPerShare(a.eps.latest.value)} per share${year(a.eps.latest.end)}`,
-    price: "Changes every trading day: see the live chart in step 7",
-    pe: "See the live figure in step 7",
-    mcap: "See the live figure in step 7",
+    price: "Changes every trading day: see the live chart under \"The share price\"",
+    pe: "See the live figure under \"The share price\"",
+    mcap: "See the live figure under \"The share price\"",
     "f-demand": readings.demand,
     "f-inflation": readings.inflation,
     "f-competition": readings.competition ?? "What the company says about its competitors is in \"Key drivers\"",

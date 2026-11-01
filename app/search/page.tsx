@@ -86,7 +86,7 @@ async function Results({ searchParams }: { searchParams: Promise<Record<string, 
               >
                 <CompanyLogo name={displayName(m.name)} size={42} />
                 <span className="fathom-grow flex-1 text-[17px] font-semibold text-ink">{displayName(m.name)}</span>
-                <span className="rounded-lg bg-panel-2 px-2.5 py-1 text-sm font-semibold text-ocean">{m.ticker}</span>
+                <span className="rounded-lg bg-panel-2 px-2.5 py-1 text-sm font-semibold text-ink">{m.ticker}</span>
               </Link>
             </li>
           ))}

@@ -9,7 +9,7 @@
  * The choice is remembered in this browser only.
  * (In the code the levels keep their older names: surface, below and deep.)
  */
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 
 export type Level = "surface" | "below" | "deep";
 export const LEVELS: Level[] = ["surface", "below", "deep"];
@@ -22,11 +22,39 @@ export const LEVEL_INFO: Record<Level, { name: string; hint: string }> = {
 
 const KEY = "fathom:depth";
 
-type DepthState = { level: Level; setLevel: (l: Level) => void; stamp: number };
+type Notice = { level: Level; part?: string; n: number };
+type DepthState = { level: Level; setLevel: (l: Level) => void; stamp: number; notice?: Notice };
 const DepthContext = createContext<DepthState>({ level: "surface", setLevel: () => {}, stamp: 0 });
+
+/** The part of the page the reader is in right now: the last part whose top has scrolled past the bar. */
+function currentPart(): HTMLElement | undefined {
+  const parts = [...document.querySelectorAll<HTMLElement>("[data-part]")];
+  let pick: HTMLElement | undefined;
+  for (const el of parts) {
+    if (el.getBoundingClientRect().top <= 180) pick = el;
+    else break;
+  }
+  return pick ?? parts.find((el) => el.getBoundingClientRect().bottom > 0);
+}
 
 export function DepthProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<{ level: Level; stamp: number }>({ level: "surface", stamp: 0 });
+  const [notice, setNotice] = useState<Notice>();
+  // Where the reader was, so the page can keep them there when the detail changes.
+  const anchor = useRef<{ id: string; top: number } | null>(null);
+
+  useLayoutEffect(() => {
+    const a = anchor.current;
+    anchor.current = null;
+    if (!a) return;
+    const el = document.getElementById(a.id);
+    if (!el) return;
+    const delta = el.getBoundingClientRect().top - a.top;
+    if (Math.abs(delta) > 1) window.scrollBy({ top: delta, behavior: "instant" as ScrollBehavior });
+    el.classList.remove("part-flash");
+    void el.offsetWidth; // restart the highlight
+    el.classList.add("part-flash");
+  }, [state.stamp]);
 
   // Pick up the reader's last choice once the page is in the browser.
   useEffect(() => {
@@ -43,6 +71,9 @@ export function DepthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const setLevel = (level: Level) => {
+    const part = currentPart();
+    anchor.current = part ? { id: part.id, top: part.getBoundingClientRect().top } : null;
+    setNotice((n) => ({ level, part: part?.dataset.part, n: (n?.n ?? 0) + 1 }));
     setState((s) => ({ level, stamp: s.stamp + 1 }));
     try {
       window.localStorage.setItem(KEY, level);
@@ -51,7 +82,7 @@ export function DepthProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  return <DepthContext.Provider value={{ ...state, setLevel }}>{children}</DepthContext.Provider>;
+  return <DepthContext.Provider value={{ ...state, setLevel, notice }}>{children}</DepthContext.Provider>;
 }
 
 export function useDepth(): DepthState {
@@ -96,9 +127,10 @@ export function DepthSwitch() {
             aria-checked={on}
             title={LEVEL_INFO[l].hint}
             onClick={() => setLevel(l)}
-            className={`relative min-h-9 rounded-full px-2 text-[14px] font-semibold transition-colors ${on ? "text-white" : "text-muted hover:text-ink"}`}
+            className={`relative flex min-h-11 flex-col items-center justify-center rounded-full px-2 leading-tight transition-colors ${on ? "text-white" : "text-muted hover:text-ink"}`}
           >
-            {LEVEL_INFO[l].name}
+            <span className="text-[14px] font-semibold">{LEVEL_INFO[l].name}</span>
+            <span className={`hidden text-[11px] sm:block ${on ? "text-white/75" : "text-muted"}`}>{LEVEL_INFO[l].hint}</span>
           </button>
         );
       })}
@@ -135,24 +167,45 @@ function useReadProgress(): number {
  * A slim bar that stays at the top of a company page while reading, holding the detail
  * switch, with a blue line along its bottom edge that fills as the reader scrolls.
  */
+const CHANGE: Record<Level, string> = {
+  surface: "Showing the short answers only",
+  below: "Added the explanation and main numbers under each part",
+  deep: "Added every detail: the full figures and the reports' own words",
+};
+
 export function DetailBar() {
-  const { level } = useDepth();
+  const { notice } = useDepth();
   const progress = useReadProgress();
+  // Say what just changed, and where the reader still is, for a few seconds after a switch.
+  const [hidden, setHidden] = useState<number | undefined>();
+  useEffect(() => {
+    if (!notice) return;
+    const t = window.setTimeout(() => setHidden(notice.n), 4200);
+    return () => window.clearTimeout(t);
+  }, [notice]);
+  const fresh = notice && hidden !== notice.n;
   return (
     <div className="sticky top-0 z-20 -mx-5 border-b border-line bg-white/90 px-5 py-2.5 backdrop-blur-xl sm:mx-0 sm:rounded-b-2xl sm:px-4">
-      <div className="mx-auto flex max-w-[760px] items-center justify-between gap-3">
-        <span className="hidden text-[14px] font-semibold text-muted sm:block">
-          How much detail? <span className="font-normal">{LEVEL_INFO[level].hint}</span>
+      <div className="flex items-center justify-between gap-4">
+        <span className="hidden min-w-0 flex-1 text-[14px] sm:block" aria-live="polite">
+          {fresh ? (
+            <span key={notice.n} className="fathom-pop flex flex-col leading-snug">
+              <span className="font-semibold text-ink">{CHANGE[notice.level]}</span>
+              {notice.part && <span className="truncate text-muted">You&apos;re still on “{notice.part}”</span>}
+            </span>
+          ) : (
+            <span className="flex flex-col leading-snug">
+              <span className="font-semibold text-ink">How much detail?</span>
+              <span className="text-muted">Switch any time; you&apos;ll stay where you are.</span>
+            </span>
+          )}
         </span>
-        <div className="w-full sm:w-[300px]">
+        <div className="w-full sm:w-[380px]">
           <DepthSwitch />
         </div>
       </div>
       <span aria-hidden="true" className="absolute inset-x-0 -bottom-px h-[3px] overflow-hidden sm:rounded-b-2xl">
-        <span
-          className="block h-full origin-left bg-ocean"
-          style={{ transform: `scaleX(${progress})` }}
-        />
+        <span className="block h-full origin-left bg-ocean" style={{ transform: `scaleX(${progress})` }} />
       </span>
     </div>
   );

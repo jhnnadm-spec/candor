@@ -16,9 +16,9 @@ export function PriceChart({ symbol }: { symbol: string }) {
         isTransparent: true,
         autosize: true,
         chartOnly: false,
-        trendLineColor: "rgba(11, 79, 108, 1)",
-        underLineColor: "rgba(47, 143, 179, 0.25)",
-        underLineBottomColor: "rgba(47, 143, 179, 0)",
+        trendLineColor: "rgba(45, 91, 255, 1)",
+        underLineColor: "rgba(45, 91, 255, 0.18)",
+        underLineBottomColor: "rgba(45, 91, 255, 0)",
       }}
       attribution={{ href: `https://www.tradingview.com/symbols/${symbol.replace(":", "-")}/`, text: `${symbol} chart` }}
     />
@@ -89,6 +89,26 @@ export function MarketNews({ height = 520 }: { height?: number }) {
         locale: "en",
       }}
       attribution={{ href: "https://www.tradingview.com/news/markets/stocks/", text: "Stock market news" }}
+    />
+  );
+}
+
+/** The week's important US economic releases (jobs, inflation, interest rates), from TradingView's calendar. */
+export function EconomicCalendar({ height = 420 }: { height?: number }) {
+  return (
+    <TradingViewWidget
+      script="events"
+      height={height}
+      config={{
+        colorTheme: "light",
+        isTransparent: true,
+        width: "100%",
+        height: "100%",
+        locale: "en",
+        importanceFilter: "0,1",
+        countryFilter: "us",
+      }}
+      attribution={{ href: "https://www.tradingview.com/economic-calendar/", text: "Economic calendar" }}
     />
   );
 }

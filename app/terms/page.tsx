@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Dictionary" };
 
 export default function TermsPage(props: PageProps<"/terms">) {
   return (
-    <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-10 px-5 py-12 sm:py-16 lg:px-8">
+    <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-10 px-5 py-12 sm:py-16 lg:px-10">
       <PageTitle
         title="Money words, in plain English"
         note="What each term means, why people check it, and when a high or low number is good or bad."

@@ -5,7 +5,7 @@
 import type { ReactNode } from "react";
 
 /** 100 dots, one per dollar of each $100 of sales; the filled ones are what's kept. */
-export function DotGrid({ value, label, color = "#2a78d6" }: { value: number; label: string; color?: string }) {
+export function DotGrid({ value, label, color = "#2d5bff" }: { value: number; label: string; color?: string }) {
   const filled = Math.max(0, Math.min(100, Math.round(value * 100)));
   return (
     <div className="flex items-center gap-4">
@@ -116,7 +116,7 @@ export function TopicIcon({ name }: { name: string }) {
   const icon = ICONS[name];
   if (!icon) return null;
   return (
-    <span aria-hidden="true" className="inline-flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-surface/70 text-ocean">
+    <span aria-hidden="true" className="inline-flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-surface/70 text-ink">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         {icon}
       </svg>
@@ -125,7 +125,7 @@ export function TopicIcon({ name }: { name: string }) {
 }
 
 /** A slim bar out of 100%, for a share such as a margin. */
-export function Meter({ value, color = "#2a78d6" }: { value: number; color?: string }) {
+export function Meter({ value, color = "#2d5bff" }: { value: number; color?: string }) {
   const pct = Math.max(0, Math.min(100, value * 100));
   return (
     <div className="h-2.5 w-full rounded-full bg-panel-2" role="img" aria-label={`${Math.round(pct)}% of 100%`}>

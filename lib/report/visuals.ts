@@ -5,13 +5,13 @@
 import { formatDate, formatMoney, formatPerShare } from "../financials/format";
 import type { CompanyNumbers, Comparison } from "../financials/metrics";
 
-/** Chart colours, checked for colour-blind readers on cand0r's light glass tiles (in this order). */
+/** Chart colours from cand0r's palette: distinct in lightness as well as hue, so they read for colour-blind readers too. */
 export const SERIES = {
-  blue: "#2a78d6",
-  magenta: "#d55181",
-  violet: "#6250d6",
-  green: "#199e70",
-  orange: "#eb6834",
+  blue: "#2d5bff",
+  magenta: "#f43f5e",
+  violet: "#7c5cff",
+  green: "#0ea5a4",
+  orange: "#f59e0b",
 } as const;
 
 export type Segment = { label: string; value: number; display: string; color: string; note: string };
@@ -110,7 +110,7 @@ export function marginLines(n?: CompanyNumbers) {
 
 
 export type PairItem = { label: string; value: number; display: string; color: string };
-const EARLIER = "#9fb7c3"; // a quiet grey-blue for "a year earlier", so the latest figure stands out
+const EARLIER = "#c7d2e6"; // a quiet grey-blue for "a year earlier", so the latest figure stands out
 
 /** The figure a year earlier next to the latest one, for anything compared over a year. */
 export function compareFor(id: string, n?: CompanyNumbers): PairItem[] | undefined {

@@ -10,10 +10,12 @@ import { describeAnnouncement, eventCodes } from "../sec/events";
 import { loadCompanyFacts } from "../sec/facts";
 import {
   checkSupport,
+  expectedSoon,
   latestFiling,
   loadFilings,
   recentAnnouncements,
   type CompanyFilings,
+  type Expected,
   type Filing,
   type Support,
 } from "../sec/filings";
@@ -52,6 +54,7 @@ export type CompanyReport = {
   statements: Statement[];
   announcements: Announcement[];
   governance?: GovernanceCheck;
+  expected?: Expected[]; // what it is likely to publish soon, from last year's timing
   tradingViewSymbol: string; // e.g. "NASDAQ:AAPL", for the price chart and market data
   explanationKey: string; // which reports a plain-English explanation should be written from
   generatedAt: string;
@@ -151,5 +154,6 @@ export async function getCompanyReport(ticker: string): Promise<CompanyReport | 
       .filter((a) => a.events.length > 0)
       .slice(0, 12),
     governance: governanceCheck(filings),
+    expected: expectedSoon(filings),
   };
 }

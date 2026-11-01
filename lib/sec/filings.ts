@@ -119,3 +119,38 @@ export function checkSupport(company: CompanyFilings, today: Date = new Date()):
   }
   return { supported: false, reason: "no-recent-reports" };
 }
+
+/** Something the company is expected to publish soon, worked out from when it published the same thing a year ago. */
+export type Expected = {
+  kind: "results" | "quarterly" | "annual";
+  date: string; // expected around, "YYYY-MM-DD"
+  lastYear: string; // when the same thing came out a year earlier, "YYYY-MM-DD"
+  url: string; // last year's filing, as the basis for the estimate
+};
+
+const DAY = 86_400_000;
+const iso = (t: number) => new Date(t).toISOString().slice(0, 10);
+
+/**
+ * The next results announcement and the next report, estimated from last year's timing:
+ * companies tend to report on much the same schedule every year. Only dates in the
+ * next 100 days are given, and each is clearly an estimate.
+ */
+export function expectedSoon(company: CompanyFilings, today: Date = new Date()): Expected[] {
+  const now = today.getTime();
+  const from = iso(now - 365 * DAY);
+  const to = iso(now - 265 * DAY);
+  const pick = (match: (f: Filing) => boolean, kind: (f: Filing) => Expected["kind"]): Expected | undefined => {
+    const lastYear = company.filings
+      .filter((f) => match(f) && f.filingDate >= from && f.filingDate <= to)
+      .sort((a, b) => a.filingDate.localeCompare(b.filingDate));
+    for (const f of lastYear) {
+      const next = Date.parse(f.filingDate) + 364 * DAY; // same weekday, a year on
+      if (next > now) return { kind: kind(f), date: iso(next), lastYear: f.filingDate, url: f.url };
+    }
+    return undefined;
+  };
+  const results = pick((f) => f.form === "8-K" && f.items.includes("2.02"), () => "results");
+  const report = pick((f) => f.form === "10-Q" || f.form === "10-K", (f) => (f.form === "10-K" ? "annual" : "quarterly"));
+  return [results, report].filter((x): x is Expected => Boolean(x)).sort((a, b) => a.date.localeCompare(b.date));
+}

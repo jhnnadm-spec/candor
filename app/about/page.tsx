@@ -26,7 +26,7 @@ export default function About() {
         <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
           {RULES.map((r) => (
             <li key={r.title} className="fathom-card flex items-start gap-4 p-6">
-              <span aria-hidden="true" className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-surface/70 text-ocean">
+              <span aria-hidden="true" className="flex h-11 w-11 flex-none items-center justify-center rounded-2xl bg-surface/70 text-ink">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   {r.icon}
                 </svg>
@@ -41,11 +41,13 @@ export default function About() {
       </section>
       <section className="fathom-card flex flex-col gap-2 p-6 sm:p-7" aria-labelledby="advice-title">
         <h2 id="advice-title" className="font-display text-[22px] font-bold">
-          Not financial advice
+          Important information
         </h2>
         <p className="text-[16px] leading-relaxed text-muted">
-          cand0r is for education only. It does not recommend buying, selling or holding any investment. Always check the
-          original sources before making a decision.
+          cand0r provides general information for educational purposes only. It is not investment, financial, legal or tax
+          advice, and it does not recommend buying, selling or holding any security or provide price targets. Figures come from
+          public filings and other public sources and may contain errors or be out of date, so please verify them against the
+          original documents. Consider speaking to a licensed financial adviser before making any investment decision.
         </p>
       </section>
     </div>

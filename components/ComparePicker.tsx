@@ -86,7 +86,7 @@ export function ComparePicker({ chosen, max = 5 }: { chosen: Match[]; max?: numb
               <li key={m.ticker}>
                 <button type="button" onClick={() => add(m.ticker)} className="flex min-h-11 w-full items-center justify-between gap-3 px-4 text-left hover:bg-mist">
                   <span className="truncate">{m.name}</span>
-                  <span className="text-[13px] font-bold text-ocean">{m.ticker}</span>
+                  <span className="text-[13px] font-bold text-ink">{m.ticker}</span>
                 </button>
               </li>
             ))}
@@ -106,7 +106,7 @@ export function ComparePicker({ chosen, max = 5 }: { chosen: Match[]; max?: numb
               })
               .catch(() => undefined);
           }}
-          className="inline-flex min-h-10 items-center gap-2 self-start rounded-xl border border-line bg-white px-3.5 text-[14px] font-semibold text-ocean hover:border-mid"
+          className="inline-flex min-h-10 items-center gap-2 self-start rounded-xl border border-line bg-white px-3.5 text-[14px] font-semibold text-ink hover:border-mid"
         >
           {copied ? "Link copied: send it to anyone, or save it to come back later" : "Copy a link to this comparison"}
         </button>

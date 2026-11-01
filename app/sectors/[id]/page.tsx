@@ -19,7 +19,7 @@ export async function generateMetadata(props: PageProps<"/sectors/[id]">): Promi
 
 export default function SectorPage(props: PageProps<"/sectors/[id]">) {
   return (
-    <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-8 px-5 py-12 sm:py-16 lg:px-8">
+    <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-8 px-5 py-12 sm:py-16 lg:px-10">
       <Suspense fallback={<Loader label="Loading companies…" />}>
         <Sector params={props.params} searchParams={props.searchParams} />
       </Suspense>

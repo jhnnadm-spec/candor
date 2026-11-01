@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { CompanyLogo } from "@/components/CompanyLogo";
 import { HeroHeadline } from "@/components/HeroHeadline";
-import { HeroPreview } from "@/components/HeroPreview";
+import { JargonTranslator, type JargonTerm } from "@/components/JargonTranslator";
+import { lookupTerm } from "@/lib/glossary";
 import { HowArt } from "@/components/HowArt";
 import { SearchForm } from "@/components/SearchForm";
 import { SectorIcon } from "@/components/SectorIcon";
@@ -9,52 +10,78 @@ import { SurpriseButton } from "@/components/SurpriseButton";
 import { WatchlistHome } from "@/components/WatchlistHome";
 import { largestCompanies, sectorSummaries } from "@/lib/sectors-data";
 
+// The biggest US-listed companies by market value (late October 2026). Shown as quick picks.
 const POPULAR = [
   { ticker: "AAPL", name: "Apple", site: "https://www.apple.com" },
-  { ticker: "NKE", name: "Nike", site: "https://www.nike.com" },
-  { ticker: "KO", name: "Coca-Cola", site: "https://www.coca-colacompany.com" },
+  { ticker: "NVDA", name: "NVIDIA", site: "https://www.nvidia.com" },
   { ticker: "MSFT", name: "Microsoft", site: "https://www.microsoft.com" },
-  { ticker: "COST", name: "Costco", site: "https://www.costco.com" },
+  { ticker: "GOOGL", name: "Alphabet", site: "https://abc.xyz" },
+  { ticker: "AMZN", name: "Amazon", site: "https://www.amazon.com" },
+  { ticker: "TSLA", name: "Tesla", site: "https://www.tesla.com" },
+  { ticker: "META", name: "Meta", site: "https://www.meta.com" },
+  { ticker: "AVGO", name: "Broadcom", site: "https://www.broadcom.com" },
+];
+
+// Words for the front page's translator, straight from the dictionary.
+const JARGON: [string, string][] = [
+  ["revenue", "Revenue"],
+  ["ebitda", "EBITDA"],
+  ["free-cash-flow", "Free cash flow"],
+  ["pe-ratio", "P/E ratio"],
+  ["debt-to-equity", "Debt-to-equity"],
+  ["return-on-equity", "ROE"],
+  ["gross-margin", "Gross margin"],
+  ["share-buyback", "Buyback"],
 ];
 
 const HOW = [
   { n: 1 as const, title: "Search a company", text: "Type its name, like Nike, or its short code, like NKE." },
-  { n: 2 as const, title: "Read the short answers", text: "Seven simple questions, each answered in a sentence or a picture." },
+  { n: 2 as const, title: "Read the short answers", text: "Seven short parts, from what it sells to what it's worth, each with a picture." },
   { n: 3 as const, title: "Tap “Tell me more”", text: "Only when you're curious. You never have to read it all." },
 ];
 
 export default function Home() {
   const surprise = largestCompanies(60).map((r) => r.t);
+  const jargon: JargonTerm[] = JARGON.flatMap(([key, label]) => {
+    const e = lookupTerm(key);
+    return e ? [{ key, label, term: e.term, definition: e.definition, why: e.why }] : [];
+  });
   return (
-    <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-20 px-5 pb-24 pt-14 sm:gap-28 sm:pt-24 lg:px-8">
-      {/* Search first, on a faint grid with one soft glow of brand blue behind it */}
-      <section className="relative isolate flex flex-col items-center gap-7 text-center">
-        <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-[14px] font-medium text-muted">
-          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ocean" />
-          Free. A source for every point.
-        </p>
-        <HeroHeadline />
-        <p className="max-w-xl text-[19px] leading-relaxed text-muted">
-          Pick a US company. cand0r explains it one simple question at a time.
-        </p>
-        <div className="flex w-full justify-center">
-          <SearchForm />
+    <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-20 px-5 pb-24 pt-12 sm:gap-28 sm:pt-20 lg:px-10">
+      {/* Search on the left, a live translator on the right */}
+      <section className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16">
+        <div className="flex flex-col items-start gap-7">
+          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-1.5 text-[14px] font-medium text-muted">
+            <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ocean" />
+            Free. A source for every point.
+          </p>
+          <HeroHeadline />
+          <p className="max-w-xl text-[19px] leading-relaxed text-muted">
+            Pick a US company. cand0r reads its official reports and explains the whole business, step by step, in words anyone can follow.
+          </p>
+          <div className="flex w-full">
+            <SearchForm />
+          </div>
+          <div className="flex flex-col gap-2.5">
+            <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-muted" title="Among the largest US-listed companies by market value, late October 2026">
+              Or start with the biggest
+            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              {POPULAR.map((c) => (
+                <Link
+                  key={c.ticker}
+                  href={`/stock/${c.ticker}`}
+                  className="fathom-lift inline-flex items-center gap-2 rounded-full border border-line bg-white py-1 pl-1 pr-3.5 text-[15px] font-medium text-ink no-underline"
+                >
+                  <CompanyLogo name={c.name} website={c.site} size={26} />
+                  {c.name}
+                </Link>
+              ))}
+              <SurpriseButton tickers={surprise} />
+            </div>
+          </div>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          <span className="mr-1 text-[15px] text-muted">Try</span>
-          {POPULAR.map((c) => (
-            <Link
-              key={c.ticker}
-              href={`/stock/${c.ticker}`}
-              className="fathom-lift inline-flex items-center gap-2 rounded-full border border-line bg-white py-1 pl-1 pr-3.5 text-[15px] font-medium text-ink no-underline"
-            >
-              <CompanyLogo name={c.name} website={c.site} size={26} />
-              {c.name}
-            </Link>
-          ))}
-          <SurpriseButton tickers={surprise} />
-        </div>
-        <HeroPreview />
+        <JargonTranslator terms={jargon} />
       </section>
 
       <WatchlistHome />

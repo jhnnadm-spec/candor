@@ -12,7 +12,7 @@ export default function SectorsPage() {
   const sectors = sectorSummaries();
   const ready = sectors.some((s) => s.count > 0);
   return (
-    <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-10 px-5 py-12 sm:py-16 lg:px-8">
+    <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-10 px-5 py-12 sm:py-16 lg:px-10">
       <PageTitle title="Browse by type of business" note="Pick one to see its companies, biggest first." />
       {!ready && <p className="fathom-card p-5 text-[16px]">The sector list is being built from SEC data. Check back shortly.</p>}
       <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">

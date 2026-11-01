@@ -238,7 +238,7 @@ export function ConceptMap({ nodes, company }: { nodes: MapNode[]; company: stri
               onClick={() => setActive(n.id)}
               aria-pressed={n.id === phoneNode?.id}
               className={`flex min-h-10 items-center gap-1.5 rounded-full px-3 text-[13px] font-semibold ${
-                n.id === phoneNode?.id ? "bg-ocean text-abyss" : phoneNear.has(n.id) ? "bg-surface text-ocean" : "bg-panel-2 text-muted"
+                n.id === phoneNode?.id ? "bg-ocean text-abyss" : phoneNear.has(n.id) ? "bg-surface text-ink" : "bg-panel-2 text-muted"
               }`}
             >
               <span aria-hidden="true" className="h-2 w-2 rounded-full" style={{ background: GROUPS[n.group].color }} />
@@ -285,7 +285,7 @@ function Details({
               type="button"
               onClick={() => onPick(n.id)}
               title={label}
-              className="fathom-grow rounded-full bg-surface/60 px-2.5 py-1 text-left text-[13px] font-semibold text-ocean hover:bg-surface"
+              className="fathom-grow rounded-full bg-surface/60 px-2.5 py-1 text-left text-[13px] font-semibold text-ink hover:bg-surface"
             >
               {n.label}
             </button>
@@ -306,7 +306,7 @@ function Details({
       {node.value && (
         <p className="rounded-xl bg-surface/40 px-3 py-2 text-[15px]">
           <span className="text-muted">{company}: </span>
-          <strong className="font-semibold text-ocean">{node.value}</strong>
+          <strong className="font-semibold text-ink">{node.value}</strong>
         </p>
       )}
       <p className="text-[15px] leading-relaxed">{node.definition}</p>

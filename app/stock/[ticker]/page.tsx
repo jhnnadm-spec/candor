@@ -5,9 +5,10 @@ import { ResearchStep } from "@/components/ResearchStep";
 import { WatchButton } from "@/components/WatchButton";
 import { Loader } from "@/components/Loader";
 import { ExplainButton } from "@/components/ExplainButton";
-import { CompanyNews, MarketData, PriceChart } from "@/components/MarketWidgets";
+import { MarketData, PriceChart } from "@/components/MarketWidgets";
 import { BillsGauge, Columns, Lines, PairBars, StackedBar } from "@/components/viz/Charts";
 import { RichText } from "@/components/RichText";
+import { Emph } from "@/components/Emph";
 import { SourceLink } from "@/components/SourceLink";
 import { describeAnnouncement, EVENT_WHY, stepsForEvent } from "@/lib/sec/events";
 import { explanationState, type ExplanationState } from "@/lib/explain/ondemand";
@@ -32,6 +33,8 @@ import { billsGauge, cashVsDebt, compareFor, marginLines, moneyUses, pairFor, sa
 import { DotGrid, Meter, StatusBadge, TopicIcon } from "@/components/viz/Static";
 import { AtDepth, DepthProvider, DetailBar } from "@/components/Depth";
 import { CompanyLogo } from "@/components/CompanyLogo";
+import { KeyMap } from "@/components/KeyMap";
+import { CompanySidebar } from "@/components/CompanySidebar";
 import { accentVars, BRAND, stepAccent } from "@/lib/accents";
 import { StepIcon } from "@/components/StepIcon";
 import { BigAnswer, KeepBar, LiteCard, MiniBars, MiniGauge, MiniPair, SaidAnswer, SourceChips, UsesBar } from "@/components/Lite";
@@ -79,7 +82,7 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
     rates: now("rates"),
     inflation: now("inflation"),
     demand: now("demand"),
-    sentiment: "Changes every day with news and mood: see the live share price in step 7",
+    sentiment: "Changes every day with news and mood: see the live share price under \"The share price\"",
     competition: mentioned("competition"),
     rules: mentioned("rules"),
   });
@@ -87,11 +90,16 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
   const fundamentals = fundamentalFromReport(report);
   const ctx: Ctx = { report, e, level: "surface" };
 
+  const stepTitles = Object.fromEntries(STEPS.map((s) => [s.id, s.title]));
+
   return (
     <DepthProvider>
-      <div className="mx-auto flex w-full max-w-[800px] flex-col gap-10 px-5 pb-16 pt-8 sm:pt-12">
+      <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-10 px-5 pb-16 pt-8 sm:pt-12 lg:px-10">
         <Hero report={report} profile={profile} company={company} lead={lead} />
         <ExplainStatus ticker={report.company.ticker} state={state} />
+        <KeyMap nodes={nodes} company={company} ticker={report.company.ticker} stepTitles={stepTitles} />
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[minmax(0,1fr)_380px] xl:gap-12">
+        <div className="flex min-w-0 flex-col gap-10">
         <Contents company={company} />
         {fundamentals && <FundamentalGlance result={fundamentals} />}
         <DetailBar />
@@ -101,6 +109,7 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
               key={step.id}
               ticker={report.company.ticker}
               id={step.id}
+              label={step.title}
               number={i + 1}
               total={STEPS.length}
               question={step.question}
@@ -111,7 +120,7 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
               deep={deeperBody(step, ctx, "deep", profile)}
             />
           ))}
-          <section id="whole-picture" className="flex scroll-mt-20 flex-col gap-8 border-t border-line pt-10">
+          <section id="whole-picture" data-part="The whole picture" className="flex scroll-mt-20 flex-col gap-8 border-t border-line pt-10">
             <AtDepth max="below">
               <ForcesSummary forces={forces} company={company} />
             </AtDepth>
@@ -120,15 +129,19 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
               <ConceptMap nodes={nodes} company={company} />
             </AtDepth>
           </section>
-          <section id="numbers" className="flex scroll-mt-20 flex-col gap-3 border-t border-line pt-10">
+          <section id="numbers" data-part="All the numbers" className="flex scroll-mt-20 flex-col gap-3 border-t border-line pt-10">
             <h2 className="font-display text-[26px] font-bold tracking-tight">Want to dig further?</h2>
             <AllNumbers report={report} />
-            <MoreInfo report={report} />
           </section>
           <div className="flex flex-col gap-3">
             {e && <AiNote e={e} />}
             <Disclaimer />
           </div>
+        </div>
+        </div>
+        <aside aria-label={`More about ${company}`} className="lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto lg:pr-1 [scrollbar-width:thin]">
+          <CompanySidebar company={company} symbol={report.tradingViewSymbol} expected={report.expected} announcements={report.announcements} />
+        </aside>
         </div>
       </div>
     </DepthProvider>
@@ -165,7 +178,9 @@ function Hero({ report, profile, company, lead }: { report: CompanyReport; profi
       </div>
       {lead && (
         <div className="flex flex-col gap-2">
-          <p className="text-[20px] leading-[1.5] text-ink">{lead.text}</p>
+          <p className="max-w-4xl text-[20px] leading-[1.5] text-ink/85">
+            <Emph text={lead.text} />
+          </p>
           <SourceChips sources={[lead.source]} />
         </div>
       )}
@@ -210,28 +225,32 @@ function sentenceCase(s: string): string {
   return t.charAt(0).toUpperCase() + t.slice(1);
 }
 
-/** Before the questions: a plain list of what's ahead, each one a link. */
+/** Before the seven parts: a visual guide to what's ahead, each card a link to its part. */
 function Contents({ company }: { company: string }) {
   return (
-    <nav aria-labelledby="contents-title" className="flex flex-col gap-3">
-      <h2 id="contents-title" className="text-[17px] font-semibold">
-        7 questions about {company}
-      </h2>
-      <ol className="m-0 grid list-none gap-2 p-0 sm:grid-cols-2">
+    <nav aria-labelledby="contents-title" className="flex flex-col gap-4">
+      <div className="flex flex-col gap-1">
+        <h2 id="contents-title" className="font-display text-[26px] font-semibold tracking-[-0.03em]">
+          Inside {company}
+        </h2>
+        <p className="text-[15px] text-muted">Seven short parts, from what it does to what it&apos;s worth. Jump to any one.</p>
+      </div>
+      <ol className="m-0 grid list-none grid-cols-2 gap-3 p-0 sm:grid-cols-3 xl:grid-cols-4">
         {STEPS.map((s, i) => (
-          <li key={s.id} style={accentVars(stepAccent(s.id))}>
+          <li key={s.id} style={accentVars(stepAccent(s.id))} className={i === 0 ? "col-span-2 sm:col-span-1" : ""}>
             <a
               href={`#step-${s.id}`}
-              className="fathom-card fathom-lift group flex min-h-12 items-center gap-3 rounded-2xl px-3 py-2 text-[15px] font-medium text-ink no-underline"
+              className="fathom-card fathom-lift group relative flex h-full flex-col gap-3 overflow-hidden p-4 text-ink no-underline"
             >
-              <StepIcon id={s.id} size={34} />
-              <span aria-hidden="true" className="w-4 flex-none text-[13px] font-medium tabular-nums text-muted">
-                {i + 1}
+              <span aria-hidden="true" className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-70" style={{ background: "var(--a)" }} />
+              <span className="flex items-center justify-between">
+                <StepIcon id={s.id} size={44} />
+                <span aria-hidden="true" className="font-mono text-[12px] text-muted">0{i + 1}</span>
               </span>
-              <span className="flex-1">{s.title}</span>
-              <svg className="flex-none text-[var(--a-ink)] opacity-0 transition-[opacity,transform] group-hover:translate-x-0.5 group-hover:opacity-100" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="m9 6 6 6-6 6" />
-              </svg>
+              <span className="flex flex-col gap-0.5">
+                <span className="text-[15px] font-semibold tracking-[-0.01em]">{s.title}</span>
+                <span className="text-[13px] leading-snug text-muted">{s.question}</span>
+              </span>
             </a>
           </li>
         ))}
@@ -287,7 +306,9 @@ function Claims({ claims, quotes }: { claims: CheckedClaim[]; quotes?: boolean }
     <ul className="flex flex-col gap-5">
       {claims.map((c) => (
         <li key={c.text} className="flex flex-col gap-1">
-          <p className="text-[17px] leading-[1.65]">{c.text}</p>
+          <p className="text-[17px] leading-[1.65]">
+            <Emph text={c.text} />
+          </p>
           {quotes && (
             <p className="my-1 border-l-2 border-line pl-3 text-[14px] leading-relaxed text-muted">
               From the report: &ldquo;{c.quote}&rdquo;
@@ -373,7 +394,7 @@ function StepNews({ step, report }: { step: string; report: CompanyReport }) {
           </span>
         </span>
         {relevant.length > 0 && (
-          <span aria-hidden="true" className="text-xl text-ocean transition-transform group-open:rotate-45">
+          <span aria-hidden="true" className="text-xl text-ink transition-transform group-open:rotate-45">
             +
           </span>
         )}
@@ -382,7 +403,7 @@ function StepNews({ step, report }: { step: string; report: CompanyReport }) {
         <ol className="mt-3 flex flex-col gap-4 border-t border-line pt-3">
           {relevant.map((a) => (
             <li key={a.url} className="flex flex-col gap-1">
-              <span className="text-[13px] font-semibold text-ocean">{formatDate(a.filingDate)}</span>
+              <span className="text-[13px] font-semibold text-ink">{formatDate(a.filingDate)}</span>
               {a.codes.map((c) => (
                 <span key={c} className="flex flex-col">
                   <span className="text-[16px] font-semibold">{describeAnnouncement([c])[0]}</span>
@@ -395,7 +416,7 @@ function StepNews({ step, report }: { step: string; report: CompanyReport }) {
         </ol>
       )}
       <p className="mt-2 text-[13px] text-muted">
-        News headlines are at the bottom of the page, under <a href="#news">News and announcements</a>.
+        News headlines and what&apos;s coming up are in the side panel.
       </p>
     </details>
   );
@@ -681,7 +702,7 @@ function AllNumbers({ report }: { report: CompanyReport }) {
           <span className="text-[18px] font-semibold">All the key numbers</span>
           <span className="text-[14px] text-muted">{area.why}</span>
         </span>
-        <span aria-hidden="true" className="text-2xl text-ocean transition-transform group-open:rotate-45">
+        <span aria-hidden="true" className="text-2xl text-ink transition-transform group-open:rotate-45">
           +
         </span>
       </summary>
@@ -749,7 +770,7 @@ function BlockView({ block, report }: { block: Block; report: CompanyReport }) {
       const d = salesHistory(n)!;
       return (
         <ChartPanel title="Sales by year" note="Tap a year to see its sales.">
-          <Columns bars={d.bars} color={SERIES.blue} highlight="#0B4F6C" />
+          <Columns bars={d.bars} color="#c7d4ff" highlight={SERIES.blue} />
         </ChartPanel>
       );
     }
@@ -835,7 +856,7 @@ function BlockView({ block, report }: { block: Block; report: CompanyReport }) {
 function MarketKey() {
   return (
     <details className="group rounded-2xl bg-mist px-5 py-4">
-      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 text-[16px] font-semibold text-ocean">
+      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 text-[16px] font-semibold text-ink">
         What every term in this box means
         <svg className="transition-transform group-open:rotate-180" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="m6 9 6 6 6-6" />
@@ -1110,51 +1131,14 @@ function OriginalReports({ report }: { report: CompanyReport }) {
 // ---------------------------------------------------------------- below the levels
 
 /** Official announcements and news headlines, folded away until wanted. */
-function MoreInfo({ report }: { report: CompanyReport }) {
-  return (
-    <details id="news" className="fathom-card group flex scroll-mt-20 flex-col px-5 py-4 sm:px-6">
-      <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4">
-        <span className="flex flex-col">
-          <span className="text-[18px] font-semibold">News and announcements</span>
-          <span className="text-[14px] text-muted">What the company told the SEC lately, and what reporters are saying.</span>
-        </span>
-        <span aria-hidden="true" className="text-2xl text-ocean transition-transform group-open:rotate-45">
-          +
-        </span>
-      </summary>
-      <div className="mt-5 flex flex-col gap-8">
-        <div className="flex flex-col gap-3">
-          <h3 className="text-[16px] font-semibold">From the company <span className="font-normal text-muted">(8-K filings, last four months)</span></h3>
-          {report.announcements.length === 0 ? (
-            <p className="text-[16px] text-muted">None filed in the last four months.</p>
-          ) : (
-            <ol className="m-0 flex list-none flex-col gap-4 p-0">
-              {report.announcements.map((a) => (
-                <li key={a.url} className="flex flex-col gap-0.5">
-                  <span className="text-[13px] font-semibold text-mid">{formatDate(a.filingDate)}</span>
-                  <span className="text-[16px] leading-snug">{a.events.join(", ")}</span>
-                  <SourceLink href={a.url} label="8-K filing" />
-                </li>
-              ))}
-            </ol>
-          )}
-        </div>
-        <div className="flex flex-col gap-3">
-          <h3 className="text-[16px] font-semibold">In the news <span className="font-normal text-muted">(reporters&apos; views, via TradingView)</span></h3>
-          <CompanyNews symbol={report.tradingViewSymbol} height={460} />
-        </div>
-      </div>
-    </details>
-  );
-}
-
 // ---------------------------------------------------------------- other states
 
 function Disclaimer() {
   return (
     <p className="text-sm leading-relaxed text-muted">
-      <strong className="font-semibold text-ink">For information only. Not investment advice.</strong> cand0r explains public
-      information for education. It never says whether to buy, sell or hold any investment, and never gives price targets.
+      <strong className="font-semibold text-ink">Important information.</strong> This page explains the company&apos;s public
+      filings for educational purposes only. It is not investment advice or a recommendation to buy, sell or hold its shares,
+      and cand0r does not provide price targets. Please check the linked source documents before relying on any figure.
     </p>
   );
 }

@@ -7,6 +7,7 @@ import { accentAt, accentVars } from "@/lib/accents";
 import Link from "next/link";
 import { Suspense } from "react";
 import { ComparePicker } from "@/components/ComparePicker";
+import { CompareVisual, type CompareVizRow } from "@/components/CompareVisual";
 import { Loader } from "@/components/Loader";
 import { PageTitle } from "@/components/PageTitle";
 import { SourceLink } from "@/components/SourceLink";
@@ -30,7 +31,7 @@ const EXAMPLES = [
 
 export default function ComparePage(props: PageProps<"/compare">) {
   return (
-    <div className="mx-auto flex w-full max-w-[1180px] flex-col gap-10 px-5 py-12 sm:py-16 lg:px-8">
+    <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-10 px-5 py-12 sm:py-16 lg:px-10">
       <PageTitle
         title="Compare companies"
         note="Put 2 to 5 companies side by side, using their own figures from their reports to the SEC. Each figure is explained in everyday words."
@@ -66,8 +67,9 @@ async function Compare({ searchParams }: { searchParams: Promise<Record<string, 
       )}
       {found.length < MIN_COMPANIES ? <Start /> : <Table comparison={buildComparison(found)} />}
       <p className="text-sm leading-relaxed text-muted">
-        <strong className="font-semibold text-ink">For information only. Not investment advice.</strong> This compares what the
-        companies reported. It never says which one is better, or whether to buy, sell or hold any of them.
+        <strong className="font-semibold text-ink">Important information.</strong> This comparison sets out what each company
+        reported in its public filings. It is provided for educational purposes only, does not rank the companies, and is not a
+        recommendation to buy, sell or hold any of them.
       </p>
     </>
   );
@@ -96,6 +98,20 @@ function Start() {
 
 function Table({ comparison: c }: { comparison: ReturnType<typeof buildComparison> }) {
   const groups = FUNDAMENTAL_GROUPS.map((g) => ({ ...g, rows: c.rows.filter((r) => r.group === g.id) })).filter((g) => g.rows.length > 0);
+  // The pictures only use figures at least two of the companies reported.
+  const viz: CompareVizRow[] = groups.flatMap((g) =>
+    g.rows
+      .filter((r) => r.cells.filter((x) => x.figure.status === "reported").length >= 2)
+      .map((r) => ({
+        id: r.id,
+        group: g.id,
+        groupTitle: g.title,
+        name: r.name,
+        plain: r.plain,
+        unit: (r.cells.find((x) => x.figure.status === "reported")?.figure as { unit: CompareVizRow["unit"] }).unit,
+        cells: r.cells.map((x) => ({ ticker: x.ticker, value: x.figure.status === "reported" ? x.figure.value : null, display: figureValue(x.figure), mark: x.mark })),
+      })),
+  );
   return (
     <>
       {c.warnings.length > 0 && (
@@ -125,7 +141,10 @@ function Table({ comparison: c }: { comparison: ReturnType<typeof buildCompariso
         </section>
       )}
 
+      {viz.length > 0 && <CompareVisual companies={c.companies.map((m) => ({ ticker: m.ticker, company: m.company }))} rows={viz} />}
+
       <section aria-label="Side-by-side figures" className="flex flex-col gap-3">
+        <h2 className="font-display text-[22px] font-semibold tracking-[-0.03em]">Every figure, side by side</h2>
         <p className="text-[14px] text-muted">
           Point at any underlined term to see what it means and how a high or a low figure can be read both ways. All figures are
           in US dollars, under US accounting rules (US GAAP), from each company&apos;s latest reports.
@@ -237,18 +256,32 @@ function Row({ row }: { row: CompareRow }) {
         <span className="block text-[13px] text-muted">{row.plain}</span>
         <span className="mt-1 block text-[12px] leading-snug text-muted">{row.meaning}</span>
       </th>
-      {row.cells.map((cell) => (
-        <Cell key={cell.ticker} cell={cell} />
+      {row.cells.map((cell, i) => (
+        <Cell key={cell.ticker} cell={cell} index={i} top={top(row)} />
       ))}
     </tr>
   );
 }
 
-function Cell({ cell }: { cell: CompareCell }) {
+/** The largest size of any reported figure in the row, so each cell's little bar can be drawn to the same scale. */
+function top(row: CompareRow): number {
+  return Math.max(0, ...row.cells.map((c) => (c.figure.status === "reported" ? Math.abs(c.figure.value) : 0)));
+}
+
+function Cell({ cell, index, top }: { cell: CompareCell; index: number; top: number }) {
   const f = cell.figure;
+  const a = accentAt(index);
   return (
     <td className={`border-t border-line px-3 py-3 align-top ${cell.mark ? "bg-mist" : ""}`}>
       <span className={`block font-display font-bold tabular-nums ${f.status === "reported" ? "text-[20px] text-ink" : "text-[15px] text-muted"}`}>{figureValue(f)}</span>
+      {f.status === "reported" && top > 0 && (
+        <span aria-hidden="true" className="mt-1.5 block h-1.5 w-full max-w-[160px] overflow-hidden rounded-full bg-panel-2">
+          <span
+            className="fathom-grow-right block h-full rounded-full"
+            style={{ width: `${Math.max(3, (Math.abs(f.value) / top) * 100)}%`, background: f.value < 0 ? `repeating-linear-gradient(135deg, ${a.solid} 0 4px, ${a.soft} 4px 7px)` : a.solid }}
+          />
+        </span>
+      )}
       {cell.mark && (
         <span className="mt-1 inline-flex rounded-md border border-line bg-white px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-mid">
           {cell.mark === "highest" ? "Highest" : "Lowest"}

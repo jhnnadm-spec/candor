@@ -39,6 +39,10 @@ export function CompanyLogo({
           style={{ padding: Math.round(size * 0.14) }}
           referrerPolicy="no-referrer"
           onError={() => setFailed((f) => f + 1)}
+          // An image that failed before the page came alive never fires onError, so check once it's on screen.
+          ref={(el) => {
+            if (el?.complete && el.naturalWidth === 0) setFailed((f) => f + 1);
+          }}
         />
       ) : (
         <Initials name={name} size={size} />

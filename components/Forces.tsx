@@ -113,7 +113,7 @@ function ForceCard({ f, nodeName, company }: { f: Force; nodeName: (id: string) 
       {f.now && (
         <div className="flex flex-col gap-1">
           <p className="text-[14px] leading-relaxed">
-            <span className="font-semibold text-ocean">Now: </span>
+            <span className="font-semibold text-ink">Now: </span>
             {f.now.text}
           </p>
           {f.now.source && <SourceLink href={f.now.source.url} label={f.now.source.name} kind="Official data" />}
@@ -152,7 +152,7 @@ function ForceCard({ f, nodeName, company }: { f: Force; nodeName: (id: string) 
       {f.company && <p className="border-t border-line pt-2.5 text-[14px] leading-relaxed">{f.company}</p>}
       {f.ownWords.length > 0 && (
         <details className="group border-t border-line pt-2.5">
-          <summary className="cursor-pointer list-none text-[14px] font-semibold text-ocean">
+          <summary className="cursor-pointer list-none text-[14px] font-semibold text-ink">
             What {company} says about this ({f.ownWords.length})
           </summary>
           <ul className="mt-2 flex flex-col gap-3">

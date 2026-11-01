@@ -15,7 +15,7 @@ export function TradingViewWidget({
   height,
   attribution,
 }: {
-  script: "mini-symbol-overview" | "financials" | "timeline";
+  script: "mini-symbol-overview" | "financials" | "timeline" | "events";
   config: Record<string, unknown>;
   height: number;
   attribution: { href: string; text: string };
@@ -46,7 +46,7 @@ export function TradingViewWidget({
       <div ref={container} style={{ height }} className="w-full" />
       <div className="tradingview-widget-copyright text-center text-[13px] leading-8 text-muted">
         <a href={attribution.href} rel="noopener nofollow" target="_blank" className="no-underline">
-          <span className="text-ocean">{attribution.text}</span>
+          <span className="text-ink">{attribution.text}</span>
         </a>{" "}
         by TradingView
       </div>

@@ -52,7 +52,7 @@ export function StackedBar({ segments, caption, selectHint = "Tap a part of the 
             onClick={() => setActive(i)}
             aria-label={`${s.label}: ${s.display}`}
             aria-pressed={active === i}
-            className="h-full cursor-pointer transition-[width,opacity] duration-700 ease-out first:rounded-l-lg last:rounded-r-lg hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean motion-reduce:transition-none"
+            className="h-full cursor-pointer transition-[width,opacity,transform] duration-700 ease-out first:rounded-l-lg last:rounded-r-lg hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean motion-reduce:transition-none"
             style={{
               width: shown ? `${(s.value / total) * 100}%` : "0%",
               transitionDelay: `${i * 90}ms`,
@@ -110,7 +110,7 @@ export function Columns({ bars, color, highlight }: { bars: Bar[]; color: string
         <span className="text-muted">{sel.detail}</span>
         <span className="font-semibold tabular-nums">{sel.display}</span>
       </div>
-      <div ref={ref} className="flex h-28 items-end gap-2" role="group" aria-label="Sales by year">
+      <div ref={ref} className="flex h-32 items-end gap-2 pt-6" role="group" aria-label="Sales by year">
         {bars.map((b, i) => (
           <button
             key={b.label}
@@ -122,15 +122,20 @@ export function Columns({ bars, color, highlight }: { bars: Bar[]; color: string
             className="group flex h-full flex-1 cursor-pointer flex-col justify-end focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean"
           >
             <span
-              className="block w-full rounded-t-[4px] transition-[height] duration-700 ease-out group-hover:brightness-110 motion-reduce:transition-none"
+              className="relative block w-full rounded-t-[6px] transition-[height,filter,transform] duration-700 ease-out group-hover:brightness-105 motion-reduce:transition-none"
               style={{
                 height: shown ? `${Math.max(3, (b.value / max) * 100)}%` : "0%",
                 transitionDelay: `${i * 70}ms`,
-                background: i === bars.length - 1 ? highlight : color,
-                outline: i === active ? "2px solid var(--color-ink)" : undefined,
-                outlineOffset: 2,
+                background: i === bars.length - 1 || i === active ? `linear-gradient(180deg, ${highlight}, color-mix(in srgb, ${highlight} 70%, #7c5cff))` : color,
+                boxShadow: i === active ? `0 10px 20px -12px ${highlight}` : undefined,
               }}
-            />
+            >
+              {i === active && (
+                <span className="fathom-pop absolute -top-7 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-ink px-1.5 py-0.5 text-[11px] font-semibold text-white">
+                  {b.display}
+                </span>
+              )}
+            </span>
           </button>
         ))}
       </div>
@@ -166,8 +171,7 @@ export function BillsGauge({ value }: { value: number }) {
   return (
     <div className="flex flex-col gap-2">
       <div ref={ref} className="relative h-3 rounded-full bg-panel-2">
-        <div className="absolute inset-y-0 left-0 w-1/2 rounded-l-full bg-[#d55181]/35" />
-        <div className="absolute inset-y-0 right-0 w-1/2 rounded-r-full bg-[#199e70]/35" />
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#f43f5e]/45 via-[#f59e0b]/35 to-[#0ea5a4]/45" />
         <div className="absolute -top-1.5 h-6 w-[3px] rounded bg-line" style={{ left: "calc(50% - 1px)" }} aria-hidden="true" />
         <div
           className="absolute -top-2 h-7 w-2 rounded-full bg-ink shadow-[0_0_0_3px_#ffffff] transition-[left] duration-1000 ease-out motion-reduce:transition-none"
@@ -286,6 +290,20 @@ export function Lines({
             </text>
           ));
         })()}
+        <defs>
+          {series.map((s, si) => (
+            <linearGradient key={s.name} id={`${id}-g${si}`} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor={s.color} stopOpacity="0.18" />
+              <stop offset="1" stopColor={s.color} stopOpacity="0" />
+            </linearGradient>
+          ))}
+        </defs>
+        {series.map((s, si) => {
+          const idx = s.values.map((v, i) => (v === undefined ? -1 : i)).filter((i) => i >= 0);
+          if (idx.length < 2 || si > 0) return null;
+          const area = `M${x(idx[0])},${y(bottom)} ` + idx.map((i) => `L${x(i)},${y(s.values[i]!)}`).join(" ") + ` L${x(idx.at(-1)!)},${y(bottom)} Z`;
+          return <path key={`area-${s.name}`} d={area} fill={`url(#${id}-g${si})`} style={{ opacity: shown ? 1 : 0, transition: "opacity 1s ease-out" }} />;
+        })}
         {series.map((s) => {
           const pts = s.values.map((v, i) => (v === undefined ? null : `${x(i)},${y(v)}`)).filter(Boolean);
           return (
@@ -294,7 +312,7 @@ export function Lines({
                 points={pts.join(" ")}
                 fill="none"
                 stroke={s.color}
-                strokeWidth="2"
+                strokeWidth="2.5"
                 strokeLinejoin="round"
                 strokeLinecap="round"
                 pathLength={1}
@@ -322,7 +340,7 @@ export function Lines({
             type="button"
             onClick={() => setActive(i)}
             aria-pressed={i === active}
-            className={`min-h-9 rounded-full px-3 text-[13px] font-semibold ${i === active ? "bg-ocean text-abyss" : "bg-panel-2 text-muted hover:text-ink"}`}
+            className={`min-h-9 rounded-full px-3 text-[13px] font-semibold transition-colors ${i === active ? "bg-ink text-abyss" : "bg-panel-2 text-muted hover:text-ink"}`}
           >
             {yr.label}
           </button>

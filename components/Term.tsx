@@ -104,8 +104,8 @@ export function Term({
           setOpen(next);
           setPinned(next);
         }}
-        className={`inline cursor-help rounded-sm font-semibold text-ink underline decoration-ocean/60 decoration-dotted decoration-2 underline-offset-4 transition-[font-size,color] duration-200 motion-reduce:transition-none ${
-          open ? "text-[1.08em] text-ocean" : ""
+        className={`inline cursor-pointer rounded-sm font-semibold text-ink underline decoration-ocean/60 decoration-dotted decoration-2 underline-offset-4 transition-[font-size,color] duration-200 motion-reduce:transition-none ${
+          open ? "text-[1.08em] text-ink" : ""
         }`}
       >
         {children}

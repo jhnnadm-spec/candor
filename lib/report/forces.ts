@@ -253,7 +253,7 @@ export function buildForces(name: string, n: CompanyNumbers | undefined, e: Save
     plain: "How investors feel",
     term: "Market sentiment",
     glossary: "market-sentiment",
-    now: { text: "See the live share price and valuation in step 7, and the latest headlines further down this page." },
+    now: { text: "See the live share price and valuation under \"The share price\", and the latest headlines in the side panel." },
     chain: ["News, results or fear and excitement", "More people want to buy, or sell, the shares", "The share price and P/E ratio move, sometimes far more than the business itself changed"],
     affects: ["price", "pe", "mcap"],
     ownWords: words.sentiment ?? [],

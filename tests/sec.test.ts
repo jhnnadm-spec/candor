@@ -3,6 +3,7 @@ import { padCik, SEC_URLS } from "@/lib/sec/client";
 import { findCompanies, parseTickers } from "@/lib/sec/tickers";
 import {
   checkSupport,
+  expectedSoon,
   latestFiling,
   parseSubmissions,
   previousFiling,
@@ -107,6 +108,53 @@ describe("filings", () => {
     expect(SEC_URLS.companyFacts(320193)).toBe(
       "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
     );
+  });
+});
+
+describe("what's coming up", () => {
+  const f = (form: string, filingDate: string, items: string[] = []) => ({
+    accessionNumber: `x-${form}-${filingDate}`,
+    form,
+    filingDate,
+    reportDate: "",
+    primaryDocument: "d.htm",
+    items,
+    url: `https://www.sec.gov/${form}/${filingDate}`,
+    indexUrl: "",
+  });
+  const company = {
+    cik: "1",
+    name: "Example",
+    tickers: ["EX"],
+    exchanges: [],
+    industry: "",
+    sic: 0,
+    fiscalYearEnd: "1231",
+    filings: [
+      f("10-Q", "2026-07-30"),
+      f("8-K", "2026-07-29", ["2.02", "9.01"]),
+      f("10-K", "2026-02-10"),
+      f("10-Q", "2025-10-30"),
+      f("8-K", "2025-10-29", ["2.02"]),
+      f("8-K", "2025-11-20", ["5.07"]),
+    ],
+  };
+
+  it("estimates the next results and report from last year's dates, earliest first", () => {
+    const out = expectedSoon(company, new Date("2026-10-01T12:00:00Z"));
+    expect(out.map((e) => [e.kind, e.date, e.lastYear])).toEqual([
+      ["results", "2026-10-28", "2025-10-29"],
+      ["quarterly", "2026-10-29", "2025-10-30"],
+    ]);
+  });
+
+  it("moves on to the next one once those dates pass, ignoring other kinds of announcement", () => {
+    const out = expectedSoon(company, new Date("2026-11-15T12:00:00Z"));
+    expect(out.map((e) => [e.kind, e.date])).toEqual([["annual", "2027-02-09"]]);
+  });
+
+  it("gives nothing when last year's matching filings are all too far ahead or behind", () => {
+    expect(expectedSoon(company, new Date("2026-04-01T12:00:00Z"))).toEqual([]);
   });
 });
 

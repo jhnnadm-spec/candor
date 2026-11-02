@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
-  cand0r's colours and fonts, defined once and used everywhere.
+  candor's colours and fonts, defined once and used everywhere.
   In the code, "bg-ocean" or "text-ink" refers to these.
 */
 @theme {
@@ -13,7 +13,7 @@
   --radius-xl: 4px;
   --radius-2xl: 4px;
   --radius-3xl: 6px;
-  /* cand0r: near-black ink, one electric blue, and quiet greys. */
+  /* candor: near-black ink, one electric blue, and quiet greys. */
   --color-abyss: #ffffff; /* text on dark buttons */
   --color-panel: #ffffff; /* tiles */
   --color-panel-2: #f4f5f7; /* inside tiles: chart tracks, inactive tabs, inputs */
@@ -165,7 +165,7 @@ body {
   - .fathom-lift: rises a little and casts a coloured glow when pointed at or focused.
   - .fathom-tint: a pale card in its accent colour.
   - .fathom-icon-pop: an icon inside a .group gives a small happy bounce on hover.
-  - .fathom-rainbow: cand0r's gradient, for one or two words at most.
+  - .fathom-rainbow: candor's gradient, for one or two words at most.
   - .fathom-blob: the slow, soft colour shapes behind the front page's headline.
   - .fathom-swap: a word swapping in from below (the front page's rotating company).
   Everything stays still for anyone who has asked their device for less motion.

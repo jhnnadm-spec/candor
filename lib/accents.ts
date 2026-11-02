@@ -1,5 +1,5 @@
 /**
- * cand0r's accents. The brand is near-black ink plus one electric blue. A small set of
+ * candor's accents. The brand is near-black ink plus one electric blue. A small set of
  * softer colours adds variety to pictures and icons (each question, each type of
  * business) and tells things apart on Compare. Text stays mostly ink.
  * Each accent has three shades:

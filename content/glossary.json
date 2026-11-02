@@ -638,10 +638,10 @@
     "term": "Valuation",
     "short": "valuation",
     "definition": "Working out what a company is worth and comparing it with its share price.",
-    "why": "A great company can still be a poor investment if its shares already cost too much. cand0r shows the measures but never says what to do.",
+    "why": "A great company can still be a poor investment if its shares already cost too much. candor shows the measures but never says what to do.",
     "analyst": "Valuation compares the price of the shares with what the business earns or owns. People usually use it to judge what the market already expects.",
     "reading": "A high valuation means the market expects a lot; a low one means it expects little.",
-    "caveat": "Valuation measures say what the market expects, not what will happen. cand0r doesn't say whether a price is right."
+    "caveat": "Valuation measures say what the market expects, not what will happen. candor doesn't say whether a price is right."
   },
   "industry-risks": {
     "term": "Risks and outlook",
@@ -1021,7 +1021,7 @@
     "why": "Cash in the bank could be used to pay back debt, so net debt shows the borrowing that cash wouldn't cover.",
     "analyst": "People usually compare net debt with profit and cash flow to see how many years it would take to pay off what the company owes.",
     "reading": "Low or negative net debt suggests a strong cushion; high net debt means the company depends more on lenders.",
-    "caveat": "cand0r uses long-term debt only, so short-term borrowing and leases are left out; and not all cash is free to use (some may be needed day to day or held abroad).",
+    "caveat": "candor uses long-term debt only, so short-term borrowing and leases are left out; and not all cash is free to use (some may be needed day to day or held abroad).",
     "sides": {
       "high": {
         "label": "High net debt",

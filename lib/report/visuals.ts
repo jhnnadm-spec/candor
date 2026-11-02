@@ -1,11 +1,11 @@
 /**
- * The numbers behind cand0r's charts, worked out from the same SEC figures as
+ * The numbers behind candor's charts, worked out from the same SEC figures as
  * the sentences. Each chart gets plain data; the drawing happens in components/viz.
  */
 import { formatDate, formatMoney, formatPerShare } from "../financials/format";
 import type { CompanyNumbers, Comparison } from "../financials/metrics";
 
-/** Chart colours from cand0r's palette: distinct in lightness as well as hue, so they read for colour-blind readers too. */
+/** Chart colours from candor's palette: distinct in lightness as well as hue, so they read for colour-blind readers too. */
 export const SERIES = {
   blue: "#2d5bff",
   magenta: "#f43f5e",

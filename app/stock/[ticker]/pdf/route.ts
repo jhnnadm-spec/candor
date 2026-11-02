@@ -13,7 +13,7 @@ export async function GET(req: Request, ctx: RouteContext<"/stock/[ticker]/pdf">
   const t = decodeURIComponent(ticker).toUpperCase();
   const report = /^[A-Z0-9.-]{1,10}$/.test(t) ? await getCompanyReport(t) : null;
   if (!report) return new Response("Company not found", { status: 404 });
-  if (!report.support.supported) return new Response("cand0r doesn't cover this company yet", { status: 400 });
+  if (!report.support.supported) return new Response("candor doesn't cover this company yet", { status: 400 });
 
   const [{ explanation }, profile] = await Promise.all([
     explanationState(report.company.ticker, report.explanationKey),
@@ -23,7 +23,7 @@ export async function GET(req: Request, ctx: RouteContext<"/stock/[ticker]/pdf">
   const pageUrl = new URL(`/stock/${encodeURIComponent(report.company.ticker)}`, req.url).toString();
 
   const pdf = await renderToBuffer(ReportPdf({ report, explanation, profile, pageUrl, createdAt }));
-  const filename = `cand0r-${report.company.ticker}-${createdAt.toISOString().slice(0, 10)}.pdf`;
+  const filename = `candor-${report.company.ticker}-${createdAt.toISOString().slice(0, 10)}.pdf`;
   return new Response(new Uint8Array(pdf), {
     headers: {
       "Content-Type": "application/pdf",

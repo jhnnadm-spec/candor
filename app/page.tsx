@@ -57,7 +57,7 @@ export default function Home() {
           </p>
           <HeroHeadline />
           <p className="max-w-xl text-[19px] leading-relaxed text-muted">
-            Pick a US company. cand0r reads its official reports and explains the whole business, step by step, in words anyone can follow.
+            Pick a US company. candor reads its official reports and explains the whole business, step by step, in words anyone can follow.
           </p>
           <div className="flex w-full">
             <SearchForm />

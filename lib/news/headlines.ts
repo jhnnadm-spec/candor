@@ -3,7 +3,7 @@
  * Journal, Reuters, Bloomberg, CNBC and others), found through the GDELT Project's
  * free news index (https://www.gdeltproject.org, open for any use with credit).
  *
- * cand0r shows only each headline, its publisher, date and a link to the original
+ * candor shows only each headline, its publisher, date and a link to the original
  * article; it never copies article text. Some publishers need a subscription to read.
  * If the index can't be reached, the page still offers search links to each publisher.
  */
@@ -53,7 +53,7 @@ export function gdeltQuery(name: string): string {
   return `"${name.replace(/"/g, "")}" (${domains.join(" OR ")}) sourcelang:english`;
 }
 
-/** The GDELT address for a search; `wide` drops the publisher filter (cand0r then filters the results itself). */
+/** The GDELT address for a search; `wide` drops the publisher filter (candor then filters the results itself). */
 export function gdeltUrl(name: string, wide = false): string {
   const query = wide ? `"${name.replace(/"/g, "")}" sourcelang:english` : gdeltQuery(name);
   const params = new URLSearchParams({ query, mode: "ArtList", format: "json", maxrecords: wide ? "250" : "75", sort: "DateDesc", timespan: "14d" });
@@ -66,7 +66,7 @@ function isoFromSeen(seen: string): string | undefined {
   return m ? `${m[1]}-${m[2]}-${m[3]}T${m[4]}:${m[5]}:${m[6]}Z` : undefined;
 }
 
-/** The publisher for an article's web address, if it's one cand0r searches. */
+/** The publisher for an article's web address, if it's one candor searches. */
 function outletFor(url: string, domain?: string): { domain: string; name: string } | undefined {
   let host = (domain ?? "").toLowerCase();
   try {
@@ -119,7 +119,7 @@ export function parseGdelt(body: string, name: string, ticker: string, limit = 8
 
 async function gdelt(url: string): Promise<string> {
   const res = await fetch(url, {
-    headers: { "User-Agent": "cand0r/1.0 (plain-English company explainer; https://github.com/jhnnadm-spec/fathom)" },
+    headers: { "User-Agent": "candor/1.0 (plain-English company explainer; https://github.com/jhnnadm-spec/fathom)" },
     signal: AbortSignal.timeout(8000),
   });
   if (!res.ok) throw new Error(`${res.status} from GDELT`);

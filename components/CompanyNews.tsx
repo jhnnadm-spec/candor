@@ -27,7 +27,7 @@ export async function CompanyNews({ name, ticker }: { name: string; ticker: stri
           ))}
         </ol>
       ) : (
-        <p className="text-[13px] leading-snug text-muted">No recent headlines found from the publishers cand0r checks. Search them directly:</p>
+        <p className="text-[13px] leading-snug text-muted">No recent headlines found from the publishers candor checks. Search them directly:</p>
       )}
       <div className="flex flex-col gap-1.5 border-t border-line pt-2.5">
         <span className="text-[11.5px] font-semibold uppercase tracking-[0.06em] text-muted">Search for more</span>

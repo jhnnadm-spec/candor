@@ -1,5 +1,5 @@
 /**
- * Which SEC data labels ("tags") to use for each number cand0r shows.
+ * Which SEC data labels ("tags") to use for each number candor shows.
  *
  * Companies don't all use the same tag for the same idea, and some switch tags
  * over the years (Coca-Cola's long-term debt is one example). Each metric lists

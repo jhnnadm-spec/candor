@@ -14,7 +14,7 @@ export type Indicator = {
   source: { name: string; url: string };
 };
 
-const UA = "cand0r/1.0 (plain-English company explainer; https://github.com/jhnnadm-spec/fathom)";
+const UA = "candor/1.0 (plain-English company explainer; https://github.com/jhnnadm-spec/fathom)";
 
 async function get(url: string, init: RequestInit = {}): Promise<Response> {
   let last: unknown;

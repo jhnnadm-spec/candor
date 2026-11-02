@@ -12,8 +12,8 @@ import { SearchForm } from "@/components/SearchForm";
 
 export const metadata: Metadata = {
   title: {
-    default: "cand0r: company reports, explained plainly",
-    template: "%s · cand0r",
+    default: "candor: company reports, explained plainly",
+    template: "%s · candor",
   },
   description:
     "Understand any US public company in plain English, with a source for every claim. For education only, not financial advice.",
@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col">
         <header className="relative z-10 bg-ink">
           <div className="mx-auto flex max-w-[1360px] flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-3.5 lg:px-10">
-            <Link href="/" className="no-underline" aria-label="cand0r home">
+            <Link href="/" className="no-underline" aria-label="candor home">
               <Logo size={26} tone="dark" />
             </Link>
             <NavLinks />
@@ -42,7 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <footer className="bg-ink">
           <div className="mx-auto flex max-w-[1360px] flex-col gap-2 px-5 py-3 text-[12px] leading-snug text-[#A3AAB8] lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:px-10">
             <p className="m-0">
-              <strong className="font-semibold text-white">cand0r</strong> is for education only, not investment, legal or tax advice, and never says buy, sell
+              <strong className="font-semibold text-white">candor</strong> is for education only, not investment, legal or tax advice, and never says buy, sell
               or hold. Figures come from public SEC filings and may contain errors: check the linked sources.{" "}
               <Link href="/about" className="text-[#D9DCE2] hover:text-white">
                 More about this

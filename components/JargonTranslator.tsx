@@ -3,7 +3,7 @@
 /**
  * The front page's interactive card: pick a piece of finance jargon and watch it turn
  * into plain English, word by word. It cycles through the words by itself until
- * someone picks one, then waits for them. Everything comes from cand0r's own
+ * someone picks one, then waits for them. Everything comes from candor's own
  * dictionary. Still for anyone who has asked for less motion.
  */
 import Link from "next/link";

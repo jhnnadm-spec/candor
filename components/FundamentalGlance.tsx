@@ -84,7 +84,7 @@ export function FundamentalGlance({ result }: { result: LensResult<FundamentalDa
               );
             })}
             <p className="text-[12.5px] leading-relaxed text-muted">
-              US dollars, as the company reported them under US accounting rules (US GAAP). cand0r only combines figures that cover exactly the same
+              US dollars, as the company reported them under US accounting rules (US GAAP). candor only combines figures that cover exactly the same
               period or date, and shows &quot;Not reported&quot; rather than a zero when one is missing.
             </p>
           </div>

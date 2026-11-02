@@ -28,7 +28,7 @@ export type Figure =
       status: "reported";
       value: number;
       unit: Unit;
-      currency: string; // "USD" for every US filer cand0r covers
+      currency: string; // "USD" for every US filer candor covers
       period: Period;
       sources: SourceRef[];
     }
@@ -43,7 +43,7 @@ export type LensMeta = {
   currency: string;
   accountingStandard: "US GAAP";
   fiscalYearEnd?: string; // "MMDD"
-  sector?: string; // cand0r's plain sector name
+  sector?: string; // candor's plain sector name
   industry?: string;
 };
 
@@ -54,7 +54,7 @@ export type LensResult<T> = {
   meta: LensMeta;
   data: T;
   sources: SourceRef[];
-  updatedAt: string; // when cand0r built this result
+  updatedAt: string; // when candor built this result
   summary: string[]; // plain-English sentences built from `data`
 };
 

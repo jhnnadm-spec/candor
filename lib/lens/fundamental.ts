@@ -5,7 +5,7 @@
  * Every figure is worked out in code from reported numbers (lib/financials),
  * keeps its period and source, and is only combined with figures that cover
  * exactly the same period or date. Ratios that need a share price (P/E,
- * EV/EBITDA) are left out: cand0r has no share price it may use in its own sums.
+ * EV/EBITDA) are left out: candor has no share price it may use in its own sums.
  */
 import { formatDate, formatMoney, formatPercent, formatPerShare } from "../financials/format";
 import type { Comparison, CompanyNumbers, Figure as NumberFigure, Ratio } from "../financials/metrics";
@@ -38,7 +38,7 @@ export type MetricRow = {
   plain: string; // the same idea in everyday words
   term: string; // glossary key, for the pop-up explanation
   meaning: string; // one sentence: what it is, with any jargon explained in the same sentence
-  formula: string; // how cand0r works it out, in words
+  formula: string; // how candor works it out, in words
   figure: Figure;
   reading?: string; // what this company's figure says, in plain words
 };
@@ -194,7 +194,7 @@ function missingReason(n: CompanyNumbers, ids: MetricId[]): Figure {
   const missing = n.omitted.some((o) => ids.includes(o.id) && o.reason === "not-reported" && o.period !== "quarterly");
   if (stale) return { status: "not-reported", reason: "Not in its latest reports: the last figure it filed is more than a year old." };
   if (missing) return { status: "not-reported", reason: "Not reported in its SEC filings." };
-  return { status: "not-comparable", reason: "The figures needed don't cover exactly the same period, so cand0r doesn't combine them." };
+  return { status: "not-comparable", reason: "The figures needed don't cover exactly the same period, so candor doesn't combine them." };
 }
 
 const samePeriod = (a?: NumberFigure, b?: NumberFigure) => Boolean(a && b && a.start === b.start && a.end === b.end);
@@ -352,7 +352,7 @@ export function shortCompany(name: string): string {
   return name.replace(/,?\s+(Inc\.?|Corp(oration)?\.?|Co\.?|Company|Ltd\.?|plc|Holdings?|Group)$/i, "").replace(/^The\s+/i, "");
 }
 
-/** The Fundamental lens for one company's report. Returns null when cand0r can't explain it. */
+/** The Fundamental lens for one company's report. Returns null when candor can't explain it. */
 export function fundamentalFromReport(report: CompanyReport): LensResult<FundamentalData> | null {
   const n = report.numbers;
   if (!report.support.supported || !n) return null;

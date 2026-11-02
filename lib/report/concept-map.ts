@@ -238,7 +238,7 @@ export function workedLinks(n?: CompanyNumbers): WorkedLink[] {
     const relation = RELATIONS.find((x) => x.id === id);
     if (relation) out.push({ ...relation, sum, says, period });
   };
-  const notLined = "Its figures for these don't cover exactly the same period, so cand0r doesn't put them in one sum.";
+  const notLined = "Its figures for these don't cover exactly the same period, so candor doesn't put them in one sum.";
 
   // Net income = revenue − costs
   {
@@ -345,7 +345,7 @@ export function workedLinks(n?: CompanyNumbers): WorkedLink[] {
           ? `It owed ${v("debt")} long-term and held ${v("cash")} in cash, so even if it used all its cash to repay debt, ${money(f.netdebt!.value)} would still be owed.`
           : `It held ${v("cash")} in cash against ${v("debt")} of long-term debt: ${money(Math.abs(f.netdebt!.value))} more cash than long-term borrowing (net cash).`
         : f.debt && f.cash
-          ? "Its cash and debt figures are from different dates, so cand0r doesn't put them in one sum."
+          ? "Its cash and debt figures are from different dates, so candor doesn't put them in one sum."
           : "Net debt shows what the company would still owe long-term if it used all its cash to repay borrowing.",
       ok ? f.netdebt!.when : undefined,
     );

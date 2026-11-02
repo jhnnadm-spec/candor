@@ -1,5 +1,5 @@
 /**
- * cand0r's loading animation, built from the logo: its three flat bars (Short,
+ * candor's loading animation, built from the logo: its three flat bars (Short,
  * Explained, Everything) grow out one after another and fall back, over and over,
  * while the steps below take turns. Pure CSS (keyframes in globals.css), and still
  * for anyone who has asked their device for less motion.

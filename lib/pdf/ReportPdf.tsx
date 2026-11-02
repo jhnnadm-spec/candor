@@ -201,7 +201,7 @@ function topic(ctx: Ctx, id: TopicId, title: string, max?: number, color?: strin
   );
 }
 
-/** The cand0r mark: three flat bars, one per level of detail. */
+/** The candor mark: three flat bars, one per level of detail. */
 function LogoMark({ size = 16 }: { size?: number }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 100 100">
@@ -241,7 +241,7 @@ function section(num: string, title: string, intro: string, color: string, child
 function notWritten() {
   return (
     <Text style={s.note}>
-      The plain-English points for this part haven&apos;t been written for this company yet. They will appear on its cand0r page once ready.
+      The plain-English points for this part haven&apos;t been written for this company yet. They will appear on its candor page once ready.
     </Text>
   );
 }
@@ -351,7 +351,7 @@ export type PdfInput = {
   report: CompanyReport;
   explanation?: SavedExplanation;
   profile?: CompanyProfile;
-  pageUrl: string; // the live page on the cand0r website
+  pageUrl: string; // the live page on the candor website
   createdAt: Date;
 };
 
@@ -379,11 +379,11 @@ export function ReportPdf({ report, explanation: e, profile, pageUrl, createdAt 
   const sources = sourcesSection(ctx, pageUrl);
   const company = report.company;
   return (
-    <Document title={`${company.name} (${company.ticker}): plain-English company report · cand0r`} author="cand0r" subject="Plain-English company research report" creator="cand0r" producer="cand0r">
+    <Document title={`${company.name} (${company.ticker}): plain-English company report · candor`} author="candor" subject="Plain-English company research report" creator="candor" producer="candor">
       <Page size="A4" style={s.page}>
         <View fixed style={s.footer}>
           <Text>
-            cand0r · {company.name} ({company.ticker}) · {created} · For education only, not investment advice.
+            candor · {company.name} ({company.ticker}) · {created} · For education only, not investment advice.
           </Text>
           <Text render={({ pageNumber, totalPages }) => `Page ${pageNumber} of ${totalPages}`} />
         </View>
@@ -416,7 +416,7 @@ function frontPage(ctx: Ctx, created: string, pageUrl: string) {
       <View style={s.band}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
           <LogoMark size={15} />
-          <Text style={{ fontWeight: 700, fontSize: 13, color: "#D9DCE2" }}>cand0r</Text>
+          <Text style={{ fontWeight: 700, fontSize: 13, color: "#D9DCE2" }}>candor</Text>
         </View>
         <Text style={{ fontSize: 8.5 }}>Company research report · plain-English edition · {created}</Text>
       </View>
@@ -791,7 +791,7 @@ function everyFigure(ctx: Ctx) {
   return section(
     "A",
     "Every figure, and how it's worked out",
-    "Worked out in code from the figures the company tagged in its SEC reports. cand0r only combines figures covering exactly the same period, and leaves a figure out rather than guess.",
+    "Worked out in code from the figures the company tagged in its SEC reports. candor only combines figures covering exactly the same period, and leaves a figure out rather than guess.",
     C.muted,
     <>
       {FUNDAMENTAL_GROUPS.map((g) => {
@@ -856,7 +856,7 @@ function sourcesSection(ctx: Ctx, pageUrl: string) {
   return section(
     "C",
     "Sources",
-    "cand0r doesn't create financial data. Every figure and point comes from these documents, filed by the company with the US Securities and Exchange Commission (SEC EDGAR).",
+    "candor doesn't create financial data. Every figure and point comes from these documents, filed by the company with the US Securities and Exchange Commission (SEC EDGAR).",
     C.muted,
     <>
       {ctx.src.items.map((it, i) => (
@@ -896,9 +896,9 @@ function disclaimer() {
       <Text style={[s.label, { color: C.ink }]}>Important information</Text>
       <Text style={{ fontSize: 8, color: C.muted, marginTop: 3 }}>
         This report explains a company&apos;s public filings for educational purposes only. It is not investment, financial, legal or tax advice, and it is not a
-        recommendation to buy, sell or hold any security; cand0r does not give price targets or ratings. Figures are taken from filings with the US Securities and
+        recommendation to buy, sell or hold any security; candor does not give price targets or ratings. Figures are taken from filings with the US Securities and
         Exchange Commission and may contain errors or be out of date: check them against the original documents listed above before relying on them. Past results
-        are not a reliable indicator of future performance. Consider speaking to a licensed financial adviser before making any investment decision. cand0r is
+        are not a reliable indicator of future performance. Consider speaking to a licensed financial adviser before making any investment decision. candor is
         independent and not affiliated with any company it covers.
       </Text>
     </View>

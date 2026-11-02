@@ -113,7 +113,7 @@ describe("Fundamental lens: the sums, checked by hand", () => {
     expect(d.status === "reported" && d.period).toEqual({ kind: "date", end: "2025-12-31" });
   });
 
-  it("leaves out ratios that need a share price, since cand0r has none to use", () => {
+  it("leaves out ratios that need a share price, since candor has none to use", () => {
     expect(Object.keys(f)).not.toContain("peRatio");
     expect(Object.keys(f)).not.toContain("evToEbitda");
   });

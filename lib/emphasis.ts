@@ -1,6 +1,6 @@
 /**
  * Picks out what matters in a sentence so it can be shown in bold: amounts of money,
- * percentages and other figures, and the key finance terms from cand0r's dictionary.
+ * percentages and other figures, and the key finance terms from candor's dictionary.
  * Each term is picked out once per sentence, so text stays easy to read.
  */
 import { glossaryKeys, lookupTerm } from "./glossary";

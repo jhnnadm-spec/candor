@@ -1,11 +1,11 @@
-# cand0r
+# candor
 
-cand0r helps anyone understand US public companies in plain English.
-You search for a company, and cand0r gathers information from public sources
+candor helps anyone understand US public companies in plain English.
+You search for a company, and candor gathers information from public sources
 that allow it to be shared, explains it at three depths, and links every point
 back to where it came from.
 
-cand0r is for education only. It is not financial advice and never says buy,
+candor is for education only. It is not financial advice and never says buy,
 sell or hold.
 
 ## How the project is organised
@@ -14,7 +14,7 @@ sell or hold.
 |---|---|
 | `app/` | The website's pages. Each folder is a web address: `app/about/page.tsx` is `/about`. |
 | `app/layout.tsx` | The frame around every page: header, footer and fonts. |
-| `app/globals.css` | cand0r's colours and fonts, defined once. |
+| `app/globals.css` | candor's colours and fonts, defined once. |
 | `components/` | Reusable building blocks, such as the logo. |
 | `.github/workflows/` | Instructions for GitHub's robot, which checks the code on every change. |
 | `.env.example` | A list of the private settings (keys) the app needs, with no real values. |
@@ -55,7 +55,7 @@ GitHub, Vercel rebuilds and publishes it automatically.
 ## Explanations for any company (Supabase)
 
 Companies without a saved explanation show a **Write the plain-English
-explanation** button. cand0r then writes one with the free Cloudflare AI,
+explanation** button. candor then writes one with the free Cloudflare AI,
 checks every point, and saves it in a free Supabase database.
 
 - Limits (to stay free): about 6 new explanations a day in total, and 3 new
@@ -74,7 +74,7 @@ checks every point, and saves it in a free Supabase database.
   industry code it gives the SEC, with yearly sales from SEC data so bigger
   companies come first. Runs on the 2nd of each month (about 20 minutes) and
   saves `content/sectors.json`.
-- **Watchlist**: saved in each visitor's browser only. No accounts, nothing stored by cand0r.
+- **Watchlist**: saved in each visitor's browser only. No accounts, nothing stored by candor.
 - **Background facts**: chief executive, founding year, headquarters, employees
   and website come from Wikidata (CC0, free to reuse); the short introduction
   comes from Wikipedia (CC BY-SA 4.0, credited on the page). They're labelled as
@@ -84,7 +84,7 @@ checks every point, and saves it in a free Supabase database.
 
 Each lens lives in `lib/lens/` and returns the same shape (`LensResult` in `lib/lens/types.ts`): figures with their period, currency and source links, plus a plain-English summary written from those figures only. Numbers are always worked out in code; the AI never produces figures.
 
-- **Fundamental** (`lib/lens/fundamental.ts`): sales, growth, margins, EBITDA, cash flow, net debt, debt-to-equity, current ratio, ROE and EPS from SEC filings. P/E and EV/EBITDA need a share price, which cand0r may not use in its own sums (the TradingView price is display only), so they're left out rather than shown empty.
+- **Fundamental** (`lib/lens/fundamental.ts`): sales, growth, margins, EBITDA, cash flow, net debt, debt-to-equity, current ratio, ROE and EPS from SEC filings. P/E and EV/EBITDA need a share price, which candor may not use in its own sums (the TradingView price is display only), so they're left out rather than shown empty.
 - **Compare** (`lib/compare/compare.ts`, page `/compare?t=KO,PEP`): 2 to 5 companies side by side, highest and lowest marked (never "better" or "worse"), warnings when figures aren't like for like, and "Not reported" instead of zero. The link is the saved comparison.
 - JSON for testing: `/api/lens/fundamental?t=KO` and `/api/lens/compare?t=KO,PEP`.
 

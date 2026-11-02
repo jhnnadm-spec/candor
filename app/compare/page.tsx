@@ -62,8 +62,8 @@ async function Compare({ searchParams }: { searchParams: Promise<Record<string, 
       <ComparePicker chosen={chosen} max={MAX_COMPANIES} />
       {missing.length > 0 && (
         <p className="rounded-2xl bg-mist p-4 text-[15px]">
-          cand0r can&apos;t compare {missingNames.join(", ")}: it either isn&apos;t a US-listed company, or it doesn&apos;t file the
-          yearly and quarterly reports (10-K and 10-Q) cand0r reads.
+          candor can&apos;t compare {missingNames.join(", ")}: it either isn&apos;t a US-listed company, or it doesn&apos;t file the
+          yearly and quarterly reports (10-K and 10-Q) candor reads.
         </p>
       )}
       {found.length < MIN_COMPANIES ? <Start /> : <Table comparison={buildComparison(found)} />}

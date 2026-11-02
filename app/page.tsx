@@ -36,7 +36,7 @@ const JARGON: [string, string][] = [
 
 const HOW = [
   { n: 1 as const, title: "Search a company", text: "Type its name, like Nike, or its short code, like NKE." },
-  { n: 2 as const, title: "Read the short answers", text: "Seven short parts, from what it sells to what it's worth, each with a picture." },
+  { n: 2 as const, title: "Read the short answers", text: "The share price, then four short parts: growth, health, cash and spending, each with a picture." },
   { n: 3 as const, title: "Tap “Tell me more”", text: "Only when you're curious. You never have to read it all." },
 ];
 

@@ -4,14 +4,12 @@ import { Suspense, type ReactNode } from "react";
 import { ResearchStep } from "@/components/ResearchStep";
 import { WatchButton } from "@/components/WatchButton";
 import { Loader } from "@/components/Loader";
-import { ExplainButton } from "@/components/ExplainButton";
 import { MarketData, PriceChart } from "@/components/MarketWidgets";
 import { BillsGauge, Columns, Lines, PairBars, StackedBar } from "@/components/viz/Charts";
 import { RichText } from "@/components/RichText";
 import { Emph } from "@/components/Emph";
 import { SourceLink } from "@/components/SourceLink";
 import { describeAnnouncement, EVENT_WHY, stepsForEvent } from "@/lib/sec/events";
-import { explanationState, type ExplanationState } from "@/lib/explain/ondemand";
 import type { CheckedClaim, SavedExplanation } from "@/lib/explain/types";
 import { formatDate, formatMoney, formatPercent, formatShare } from "@/lib/financials/format";
 import type { Statement } from "@/lib/financials/templates";
@@ -26,17 +24,14 @@ import { conceptMap, mapNodes, workedLinks } from "@/lib/report/concept-map";
 import { PageNav, type NavItem } from "@/components/PageNav";
 import { FundamentalGlance } from "@/components/FundamentalGlance";
 import { fundamentalFromReport } from "@/lib/lens/fundamental";
-import { Forces, ForcesSummary } from "@/components/Forces";
-import { getMacro } from "@/lib/macro/data";
-import { buildForces } from "@/lib/report/forces";
 import { billsGauge, cashVsDebt, compareFor, marginLines, moneyUses, pairFor, salesHistory, salesSplit, SERIES, shareFor } from "@/lib/report/visuals";
 import { DotGrid, Meter, StatusBadge, TopicIcon } from "@/components/viz/Static";
-import { AtDepth, DepthProvider } from "@/components/Depth";
+import { DepthProvider } from "@/components/Depth";
 import { CompanyLogo } from "@/components/CompanyLogo";
 import { KeyMap } from "@/components/KeyMap";
 import { CompanySidebar } from "@/components/CompanySidebar";
 import { accentVars, BRAND, stepAccent } from "@/lib/accents";
-import { BigAnswer, KeepBar, LiteCard, MiniBars, MiniGauge, MiniPair, SaidAnswer, SourceChips, UsesBar } from "@/components/Lite";
+import { BigAnswer, KeepBar, LiteCard, MiniBars, MiniGauge, MiniPair, SaidAnswer, UsesBar } from "@/components/Lite";
 
 export async function generateMetadata(props: PageProps<"/stock/[ticker]">): Promise<Metadata> {
   const { ticker } = await props.params;
@@ -59,10 +54,6 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
   const { ticker } = await params;
   const report = await getCompanyReport(decodeURIComponent(ticker).toUpperCase());
   if (!report) notFound();
-  const state: ExplanationState = report.support.supported
-    ? await explanationState(report.company.ticker, report.explanationKey)
-    : { status: "unavailable" };
-  const e = state.explanation;
   if (!report.support.supported) {
     const profile = await getCompanyProfile(report.company.cik);
     return (
@@ -72,58 +63,48 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
       </div>
     );
   }
-  const [profile, macro] = await Promise.all([getCompanyProfile(report.company.cik), getMacro()]);
+  const profile = await getCompanyProfile(report.company.cik); // used for the logo only
   const company = shortCompany(report.company.name);
-  const forces = buildForces(company, report.numbers, e, macro);
   const nodes = mapNodes(conceptMap(report.numbers));
   const links = workedLinks(report.numbers);
-  const lead = e?.topics.whatItDoes?.[0];
   const fundamentals = fundamentalFromReport(report);
-  const ctx: Ctx = { report, e, level: "surface" };
+  const ctx: Ctx = { report, level: "surface" };
 
-  const stepTitles = Object.fromEntries(STEPS.map((s) => [s.id, s.title]));
+  const stepTitles = Object.fromEntries(SOLID_STEPS.map((s) => [s.id, s.title]));
   const nav: NavItem[] = [
+    { id: "price", label: "Share price" },
     { id: "map", label: "At a glance" },
     ...(fundamentals ? [{ id: "fundamentals", label: "Key numbers" }] : []),
-    ...STEPS.map((s, i) => ({ id: `step-${s.id}`, label: s.title, number: i + 1, color: stepAccent(s.id).solid })),
-    { id: "whole-picture", label: "What moves it" },
+    ...SOLID_STEPS.map((s, i) => ({ id: `step-${s.id}`, label: s.title, number: i + 1, color: stepAccent(s.id).solid })),
     { id: "numbers", label: "All the numbers" },
   ];
 
   return (
     <DepthProvider>
       <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-6 px-5 pb-16 pt-6 sm:pt-8 lg:px-10">
-        <Hero report={report} profile={profile} company={company} lead={lead} />
-        <ExplainStatus ticker={report.company.ticker} state={state} />
+        <Hero report={report} profile={profile} company={company} />
+        <SharePrice report={report} company={company} />
         <PageNav items={nav} />
         <KeyMap nodes={nodes} links={links} company={company} stepTitles={stepTitles} />
         <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
           <div className="flex min-w-0 flex-col gap-6">
             {fundamentals && <FundamentalGlance result={fundamentals} />}
-            {STEPS.map((step, i) => (
+            {SOLID_STEPS.map((step, i) => (
               <ResearchStep
                 key={step.id}
                 ticker={report.company.ticker}
                 id={step.id}
                 label={step.title}
                 number={i + 1}
-                total={STEPS.length}
+                total={SOLID_STEPS.length}
                 question={step.question}
                 brief={step.brief}
                 term={<TermName k={step.term} />}
-                surface={surfaceBody(step, ctx, Boolean(lead))}
+                surface={surfaceBody(step, ctx, false)}
                 below={deeperBody(step, ctx, "below", profile)}
                 deep={deeperBody(step, ctx, "deep", profile)}
               />
             ))}
-            <section id="whole-picture" data-part="What moves it" className="flex scroll-mt-20 flex-col gap-6 rounded-2xl border border-line bg-white px-5 py-6 sm:px-6">
-              <AtDepth max="below">
-                <ForcesSummary forces={forces} company={company} />
-              </AtDepth>
-              <AtDepth only="deep">
-                <Forces forces={forces} nodes={nodes} company={company} />
-              </AtDepth>
-            </section>
             <section id="numbers" data-part="All the numbers" className="flex scroll-mt-20 flex-col gap-3 rounded-2xl border border-line bg-white px-5 py-6 sm:px-6">
               <div>
                 <h2 className="font-display text-[22px] font-semibold tracking-[-0.03em]">All the numbers</h2>
@@ -131,14 +112,43 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
               </div>
               <AllNumbers report={report} />
             </section>
-            <PageNote e={e} />
+            <PageNote />
           </div>
           <aside aria-label={`More about ${company}`} className="lg:sticky lg:top-20">
-            <CompanySidebar company={company} ticker={report.company.ticker} expected={report.expected} announcements={report.announcements} />
+            <CompanySidebar company={company} ticker={report.company.ticker} announcements={report.announcements} />
           </aside>
         </div>
       </div>
     </DepthProvider>
+  );
+}
+
+/**
+ * Only the parts built straight from the figures the company files with the SEC, worked out in code:
+ * growth and profit, financial health, cash, and where the money goes. Parts that depend on AI-written
+ * summaries (the business, industry and risks) are left out, and the share price sits at the top instead.
+ */
+const SOLID_STEPS = STEPS.filter((s) => ["performance", "health", "cash", "management"].includes(s.id));
+
+/** The share price first, for context: live from TradingView, clearly separate from the filed figures below. */
+function SharePrice({ report, company }: { report: CompanyReport; company: string }) {
+  return (
+    <section id="price" data-part="Share price" className="flex scroll-mt-20 flex-col gap-3 rounded-2xl border border-line bg-white px-5 py-6 sm:px-6">
+      <div className="flex flex-wrap items-end justify-between gap-2">
+        <div>
+          <h2 className="font-display text-[22px] font-semibold tracking-[-0.03em]">The share price</h2>
+          <p className="max-w-3xl text-[15px] leading-relaxed text-muted">
+            What the stock market pays for one share of {company} today. Below is what the business behind it actually sells, earns,
+            owes and keeps, from its own reports.
+          </p>
+        </div>
+      </div>
+      <PriceChart symbol={report.tradingViewSymbol} />
+      <p className="text-[12.5px] text-muted">
+        Live price from TradingView, shown for context. It changes every trading day, unlike the filed figures below. candor never
+        says whether the price is right.
+      </p>
+    </section>
   );
 }
 
@@ -150,12 +160,8 @@ function shortCompany(name: string): string {
 // ---------------------------------------------------------------- the top of the page
 
 /** Who the company is, in one look: logo, name, one plain sentence and a few facts. */
-function Hero({ report, profile, company, lead }: { report: CompanyReport; profile?: CompanyProfile; company: string; lead?: CheckedClaim }) {
+function Hero({ report, profile, company }: { report: CompanyReport; profile?: CompanyProfile; company: string }) {
   const { company: c, annualReport, quarterlyReport } = report;
-  const facts: string[] = [];
-  if (profile?.founded) facts.push(`Started in ${profile.founded}`);
-  if (profile?.headquarters) facts.push(`Based in ${profile.headquarters}`);
-  if (profile?.employees) facts.push(`${compactCount(profile.employees.count)} people work there`);
   return (
     <header id="top" className="flex scroll-mt-8 flex-col gap-4 rounded-2xl border border-line bg-white px-5 py-6 sm:px-7">
       <div className="flex items-center gap-4">
@@ -170,15 +176,6 @@ function Hero({ report, profile, company, lead }: { report: CompanyReport; profi
           </p>
         </div>
       </div>
-      {lead && (
-        <div className="flex flex-col gap-2">
-          <p className="max-w-4xl text-[20px] leading-[1.5] text-ink/85">
-            <Emph text={lead.text} />
-          </p>
-          <SourceChips sources={[lead.source]} />
-        </div>
-      )}
-      {facts.length > 0 && <p className="text-[15px] text-muted">{facts.join(" · ")}</p>}
       {report.support.supported && (
         <div className="flex flex-wrap items-center gap-2">
           <WatchButton ticker={c.ticker} name={c.name} />
@@ -208,11 +205,6 @@ function Hero({ report, profile, company, lead }: { report: CompanyReport; profi
   );
 }
 
-/** 164000 → "164,000"; 2100000 → "2.1 million". */
-function compactCount(n: number): string {
-  return n >= 1_000_000 ? `${(n / 1_000_000).toFixed(1).replace(/\.0$/, "")} million` : n.toLocaleString("en-US");
-}
-
 /** "BEVERAGES" or "Services-Prepackaged Software" → "Beverages", "Services: prepackaged software". */
 function sentenceCase(s: string): string {
   const t = s.toLowerCase().replace(/-/g, ": ");
@@ -236,23 +228,6 @@ function Said({ statement, visual }: { statement?: Statement; visual?: ReactNode
       </div>
     </div>
   );
-}
-
-/** Above the levels: offer to write the explanation, or say it's on its way. */
-function ExplainStatus({ ticker, state }: { ticker: string; state: ExplanationState }) {
-  if (state.status === "unavailable") return null;
-  if (state.status === "ready") {
-    return state.stale ? <ExplainButton ticker={ticker} initial="none" update /> : null;
-  }
-  if (state.explanation && state.status === "queued") {
-    return (
-      <p className="rounded-2xl bg-mist px-5 py-4 text-[15px] leading-relaxed text-muted">
-        A newer report has been filed. An updated explanation is in the queue; until then, the one below was written
-        from the earlier report.
-      </p>
-    );
-  }
-  return <ExplainButton ticker={ticker} initial={state.status} update={Boolean(state.explanation)} />;
 }
 
 // ---------------------------------------------------------------- the three levels
@@ -282,12 +257,11 @@ function Claims({ claims, quotes }: { claims: CheckedClaim[]; quotes?: boolean }
 }
 
 /** One slim line under the page: where everything came from, and that it isn't advice. */
-function PageNote({ e }: { e?: SavedExplanation }) {
+function PageNote() {
   return (
     <p className="px-1 text-[12px] leading-relaxed text-muted">
-      Numbers come straight from the company&apos;s SEC filings and are worked out in code.
-      {e && ` Points about the business, industry and risks were written by AI on ${formatDate(e.generatedAt.slice(0, 10))} and each was checked word-for-word against the report it links to.`}{" "}
-      For education only: not investment advice, no price targets, and never buy, sell or hold.
+      Every figure comes straight from the company&apos;s SEC filings and is worked out in code; the share price is live from
+      TradingView. For education only: not investment advice, no price targets, and never buy, sell or hold.
     </p>
   );
 }

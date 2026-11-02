@@ -302,7 +302,7 @@ export const STEPS: { id: string; title: string; question: string; areas: string
   {
     id: "management",
     brief: "How its leaders use the money: reinvesting, paying owners or buying other firms.",
-    lookFor: ["Payouts funded from spare cash rather than borrowing", "How much goes back into the business versus to owners", "Changes in leaders or auditors"],
+    lookFor: ["Payouts funded from spare cash rather than borrowing", "How much goes back into the business versus to owners", "A change of auditor, or accounts that had to be restated"],
     title: "How it's run",
     question: "What do its leaders do with the money?",
     areas: ["management"],

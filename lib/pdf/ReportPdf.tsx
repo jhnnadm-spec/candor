@@ -20,7 +20,7 @@ import { MARK_BAR_HEIGHT, MARK_BARS } from "@/components/Logo";
 import { Document, Font, Link, Page, Rect, StyleSheet, Svg, Text, View } from "@react-pdf/renderer";
 import { Fragment, type ReactElement, type ReactNode } from "react";
 import type { DocumentProps } from "@react-pdf/renderer";
-import type { CheckedClaim, SavedExplanation, TopicId } from "../explain/types";
+import type { SavedExplanation } from "../explain/types";
 import { formatDate, formatMoney, formatShare } from "../financials/format";
 import { changeRows, marginTrends } from "../financials/explain-numbers";
 import { termsIn, type Statement } from "../financials/templates";
@@ -183,23 +183,7 @@ function statementPoint(ctx: Ctx, st: Statement, color?: string) {
   return bullet(ctx, st.text, st.sources.map((x) => ctx.src.ref(x.label, x.url)), undefined, color);
 }
 
-function claims(ctx: Ctx, list: CheckedClaim[], quotes = true, color?: string) {
-  return list.map((c) => bullet(ctx, c.text, [ctx.src.ref(c.source.label, c.source.url)], quotes ? c.quote : undefined, color));
-}
 
-function topic(ctx: Ctx, id: TopicId, title: string, max?: number, color?: string) {
-  const list = (ctx.e?.topics[id] ?? []).slice(0, max);
-  if (list.length === 0) return null;
-  return (
-    <View key={id}>
-      <KeepMarker />
-      <Text style={s.h} minPresenceAhead={70}>
-        {title}
-      </Text>
-      {claims(ctx, list, true, color)}
-    </View>
-  );
-}
 
 /** The candor mark: three flat bars, one per level of detail. */
 function LogoMark({ size = 16 }: { size?: number }) {
@@ -238,13 +222,6 @@ function section(num: string, title: string, intro: string, color: string, child
   );
 }
 
-function notWritten() {
-  return (
-    <Text style={s.note}>
-      The plain-English points for this part haven&apos;t been written for this company yet. They will appear on its candor page once ready.
-    </Text>
-  );
-}
 
 // ---------------------------------------------------------------- charts (flat, one colour each)
 
@@ -356,19 +333,18 @@ export type PdfInput = {
 };
 
 /** Called as a plain function (not <ReportPdf/>) so the PDF renderer receives the <Document> directly. */
-export function ReportPdf({ report, explanation: e, profile, pageUrl, createdAt }: PdfInput): ReactElement<DocumentProps> {
+export function ReportPdf({ report, profile, pageUrl, createdAt }: PdfInput): ReactElement<DocumentProps> {
   // Built top to bottom with plain function calls, so source numbers follow reading order.
-  const ctx: Ctx = { report, e, profile, src: new SourceList(), terms: new Set() };
+  // Only what the company's filings give, worked out in code: no AI-written summaries.
+  const ctx: Ctx = { report, e: undefined, profile, src: new SourceList(), terms: new Set() };
   const created = formatDate(createdAt.toISOString().slice(0, 10));
   const body = (
     <>
       {frontPage(ctx, created, pageUrl)}
-      {business(ctx)}
       {growth(ctx)}
       {health(ctx)}
       {cash(ctx)}
       {management(ctx)}
-      {outlook(ctx)}
       {links(ctx)}
       {changes(ctx)}
       {announcements(ctx)}
@@ -401,11 +377,10 @@ export function ReportPdf({ report, explanation: e, profile, pageUrl, createdAt 
 // ---------------------------------------------------------------- page 1
 
 function frontPage(ctx: Ctx, created: string, pageUrl: string) {
-  const { report, e, profile } = ctx;
+  const { report } = ctx;
   const { company, annualReport, quarterlyReport } = report;
   const fundamentals = fundamentalFromReport(report);
-  const { favour, watch, risks } = highlights(report.numbers, report.governance, e);
-  const lead = [...(e?.topics.whatItDoes ?? []).slice(0, 1), ...(e?.topics.howItMakesMoney ?? []).slice(0, 2)];
+  const { favour, watch, risks } = highlights(report.numbers, report.governance, undefined);
   const basedOn = [
     annualReport && `annual report (10-K) filed ${formatDate(annualReport.filingDate)}`,
     quarterlyReport && `quarterly report (10-Q) filed ${formatDate(quarterlyReport.filingDate)}`,
@@ -433,7 +408,7 @@ function frontPage(ctx: Ctx, created: string, pageUrl: string) {
 
       <Text style={[s.note, { marginTop: 6 }]}>
         How to read it: key finance terms are <Text style={s.kw}>highlighted</Text> and explained under &quot;Key terms&quot; at the back, figures are in{" "}
-        <Text style={s.num}>bold</Text>, and each [number] matches the source list. Every point is worked out from the company&apos;s own figures and words: it
+        <Text style={s.num}>bold</Text>, and each [number] matches the source list. Every figure is worked out in code from the company&apos;s own SEC filings: it
         describes the business, not whether to buy, sell or hold its shares. Share price and latest news:{" "}
         <Link src={pageUrl} style={s.link}>
           {pageUrl.replace(/^https?:\/\//, "")}
@@ -444,24 +419,9 @@ function frontPage(ctx: Ctx, created: string, pageUrl: string) {
       <View style={{ flexDirection: "row", gap: 16, marginTop: 10 }}>
         {/* The story */}
         <View style={{ flex: 1 }}>
-          <Text style={[s.label, { marginTop: 2 }]}>The company in one minute</Text>
-          {lead.length > 0 ? (
-            <Text style={[s.p, { fontSize: 10.5, marginTop: 4 }]}>
-              {lead.map((c, i) => (
-                <Fragment key={c.text}>
-                  {i > 0 ? " " : ""}
-                  {rich(ctx, c.text)}
-                  <Text style={s.ref}>{refText([ctx.src.ref(c.source.label, c.source.url)])}</Text>
-                </Fragment>
-              ))}
-            </Text>
-          ) : (
-            <Text style={[s.note, { marginTop: 4 }]}>The plain-English description of this business hasn&apos;t been written yet.</Text>
-          )}
-
           {fundamentals && fundamentals.summary.length > 0 && (
             <>
-              <Text style={[s.label, { marginTop: 8 }]}>Key takeaways from the figures</Text>
+              <Text style={[s.label, { marginTop: 2 }]}>Key takeaways from the figures</Text>
               <View style={{ marginTop: 4 }}>{fundamentals.summary.map((t) => bullet(ctx, t, fundamentals.sources.slice(0, 1).map((x) => ctx.src.ref(x.name, x.url))))}</View>
             </>
           )}
@@ -494,7 +454,6 @@ function frontPage(ctx: Ctx, created: string, pageUrl: string) {
             <Text style={[s.note, { marginTop: 4 }]}>No figures available.</Text>
           )}
           {fundamentals?.meta.fiscalYearEnd && <Text style={{ fontSize: 6.5, color: C.muted, marginTop: 5 }}>Latest financial year; balance-sheet figures on the latest report date. In US dollars.</Text>}
-          {profile && companyFacts(profile)}
         </View>
       </View>
 
@@ -527,42 +486,9 @@ function figureLabel(id: string, name: string, f: Parameters<typeof figureValue>
 
 const GROUP_COLOR: Record<FundamentalGroupId, string> = { size: C.blueInk, profitability: "#0B6F6E", cash: C.amberInk, safety: "#5B3FD6", returns: "#B4233C" };
 
-function companyFacts(p: CompanyProfile) {
-  const facts: [string, string][] = [];
-  if (p.ceo) facts.push(["Chief executive", p.ceo]);
-  if (p.founded) facts.push(["Founded", p.founded]);
-  if (p.headquarters) facts.push(["Headquarters", p.headquarters]);
-  if (p.employees) facts.push(["Employees", `${p.employees.count.toLocaleString("en-US")}${p.employees.asOf ? ` (${p.employees.asOf})` : ""}`]);
-  if (facts.length === 0) return null;
-  return (
-    <View style={{ marginTop: 10 }}>
-      <Text style={s.label}>Company facts</Text>
-      {facts.map(([k, v]) => (
-        <View key={k} style={{ marginTop: 3 }}>
-          <Text style={{ fontSize: 7.5, color: C.muted }}>{k}</Text>
-          <Text style={{ fontSize: 8.5, fontWeight: 600 }}>{clean(v)}</Text>
-        </View>
-      ))}
-      <Text style={{ fontSize: 6.5, color: C.muted, marginTop: 4 }}>Background from Wikidata (CC0); may lag behind.</Text>
-    </View>
-  );
-}
 
 // ---------------------------------------------------------------- sections 1–6
 
-function business(ctx: Ctx) {
-  const body = ctx.e ? (
-    <>
-      {topic(ctx, "whatItDoes", "What the company does", undefined, C.blue)}
-      {topic(ctx, "howItMakesMoney", "How it makes money", undefined, C.blue)}
-      {topic(ctx, "competitiveEdge", "What the company says gives it an edge", undefined, C.blue)}
-      {topic(ctx, "marketPosition", "Where it says it stands in its industry", undefined, C.blue)}
-    </>
-  ) : (
-    notWritten()
-  );
-  return section("1", "The business", "What it sells, who pays for it, and what it says sets it apart. Every number later makes more sense with this in mind.", C.blue, body);
-}
 
 function growth(ctx: Ctx) {
   const n = ctx.report.numbers;
@@ -570,7 +496,7 @@ function growth(ctx: Ctx) {
   const trends = n ? marginTrends(n) : [];
   const pct = (v?: number) => (v === undefined ? "–" : formatShare(v));
   return section(
-    "2",
+    "1",
     "Growth and profit",
     "Whether it sells more each year, and how much of each sale it keeps. From the income statement.",
     C.teal,
@@ -618,7 +544,7 @@ function health(ctx: Ctx) {
   const cash = n?.balance.cash?.latest;
   const debt = n?.balance.longTermDebt?.latest;
   return section(
-    "3",
+    "2",
     "Financial health",
     "Whether it can pay its bills and how much it relies on borrowed money: its cushion for bad times. From the balance sheet.",
     C.violet,
@@ -642,7 +568,7 @@ function cash(ctx: Ctx) {
   const n = ctx.report.numbers;
   const fcf = n?.ratios.freeCashFlow;
   return section(
-    "4",
+    "3",
     "Cash",
     "Profit follows accounting rules; cash is what actually lands in the bank. Free cash flow is what's left after investing in the business. From the cash flow statement.",
     C.amber,
@@ -668,7 +594,7 @@ function management(ctx: Ctx) {
     ctx.terms.add("restatement");
   }
   return section(
-    "5",
+    "4",
     "How it's run",
     "How its leaders use the company's money, how much profit they make with shareholders' money, and official warning signs about its accounts.",
     C.sky,
@@ -699,22 +625,6 @@ function management(ctx: Ctx) {
   );
 }
 
-function outlook(ctx: Ctx) {
-  const body = ctx.e ? (
-    <>
-      {topic(ctx, "industryTrends", "Trends in its industry", undefined, C.rose)}
-      {topic(ctx, "demandDrivers", "What drives demand", undefined, C.rose)}
-      {topic(ctx, "biggestRisks", "Key risks the company highlights", undefined, C.rose)}
-      {topic(ctx, "newRisks", "New or changed risks", undefined, C.rose)}
-      {topic(ctx, "outlook", "What management expects", undefined, C.rose)}
-      {topic(ctx, "upcoming", "What the company says is coming up", undefined, C.rose)}
-    </>
-  ) : (
-    notWritten()
-  );
-  ctx.terms.add("risk-factors");
-  return section("6", "Industry, outlook and risks", "The bigger picture and what could go wrong, in the company's own words (with the exact wording from its reports).", C.rose, body);
-}
 
 // ---------------------------------------------------------------- 7–9
 
@@ -722,7 +632,7 @@ function links(ctx: Ctx) {
   const list = workedLinks(ctx.report.numbers).filter((l) => l.period);
   if (list.length === 0) return null;
   return section(
-    "7",
+    "5",
     "How the numbers link",
     "The sums that connect one figure to the next, worked out with the company's own figures, so you can see exactly where each number comes from.",
     C.ink,
@@ -750,7 +660,7 @@ function changes(ctx: Ctx) {
   if (rows.length === 0) return null;
   rows.forEach((r) => r.term && ctx.terms.add(r.term));
   return section(
-    "8",
+    "6",
     "What changed in a year",
     "Each figure next to the same figure a year earlier. Quarters are compared with the same quarter a year before, because many businesses are busier in some seasons.",
     C.green,
@@ -771,7 +681,7 @@ function announcements(ctx: Ctx) {
   const list = ctx.report.announcements;
   ctx.terms.add("8-k");
   return section(
-    "9",
+    "7",
     "Recent official announcements",
     "Major events the company reported to the SEC in the last four months (form 8-K).",
     C.slate,

@@ -100,8 +100,8 @@ export function AtDepth({ min, max, only, children }: { min?: Level; max?: Level
 }
 
 /**
- * Each level wears its bar's colour from the logo (blue, teal, amber, from shortest to
- * longest), with text dark or white so it stays easy to read on that colour.
+ * Each level has its own colour (blue, teal, amber, from shortest to longest) and a small
+ * bar as long as its bar in the logo, with text dark or white so it stays easy to read.
  */
 const LEVEL_COLOR: Record<Level, { bg: string; text: string; hint: string; bar: number }> = {
   surface: { bg: "#2D5BFF", text: "#FFFFFF", hint: "rgba(255,255,255,0.8)", bar: 8 },

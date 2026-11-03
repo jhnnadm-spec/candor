@@ -185,12 +185,12 @@ function statementPoint(ctx: Ctx, st: Statement, color?: string) {
 
 
 
-/** The candor mark: three flat bars, one per level of detail. */
-function LogoMark({ size = 16 }: { size?: number }) {
+/** The candor mark: three flat bars lined up on the right, one per level of detail (white on the dark band). */
+function LogoMark({ size = 16, color = "#FFFFFF" }: { size?: number; color?: string }) {
   return (
     <Svg width={size} height={size} viewBox="0 0 100 100">
       {MARK_BARS.map((b) => (
-        <Rect key={b.y} x={0} y={b.y} width={b.width} height={MARK_BAR_HEIGHT} fill={b.color} />
+        <Rect key={b.y} x={b.x} y={b.y} width={b.width} height={MARK_BAR_HEIGHT} fill={color} />
       ))}
     </Svg>
   );
@@ -391,7 +391,7 @@ function frontPage(ctx: Ctx, created: string, pageUrl: string) {
       <View style={s.band}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}>
           <LogoMark size={15} />
-          <Text style={{ fontWeight: 700, fontSize: 13, color: "#D9DCE2" }}>candor</Text>
+          <Text style={{ fontWeight: 700, fontSize: 13, color: "#FFFFFF" }}>candor</Text>
         </View>
         <Text style={{ fontSize: 8.5 }}>Company research report · plain-English edition · {created}</Text>
       </View>

@@ -4,7 +4,7 @@
  * while the steps below take turns. Pure CSS (keyframes in globals.css), and still
  * for anyone who has asked their device for less motion.
  */
-import { MARK_BAR_HEIGHT, MARK_BARS } from "./Logo";
+import { MARK_BAR_HEIGHT, MARK_BARS, MARK_INK } from "./Logo";
 
 export function Loader({ label = "Loading…", steps }: { label?: string; steps?: string[] }) {
   const lines = steps && steps.length > 0 ? steps : [label];
@@ -14,12 +14,12 @@ export function Loader({ label = "Loading…", steps }: { label?: string; steps?
         {MARK_BARS.map((b, i) => (
           <span
             key={b.y}
-            className="candor-logo-bar absolute left-0 block"
+            className="candor-logo-bar absolute right-0 block"
             style={{
               top: `${b.y}%`,
               height: `${MARK_BAR_HEIGHT}%`,
               width: `${b.width}%`,
-              background: b.color,
+              background: MARK_INK,
               animationDelay: `${i * 0.18}s`,
             }}
           />

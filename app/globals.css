@@ -63,7 +63,7 @@ body {
 
 /*
   Loading animation (components/Loader.tsx): the logo's three bars grow out from the
-  left one after another and fall back, while captions take turns. Placeholder boxes
+  right one after another and fall back, while captions take turns. Placeholder boxes
   elsewhere shimmer softly.
 */
 @keyframes candor-logo-bar {
@@ -80,7 +80,7 @@ body {
   3%, 31% { opacity: 1; transform: translateY(0); }
   33.3%, 100% { opacity: 0; transform: translateY(-6px); }
 }
-.candor-logo-bar { transform-origin: left; animation: candor-logo-bar 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.candor-logo-bar { transform-origin: right; animation: candor-logo-bar 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
 .candor-shimmer {
   background: linear-gradient(90deg, #eef0f3 30%, #f8f9fb 50%, #eef0f3 70%);
   background-size: 200% 100%;

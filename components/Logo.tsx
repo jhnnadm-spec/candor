@@ -1,33 +1,36 @@
 /**
- * The candor mark: three flat bars that get longer, one for each level of detail on a
- * company page (Short, Explained, Everything). Square corners, one solid colour each,
- * so it holds up from a favicon to a billboard.
+ * The candor mark: three flat black bars, lined up on the right and getting longer
+ * downwards, like steps: one for each level of detail on a company page (Short,
+ * Explained, Everything). Square corners and one colour, so it holds up from a
+ * favicon to a billboard. Black on light backgrounds, white on dark ones.
  */
+export const MARK_INK = "#0C0F14";
 export const MARK_BARS = [
-  { y: 0, width: 46, color: "#2D5BFF" }, // Short
-  { y: 36, width: 73, color: "#0EA5A4" }, // Explained
-  { y: 72, width: 100, color: "#F59E0B" }, // Everything
-] as const;
+  { y: 0, width: 46 }, // Short
+  { y: 36, width: 73 }, // Explained
+  { y: 72, width: 100 }, // Everything
+].map((b) => ({ ...b, x: 100 - b.width }));
 export const MARK_BAR_HEIGHT = 28;
 
-export function LogoMark({ size = 28 }: { size?: number }) {
+export function LogoMark({ size = 28, color = MARK_INK }: { size?: number; color?: string }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" aria-hidden="true">
+    <svg width={size} height={size} viewBox="0 0 100 100" aria-hidden="true" shapeRendering="crispEdges">
       {MARK_BARS.map((b) => (
-        <rect key={b.y} x={0} y={b.y} width={b.width} height={MARK_BAR_HEIGHT} fill={b.color} />
+        <rect key={b.y} x={b.x} y={b.y} width={b.width} height={MARK_BAR_HEIGHT} fill={color} />
       ))}
     </svg>
   );
 }
 
 /**
- * The mark with the name "candor" on its right (all lowercase): dark
- * grey lettering on light backgrounds, light grey on dark ones (the header).
+ * The mark with the name "candor" on its right (all lowercase), both in one colour:
+ * black on light backgrounds, white on dark ones (the header).
  */
 export function Logo({ size = 28, tone = "light" }: { size?: number; tone?: "light" | "dark" }) {
+  const color = tone === "dark" ? "#FFFFFF" : MARK_INK;
   return (
-    <span className="inline-flex items-center" style={{ gap: size * 0.35, color: tone === "dark" ? "#D9DCE2" : "#4B5260" }}>
-      <LogoMark size={size} />
+    <span className="inline-flex items-center" style={{ gap: size * 0.35, color }}>
+      <LogoMark size={size} color={color} />
       <span className="font-display font-semibold leading-none tracking-[-0.04em]" style={{ fontSize: size * 1.09 }}>
         candor
       </span>

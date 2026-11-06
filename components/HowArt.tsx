@@ -40,10 +40,10 @@ export function HowArt({ step }: { step: 1 | 2 | 3 }) {
         </div>
       )}
       {step === 3 && (
-        // A "Tell me more" button opening up more lines underneath
+        // A "Show the full explanation" button opening up more lines underneath
         <div className="flex w-[74%] flex-col items-start gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-sm bg-ink px-3 py-1.5 text-[12px] font-semibold text-white">
-            Tell me more
+            Show the full explanation
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:rotate-180">
               <path d="m6 9 6 6 6-6" />
             </svg>

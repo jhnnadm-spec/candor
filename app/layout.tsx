@@ -9,6 +9,7 @@ import "./globals.css";
 import { Logo } from "@/components/Logo";
 import { HeaderSearch, NavLinks } from "@/components/NavLinks";
 import { SearchForm } from "@/components/SearchForm";
+import { DuneEdge, Sky } from "@/components/Sky";
 
 export const metadata: Metadata = {
   title: {
@@ -23,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
-        <header className="relative z-10 bg-ink">
+        <header className="relative z-10 bg-dune">
           <div className="mx-auto flex max-w-[1360px] flex-wrap items-center justify-between gap-x-4 gap-y-3 px-5 py-3.5 lg:px-10">
             <Link href="/" className="no-underline" aria-label="candor home">
               <Logo size={26} tone="dark" />
@@ -37,10 +38,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </div>
         </header>
 
-        <main className="flex flex-1 flex-col overflow-x-clip">{children}</main>
+        <main className="relative isolate flex flex-1 flex-col overflow-x-clip">
+          <Sky />
+          {children}
+        </main>
 
-        <footer className="bg-ink">
-          <div className="mx-auto flex max-w-[1360px] flex-col gap-2 px-5 py-3 text-[12px] leading-snug text-[#A3AAB8] lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:px-10">
+        <DuneEdge />
+        <footer className="bg-dune">
+          <div className="mx-auto flex max-w-[1360px] flex-col gap-3 px-5 pb-6 pt-3 text-[12px] leading-snug text-[#A3AAB8] lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:px-10">
             <p className="m-0">
               <strong className="font-semibold text-white">candor</strong> is for education only, not investment, legal or tax advice, and never says buy, sell
               or hold. Figures come from public SEC filings and may contain errors: check the linked sources.{" "}

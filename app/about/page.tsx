@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { PageTitle } from "@/components/PageTitle";
 
 export const metadata: Metadata = { title: "About" };
@@ -49,6 +50,9 @@ export default function About() {
           public filings and other public sources and may contain errors or be out of date, so please verify them against the
           original documents. Consider speaking to a licensed financial adviser before making any investment decision.
         </p>
+        <Link href="/disclaimer" className="self-start text-[15px] font-semibold">
+          Read the full disclaimer →
+        </Link>
       </section>
     </div>
   );

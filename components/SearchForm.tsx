@@ -28,7 +28,7 @@ export function SearchForm({ size = "large", autoFocus = false }: { size?: "larg
           required
           autoFocus={autoFocus}
           autoComplete="off"
-          placeholder={large ? "Try Apple or Nike" : "Search a company"}
+          placeholder={large ? "Company name or ticker" : "Search a company"}
           className={`w-full bg-transparent outline-none ${large ? "py-3.5 text-lg text-ink placeholder:text-[#7a818c]" : "py-2 text-[15px] text-white placeholder:text-[#8B93A1]"}`}
         />
       </div>

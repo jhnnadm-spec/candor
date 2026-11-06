@@ -165,14 +165,6 @@ export default function DisclaimerPage() {
         </ul>
       </section>
 
-      <nav aria-label="On this page" className="flex flex-wrap gap-2">
-        {SECTIONS.map((s, i) => (
-          <a key={s.id} href={`#${s.id}`} className="rounded-sm bg-panel-2 px-3 py-1.5 text-[13.5px] font-semibold text-ink no-underline hover:bg-surface">
-            {i + 1}. {s.title}
-          </a>
-        ))}
-      </nav>
-
       <div className="flex flex-col gap-3">
         {SECTIONS.map((s, i) => (
           <section key={s.id} id={s.id} aria-labelledby={`${s.id}-h`} className="scroll-mt-24 rounded-sm border border-line bg-white px-6 py-5">

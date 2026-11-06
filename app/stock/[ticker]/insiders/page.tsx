@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { Loader } from "@/components/Loader";
 import { CompanyTop, shortCompany } from "@/components/company/CompanyTop";
+import { CompanyDisclaimer } from "@/components/company/Disclaimer";
 import { InsidersView } from "@/components/filings/InsidersView";
 import { getInsiders } from "@/lib/filings/load";
 import { getCompanyProfile } from "@/lib/profile/wiki";
@@ -41,6 +42,7 @@ async function Insiders({ params }: { params: Promise<{ ticker: string }> }) {
         }
       />
       {data && data.trades.length > 0 ? <InsidersView s={data} company={company} /> : <p className="text-[17px] text-muted">No insider trades (Form 4) for {company} were filed in the last year.</p>}
+      <CompanyDisclaimer extra={"Insider trades are reported facts, not signals: insiders buy and sell for many personal reasons."} />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { Loader } from "@/components/Loader";
 import { CompanyTop, shortCompany } from "@/components/company/CompanyTop";
+import { CompanyDisclaimer } from "@/components/company/Disclaimer";
 import { ProxyView } from "@/components/filings/ProxyView";
 import { getProxy } from "@/lib/filings/load";
 import { getCompanyProfile } from "@/lib/profile/wiki";
@@ -51,6 +52,7 @@ async function Proxy({ params }: { params: Promise<{ ticker: string }> }) {
         }
       />
       {proxy ? <ProxyView p={proxy} company={company} /> : <p className="text-[17px] text-muted">{company} hasn&apos;t filed a proxy statement (DEF 14A) that candor can find. Some companies file a different kind, or include it in their yearly report.</p>}
+      <CompanyDisclaimer extra={"Pay and vote details are as the company reported them."} />
     </div>
   );
 }

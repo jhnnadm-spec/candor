@@ -44,8 +44,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <p className="m-0">
               <strong className="font-semibold text-white">candor</strong> is for education only, not investment, legal or tax advice, and never says buy, sell
               or hold. Figures come from public SEC filings and may contain errors: check the linked sources.{" "}
-              <Link href="/about" className="text-[#D9DCE2] hover:text-white">
-                More about this
+              <Link href="/disclaimer" className="font-semibold text-[#D9DCE2] hover:text-white">
+                Read the full disclaimer
               </Link>
             </p>
             <nav aria-label="Footer" className="flex flex-none gap-x-5 font-medium">
@@ -54,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 ["/compare", "Compare"],
                 ["/terms", "Dictionary"],
                 ["/about", "About"],
+                ["/disclaimer", "Disclaimer"],
               ].map(([href, label]) => (
                 <Link key={href} href={href} className="text-[#D9DCE2] no-underline hover:text-white">
                   {label}

@@ -34,6 +34,7 @@ import { accentVars, BRAND, stepAccent } from "@/lib/accents";
 import { BigAnswer, KeepBar, LiteCard, MiniBars, MiniGauge, MiniPair, SaidAnswer, UsesBar } from "@/components/Lite";
 import { CompanyTabs } from "@/components/company/CompanyTabs";
 import { FilingsGrid } from "@/components/company/FilingsGrid";
+import { CompanyDisclaimer } from "@/components/company/Disclaimer";
 
 export async function generateMetadata(props: PageProps<"/stock/[ticker]">): Promise<Metadata> {
   const { ticker } = await props.params;
@@ -272,10 +273,7 @@ function Claims({ claims, quotes }: { claims: CheckedClaim[]; quotes?: boolean }
 /** One slim line under the page: where everything came from, and that it isn't advice. */
 function PageNote() {
   return (
-    <p className="px-1 text-[12px] leading-relaxed text-muted">
-      Every figure comes straight from the company&apos;s SEC filings and is worked out in code; the share price is live from
-      TradingView. For education only: not investment advice, no price targets, and never buy, sell or hold.
-    </p>
+    <CompanyDisclaimer extra="Every figure comes from the company's SEC filings and is worked out in code; the share price chart is from TradingView." />
   );
 }
 

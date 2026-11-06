@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { Loader } from "@/components/Loader";
 import { CompanyTop, shortCompany } from "@/components/company/CompanyTop";
+import { CompanyDisclaimer } from "@/components/company/Disclaimer";
 import { AnnouncementsView } from "@/components/filings/AnnouncementsView";
 import { getAnnouncements } from "@/lib/filings/load";
 import { getCompanyProfile } from "@/lib/profile/wiki";
@@ -42,6 +43,7 @@ async function Announcements({ params }: { params: Promise<{ ticker: string }> }
         }
       />
       {data && data.list.length > 0 ? <AnnouncementsView list={data.list} since={data.since} /> : <p className="text-[17px] text-muted">{company} hasn&apos;t filed any 8-K announcements in the last two years.</p>}
+      <CompanyDisclaimer extra={"Announcements are summarised by kind; quoted text is the company's own."} />
     </div>
   );
 }

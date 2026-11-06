@@ -1,6 +1,7 @@
 /** The yearly (10-K) and quarterly (10-Q) report pages share this. */
 import { notFound } from "next/navigation";
 import { CompanyTop, shortCompany } from "@/components/company/CompanyTop";
+import { CompanyDisclaimer } from "@/components/company/Disclaimer";
 import { ReportGuideView } from "@/components/filings/ReportGuideView";
 import { getReportGuide, type ReportForm } from "@/lib/filings/load";
 import { getCompanyProfile } from "@/lib/profile/wiki";
@@ -44,6 +45,7 @@ export async function ReportGuidePage({ params, form }: { params: Promise<{ tick
       ) : (
         <p className="text-[17px] text-muted">{company} hasn&apos;t filed a {form} that candor can find.</p>
       )}
+      <CompanyDisclaimer extra={"Checks marked green or amber describe wording found in the report, not a judgement of the company."} />
     </div>
   );
 }

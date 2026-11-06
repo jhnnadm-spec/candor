@@ -162,7 +162,11 @@ function PartCard({ item, form, ticker, color }: { item: GuideItem; form: string
   const label = form === "10-Q" ? `Part ${item.part ?? ""} · Item ${item.id.replace(/^I+-/, "")}` : `Item ${item.id}`;
 
   return (
-    <article id={`part-${item.id}`} className="scroll-mt-24 overflow-hidden rounded-sm border border-line bg-white">
+    <article
+      id={`part-${item.id}`}
+      className="candor-reveal scroll-mt-24 overflow-hidden rounded-sm border bg-white transition-[border-color,box-shadow] duration-200"
+      style={open ? { borderColor: color, boxShadow: `inset 3px 0 0 ${color}` } : { borderColor: "var(--color-line)" }}
+    >
       <button type="button" aria-expanded={open} onClick={() => setOpen(!open)} className="flex w-full items-start gap-4 px-5 py-4 text-left sm:px-6">
         <span aria-hidden="true" className="mt-1.5 h-3 w-3 flex-none rounded-[2px]" style={{ background: color }} />
         <span className="flex min-w-0 flex-1 flex-col gap-0.5">
@@ -179,12 +183,17 @@ function PartCard({ item, form, ticker, color }: { item: GuideItem; form: string
             </span>
           )}
         </span>
-        <svg className={`mt-1 flex-none transition-transform ${open ? "rotate-180" : ""}`} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <path d="m6 9 6 6 6-6" />
-        </svg>
+        <span className="flex flex-none flex-col items-end gap-1.5">
+          <span className="rounded-sm px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide" style={open ? { background: color, color: "#fff" } : { background: "var(--color-panel-2)", color: "var(--color-muted)" }}>
+            {open ? "Open" : "Closed"}
+          </span>
+          <svg className={`flex-none transition-transform duration-300 ${open ? "rotate-180" : ""}`} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </span>
       </button>
       {open && (
-        <div className="fathom-fade flex flex-col gap-4 border-t border-line px-5 py-5 sm:px-6">
+        <div className="candor-drawer-in flex flex-col gap-4 border-t border-line px-5 py-5 sm:px-6">
           {item.why && (
             <p className="m-0 rounded-sm bg-mist px-4 py-3 text-[15px] leading-relaxed">
               <strong className="font-semibold">Why people read it: </strong>
@@ -279,6 +288,16 @@ function PartCard({ item, form, ticker, color }: { item: GuideItem; form: string
               )}
             </div>
           )}
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              document.getElementById(`part-${item.id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }}
+            className="self-start text-[13.5px] font-semibold text-muted underline underline-offset-4 hover:text-ink"
+          >
+            Close this part ↑
+          </button>
         </div>
       )}
     </article>

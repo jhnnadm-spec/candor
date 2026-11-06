@@ -2,17 +2,18 @@
 
 /**
  * The bar that stays at the top of a company page: every section in order, the one
- * being read highlighted, and the detail switch (Short, Explained, Everything).
- * A thin line along its bottom fills as the reader scrolls.
+ * being read highlighted, a small "open" mark on parts whose full explanation is open,
+ * and a button to close them all. A thin line along its bottom fills as the reader scrolls.
  */
 import { useEffect, useRef, useState } from "react";
-import { DepthSwitch, useReadProgress } from "./Depth";
+import { useOpenParts, useReadProgress } from "./OpenParts";
 
 export type NavItem = { id: string; label: string; number?: number; color?: string };
 
 export function PageNav({ items }: { items: NavItem[] }) {
   const [current, setCurrent] = useState(items[0]?.id);
   const progress = useReadProgress();
+  const { open, closeAll } = useOpenParts();
   const list = useRef<HTMLOListElement>(null);
 
   // The section being read: the last one whose top has passed just under the bar.
@@ -72,17 +73,26 @@ export function PageNav({ items }: { items: NavItem[] }) {
                     </span>
                   )}
                   {it.label}
+                  {open.has(it.id.replace(/^step-/, "")) && (
+                    <span className={`rounded-sm px-1 text-[10px] font-bold uppercase tracking-wide ${on ? "bg-white/25 text-white" : "bg-ink text-white"}`} title="Its full explanation is open">
+                      open
+                    </span>
+                  )}
                 </a>
               </li>
             );
           })}
         </ol>
-        <div className="hidden w-[288px] flex-none md:block">
-          <DepthSwitch compact />
-        </div>
-      </div>
-      <div className="px-1 pb-2 md:hidden">
-        <DepthSwitch compact />
+        {open.size > 0 && (
+          <button
+            type="button"
+            onClick={closeAll}
+            className="flex min-h-9 flex-none items-center gap-1.5 rounded-sm bg-panel-2 px-3 text-[13px] font-semibold text-ink transition-colors hover:bg-surface"
+          >
+            <span className="tabular-nums">{open.size} open</span>
+            <span className="text-muted">· Close all</span>
+          </button>
+        )}
       </div>
       <span aria-hidden="true" className="absolute inset-x-0 -bottom-px h-[2px]">
         <span className="block h-full origin-left bg-ocean" style={{ transform: `scaleX(${progress})` }} />

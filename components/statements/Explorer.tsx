@@ -12,6 +12,7 @@ import { GUIDES } from "@/lib/statements/guide";
 import { change, compact, niceDate } from "@/lib/statements/format";
 import type { StatementKind } from "@/lib/sec/rpages";
 import { BalanceBars, Waterfall } from "./Pictures";
+import { CountUp } from "@/components/viz/CountUp";
 
 export type ReportLite = Omit<ReportStatements, "pages">;
 type Which = "annual" | "quarterly";
@@ -151,9 +152,7 @@ export function StatementsExplorer({ company, annual, quarterly }: { company: st
               <span className="font-display text-[17px] font-semibold leading-snug text-ink">{GUIDES[k].question}</span>
               {has && h.value !== undefined ? (
                 <span className="flex flex-col">
-                  <span className="font-display text-[22px] font-bold tabular-nums" style={{ color: col.ink }}>
-                    {compact(h.value)}
-                  </span>
+                  <CountUp text={compact(h.value)} className="font-display text-[22px] font-bold text-ink" />
                   <span className="text-[12px] text-muted">{h.caption}</span>
                 </span>
               ) : (
@@ -165,7 +164,7 @@ export function StatementsExplorer({ company, annual, quarterly }: { company: st
       </div>
 
       {/* The chosen statement */}
-      <section key={`${which}-${kind}`} className="fathom-fade flex flex-col overflow-hidden rounded-sm border border-line bg-white" aria-label={g.name}>
+      <section key={`${which}-${kind}`} className="fathom-fade candor-reveal flex flex-col overflow-hidden rounded-sm border border-line bg-white" aria-label={g.name}>
         <header className="flex flex-col gap-2 border-b border-line px-5 py-5 sm:px-6" style={{ background: c.soft }}>
           <p className="m-0 text-[13px] font-semibold" style={{ color: c.ink }}>
             {g.name} <span className="font-normal text-muted">· {g.aka}</span>
@@ -224,7 +223,8 @@ function StatementBody({ s, kind }: { s: StatementView; kind: StatementKind }) {
   let chips: { label: string; on: boolean; go: () => void }[] = [];
   if ((kind === "income" || kind === "cashflow") && s.steps?.[col]?.length) {
     chips = durationCols.map(({ col: c, i }) => ({ label: c.label, on: i === col, go: () => setCol(i) }));
-    picture = <Waterfall steps={s.steps[col]} caption={g.picture} />;
+    const sales = kind === "income" ? s.steps[col].find((x) => x.key === "sales")?.value : undefined;
+    picture = <Waterfall steps={s.steps[col]} caption={g.picture} base={sales} />;
   } else if (kind === "balance" && s.balance?.[col]) {
     chips = s.balance.map((_, i) => ({ label: s.columns[i].label, on: i === col, go: () => setCol(i) }));
     const b = s.balance[col];

@@ -5,6 +5,7 @@
  */
 import type { ReactNode } from "react";
 import { Emph } from "./Emph";
+import { CountUp } from "./viz/CountUp";
 
 export function LiteCard({
   question,
@@ -37,7 +38,7 @@ export function BigAnswer({ value, caption, tone = "ocean" }: { value: string; c
   const color = tone === "good" ? "text-[#0b6f6e]" : tone === "warn" ? "text-[#b4233c]" : "text-[var(--a-ink,#0c0f14)]";
   return (
     <p className="flex flex-col gap-1">
-      <span className={`font-display text-[40px] font-bold leading-none tracking-tight tabular-nums ${color}`}>{value}</span>
+      <CountUp text={value} className={`font-display text-[40px] font-bold leading-none tracking-tight ${color}`} />
       <span className="text-[16px] text-ink">{caption}</span>
     </p>
   );
@@ -103,17 +104,17 @@ export function MiniBars({ bars }: { bars: { label: string; value: number }[] })
   const max = Math.max(...bars.map((b) => b.value), 1);
   return (
     <figure className="m-0 flex flex-col gap-1.5" aria-label={`Sales by year: ${bars.map((b) => `${b.label} ${compactMoney(b.value)}`).join(", ")}`}>
-      <div className="flex h-24 items-end gap-1.5 pt-5">
+      <div className="flex h-24 items-end gap-1.5 border-b border-line pt-5">
         {bars.map((b, i) => {
           const last = i === bars.length - 1;
           return (
-            <span key={b.label} className="group relative flex h-full flex-1 items-end">
+            <span key={b.label} className="group relative flex h-full flex-1 items-end justify-center">
               <span
-                className="fathom-grow-up block w-full rounded-t-[1px] transition-[filter] duration-200 group-hover:brightness-95"
+                className="candor-bar-in block w-full max-w-6 rounded-t-[4px] transition-[filter] duration-200 group-hover:brightness-95"
                 style={{
                   height: `${Math.max(4, (b.value / max) * 100)}%`,
                   background: last ? "var(--a, #2d5bff)" : "color-mix(in srgb, var(--a, #2d5bff) 22%, white)",
-                  animationDelay: `${i * 60}ms`,
+                      animationDelay: `${i * 70}ms`,
                 }}
               />
               <span
@@ -142,15 +143,15 @@ export function KeepBar({ kept }: { kept: number }) {
   const pct = Math.max(0, Math.min(100, Math.round(kept)));
   return (
     <figure className="m-0 flex flex-col gap-2" aria-label={`$${pct} kept as profit, $${100 - pct} spent on costs, out of every $100 of sales`}>
-      <div className="flex h-5 gap-[3px] overflow-hidden rounded-sm">
+      <div className="flex h-3 gap-[2px]">
         <span
           title={`$${100 - pct} of every $100 went on costs`}
-          className="h-full rounded-l-sm bg-[#e5e7eb] transition-[filter] hover:brightness-95"
+          className="h-full rounded-l-[4px] bg-[#e5e7eb] transition-[filter] hover:brightness-95"
           style={{ width: `${100 - pct}%` }}
         />
         <span
           title={`$${pct} of every $100 was kept as profit`}
-          className="fathom-grow-right h-full rounded-r-sm bg-[#0ea5a4] transition-[filter] hover:brightness-105"
+          className="fathom-grow-right h-full rounded-r-[4px] bg-[#0ea5a4] transition-[filter] hover:brightness-105"
           style={{ width: `${pct}%` }}
         />
       </div>
@@ -199,9 +200,9 @@ export function MiniPair({ items }: { items: { label: string; value: number; dis
             <span className="text-muted transition-colors group-hover:text-ink">{it.label.replace(/\s*\(.*\)$/, "")}</span>
             <span className="font-semibold tabular-nums">{it.display}</span>
           </span>
-          <span className="h-2.5 overflow-hidden rounded-sm bg-panel-2">
+          <span className="h-2.5 rounded-r-[4px] bg-panel-2">
             <span
-              className="fathom-grow-right block h-full rounded-sm transition-[filter] group-hover:brightness-105"
+              className="fathom-grow-right block h-full rounded-r-[4px] transition-[filter] group-hover:brightness-105"
               style={{ width: `${Math.max(3, (it.value / max) * 100)}%`, background: it.color }}
             />
           </span>
@@ -216,12 +217,12 @@ export function UsesBar({ segments }: { segments: { label: string; value: number
   const total = segments.reduce((s, x) => s + x.value, 0) || 1;
   return (
     <figure className="m-0 flex flex-col gap-2.5">
-      <div className="flex h-5 gap-[3px] overflow-hidden rounded-sm">
+      <div className="flex h-3 gap-[2px]">
         {segments.map((s) => (
           <span
             key={s.label}
             title={`${s.label.replace(/\s*\(.*\)$/, "")}: ${s.display}`}
-            className="fathom-grow-right h-full transition-[filter] first:rounded-l-sm last:rounded-r-sm hover:brightness-110"
+            className="fathom-grow-right h-full rounded-[4px] transition-[filter] hover:brightness-110"
             style={{ width: `${(s.value / total) * 100}%`, background: s.color }}
           />
         ))}

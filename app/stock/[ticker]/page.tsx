@@ -26,7 +26,7 @@ import { FundamentalGlance } from "@/components/FundamentalGlance";
 import { fundamentalFromReport } from "@/lib/lens/fundamental";
 import { billsGauge, cashVsDebt, compareFor, marginLines, moneyUses, pairFor, salesHistory, salesSplit, SERIES, shareFor } from "@/lib/report/visuals";
 import { DotGrid, Meter, StatusBadge, TopicIcon } from "@/components/viz/Static";
-import { DepthProvider } from "@/components/Depth";
+import { OpenPartsProvider } from "@/components/OpenParts";
 import { CompanyLogo } from "@/components/CompanyLogo";
 import { KeyMap } from "@/components/KeyMap";
 import { CompanySidebar } from "@/components/CompanySidebar";
@@ -83,7 +83,7 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
   ];
 
   return (
-    <DepthProvider>
+    <OpenPartsProvider>
       <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-6 px-5 pb-16 pt-6 sm:pt-8 lg:px-10">
         <Hero report={report} profile={profile} company={company} />
         <CompanyTabs ticker={report.company.ticker} />
@@ -105,8 +105,8 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
                 brief={step.brief}
                 term={<TermName k={step.term} />}
                 surface={surfaceBody(step, ctx, false)}
-                below={deeperBody(step, ctx, "below", profile)}
-                deep={deeperBody(step, ctx, "deep", profile)}
+                full={deeperBody(step, ctx, "deep", profile)}
+                inside={INSIDE[step.id]}
               />
             ))}
             <FilingsGrid ticker={report.company.ticker} company={company} />
@@ -124,7 +124,7 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
           </aside>
         </div>
       </div>
-    </DepthProvider>
+    </OpenPartsProvider>
   );
 }
 
@@ -133,6 +133,14 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
  * growth and profit, financial health, cash, and where the money goes. Parts that depend on AI-written
  * summaries (the business, industry and risks) are left out, and the share price sits at the top instead.
  */
+/** What each part's full explanation holds, shown on its button. */
+const INSIDE: Record<string, string> = {
+  performance: "Sales by year, where each $100 goes, margins over time, and every figure explained",
+  health: "Cash next to debt, the bills test, and every figure explained",
+  cash: "Cash from the business, spare cash, and how it compares with profit",
+  management: "Where the money went, returns on shareholders' money, and official warning signs",
+};
+
 const SOLID_STEPS = STEPS.filter((s) => ["performance", "health", "cash", "management"].includes(s.id));
 
 /** The share price first, for context: live from TradingView, clearly separate from the filed figures below. */

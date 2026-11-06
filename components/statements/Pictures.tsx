@@ -9,6 +9,7 @@
 import { useState } from "react";
 import type { BalancePart, Step } from "@/lib/statements/model";
 import { compact } from "@/lib/statements/format";
+import { CountUp } from "@/components/viz/CountUp";
 
 const INK = "#0c0f14";
 const BLUE = "#2d5bff";
@@ -32,7 +33,18 @@ function spansOf(steps: Step[]): { from: number; to: number }[] {
   return out;
 }
 
-export function Waterfall({ steps, caption, startHint }: { steps: Step[]; caption?: string; startHint?: string }) {
+/** The running total after each bar. */
+function levelsOf(steps: Step[]): number[] {
+  const out: number[] = [];
+  let level = 0;
+  for (const s of steps) {
+    level = s.anchor ? s.value : level + s.value;
+    out.push(level);
+  }
+  return out;
+}
+
+export function Waterfall({ steps, caption, startHint, base }: { steps: Step[]; caption?: string; startHint?: string; base?: number }) {
   const [sel, setSel] = useState<number | null>(null);
   const spans = spansOf(steps);
   const lo = Math.min(0, ...spans.map((x) => x.from));
@@ -41,15 +53,19 @@ export function Waterfall({ steps, caption, startHint }: { steps: Step[]; captio
   const pct = (v: number) => ((v - lo) / range) * 100;
   const chosen = sel === null ? null : steps[sel];
   const last = steps.length - 1;
+  // Where the running total stood before each bar: a thin connector joins one bar to the next there.
+  const levels = levelsOf(steps);
+  const before = steps.map((_, i) => (i === 0 ? undefined : levels[i - 1]));
 
   return (
     <figure className="m-0 flex flex-col gap-3">
       {caption && <figcaption className="text-[13px] text-muted">{caption}</figcaption>}
-      <ol className="m-0 flex list-none flex-col gap-1 p-0">
+      <ol className="m-0 flex list-none flex-col p-0" onMouseLeave={() => setSel(null)}>
         {steps.map((s, i) => {
           const sp = spans[i];
           const color = s.anchor ? (i === last ? BLUE : INK) : s.value >= 0 ? UP : DOWN;
           const on = sel === i;
+          const share = base && s.anchor && base > 0 && i > 0 ? Math.round((s.value / base) * 1000) / 10 : undefined;
           return (
             <li key={s.key + i}>
               <button
@@ -58,31 +74,52 @@ export function Waterfall({ steps, caption, startHint }: { steps: Step[]; captio
                 onMouseEnter={() => setSel(i)}
                 onFocus={() => setSel(i)}
                 aria-pressed={on}
-                className={`flex w-full flex-col gap-1 rounded-sm px-2 py-1.5 text-left transition-colors ${on ? "bg-panel-2" : "hover:bg-panel-2/70"}`}
+                aria-label={`${s.label}: ${s.anchor ? compact(s.value) : `${s.value >= 0 ? "plus" : "minus"} ${compact(Math.abs(s.value))}`}`}
+                className={`grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1 rounded-sm px-2 text-left transition-colors sm:grid-cols-[minmax(9rem,15rem)_minmax(0,1fr)_7.5rem] ${on ? "bg-panel-2" : "hover:bg-panel-2/70"}`}
               >
-                <span className="flex items-baseline justify-between gap-3 text-[14px]">
-                  <span className={s.anchor ? "font-semibold text-ink" : "text-ink/80"}>
-                    {!s.anchor && <span aria-hidden="true" className="mr-1.5 inline-block w-3 text-center font-semibold" style={{ color }}>{s.value >= 0 ? "+" : "−"}</span>}
-                    {s.label}
-                  </span>
-                  <span className="font-semibold tabular-nums" style={{ color: s.anchor ? INK : color }}>
-                    {s.anchor ? compact(s.value) : `${s.value >= 0 ? "+" : "−"}${compact(Math.abs(s.value))}`}
+                <span className={`py-1 text-[14px] sm:py-0 ${s.anchor ? "font-semibold text-ink" : "text-ink/80"}`}>
+                  {!s.anchor && <span aria-hidden="true" className="mr-1.5 inline-block w-3 text-center font-semibold text-muted">{s.value >= 0 ? "+" : "−"}</span>}
+                  {s.label}
+                </span>
+                <span className="order-3 col-span-2 sm:order-none sm:col-span-1">
+                  <span className="relative block h-9">
+                    {/* recessive track and zero line */}
+                    <span aria-hidden="true" className="absolute inset-x-0 top-[10px] h-4 rounded-[2px] bg-panel-2/70" />
+                    {lo < 0 && <span aria-hidden="true" className="absolute inset-y-0 w-px bg-muted/50" style={{ left: `${pct(0)}%` }} />}
+                    {before[i] !== undefined && (
+                      <span aria-hidden="true" className="absolute top-[-10px] h-5 w-px bg-muted/45" style={{ left: `${pct(before[i]!)}%` }} />
+                    )}
+                    <span
+                      className="fathom-grow-right absolute top-[10px] h-4"
+                      style={{
+                        left: `${pct(sp.from)}%`,
+                        width: `${Math.max(0.6, pct(sp.to) - pct(sp.from))}%`,
+                        background: color,
+                        borderRadius: s.anchor ? "0 4px 4px 0" : "4px",
+                        animationDelay: `${i * 80}ms`,
+                        transformOrigin: !s.anchor && s.value < 0 ? "right" : "left",
+                        boxShadow: on ? `0 0 0 2px #fff, 0 0 0 4px ${color}` : undefined,
+                      }}
+                    />
                   </span>
                 </span>
-                <span className="relative block h-3.5 w-full rounded-[2px] bg-panel-2">
-                  {lo < 0 && <span aria-hidden="true" className="absolute inset-y-[-3px] w-px bg-muted/50" style={{ left: `${pct(0)}%` }} />}
-                  <span
-                    className="fathom-grow-right absolute inset-y-0 rounded-[2px]"
-                    style={{ left: `${pct(sp.from)}%`, width: `${Math.max(0.6, pct(sp.to) - pct(sp.from))}%`, background: color, animationDelay: `${i * 70}ms` }}
-                  />
+                <span className="py-1 text-right text-[14px] font-semibold tabular-nums text-ink sm:py-0">
+                  {s.anchor ? <CountUp text={compact(s.value)} /> : `${s.value >= 0 ? "+" : "−"}${compact(Math.abs(s.value))}`}
+                  {share !== undefined && <span className="block text-[11.5px] font-normal text-muted">{share}% of sales</span>}
                 </span>
               </button>
             </li>
           );
         })}
       </ol>
+      <div className="flex flex-wrap gap-x-4 gap-y-1 px-2 text-[12.5px] text-muted" aria-hidden="true">
+        <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-[2px]" style={{ background: INK }} /> Running total</span>
+        <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-[2px]" style={{ background: UP }} /> Added</span>
+        <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-[2px]" style={{ background: DOWN }} /> Taken away</span>
+        <span className="flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-[2px]" style={{ background: BLUE }} /> Where it ends</span>
+      </div>
       <div className="min-h-[4.5em] rounded-sm bg-panel-2 px-4 py-3 text-[14.5px] leading-relaxed" aria-live="polite">
-        {chosen ? <StepDetail step={chosen} /> : <span className="text-muted">{startHint ?? "Tap or point at a bar to see what's inside it."}</span>}
+        {chosen ? <StepDetail step={chosen} /> : <span className="text-muted">{startHint ?? "Point at or tap a bar to see the lines inside it."}</span>}
       </div>
     </figure>
   );
@@ -128,6 +165,13 @@ const GROUP_STYLE: Record<BalancePart["group"], { name: string; shades: string[]
 
 type Piece = BalancePart & { color: string; key: string };
 
+/** Light fills get near-black text, darker fills white. */
+function inkOn(hex: string): string {
+  const h = hex.replace("#", "");
+  const [r, g, b] = [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b > 0.32 ? "#0c0f14" : "#ffffff";
+}
+
 function colourise(parts: BalancePart[]): Piece[] {
   const used: Record<string, number> = {};
   return parts.map((p, i) => {
@@ -154,21 +198,30 @@ export function BalanceBars({ assets, owed, equity, totalAssets }: { assets: Bal
         </span>
         <span className="font-semibold tabular-nums">{compact(total)}</span>
       </div>
-      <div className="flex h-11 w-full gap-[2px] overflow-hidden rounded-sm bg-panel-2" role="group" aria-label={title}>
-        {pieces.map((p, i) => (
-          <button
-            key={p.key}
-            type="button"
-            title={`${p.plain}: ${compact(p.value)}`}
-            aria-label={`${p.plain}: ${compact(p.value)}`}
-            aria-pressed={sel?.key === p.key}
-            onMouseEnter={() => setSel(p)}
-            onFocus={() => setSel(p)}
-            onClick={() => setSel(p)}
-            className="fathom-grow-right h-full min-w-[3px] cursor-pointer transition-opacity hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean"
-            style={{ width: `${(p.value / scale) * 100}%`, background: p.color, opacity: sel && sel.key !== p.key ? 0.4 : 1, animationDelay: `${i * 40}ms` }}
-          />
-        ))}
+      <div className="flex h-7 w-full gap-[2px]" role="group" aria-label={title}>
+        {pieces.map((p, i) => {
+          const share = p.value / scale;
+          return (
+            <button
+              key={p.key}
+              type="button"
+              title={`${p.plain}: ${compact(p.value)}`}
+              aria-label={`${p.plain}: ${compact(p.value)}, ${Math.round(share * 100)}%`}
+              aria-pressed={sel?.key === p.key}
+              onMouseEnter={() => setSel(p)}
+              onFocus={() => setSel(p)}
+              onClick={() => setSel(p)}
+              className="fathom-grow-right relative h-full min-w-[3px] cursor-pointer rounded-[4px] transition-opacity hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ocean"
+              style={{ width: `${share * 100}%`, background: p.color, opacity: sel && sel.key !== p.key ? 0.4 : 1, animationDelay: `${i * 45}ms` }}
+            >
+              {share >= 0.07 && (
+                <span className="pointer-events-none absolute inset-y-0 left-2 flex items-center text-[12px] font-semibold tabular-nums" style={{ color: inkOn(p.color) }}>
+                  {Math.round(share * 100)}%
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
     </div>
   );

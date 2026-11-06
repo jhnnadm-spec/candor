@@ -1,0 +1,2246 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>178
+<FILENAME>R160.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.26.3</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="1"><div style="width: 200px;"><strong>Off-balance Sheet Lending-related Financial Instruments, Guarantees, and Other Commitments - Summary (Details) - USD ($)<br> $ in Millions</strong></div></th>
+<th class="th"><div>Sep. 30, 2026</div></th>
+<th class="th"><div>Dec. 31, 2025</div></th>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="rou">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount', window );">Total lending-related commitments</a></td>
+<td class="nump">$ 1,934,100<span></span>
+</td>
+<td class="nump">$ 1,817,307<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">1,337,715<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">306,877<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">247,340<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">42,168<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue', window );">Off-balance sheet lending-related financial commitments, Carrying value</a></td>
+<td class="nump">6,723<span></span>
+</td>
+<td class="nump">6,278<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_AssetAcquisitionAxis=jpm_AppleCreditCardPortfolioMember', window );">Apple Credit Card Portfolio | Credit Concentration Risk | Credit card</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsGuaranteesAndOtherCommitmentsSupplementalInformationAbstract', window );"><strong>Off balance sheet lending related financial instruments guarantees and other commitments - supplemental information</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsContractualAmount', window );">Credit exposure</a></td>
+<td class="nump">107,000<span></span>
+</td>
+<td class="nump">104,000<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=us-gaap_ConsumerLoanMember', window );">Total Consumer</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount', window );">Total lending-related commitments</a></td>
+<td class="nump">1,299,275<span></span>
+</td>
+<td class="nump">1,221,353<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">1,175,012<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">111,226<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">3,116<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">9,921<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue', window );">Off-balance sheet lending-related financial commitments, Carrying value</a></td>
+<td class="nump">2,675<span></span>
+</td>
+<td class="nump">2,537<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_ConsumerLoanExcludingCreditCardMember', window );">Total consumer, excluding credit card</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount', window );">Total lending-related commitments</a></td>
+<td class="nump">47,668<span></span>
+</td>
+<td class="nump">43,587<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">30,062<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">4,569<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">3,116<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">9,921<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue', window );">Off-balance sheet lending-related financial commitments, Carrying value</a></td>
+<td class="nump">375<span></span>
+</td>
+<td class="nump">337<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=us-gaap_ResidentialRealEstateMember', window );">Residential real estate</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount', window );">Total lending-related commitments</a></td>
+<td class="nump">31,661<span></span>
+</td>
+<td class="nump">28,998<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">18,094<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">4,565<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">3,103<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">5,899<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue', window );">Off-balance sheet lending-related financial commitments, Carrying value</a></td>
+<td class="nump">365<span></span>
+</td>
+<td class="nump">327<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=us-gaap_AutomobileLoanMember', window );">Auto and other</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount', window );">Total lending-related commitments</a></td>
+<td class="nump">16,007<span></span>
+</td>
+<td class="nump">14,589<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">11,968<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">4<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">13<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">4,022<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue', window );">Off-balance sheet lending-related financial commitments, Carrying value</a></td>
+<td class="nump">10<span></span>
+</td>
+<td class="nump">10<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=us-gaap_CreditCardReceivablesMember', window );">Credit card</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount', window );">Total lending-related commitments</a></td>
+<td class="nump">1,251,607<span></span>
+</td>
+<td class="nump">1,177,766<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">1,144,950<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">106,657<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue', window );">Off-balance sheet lending-related financial commitments, Carrying value</a></td>
+<td class="nump">2,300<span></span>
+</td>
+<td class="nump">2,200<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=us-gaap_CommercialLoanMember', window );">Total wholesale</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount', window );">Total lending-related commitments</a></td>
+<td class="nump">634,825<span></span>
+</td>
+<td class="nump">595,954<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">162,703<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">195,651<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">244,224<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">32,247<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue', window );">Off-balance sheet lending-related financial commitments, Carrying value</a></td>
+<td class="nump">4,048<span></span>
+</td>
+<td class="nump">3,741<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_OtherUnfundedCommitmentsToExtendCreditMember', window );">Other unfunded commitments to extend credit</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount', window );">Total lending-related commitments</a></td>
+<td class="nump">590,603<span></span>
+</td>
+<td class="nump">561,506<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">135,894<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">185,024<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">238,480<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">31,205<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue', window );">Off-balance sheet lending-related financial commitments, Carrying value</a></td>
+<td class="nump">3,339<span></span>
+</td>
+<td class="nump">3,112<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsGuaranteesAndOtherCommitmentsSupplementalInformationAbstract', window );"><strong>Off balance sheet lending related financial instruments guarantees and other commitments - supplemental information</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedCommitmentsWholesaleContractualAmountNetOfRiskParticipationsOtherUnfundedCommitmentsToExtendCredit', window );">Risk participations for other unfunded commitments to extend credit</a></td>
+<td class="nump">110<span></span>
+</td>
+<td class="nump">181<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_StandbyLettersOfCreditAndOtherFinancialGuaranteesMember', window );">Standby letters of credit and other financial guarantees</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount', window );">Total lending-related commitments</a></td>
+<td class="nump">38,741<span></span>
+</td>
+<td class="nump">29,919<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">22,276<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">10,139<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">5,662<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">664<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue', window );">Off-balance sheet lending-related financial commitments, Carrying value</a></td>
+<td class="nump">695<span></span>
+</td>
+<td class="nump">616<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsCurrentCarryingValue', window );">Other guarantees and commitments, Carrying value</a></td>
+<td class="nump">514<span></span>
+</td>
+<td class="nump">441<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsGuaranteesAndOtherCommitmentsSupplementalInformationAbstract', window );"><strong>Off balance sheet lending related financial instruments guarantees and other commitments - supplemental information</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedCommitmentsWholesaleContractualAmountNetOfRiskParticipationsStandbyLettersOfCreditAndOtherFinancialGuarantees', window );">Risk participations for standby letters of credit and other financial guarantees</a></td>
+<td class="nump">20,200<span></span>
+</td>
+<td class="nump">9,200<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_OtherLettersOfCreditMember', window );">Other letters of credit</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="rou">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount', window );">Total lending-related commitments</a></td>
+<td class="nump">5,481<span></span>
+</td>
+<td class="nump">4,529<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">4,533<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">488<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">82<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears', window );">Off-balance sheet lending-related financial commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">378<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue', window );">Off-balance sheet lending-related financial commitments, Carrying value</a></td>
+<td class="nump">14<span></span>
+</td>
+<td class="nump">13<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsCurrentCarryingValue', window );">Other guarantees and commitments, Carrying value</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="nump">0<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsGuaranteesAndOtherCommitmentsSupplementalInformationAbstract', window );"><strong>Off balance sheet lending related financial instruments guarantees and other commitments - supplemental information</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedCommitmentsWholesaleContractualAmountNetOfRiskParticipationsOtherLettersOfCredit', window );">Risk participations for other letters of credit</a></td>
+<td class="nump">978<span></span>
+</td>
+<td class="nump">514<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_SecuritiesLendingIndemnificationsMember', window );">Securities lending indemnification agreements and guarantees</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsMaximumExposure', window );">Other guarantees and commitments, Contractual amount</a></td>
+<td class="nump">457,430<span></span>
+</td>
+<td class="nump">405,910<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInLessThanOneYear', window );">Other guarantees and commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">457,430<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenOneAndThreeYears', window );">Other guarantees and commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenThreeAndFiveYears', window );">Other guarantees and commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInMoreThanFiveYears', window );">Other guarantees and commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsCurrentCarryingValue', window );">Other guarantees and commitments, Carrying value</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="nump">0<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsGuaranteesAndOtherCommitmentsSupplementalInformationAbstract', window );"><strong>Off balance sheet lending related financial instruments guarantees and other commitments - supplemental information</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_IndemnificationAgreementSecuritiesLendingGuaranteesCollateralHeldInSupportOf', window );">Collateral held in support of securities lending indemnification agreements</a></td>
+<td class="nump">487,900<span></span>
+</td>
+<td class="nump">431,900<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_DerivativesQualifyingAsGuaranteesNettingMember', window );">Derivatives qualifying as guarantees</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsMaximumExposure', window );">Other guarantees and commitments, Contractual amount</a></td>
+<td class="nump">49,265<span></span>
+</td>
+<td class="nump">49,031<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInLessThanOneYear', window );">Other guarantees and commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">1,381<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenOneAndThreeYears', window );">Other guarantees and commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">686<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenThreeAndFiveYears', window );">Other guarantees and commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">9,263<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInMoreThanFiveYears', window );">Other guarantees and commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">37,935<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsCurrentCarryingValue', window );">Other guarantees and commitments, Carrying value</a></td>
+<td class="nump">223<span></span>
+</td>
+<td class="num">(12)<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_UnsettledReverseRepurchaseAndSecuritiesBorrowingAgreementsNettingMember', window );">Unsettled resale and securities borrowed agreements</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsMaximumExposure', window );">Other guarantees and commitments, Contractual amount</a></td>
+<td class="nump">160,847<span></span>
+</td>
+<td class="nump">137,072<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInLessThanOneYear', window );">Other guarantees and commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">157,511<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenOneAndThreeYears', window );">Other guarantees and commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">2,086<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenThreeAndFiveYears', window );">Other guarantees and commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">1,250<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInMoreThanFiveYears', window );">Other guarantees and commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsCurrentCarryingValue', window );">Other guarantees and commitments, Carrying value</a></td>
+<td class="num">(3)<span></span>
+</td>
+<td class="nump">0<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_UnsettledRepurchaseAndSecuritiesLendingAgreementsNettingMember', window );">Unsettled repurchase and securities loaned agreements</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsMaximumExposure', window );">Other guarantees and commitments, Contractual amount</a></td>
+<td class="nump">137,634<span></span>
+</td>
+<td class="nump">52,895<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInLessThanOneYear', window );">Other guarantees and commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">136,968<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenOneAndThreeYears', window );">Other guarantees and commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">666<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenThreeAndFiveYears', window );">Other guarantees and commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInMoreThanFiveYears', window );">Other guarantees and commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsCurrentCarryingValue', window );">Other guarantees and commitments, Carrying value</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="nump">0<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_MortgageRepurchaseLiabilityMember', window );">Mortgage repurchase liability</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_IndemnificationAgreementsLoanSaleAndSecuritizationMortgageRepurchaseLiabilityCarryingValue', window );">Loan sale and securitization-related indemnifications, Mortgage repurchase liability, Carrying value</a></td>
+<td class="nump">37<span></span>
+</td>
+<td class="nump">37<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_LoansSoldWithRecourseMember', window );">Loans sold with recourse</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_IndemnificationAgreementsLoanSaleAndSecuritizationLoansSoldWithRecourseContractualAmount', window );">Loan sale and securitization-related indemnifications, Loans sold with recourse, Contractual amount</a></td>
+<td class="nump">2,475<span></span>
+</td>
+<td class="nump">2,015<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_IndemnificationAgreementsLoanSaleAndSecuritizationLoansSoldWithRecourseCarryingValue', window );">Loan sale and securitization-related indemnifications, Loans sold with recourse, Carrying value</a></td>
+<td class="nump">22<span></span>
+</td>
+<td class="nump">19<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_ExchangeandClearingHouseGuaranteesandCommitmentsMember', window );">Exchange &amp; clearing house guarantees and commitments</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="rou">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsMaximumExposure', window );">Other guarantees and commitments, Contractual amount</a></td>
+<td class="nump">349,526<span></span>
+</td>
+<td class="nump">433,537<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInLessThanOneYear', window );">Other guarantees and commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">349,526<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsNetOfOtherCommitmentsCurrentCarryingValue', window );">Other guarantees and commitments, Carrying value</a></td>
+<td class="nump">0<span></span>
+</td>
+<td class="nump">0<span></span>
+</td>
+</tr>
+<tr class="rh">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FinancialInstrumentAxis=jpm_OtherGuaranteesAndCommitmentsMember', window );">Other guarantees and commitments</a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems', window );"><strong>Fair Value, Off-balance Sheet Risks, Disclosure Information [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="reu">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GuaranteeObligationsMaximumExposure', window );">Other guarantees and commitments, Contractual amount</a></td>
+<td class="nump">29,125<span></span>
+</td>
+<td class="nump">13,238<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInLessThanOneYear', window );">Other guarantees and commitments, Contractual amount, Expires in 1 year or less</a></td>
+<td class="nump">17,193<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenOneAndThreeYears', window );">Other guarantees and commitments, Contractual amount, Expires after 1 year through 3 years</a></td>
+<td class="nump">4,643<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenThreeAndFiveYears', window );">Other guarantees and commitments, Contractual amount, Expires after 3 years through 5 years</a></td>
+<td class="nump">554<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInMoreThanFiveYears', window );">Other guarantees and commitments, Contractual amount, Expires after 5 years</a></td>
+<td class="nump">6,735<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_GuarantorObligationsNetOfOtherCommitmentsCurrentCarryingValue', window );">Other guarantees and commitments, Carrying value</a></td>
+<td class="nump">$ 17<span></span>
+</td>
+<td class="nump">$ 15<span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenOneAndThreeYears">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Maximum potential amount of future payments (undiscounted), expiring between one and three years, the guarantor could be required to make under the guarantee or each group of similar guarantees before reduction for potential recoveries under recourse or collateralization provisions.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenOneAndThreeYears</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenThreeAndFiveYears">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Maximum potential amount of future payments (undiscounted), expiring between three and five years, the guarantor could be required to make under the guarantee or each group of similar guarantees before reduction for potential recoveries under recourse or collateralization provisions.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringBetweenThreeAndFiveYears</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInLessThanOneYear">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Maximum potential amount of future payments (undiscounted), expiring in less than one year, the guarantor could be required to make under the guarantee or each group of similar guarantees before reduction for potential recoveries under recourse or collateralization provisions.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInLessThanOneYear</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInMoreThanFiveYears">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Maximum potential amount of future payments (undiscounted), expiring in more than five years, the guarantor could be required to make under the guarantee or each group of similar guarantees before reduction for potential recoveries under recourse or collateralization provisions.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_GuarantorObligationsMaximumExposureUndiscountedExpiringInMoreThanFiveYears</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_GuarantorObligationsNetOfOtherCommitmentsCurrentCarryingValue">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Guarantor Obligations, Net Of Other Commitments, Current Carrying Value</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_GuarantorObligationsNetOfOtherCommitmentsCurrentCarryingValue</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_IndemnificationAgreementSecuritiesLendingGuaranteesCollateralHeldInSupportOf">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Collateral held in support of securities lending indemnification agreements.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_IndemnificationAgreementSecuritiesLendingGuaranteesCollateralHeldInSupportOf</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_IndemnificationAgreementsLoanSaleAndSecuritizationLoansSoldWithRecourseCarryingValue">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The carrying value of the related liability of loans sold with recourse.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_IndemnificationAgreementsLoanSaleAndSecuritizationLoansSoldWithRecourseCarryingValue</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_IndemnificationAgreementsLoanSaleAndSecuritizationLoansSoldWithRecourseContractualAmount">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The contractual amount (unpaid principal balance) of loans sold with recourse.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_IndemnificationAgreementsLoanSaleAndSecuritizationLoansSoldWithRecourseContractualAmount</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_IndemnificationAgreementsLoanSaleAndSecuritizationMortgageRepurchaseLiabilityCarryingValue">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Indemnification Agreements, Loan Sale and Securitization, Mortgage repurchase liability: Carrying Value</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_IndemnificationAgreementsLoanSaleAndSecuritizationMortgageRepurchaseLiabilityCarryingValue</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedCommitmentsWholesaleContractualAmountNetOfRiskParticipationsOtherLettersOfCredit">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Wholesale off-balance sheet contractual amount of lending-related commitments net of risk participations for other letters of credit.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedCommitmentsWholesaleContractualAmountNetOfRiskParticipationsOtherLettersOfCredit</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedCommitmentsWholesaleContractualAmountNetOfRiskParticipationsOtherUnfundedCommitmentsToExtendCredit">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Wholesale off-balance sheet contractual amount of lending-related commitments net of risk participations for other unfunded commitments to extend credit.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedCommitmentsWholesaleContractualAmountNetOfRiskParticipationsOtherUnfundedCommitmentsToExtendCredit</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedCommitmentsWholesaleContractualAmountNetOfRiskParticipationsStandbyLettersOfCreditAndOtherFinancialGuarantees">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Wholesale off-balance sheet contractual amount of lending-related commitments net of risk participations for standby letters of credit and other financial guarantees.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedCommitmentsWholesaleContractualAmountNetOfRiskParticipationsStandbyLettersOfCreditAndOtherFinancialGuarantees</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The contractual amount of off-balance sheet lending-related financial instruments (e.g., commitments and guarantees), which represents the maximum possible credit risk should the counterparty draw upon the commitment or the entity be required to fulfill its obligation under the guarantee, and the counterparty subsequently fail to perform according to the terms of the contract.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmount</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The contractual amount of off-balance sheet lending-related financial instruments (e.g., commitments and guarantees), expiring between one and three years, which represents the maximum possible credit risk should the counterparty draw upon the commitment or the entity be required to fulfill its obligation under the guarantee, and the counterparty subsequently fail to perform according to the terms of the contract.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenOneAndThreeOneYears</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The contractual amount of off-balance sheet lending-related financial instruments (e.g., commitments and guarantees), expiring between three and five years, which represents the maximum possible credit risk should the counterparty draw upon the commitment or the entity be required to fulfill its obligation under the guarantee, and the counterparty subsequently fail to perform according to the terms of the contract.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringBetweenThreeAndFiveYears</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The contractual amount of off-balance sheet lending-related financial instruments (e.g., commitments and guarantees), expiring in less than one year, which represents the maximum possible credit risk should the counterparty draw upon the commitment or the entity be required to fulfill its obligation under the guarantee, and the counterparty subsequently fail to perform according to the terms of the contract.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInLessThanOneYear</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The contractual amount of off-balance sheet lending-related financial instruments (e.g., commitments and guarantees), expiring in more than five years, which represents the maximum possible credit risk should the counterparty draw upon the commitment or the entity be required to fulfill its obligation under the guarantee, and the counterparty subsequently fail to perform according to the terms of the contract.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedFinancialCommitmentsContractualAmountExpiringInMoreThanFiveYears</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The carrying value of off-balance sheet lending-related financial instruments (e.g., commitments and guarantees), which represents the allowance for lending-related commitments and the guarantee liability.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsCarryingValue</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsContractualAmount">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The contractual amount of off-balance sheet lending-related financial instruments (e.g., commitments and guarantees), which represents the maximum possible credit risk should the counterparty draw upon the commitment or the entity be required to fulfill its obligation under the guarantee, and the counterparty subsequently fail to perform according to the terms of the contract.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsContractualAmount</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsGuaranteesAndOtherCommitmentsSupplementalInformationAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Off Balance Sheet Lending Related Financial Instruments Guarantees And Other Commitments Numeric Abstract.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_OffBalanceSheetLendingRelatedFinancialInstrumentsGuaranteesAndOtherCommitmentsSupplementalInformationAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Line items represent financial concepts included in a table. These concepts are used to disclose reportable information associated with domain members defined in one or many axes to the table.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 825<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 11<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482907/825-10-50-11<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 942<br> -SubTopic 825<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478898/942-825-50-1<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FairValueOffBalanceSheetRisksDisclosureInformationLineItems</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_GuaranteeObligationsCurrentCarryingValue">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The current carrying amount of the liability for the freestanding or embedded guarantor's obligations under the guarantee or each group of similar guarantees.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 460<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 4<br> -Subparagraph (c)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482425/460-10-50-4<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_GuaranteeObligationsCurrentCarryingValue</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_GuaranteeObligationsMaximumExposure">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Maximum potential amount of future payments (undiscounted) the guarantor could be required to make under the guarantee or each group of similar guarantees before reduction for potential recoveries under recourse or collateralization provisions.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 460<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 4<br> -Subparagraph (b)(1)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482425/460-10-50-4<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_GuaranteeObligationsMaximumExposure</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_AssetAcquisitionAxis=jpm_AppleCreditCardPortfolioMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_AssetAcquisitionAxis=jpm_AppleCreditCardPortfolioMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_ConcentrationRiskByTypeAxis=us-gaap_CreditConcentrationRiskMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_ConcentrationRiskByTypeAxis=us-gaap_CreditConcentrationRiskMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancingReceivablePortfolioSegmentAxis=us-gaap_CreditCardReceivablesMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancingReceivablePortfolioSegmentAxis=us-gaap_CreditCardReceivablesMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=us-gaap_ConsumerLoanMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=us-gaap_ConsumerLoanMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_ConsumerLoanExcludingCreditCardMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_ConsumerLoanExcludingCreditCardMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=us-gaap_ResidentialRealEstateMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=us-gaap_ResidentialRealEstateMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=us-gaap_AutomobileLoanMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=us-gaap_AutomobileLoanMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=us-gaap_CreditCardReceivablesMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=us-gaap_CreditCardReceivablesMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=us-gaap_CommercialLoanMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=us-gaap_CommercialLoanMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_OtherUnfundedCommitmentsToExtendCreditMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_OtherUnfundedCommitmentsToExtendCreditMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_StandbyLettersOfCreditAndOtherFinancialGuaranteesMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_StandbyLettersOfCreditAndOtherFinancialGuaranteesMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_OtherLettersOfCreditMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_OtherLettersOfCreditMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_SecuritiesLendingIndemnificationsMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_SecuritiesLendingIndemnificationsMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_DerivativesQualifyingAsGuaranteesNettingMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_DerivativesQualifyingAsGuaranteesNettingMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_UnsettledReverseRepurchaseAndSecuritiesBorrowingAgreementsNettingMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_UnsettledReverseRepurchaseAndSecuritiesBorrowingAgreementsNettingMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_UnsettledRepurchaseAndSecuritiesLendingAgreementsNettingMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_UnsettledRepurchaseAndSecuritiesLendingAgreementsNettingMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_MortgageRepurchaseLiabilityMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_MortgageRepurchaseLiabilityMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_LoansSoldWithRecourseMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_LoansSoldWithRecourseMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_ExchangeandClearingHouseGuaranteesandCommitmentsMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_ExchangeandClearingHouseGuaranteesandCommitmentsMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_FinancialInstrumentAxis=jpm_OtherGuaranteesAndCommitmentsMember">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Details</a><div><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_FinancialInstrumentAxis=jpm_OtherGuaranteesAndCommitmentsMember</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td></td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

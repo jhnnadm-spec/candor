@@ -1,0 +1,302 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>53
+<FILENAME>R35.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.26.3</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="2"><div style="width: 200px;"><strong>Basis of Presentation (Policies)<br></strong></div></th>
+<th class="th" colspan="1">9 Months Ended</th>
+</tr>
+<tr><th class="th"><div>Sep. 30, 2026</div></th></tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_OrganizationConsolidationAndPresentationOfFinancialStatementsAbstract', window );"><strong>Organization, Consolidation and Presentation of Financial Statements [Abstract]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_BasisOfAccountingPolicyPolicyTextBlock', window );">Basis of presentation policy</a></td>
+<td class="text">The accounting and financial reporting policies of JPMorganChase and its subsidiaries conform to U.S. GAAP. Additionally, where applicable, the policies conform to the accounting and reporting guidelines prescribed by regulatory authorities.<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_UseOfEstimates', window );">Use of estimates in the preparation of consolidated financial statements policy</a></td>
+<td class="text"><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The preparation of the unaudited Consolidated Financial Statements requires management to make estimates and assumptions that affect the reported amounts of assets, liabilities, revenue and expense, and disclosures of contingent assets and liabilities. Actual results could be different from these estimates. In the opinion of management, all normal, recurring adjustments have been included such that this interim financial information is fairly stated.</span></div><span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_ConsolidationPolicyTextBlock', window );">Consolidation policy</a></td>
+<td class="text"><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The Consolidated Financial Statements include the accounts of JPMorganChase and other entities in which the Firm has a controlling financial interest. All material intercompany balances and transactions have been eliminated.</span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">Assets held for clients in an agency or fiduciary capacity by the Firm are not assets of JPMorganChase and are not included on the Consolidated balance sheets.</span></div>The Firm determines whether it has a controlling financial interest in an entity by first evaluating whether the entity is a voting interest entity or a variable interest entity.<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_DerivativesAndSecuritiesPurchasedAndSoldUnderResaleAndRepurchaseAgreementsOffsettingPolicyPolicyTextBlock', window );">Offsetting assets and liabilities policy</a></td>
+<td class="text">U.S. GAAP permits entities to present derivative receivables and derivative payables with the same counterparty and the related cash collateral receivables and payables on a net basis on the Consolidated balance sheets when a legally enforceable master netting agreement exists. U.S. GAAP also permits securities sold and purchased under repurchase agreements and securities borrowed or loaned under securities loan agreements to be presented net when specified conditions are met, including the existence of a legally enforceable master netting agreement. The Firm has elected to net such balances where it has determined that the specified conditions are met. Refer to Note 1 of JPMorganChase&#8217;s 2025 Form 10-K for further information on offsetting assets and liabilities.<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_CreditLossFinancialInstrumentPolicyTextBlock', window );">Allowance for credit losses policy</a></td>
+<td class="text"><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The Firm's allowance for credit losses represents management's estimate of expected credit losses over the remaining expected life of the Firm's financial assets measured at amortized cost and certain off-balance sheet lending-related commitments.</span></div><span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_TransfersAndServicingOfFinancialAssetsPolicyTextBlock', window );">Loan securitizations policy</a></td>
+<td class="text"><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The Firm has securitized and sold a variety of loans, including residential mortgages, credit card receivables, commercial mortgages and other consumer loans.</span></div><span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_GoodwillAndIntangibleAssetsGoodwillPolicy', window );">Goodwill policy</a></td>
+<td class="text"><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">Goodwill is recorded upon completion of a business combination as the difference between the purchase price and the fair value of the net assets acquired, and can be adjusted up to one year from the acquisition date as additional information pertaining to facts and circumstances that existed as of the acquisition date is obtained about the fair value of assets acquired and liabilities assumed.</span></div><span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_DerivativesAndSecuritiesPurchasedAndSoldUnderResaleAndRepurchaseAgreementsOffsettingPolicyPolicyTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Disclosure of accounting policy for offsetting derivative instruments and securities purchased and sold under resale and repurchase agreements, respectively, when the offsetting requirements under U.S. GAAP are satisfied. [Policy Text Block]</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_DerivativesAndSecuritiesPurchasedAndSoldUnderResaleAndRepurchaseAgreementsOffsettingPolicyPolicyTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_BasisOfAccountingPolicyPolicyTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Disclosure of accounting policy for basis of accounting, or basis of presentation, used to prepare the financial statements (for example, US Generally Accepted Accounting Principles, Other Comprehensive Basis of Accounting, IFRS).</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2009/role/commonPracticeRef<br> -Topic 235<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 4<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147483426/235-10-50-4<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_BasisOfAccountingPolicyPolicyTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_ConsolidationPolicyTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Disclosure of accounting policy regarding (1) the principles it follows in consolidating or combining the separate financial statements, including the principles followed in determining the inclusion or exclusion of subsidiaries or other entities in the consolidated or combined financial statements and (2) its treatment of interests (for example, common stock, a partnership interest or other means of exerting influence) in other entities, for example consolidation or use of the equity or cost methods of accounting. The accounting policy may also address the accounting treatment for intercompany accounts and transactions, noncontrolling interest, and the income statement treatment in consolidation for issuances of stock by a subsidiary.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/exampleRef<br> -Topic 235<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 4<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147483426/235-10-50-4<br><br>Reference 2: http://fasb.org/us-gaap/role/ref/legacyRef<br> -Name Accounting Standards Codification<br> -Topic 810<br> -SubTopic 10<br> -Section 50<br> -Paragraph 1<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147481203/810-10-50-1<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_ConsolidationPolicyTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_CreditLossFinancialInstrumentPolicyTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Disclosure of accounting policy for credit loss on financial instrument measured at amortized cost basis, net investment in lease, off-balance sheet credit exposure, and available-for-sale debt security. Includes, but is not limited to, methodology used to estimate allowance for credit loss, how writeoff of uncollectible amount is recognized, and determination of past due status and nonaccrual status.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 14<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479319/326-20-50-14<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 3D<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479319/326-20-50-3D<br><br>Reference 3: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 3C<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479319/326-20-50-3C<br><br>Reference 4: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 12A<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479319/326-20-50-12A<br><br>Reference 5: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 30<br> -Paragraph 10A<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479391/326-20-30-10A<br><br>Reference 6: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 55<br> -Paragraph 40Q<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479294/326-20-55-40Q<br><br>Reference 7: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 55<br> -Paragraph 40M<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479294/326-20-55-40M<br><br>Reference 8: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 55<br> -Paragraph 40F<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479294/326-20-55-40F<br><br>Reference 9: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section S99<br> -Paragraph 1<br> -Subparagraph (SAB Topic 6.M.2.Q4)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147483530/326-20-S99-1<br><br>Reference 10: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 30<br> -Paragraph 5A<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479391/326-20-30-5A<br><br>Reference 11: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 35<br> -Paragraph 8A<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479366/326-20-35-8A<br><br>Reference 12: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 45<br> -Paragraph 5<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479344/326-20-45-5<br><br>Reference 13: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 30<br> -Name Accounting Standards Codification<br> -Section 30<br> -Paragraph 1B<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479175/326-30-30-1B<br><br>Reference 14: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 30<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 3C<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479106/326-30-50-3C<br><br>Reference 15: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 30<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 3A<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479106/326-30-50-3A<br><br>Reference 16: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 30<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 3D<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479106/326-30-50-3D<br><br>Reference 17: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 30<br> -Name Accounting Standards Codification<br> -Section 35<br> -Paragraph 13A<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479148/326-30-35-13A<br><br>Reference 18: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 30<br> -Paragraph 4A<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479391/326-20-30-4A<br><br>Reference 19: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 30<br> -Name Accounting Standards Codification<br> -Section 35<br> -Paragraph 7A<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479148/326-30-35-7A<br><br>Reference 20: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 21<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479319/326-20-50-21<br><br>Reference 21: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 11<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479319/326-20-50-11<br><br>Reference 22: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 30<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 7<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479106/326-30-50-7<br><br>Reference 23: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 326<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 17<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479319/326-20-50-17<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_CreditLossFinancialInstrumentPolicyTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_GoodwillAndIntangibleAssetsGoodwillPolicy">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Disclosure of accounting policy for goodwill. This accounting policy also may address how an entity assesses and measures impairment of goodwill, how reporting units are determined, how goodwill is allocated to such units, and how the fair values of the reporting units are determined.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/exampleRef<br> -Topic 350<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 55<br> -Paragraph 24<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482548/350-20-55-24<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 350<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 2<br> -Subparagraph (b)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482573/350-20-50-2<br><br>Reference 3: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 350<br> -SubTopic 20<br> -Name Accounting Standards Codification<br> -Publisher FASB<br> -URI https://asc.fasb.org/350-20/tableOfContent<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_GoodwillAndIntangibleAssetsGoodwillPolicy</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_OrganizationConsolidationAndPresentationOfFinancialStatementsAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_OrganizationConsolidationAndPresentationOfFinancialStatementsAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_TransfersAndServicingOfFinancialAssetsPolicyTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Disclosure of accounting policy for transfers and servicing financial assets, including securitization transactions as well as repurchase and resale agreements. This disclosure may include how the entity (1) determines whether a transaction is accounted for as a sale; (2) accounts for a sale transaction, including the initial and subsequent accounting for any interests that the entity obtains or continues to hold in the transaction, how such interests are valued, and the significant assumptions used in the valuation; (3) accounts for a transaction that does not qualify for sale treatment (that is, a financing); and (4) accounts for its servicing assets and liabilities ("servicing"), including how such servicing is measured initially and subsequently, and the methodology and significant assumptions used to value such servicing.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 860<br> -SubTopic 30<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147481420/860-30-50-1A<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 860<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 4A<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147481268/860-10-50-4A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_TransfersAndServicingOfFinancialAssetsPolicyTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_UseOfEstimates">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Disclosure of accounting policy for the use of estimates in the preparation of financial statements in conformity with generally accepted accounting principles.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 942<br> -SubTopic 235<br> -Name Accounting Standards Codification<br> -Section S50<br> -Paragraph 1<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478671/942-235-S50-1<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 942<br> -SubTopic 235<br> -Name Accounting Standards Codification<br> -Section S99<br> -Paragraph 1<br> -Subparagraph (SX 210.9-05(b)(2))<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147477314/942-235-S99-1<br><br>Reference 3: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 275<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 12<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482861/275-10-50-12<br><br>Reference 4: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 275<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 9<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482861/275-10-50-9<br><br>Reference 5: http://www.xbrl.org/2003/role/exampleRef<br> -Topic 275<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 55<br> -Paragraph 6<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482836/275-10-55-6<br><br>Reference 6: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 275<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 6<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482861/275-10-50-6<br><br>Reference 7: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 275<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 4<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482861/275-10-50-4<br><br>Reference 8: http://www.xbrl.org/2003/role/disclosureRef<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1<br> -Subparagraph (b)<br> -SubTopic 10<br> -Topic 275<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482861/275-10-50-1<br><br>Reference 9: http://www.xbrl.org/2003/role/disclosureRef<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1<br> -Subparagraph (c)<br> -SubTopic 10<br> -Topic 275<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482861/275-10-50-1<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_UseOfEstimates</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

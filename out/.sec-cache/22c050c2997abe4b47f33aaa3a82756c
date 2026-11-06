@@ -1,0 +1,132 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>68
+<FILENAME>R50.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.26.3</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="2"><div style="width: 200px;"><strong>Leases (Tables)<br></strong></div></th>
+<th class="th" colspan="1">9 Months Ended</th>
+</tr>
+<tr><th class="th"><div>Sep. 30, 2026</div></th></tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_LeasesAbstract', window );"><strong>Leases [Abstract]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_LesseeOperatingLeaseRightOfUseAssetsAndLeaseLiabilitiesTableTextBlock', window );">Information related to operating leases</a></td>
+<td class="text"><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The carrying values of the Firm&#8217;s operating leases were as follows: </span></div><div style="margin-top:4pt"><table style="border-collapse:collapse;display:inline-table;margin-bottom:5pt;vertical-align:text-bottom;width:100.000%"><tr><td style="width:1.0%"></td><td style="width:51.060%"></td><td style="width:0.1%"></td><td style="width:1.0%"></td><td style="width:23.591%"></td><td style="width:0.1%"></td><td style="width:1.0%"></td><td style="width:22.049%"></td><td style="width:0.1%"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td></tr><tr><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">(in millions)</span></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">September 30, 2026</span></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">December 31, 2025</span></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td></tr><tr><td colspan="3" style="border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Right-of-use assets</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">$</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">9,028</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td style="border-top:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">$</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">8,901&#160;</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td></tr><tr><td colspan="3" style="border-bottom:1pt solid #000000;padding:1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Lease liabilities</span></td><td colspan="2" style="border-bottom:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">9,437</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="border-bottom:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td colspan="2" style="border-bottom:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">9,337&#160;</span></td><td style="border-bottom:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td><td colspan="3" style="display:none"></td></tr></table></div><span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_OperatingLeaseLeaseIncomeTableTextBlock', window );">Operating lease income and related depreciation expense</a></td>
+<td class="text"><div style="margin-bottom:4pt;margin-top:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The following table presents the Firm&#8217;s operating lease income, included within <span style="-sec-ix-hidden:f-6484"><span style="-sec-ix-hidden:f-6485"><span style="-sec-ix-hidden:f-6486"><span style="-sec-ix-hidden:f-6487">other income</span></span></span></span>, and the related depreciation expense, included within technology, communications and equipment expense, on the Consolidated statements of income. </span></div><div style="margin-top:4pt"><table style="border-collapse:collapse;display:inline-table;margin-bottom:5pt;vertical-align:text-bottom;width:99.074%"><tr><td style="width:1.0%"></td><td style="width:32.856%"></td><td style="width:0.1%"></td><td style="width:1.0%"></td><td style="width:15.410%"></td><td style="width:0.1%"></td><td style="width:1.0%"></td><td style="width:15.410%"></td><td style="width:0.1%"></td><td style="width:1.0%"></td><td style="width:15.410%"></td><td style="width:0.1%"></td><td style="width:1.0%"></td><td style="width:15.414%"></td><td style="width:0.1%"></td></tr><tr><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000;padding:0 1pt"></td><td colspan="6" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:center;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Three months ended September 30,</span></td><td colspan="6" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:center;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Nine months ended September 30,</span></td></tr><tr><td colspan="3" style="background-color:#f4efe7;padding:1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%"><br/></span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">(in millions)</span></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">2026</span></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">2025</span></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">2026</span></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">2025</span></td></tr><tr><td colspan="3" style="border-top:1pt solid #000;padding:1.5pt 1pt 1.5pt 5.5pt;text-align:left;text-indent:-4.5pt;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Operating lease income</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">$</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">1,238</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td style="border-top:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">$</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">990&#160;</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td style="border-top:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">$</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">3,598</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td style="border-top:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">$</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">2,720&#160;</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td></tr><tr><td colspan="3" style="border-bottom:1pt solid #000;padding:1.5pt 1pt 1.5pt 5.5pt;text-align:left;text-indent:-4.5pt;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Depreciation expense</span></td><td colspan="2" style="border-bottom:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">796</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="border-bottom:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td colspan="2" style="border-bottom:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">654&#160;</span></td><td style="border-bottom:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td colspan="2" style="border-bottom:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">2,256</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="border-bottom:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td colspan="2" style="border-bottom:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">1,742&#160;</span></td><td style="border-bottom:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td></tr></table></div><span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_LesseeOperatingLeaseRightOfUseAssetsAndLeaseLiabilitiesTableTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Lessee, Operating Lease, Right-of-Use Assets and Lease Liabilities [Table Text Block]</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_LesseeOperatingLeaseRightOfUseAssetsAndLeaseLiabilitiesTableTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_LeasesAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_LeasesAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_OperatingLeaseLeaseIncomeTableTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Tabular disclosure of components of income from operating lease.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 842<br> -SubTopic 30<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 5<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479773/842-30-50-5<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 270<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 6A<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147482964/270-10-50-6A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_OperatingLeaseLeaseIncomeTableTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

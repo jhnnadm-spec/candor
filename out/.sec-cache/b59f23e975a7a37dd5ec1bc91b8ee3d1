@@ -1,0 +1,592 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>53
+<FILENAME>R32.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.25.4</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="2"><div style="width: 200px;"><strong>Cybersecurity Risk Management and Strategy Disclosure<br></strong></div></th>
+<th class="th" colspan="1">12 Months Ended</th>
+</tr>
+<tr><th class="th"><div>Dec. 31, 2025</div></th></tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskManagementStrategyAndGovernanceLineItems', window );"><strong>Cybersecurity Risk Management, Strategy, and Governance [Line Items]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskManagementProcessesForAssessingIdentifyingAndManagingThreatsTextBlock', window );">Cybersecurity Risk Management Processes for Assessing, Identifying, and Managing Threats [Text Block]</a></td>
+<td class="text"><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">We face various cybersecurity risks, including, but not limited to, risks related to unauthorized access, misuse, data theft, computer viruses, system disruptions, ransomware, malicious software and other intrusions. We utilize a multilayered, proactive approach to identify, evaluate, mitigate and prevent potential cybersecurity and information security threats through our cybersecurity risk management program. Our cybersecurity risk management program is integrated into our broader Enterprise Risk Management (&#8220;ERM&#8221;) program, which is designed to identify, assess, prioritize and mitigate risks across the organization to enhance our resilience and support the achievement of our strategic objectives. This integrated approach helps ensure that cyber risks are not viewed in isolation, but are assessed, prioritized and managed in alignment with the Company&#8217;s operational, financial and strategic risks, assisting the Company in more effectively managing interdependencies among risks and enhancing risk mitigation strategies.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">We devote significant resources to protecting the security of our computer systems, software, networks and other technology assets. Our efforts are designed to adapt with the evolution of information security risks and appropriate best practices and include physical, administrative and technical safeguards. Our practices are generally developed from, and benchmarked against, recognized cybersecurity frameworks, such as the National Institute of Standards and Technology Cybersecurity Framework. Our acquired businesses and consolidated bottling operations maintain separate cybersecurity systems and environments that may differ in scope and complexity from our own. However, for all consolidated entities, our cybersecurity risk management program is designed to help coordinate the Company&#8217;s identification of, response to and recovery from cybersecurity incidents and includes processes to triage, assess the severity of, escalate, contain, investigate and remediate incidents, as well as to comply with applicable legal obligations. </span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">Our internal audit team assesses the effectiveness of our internal controls relating to cybersecurity. Our management team also engages certain outside advisors and consultants to assist in the identification, oversight, evaluation and management of cybersecurity risks on a regular basis, as well as to advise on specific topics. For example, we conduct tests that help discover potential vulnerabilities, including external penetration testing and tabletop and other exercises, to evaluate our core information systems and cybersecurity practices that enable improved decision-making and prioritization, as well as to promote monitoring and reporting across compliance functions. As part of our overall risk mitigation strategy, the Company also maintains cybersecurity insurance coverage; however, such insurance may not be sufficient in type or amount to cover us against claims related to security breaches, cyberattacks and other related incidents.</span></div><div style="margin-bottom:6pt"><span style="background-color:#ffffff;color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">In order to oversee and identify risks from cyb</span><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">ersecurity threats associated with the Company&#8217;s independent bottling partners, distributors, wholesalers, retailers and other business partners, as well as our use of third-party service providers, we maintain a third-party risk management program designed to help protect against the misuse of information technology. We have various processes and procedures to evaluate cybersecurity threats associated with third parties, including requiring key third-party service providers to complete initial and periodic security assessments. In addition, our Global Chief Information Security Officer (&#8220;CISO&#8221;) and other senior leaders regularly meet with key bottling partners to discuss cybersecurity risks and mitigation programs in order to advance risk management capabilities and proactively share cybersecurity guidelines and best practices. </span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">We do not believe that there are currently any risks from known cybersecurity threats that have materially affected or are reasonably likely to materially affect the Company, including our business strategy, results of operations or financial condition. However, we have been the target of cyberattacks and expect them to continue as cybersecurity threats have been rapidly evolving in sophistication and becoming more prevalent in the industry. We cannot eliminate all risks from cybersecurity threats or provide assurances that we have not experienced an undetected cybersecurity incident in the past or that we will not experience such an incident in the future. For more information on the risks from cybersecurity threats that we face, refer to  Part I, &#8220;Item 1A. Risk Factors.&#8221;</span></div><span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskManagementProcessesIntegratedFlag', window );">Cybersecurity Risk Management Processes Integrated [Flag]</a></td>
+<td class="text">true<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskManagementProcessesIntegratedTextBlock', window );">Cybersecurity Risk Management Processes Integrated [Text Block]</a></td>
+<td class="text">Our cybersecurity risk management program is integrated into our broader Enterprise Risk Management (&#8220;ERM&#8221;) program, which is designed to identify, assess, prioritize and mitigate risks across the organization to enhance our resilience and support the achievement of our strategic objectives. This integrated approach helps ensure that cyber risks are not viewed in isolation, but are assessed, prioritized and managed in alignment with the Company&#8217;s operational, financial and strategic risks, assisting the Company in more effectively managing interdependencies among risks and enhancing risk mitigation strategies.<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskManagementThirdPartyEngagedFlag', window );">Cybersecurity Risk Management Third Party Engaged [Flag]</a></td>
+<td class="text">true<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskThirdPartyOversightAndIdentificationProcessesFlag', window );">Cybersecurity Risk Third Party Oversight and Identification Processes [Flag]</a></td>
+<td class="text">true<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskMateriallyAffectedOrReasonablyLikelyToMateriallyAffectRegistrantFlag', window );">Cybersecurity Risk Materially Affected or Reasonably Likely to Materially Affect Registrant [Flag]</a></td>
+<td class="text">false<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskMateriallyAffectedOrReasonablyLikelyToMateriallyAffectRegistrantTextBlock', window );">Cybersecurity Risk Materially Affected or Reasonably Likely to Materially Affect Registrant [Text Block]</a></td>
+<td class="text"><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">We do not believe that there are currently any risks from known cybersecurity threats that have materially affected or are reasonably likely to materially affect the Company, including our business strategy, results of operations or financial condition. However, we have been the target of cyberattacks and expect them to continue as cybersecurity threats have been rapidly evolving in sophistication and becoming more prevalent in the industry. We cannot eliminate all risks from cybersecurity threats or provide assurances that we have not experienced an undetected cybersecurity incident in the past or that we will not experience such an incident in the future. For more information on the risks from cybersecurity threats that we face, refer to  Part I, &#8220;Item 1A. Risk Factors.&#8221;</span></div><span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskBoardOfDirectorsOversightTextBlock', window );">Cybersecurity Risk Board of Directors Oversight [Text Block]</a></td>
+<td class="text"><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">The Company&#8217;s cybersecurity risk management program is supervised by our CISO, who reports directly to the Company&#8217;s Chief Information Officer (&#8220;CIO&#8221;). The CISO and his team are responsible for leading enterprise-wide cybersecurity strategy, policy, standards, architecture and processes. Our current CISO received his Master of Business Administration degree from Columbia University and has over 25 years of cybersecurity experience, including relevant prior senior leadership positions held with three other large companies.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">The CISO chairs the Company&#8217;s Cybersecurity Oversight Council, a cross-functional management committee that drives awareness, ownership and alignment across broad governance and risk stakeholder groups for effective cybersecurity risk management. The Cybersecurity Oversight Council is sponsored by the Company&#8217;s Global General Counsel and CIO and is composed of senior leaders from our privacy, legal, information technology, cybersecurity, internal audit, and global security and asset protection functions, among others. Subject matter experts are also invited, as appropriate. The Cybersecurity Oversight Council meets at least quarterly and has responsibility for oversight and validation of the Company&#8217;s cybersecurity strategic direction, risks, threats and priorities. The Cybersecurity Oversight Council acts in alignment with the Company&#8217;s Risk Steering Committee, another cross-functional management committee, which provides strategic direction and oversight over the Company&#8217;s ERM program. The CISO and his team are informed about and monitor the prevention, detection, mitigation and remediation of cybersecurity incidents in accordance with the Company&#8217;s cyber incident response plan.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">The Audit Committee of the Board of Directors is charged with oversight of cybersecurity matters and receives regular reports from the CISO and the CIO on, among other things, the Company&#8217;s cyber risks and threats, the status of projects to strengthen the Company&#8217;s information security systems, assessments of the Company&#8217;s security program and the emerging threat landscape. In accordance with our cybersecurity incident response plan, the Audit Committee is promptly informed by management of cybersecurity incidents with the potential to materially adversely affect the Company or its information systems and is regularly updated about incidents with lesser impact potential. The Chair of the Audit Committee regularly briefs the full Board on these matters. In addition, the Board also periodically receives cybersecurity updates directly from management. </span></div>In an effort to detect and defend against cybersecurity threats, the Company annually provides its employees with various cybersecurity and data protection training programs. These programs cover timely and relevant topics, including social engineering, phishing, deepfakes, password protection, confidential data protection, asset use and mobile security, and educate employees on the importance of reporting all incidents promptly to the Company&#8217;s centrally managed cyber defense and security operations.<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskBoardCommitteeOrSubcommitteeResponsibleForOversightTextBlock', window );">Cybersecurity Risk Board Committee or Subcommittee Responsible for Oversight [Text Block]</a></td>
+<td class="text">The Audit Committee of the Board of Directors is charged with oversight of cybersecurity matters and receives regular reports from the CISO and the CIO on, among other things, the Company&#8217;s cyber risks and threats, the status of projects to strengthen the Company&#8217;s information security systems, assessments of the Company&#8217;s security program and the emerging threat landscape.<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskProcessForInformingBoardCommitteeOrSubcommitteeResponsibleForOversightTextBlock', window );">Cybersecurity Risk Process for Informing Board Committee or Subcommittee Responsible for Oversight [Text Block]</a></td>
+<td class="text">In accordance with our cybersecurity incident response plan, the Audit Committee is promptly informed by management of cybersecurity incidents with the potential to materially adversely affect the Company or its information systems and is regularly updated about incidents with lesser impact potential. The Chair of the Audit Committee regularly briefs the full Board on these matters. In addition, the Board also periodically receives cybersecurity updates directly from management.<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskRoleOfManagementTextBlock', window );">Cybersecurity Risk Role of Management [Text Block]</a></td>
+<td class="text">The Company&#8217;s cybersecurity risk management program is supervised by our CISO, who reports directly to the Company&#8217;s Chief Information Officer (&#8220;CIO&#8221;). The CISO and his team are responsible for leading enterprise-wide cybersecurity strategy, policy, standards, architecture and processes.<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskManagementPositionsOrCommitteesResponsibleFlag', window );">Cybersecurity Risk Management Positions or Committees Responsible [Flag]</a></td>
+<td class="text">true<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskManagementPositionsOrCommitteesResponsibleTextBlock', window );">Cybersecurity Risk Management Positions or Committees Responsible [Text Block]</a></td>
+<td class="text"><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">The Company&#8217;s cybersecurity risk management program is supervised by our CISO, who reports directly to the Company&#8217;s Chief Information Officer (&#8220;CIO&#8221;). The CISO and his team are responsible for leading enterprise-wide cybersecurity strategy, policy, standards, architecture and processes. Our current CISO received his Master of Business Administration degree from Columbia University and has over 25 years of cybersecurity experience, including relevant prior senior leadership positions held with three other large companies.</span></div>The CISO chairs the Company&#8217;s Cybersecurity Oversight Council, a cross-functional management committee that drives awareness, ownership and alignment across broad governance and risk stakeholder groups for effective cybersecurity risk management. The Cybersecurity Oversight Council is sponsored by the Company&#8217;s Global General Counsel and CIO and is composed of senior leaders from our privacy, legal, information technology, cybersecurity, internal audit, and global security and asset protection functions, among others. Subject matter experts are also invited, as appropriate. The Cybersecurity Oversight Council meets at least quarterly and has responsibility for oversight and validation of the Company&#8217;s cybersecurity strategic direction, risks, threats and priorities. The Cybersecurity Oversight Council acts in alignment with the Company&#8217;s Risk Steering Committee, another cross-functional management committee, which provides strategic direction and oversight over the Company&#8217;s ERM program.<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskManagementExpertiseOfManagementResponsibleTextBlock', window );">Cybersecurity Risk Management Expertise of Management Responsible [Text Block]</a></td>
+<td class="text">Our current CISO received his Master of Business Administration degree from Columbia University and has over 25 years of cybersecurity experience, including relevant prior senior leadership positions held with three other large companies.<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskProcessForInformingManagementOrCommitteesResponsibleTextBlock', window );">Cybersecurity Risk Process for Informing Management or Committees Responsible [Text Block]</a></td>
+<td class="text"><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">The CISO chairs the Company&#8217;s Cybersecurity Oversight Council, a cross-functional management committee that drives awareness, ownership and alignment across broad governance and risk stakeholder groups for effective cybersecurity risk management. The Cybersecurity Oversight Council is sponsored by the Company&#8217;s Global General Counsel and CIO and is composed of senior leaders from our privacy, legal, information technology, cybersecurity, internal audit, and global security and asset protection functions, among others. Subject matter experts are also invited, as appropriate. The Cybersecurity Oversight Council meets at least quarterly and has responsibility for oversight and validation of the Company&#8217;s cybersecurity strategic direction, risks, threats and priorities. The Cybersecurity Oversight Council acts in alignment with the Company&#8217;s Risk Steering Committee, another cross-functional management committee, which provides strategic direction and oversight over the Company&#8217;s ERM program. The CISO and his team are informed about and monitor the prevention, detection, mitigation and remediation of cybersecurity incidents in accordance with the Company&#8217;s cyber incident response plan.</span></div><span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_cyd_CybersecurityRiskManagementPositionsOrCommitteesResponsibleReportToBoardFlag', window );">Cybersecurity Risk Management Positions or Committees Responsible Report to Board [Flag]</a></td>
+<td class="text">true<span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskBoardCommitteeOrSubcommitteeResponsibleForOversightTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection c<br> -Paragraph 1<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection c<br> -Paragraph 1<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskBoardCommitteeOrSubcommitteeResponsibleForOversightTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskBoardOfDirectorsOversightTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection c<br> -Paragraph 1<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection c<br> -Paragraph 1<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskBoardOfDirectorsOversightTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskManagementExpertiseOfManagementResponsibleTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection c<br> -Paragraph 2<br> -Subparagraph i<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection c<br> -Paragraph 2<br> -Subparagraph i<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskManagementExpertiseOfManagementResponsibleTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskManagementPositionsOrCommitteesResponsibleFlag">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection c<br> -Paragraph 2<br> -Subparagraph i<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection c<br> -Paragraph 2<br> -Subparagraph i<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskManagementPositionsOrCommitteesResponsibleFlag</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>i:booleanItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskManagementPositionsOrCommitteesResponsibleReportToBoardFlag">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection c<br> -Paragraph 2<br> -Subparagraph iii<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection c<br> -Paragraph 2<br> -Subparagraph iii<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskManagementPositionsOrCommitteesResponsibleReportToBoardFlag</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>i:booleanItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskManagementPositionsOrCommitteesResponsibleTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection c<br> -Paragraph 2<br> -Subparagraph i<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection c<br> -Paragraph 2<br> -Subparagraph i<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskManagementPositionsOrCommitteesResponsibleTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskManagementProcessesForAssessingIdentifyingAndManagingThreatsTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection b<br> -Paragraph 1<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection b<br> -Paragraph 1<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskManagementProcessesForAssessingIdentifyingAndManagingThreatsTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskManagementProcessesIntegratedFlag">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection b<br> -Paragraph 1<br> -Subparagraph i<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection b<br> -Paragraph 1<br> -Subparagraph i<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskManagementProcessesIntegratedFlag</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>i:booleanItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskManagementProcessesIntegratedTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection b<br> -Paragraph 1<br> -Subparagraph i<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection b<br> -Paragraph 1<br> -Subparagraph i<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskManagementProcessesIntegratedTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskManagementStrategyAndGovernanceLineItems">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskManagementStrategyAndGovernanceLineItems</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>i:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskManagementThirdPartyEngagedFlag">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection b<br> -Paragraph 1<br> -Subparagraph ii<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection b<br> -Paragraph 1<br> -Subparagraph ii<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskManagementThirdPartyEngagedFlag</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>i:booleanItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskMateriallyAffectedOrReasonablyLikelyToMateriallyAffectRegistrantFlag">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection b<br> -Paragraph 2<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection b<br> -Paragraph 2<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskMateriallyAffectedOrReasonablyLikelyToMateriallyAffectRegistrantFlag</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>i:booleanItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskMateriallyAffectedOrReasonablyLikelyToMateriallyAffectRegistrantTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection b<br> -Paragraph 2<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection b<br> -Paragraph 2<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskMateriallyAffectedOrReasonablyLikelyToMateriallyAffectRegistrantTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskProcessForInformingBoardCommitteeOrSubcommitteeResponsibleForOversightTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection c<br> -Paragraph 1<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection c<br> -Paragraph 1<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskProcessForInformingBoardCommitteeOrSubcommitteeResponsibleForOversightTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskProcessForInformingManagementOrCommitteesResponsibleTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection c<br> -Paragraph 2<br> -Subparagraph ii<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection c<br> -Paragraph 2<br> -Subparagraph ii<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskProcessForInformingManagementOrCommitteesResponsibleTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskRoleOfManagementTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection c<br> -Paragraph 2<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection c<br> -Paragraph 2<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskRoleOfManagementTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_cyd_CybersecurityRiskThirdPartyOversightAndIdentificationProcessesFlag">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>Reference 1: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Regulation S-K<br> -Section 106<br> -Subsection b<br> -Paragraph 1<br> -Subparagraph iii<br><br>Reference 2: http://www.xbrl.org/2003/role/presentationRef<br> -Publisher SEC<br> -Name Form 20-F<br> -Section 16K<br> -Subsection b<br> -Paragraph 1<br> -Subparagraph iii<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">cyd_CybersecurityRiskThirdPartyOversightAndIdentificationProcessesFlag</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>cyd_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>i:booleanItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

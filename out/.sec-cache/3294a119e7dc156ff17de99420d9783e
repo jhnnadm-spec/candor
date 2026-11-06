@@ -1,0 +1,98 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>28
+<FILENAME>R13.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.26.3</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="2"><div style="width: 200px;"><strong>SUPPLY CHAIN FINANCE PROGRAM<br></strong></div></th>
+<th class="th" colspan="1">9 Months Ended</th>
+</tr>
+<tr><th class="th"><div>Oct. 02, 2026</div></th></tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_TextBlockAbstract', window );"><strong>Text Block [Abstract]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_SupplierFinanceProgramTextBlock', window );">SUPPLY CHAIN FINANCE PROGRAM</a></td>
+<td class="text">SUPPLY CHAIN FINANCE PROGRAM<div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">Our current payment terms with the majority of our suppliers are 120 days. Certain financial institutions offer a voluntary supply chain finance (&#8220;SCF&#8221;) program, which enables our suppliers, at their sole discretion, to sell their receivables from the Company to these financial institutions on a non-recourse basis at a rate that leverages our credit rating and thus may be more beneficial to them. The SCF program is available to suppliers of goods and services included in cost of goods sold and selling, </span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">general and administrative expenses in our consolidated statement of income. The Company and our suppliers agree on contractual terms for the goods and services we procure, including prices, quantities and payment terms, regardless of whether the supplier elects to participate in the SCF program. The suppliers sell goods or services, as applicable, to the Company and issue the associated invoices to the Company based on the agreed-upon contractual terms. Then, if they are participating in the SCF program, our suppliers sell their invoices to the financial institutions. Our suppliers&#8217; voluntary participation in the SCF program has no bearing on our payment terms. No guarantees are provided by the Company or any of our subsidiaries under the SCF program. We have no economic interest in a supplier&#8217;s decision to participate in the SCF program, and we have no direct financial relationship with the financial institutions, as it relates to the SCF program. Accordingly, amounts due to our suppliers that elected to participate in the SCF program are included in the line item <span style="-sec-ix-hidden:f-784"><span style="-sec-ix-hidden:f-785">accounts payable and accrued expenses</span></span> and liabilities held for sale in our consolidated balance sheet, as applicable. All activity related to amounts due to suppliers that elected to participate in the SCF program is classified within the operating activities section of our consolidated statement of cash flows. As of October&#160;2, 2026 and December&#160;31, 2025, the amount of obligations outstanding that the Company has confirmed as valid to the financial institutions under the SCF program was $1,576&#160;million and $1,363&#160;million, respectively. As of October&#160;2, 2026 and December&#160;31, 2025, these amounts included $155&#160;million and $37&#160;million, respectively, of confirmed obligations outstanding related to our bottling operations in Africa that are currently held for sale. Refer to Note&#160;2.</span></div><span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_SupplierFinanceProgramTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The entire disclosure for supplier finance program.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 405<br> -SubTopic 50<br> -Name Accounting Standards Codification<br> -Publisher FASB<br> -URI https://asc.fasb.org/405-50/tableOfContent<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 405<br> -SubTopic 50<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 3<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479468/405-50-50-3<br><br>Reference 3: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 405<br> -SubTopic 50<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 3<br> -Subparagraph (a)(1)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479468/405-50-50-3<br><br>Reference 4: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 405<br> -SubTopic 50<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 3<br> -Subparagraph (a)(2)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147479468/405-50-50-3<br><br>Reference 5: http://www.xbrl.org/2003/role/exampleRef<br> -Topic 405<br> -SubTopic 50<br> -Name Accounting Standards Codification<br> -Section 55<br> -Paragraph 3<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147477128/405-50-55-3<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_SupplierFinanceProgramTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_TextBlockAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_TextBlockAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

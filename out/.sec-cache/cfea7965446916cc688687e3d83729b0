@@ -1,0 +1,98 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>27
+<FILENAME>R9.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.26.3</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="2"><div style="width: 200px;"><strong>Basis of Presentation<br></strong></div></th>
+<th class="th" colspan="1">9 Months Ended</th>
+</tr>
+<tr><th class="th"><div>Sep. 30, 2026</div></th></tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_OrganizationConsolidationAndPresentationOfFinancialStatementsAbstract', window );"><strong>Organization, Consolidation and Presentation of Financial Statements [Abstract]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_OrganizationConsolidationAndPresentationOfFinancialStatementsDisclosureTextBlock', window );">Basis of Presentation</a></td>
+<td class="text">Basis of presentation<div style="display:inline-block;vertical-align:top;width:47.368%"><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">JPMorgan Chase &amp; Co. (&#8220;JPMorganChase&#8221; or the &#8220;Firm&#8221;), a financial holding company incorporated under Delaware law in 1968, is a leading financial services firm based in the U.S., with operations worldwide. The Firm is a leader in investment banking, financial services for consumers and small businesses, commercial banking, financial transaction processing and asset management. Refer to Note 25 for further discussion of the Firm's reportable business segments.</span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The accounting and financial reporting policies of JPMorganChase and its subsidiaries conform to U.S. GAAP. Additionally, where applicable, the policies conform to the accounting and reporting guidelines prescribed by regulatory authorities. </span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The preparation of the unaudited Consolidated Financial Statements requires management to make estimates and assumptions that affect the reported amounts of assets, liabilities, revenue and expense, and disclosures of contingent assets and liabilities. Actual results could be different from these estimates. In the opinion of management, all normal, recurring adjustments have been included such that this interim financial information is fairly stated.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">These unaudited Consolidated Financial Statements should be read in conjunction with the audited Consolidated Financial Statements and related notes thereto included in JPMorganChase&#8217;s 2025 Form 10-K.</span></div><div><span style="color:#8f5a39;font-family:'Sons',sans-serif;font-size:10pt;font-weight:700;line-height:120%">Consolidation </span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The Consolidated Financial Statements include the accounts of JPMorganChase and other entities in which the Firm has a controlling financial interest. All material intercompany balances and transactions have been eliminated.</span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">Assets held for clients in an agency or fiduciary capacity by the Firm are not assets of JPMorganChase and are not included on the Consolidated balance sheets.</span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The Firm determines whether it has a controlling financial interest in an entity by first evaluating whether the entity is a voting interest entity or a variable interest entity. </span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">Refer to Notes 1 and 14 of JPMorganChase&#8217;s 2025 Form 10-K for a further description of JPMorganChase&#8217;s accounting policies regarding consolidation.</span></div></div><div><span style="color:#8f5a39;font-family:'Sons',sans-serif;font-size:10pt;font-weight:700;line-height:120%">Offsetting assets and liabilities</span></div>U.S. GAAP permits entities to present derivative receivables and derivative payables with the same counterparty and the related cash collateral receivables and payables on a net basis on the Consolidated balance sheets when a legally enforceable master netting agreement exists. U.S. GAAP also permits securities sold and purchased under repurchase agreements and securities borrowed or loaned under securities loan agreements to be presented net when specified conditions are met, including the existence of a legally enforceable master netting agreement. The Firm has elected to net such balances where it has determined that the specified conditions are met. Refer to Note 1 of JPMorganChase&#8217;s 2025 Form 10-K for further information on offsetting assets and liabilities.<span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_OrganizationConsolidationAndPresentationOfFinancialStatementsAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_OrganizationConsolidationAndPresentationOfFinancialStatementsAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_OrganizationConsolidationAndPresentationOfFinancialStatementsDisclosureTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The entire disclosure for organization, consolidation and basis of presentation of financial statements disclosure.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 205<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section S99<br> -Paragraph 3<br> -Subparagraph (SX 210.4-03(c))<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147480922/205-10-S99-3<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 946<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147480424/946-10-50-1<br><br>Reference 3: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 946<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 2<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147480424/946-10-50-2<br><br>Reference 4: http://fasb.org/us-gaap/role/ref/legacyRef<br> -Topic 810<br> -Name Accounting Standards Codification<br> -Publisher FASB<br> -URI https://asc.fasb.org/810/tableOfContent<br><br>Reference 5: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 205<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section S45<br> -Paragraph 5<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147481034/205-10-S45-5<br><br>Reference 6: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 205<br> -Name Accounting Standards Codification<br> -Publisher FASB<br> -URI https://asc.fasb.org/205/tableOfContent<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_OrganizationConsolidationAndPresentationOfFinancialStatementsDisclosureTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

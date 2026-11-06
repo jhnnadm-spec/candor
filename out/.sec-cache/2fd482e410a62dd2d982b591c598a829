@@ -1,0 +1,98 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>48
+<FILENAME>R27.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.25.4</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="2"><div style="width: 200px;"><strong>SIGNIFICANT OPERATING AND NONOPERATING ITEMS<br></strong></div></th>
+<th class="th" colspan="1">12 Months Ended</th>
+</tr>
+<tr><th class="th"><div>Dec. 31, 2025</div></th></tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_OtherIncomeAndExpensesAbstract', window );"><strong>Other Income and Expenses [Abstract]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_OtherIncomeAndOtherExpenseDisclosureTextBlock', window );">SIGNIFICANT OPERATING AND NONOPERATING ITEMS</a></td>
+<td class="text">SIGNIFICANT OPERATING AND NONOPERATING ITEMS <div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-style:italic;font-weight:700;line-height:120%">Other Operating Charges</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">In 2025, the Company recorded other operating charges of&#160;$1,261 million. These charges consisted of $960 million related to the impairment of our BodyArmor trademark which impacted our North America operating segment, $97&#160;million related to the Company&#8217;s productivity and reinvestment program, and $47 million related to the remeasurement of our contingent consideration liability to fair value in conjunction with our acquisition of fairlife in 2020, which brought the total liability to $6,173 million and was paid in March 2025. Additionally, other operating charges included $44&#160;million related to the impairment of a trademark in our Latin America operating segment, $41&#160;million related to the impairment of a trademark and property, plant and equipment in our Asia Pacific operating segment and $35&#160;million related to an indemnification agreement entered into as a part of the refranchising of certain of our bottling operations. In addition, other operating charges included $15&#160;million for the amortization of noncompete agreements related to the BodyArmor acquisition in 2021, $12&#160;million of transaction costs related to our divestiture activities and $10&#160;million related to tax litigation expense.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">In 2024, the Company recorded other operating charges of&#160;$4,163 million. These charges consisted of $3,109 million related to the remeasurement of our contingent consideration liability to fair value in conjunction with the fairlife acquisition, $760&#160;million related to the impairment of our BodyArmor trademark which impacted our North America operating segment, $133&#160;million related to the Company&#8217;s productivity and reinvestment program and $126&#160;million related to the impairment of a trademark that impacted our Latin America operating segment. In addition, other operating charges included $15 million for the amortization of noncompete agreements related to the BodyArmor acquisition, $13&#160;million related to an indemnification agreement entered into as a part of the refranchising of certain of our bottling operations and $9&#160;million of transaction costs related to our divestiture activities. These charges were partially offset by a net benefit of $2 million related to a revision of management&#8217;s estimates for tax litigation expense.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">In 2023, the Company recorded other operating charges of $1,951 million. These charges consisted of $1,702 million related to the remeasurement of our contingent consideration liability to fair value in conjunction with the fairlife acquisition, $164&#160;million related to the Company&#8217;s productivity and reinvestment program and $35 million related to the discontinuation of certain manufacturing operations that impacted our Asia Pacific operating segment. In addition, other operating charges included $27&#160;million related to the restructuring of our North America operating unit, $15 million for the amortization of noncompete agreements related to the BodyArmor acquisition and $8 million related to tax litigation expense.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">Refer to Note&#160;2 for additional information on our divestiture activities. Refer to Note&#160;12 for additional information related to the tax litigation. Refer to Note&#160;17 for additional information on fairlife and the impairment charges. Refer to Note&#160;19 for additional information on the Company&#8217;s productivity and reinvestment program. </span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-style:italic;font-weight:700;line-height:120%">Other Nonoperating Items</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-style:italic;font-weight:400;line-height:120%">Equity Income (Loss)&#160;&#8212; Net</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">The Company recorded net charges of $21 million, $92 million and $159 million in equity income (loss) &#8212; net during the years ended December&#160;31, 2025, 2024 and 2023, respectively. These amounts represent the Company&#8217;s proportionate share of significant operating and nonoperating items recorded by certain of our equity method investees.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-style:italic;font-weight:400;line-height:120%">Other Income (Loss)&#160;&#8212; Net</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During 2025, the Company recognized a gain of $1,952&#160;million related to the sale of our ownership interest in Coke Consolidated, a net gain of $409 million related to realized and unrealized gains and losses on equity securities and trading debt securities as well as realized gains and losses on available-for-sale debt securities, a gain of $331&#160;million related to the sale of a portion of our ownership interest in CCEP, a gain of $102 million related to the refranchising of our bottling operations in certain territories in India and a gain of $31 million related to the substantial liquidation of a joint venture in China. The Company also recorded a charge of $1,274 million related to our bottling operations in Africa that became held for sale, a charge of $393&#160;million related to the sale of our finished product operations in Nigeria, and other-than-temporary impairment charges of $40&#160;million related to an equity method investee in Latin America and $25 million related to a joint venture in Latin America. Additionally, the Company recorded a charge of $36 million related to the refranchising of certain bottling operations in Ghana, and charges of $27 million and $11 million for special termination benefits and a curtailment loss, respectively, related to non-U.S. pension activity.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During 2024, the Company recognized a gain of $595 million related to the refranchising of our bottling operations in the Philippines and recognized a gain of $506 million related to the sale of our ownership interest in an equity method investee in Thailand. The Company also recognized a gain of $338 million related to the sale of a portion of our ownership interest in Coke Consolidated, a gain of $303 million related to the refranchising of our bottling operations in certain territories in India and a net gain of $290 million related to realized and unrealized gains and losses on equity securities and trading debt securities as well as realized gains and losses on available-for-sale debt securities. These gains were partially offset by an other-than-temporary impairment charge of $34 million related to an equity method investee in Latin America.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During 2023, the Company recognized a gain of $439 million related to the refranchising of our bottling operations in Vietnam, a net gain of $289 million related to realized and unrealized gains and losses on equity securities and trading debt securities as well as realized gains and losses on available-for-sale debt securities, and a gain of $94&#160;million related to the sale of our ownership interests in our equity method investees in Pakistan and Indonesia. Additionally, the Company recorded charges of $67 million due to pension and other postretirement benefit plan settlement losses, an other-than-temporary impairment charge of $39 million related to an equity method investee in Latin America and charges of $32&#160;million related to the restructuring of our manufacturing operations in the United States. </span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">Refer to Note&#160;2 for additional information on our divestiture activities and on our bottling operations held for sale in Africa. Refer to Note&#160;4 for additional information on equity and debt securities. Refer to Note&#160;14 for additional information on pension and other postretirement benefit plan activity. Refer to Note&#160;17 for additional information on the impairment charges and the bottling operations in Ghana.</span></div><span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_OtherIncomeAndExpensesAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_OtherIncomeAndExpensesAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_OtherIncomeAndOtherExpenseDisclosureTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The entire disclosure for other income or other expense items (both operating and nonoperating). Sources of nonoperating income or nonoperating expense that may be disclosed, include amounts earned from dividends, interest on securities, profits (losses) on securities, net and miscellaneous other income or income deductions.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2009/role/commonPracticeRef<br> -Topic 720<br> -Name Accounting Standards Codification<br> -Publisher FASB<br> -URI https://asc.fasb.org/720/tableOfContent<br><br>Reference 2: http://www.xbrl.org/2009/role/commonPracticeRef<br> -Name Accounting Standards Codification<br> -Topic 610<br> -Publisher FASB<br> -URI https://asc.fasb.org/610/tableOfContent<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_OtherIncomeAndOtherExpenseDisclosureTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

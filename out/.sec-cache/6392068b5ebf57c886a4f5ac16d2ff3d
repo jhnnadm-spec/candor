@@ -1,0 +1,98 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>46
+<FILENAME>R28.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.26.3</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="2"><div style="width: 200px;"><strong>Restricted Cash and Other Restricted Assets<br></strong></div></th>
+<th class="th" colspan="1">9 Months Ended</th>
+</tr>
+<tr><th class="th"><div>Sep. 30, 2026</div></th></tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_CashAndCashEquivalentsAbstract', window );"><strong>Cash and Cash Equivalents [Abstract]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_RestrictedAssetsDisclosureTextBlock', window );">Restricted Cash and Other Restricted Assets</a></td>
+<td class="text">Restricted cash and other restricted assets<div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">Refer to Note 26 of JPMorganChase&#8217;s 2025 Form 10-K for a detailed discussion of the Firm&#8217;s restricted cash and other restricted assets. </span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">Certain of the Firm&#8217;s cash and other assets are restricted as to withdrawal or usage. These restrictions are imposed by various regulatory authorities based on the particular activities of the Firm&#8217;s subsidiaries.</span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The Firm is also subject to rules and regulations established by U.S. and non-U.S. regulators. As part of its compliance with the respective regulatory requirements, the Firm&#8217;s broker-dealer activities are subject to certain restrictions on cash and other assets. </span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The following table presents the components of the Firm&#8217;s restricted cash:</span></div><div style="margin-top:4pt"><table style="border-collapse:collapse;display:inline-table;margin-bottom:5pt;vertical-align:text-bottom;width:99.691%"><tr><td style="width:1.0%"></td><td style="width:48.745%"></td><td style="width:0.1%"></td><td style="width:1.0%"></td><td style="width:23.977%"></td><td style="width:0.1%"></td><td style="width:1.0%"></td><td style="width:23.978%"></td><td style="width:0.1%"></td></tr><tr><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">(in billions)</span></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">September 30,<br/>2026</span></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">December 31, 2025</span></td></tr><tr><td colspan="3" style="border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:left;vertical-align:bottom"><div style="padding-left:4.5pt;text-indent:-4.5pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Segregated for the benefit of securities and cleared derivative customers</span></div></td><td style="border-top:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">$</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">16.1</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td style="border-top:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">$</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">19.4&#160;</span></td><td style="border-top:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td></tr><tr><td colspan="3" style="padding:1.5pt 1pt;text-align:left;vertical-align:bottom"><div style="padding-left:4.5pt;text-indent:-4.5pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Cash reserves at non-U.S. central banks and held for other general purposes</span></div></td><td colspan="2" style="padding:1.5pt 0 1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">9.8</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td colspan="2" style="padding:1.5pt 0 1.5pt 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">9.6&#160;</span></td><td style="padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td></tr><tr><td colspan="3" style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:1.5pt 1pt;text-align:left;vertical-align:bottom"><div><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:120%">Total restricted cash</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:5.2pt;font-weight:700;line-height:120%;position:relative;top:-2.8pt;vertical-align:baseline">(a)</span></div></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">$</span></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:1.5pt 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">25.9</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:1.5pt 0 1.5pt 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">$</span></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:1.5pt 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">29.0&#160;</span></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:1.5pt 1pt 1.5pt 0;text-align:right;vertical-align:bottom"></td></tr></table></div><div style="padding-left:13.5pt;text-indent:-13.5pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:120%">(a)</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:120%;padding-left:4.3pt">Comprises $24.8 billion and $27.8 billion in deposits with banks, and $1.1 billion and $1.2 billion in cash and due from banks on the Consolidated balance sheets as of September&#160;30, 2026 and December&#160;31, 2025, respectively. </span></div><div style="margin-bottom:4pt;margin-top:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">Also, as of September&#160;30, 2026 and December&#160;31, 2025, the Firm had the following other restricted assets: </span></div><div style="margin-bottom:4pt;padding-left:9pt;text-indent:-9pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">&#8226;</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%;padding-left:4.95pt">Cash and securities pledged with clearing organizations for the benefit of customers of $55.6 billion and $44.9 billion, respectively. </span></div><div style="margin-bottom:4pt;padding-left:9pt;text-indent:-9pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">&#8226;</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%;padding-left:4.95pt">Securities with a fair value of $36.1 billion and $40.8 billion, respectively, in relation to customer activity.</span></div><span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_CashAndCashEquivalentsAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_CashAndCashEquivalentsAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_RestrictedAssetsDisclosureTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The entire disclosure for assets that are restricted in their use, generally by contractual agreements or regulatory requirements. This would include, but not limited to, a description of the restricted assets and the terms of the restriction.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 942<br> -SubTopic 210<br> -Name Accounting Standards Codification<br> -Section S45<br> -Paragraph 1<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147477657/942-210-S45-1<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 942<br> -SubTopic 210<br> -Name Accounting Standards Codification<br> -Section S50<br> -Paragraph 1<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478478/942-210-S50-1<br><br>Reference 3: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 942<br> -SubTopic 210<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478482/942-210-50-1<br><br>Reference 4: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 942<br> -SubTopic 210<br> -Name Accounting Standards Codification<br> -Section S99<br> -Paragraph 1<br> -Subparagraph (SX 210.9-03(1)(a))<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478546/942-210-S99-1<br><br>Reference 5: http://www.xbrl.org/2009/role/commonPracticeRef<br> -Topic 235<br> -SubTopic 10<br> -Name Accounting Standards Codification<br> -Section S99<br> -Paragraph 1<br> -Subparagraph (SX 210.4-08(e)(3)(ii))<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147480678/235-10-S99-1<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_RestrictedAssetsDisclosureTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

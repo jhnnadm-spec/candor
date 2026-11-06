@@ -1,0 +1,605 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>199
+<FILENAME>R166.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.25.4</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="2"><div style="width: 200px;"><strong>Variable Interest Entities - Programs Under Proportional Amortization Method (Details) - USD ($)<br></strong></div></th>
+<th class="th" colspan="3">12 Months Ended</th>
+</tr>
+<tr>
+<th class="th"><div>Dec. 31, 2025</div></th>
+<th class="th"><div>Dec. 31, 2024</div></th>
+<th class="th"><div>Dec. 31, 2023</div></th>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_InvestmentProgramProportionalAmortizationMethodElectedAbstract', window );"><strong>Programs for which the Firm elected proportional amortization:</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_AmortizationMethodQualifiedAffordableHousingProjectInvestments', window );">Carrying value</a></td>
+<td class="nump">$ 33,858,000,000<span></span>
+</td>
+<td class="nump">$ 31,978,000,000<span></span>
+</td>
+<td class="nump">$ 14,644,000,000<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_AffordableHousingTaxCreditsAndOtherTaxBenefitsAmount', window );">Tax credits and other tax benefits</a></td>
+<td class="nump">6,097,000,000<span></span>
+</td>
+<td class="nump">6,379,000,000<span></span>
+</td>
+<td class="nump">2,044,000,000<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_InvestmentProportionalAmortizationMethodElectedAbstract', window );"><strong>Investments that qualify to be accounted for using proportional amortization:</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_AmortizationMethodQualifiedAffordableHousingProjectInvestmentsAmortization', window );">Amortization losses recognized as a component of income tax expense</a></td>
+<td class="num">(4,553,000,000)<span></span>
+</td>
+<td class="num">(5,018,000,000)<span></span>
+</td>
+<td class="num">(1,561,000,000)<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedNonIncomeTaxRelatedActivityAndOtherReturn', window );">Non-income-tax-related gains/(losses) and other returns received that are recognized outside of income tax expense</a></td>
+<td class="nump">$ 169,000,000<span></span>
+</td>
+<td class="nump">$ 142,000,000<span></span>
+</td>
+<td class="num">$ (1,000,000)<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedIncomeTaxCreditAndOtherTaxBenefitAmortizationStatementOfIncomeOrComprehensiveIncomeExtensibleEnumeration', window );">Investment Program, Proportional Amortization Method, Applied, Amortization Expense, Statement of Income or Comprehensive Income [Extensible Enumeration]</a></td>
+<td class="text">Income tax expense<span></span>
+</td>
+<td class="text">Income tax expense<span></span>
+</td>
+<td class="text">Income tax expense<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_InvestmentProgramProportionalAmortizationMethodAppliedIncomeTaxCreditAndOtherTaxBenefitAmortizationStatementOfCashFlowsExtensibleEnumerationNotDisclosedFlag', window );">Investment Program, Proportional Amortization Method, Applied, Amortization Expense, Statement Of Cash Flows, Not Disclosed Flag</a></td>
+<td class="text">Amortization losses recognized as a component of income tax expense<span></span>
+</td>
+<td class="text">Amortization losses recognized as a component of income tax expense<span></span>
+</td>
+<td class="text">Amortization losses recognized as a component of income tax expense<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_InvestmentProportionalAmortizationMethodElectedStatementOfFinancialPositionExtensibleEnumeration', window );">Investment, Proportional Amortization Method, Elected, Statement of Financial Position [Extensible Enumeration]</a></td>
+<td class="text">Other<span></span>
+</td>
+<td class="text">Other<span></span>
+</td>
+<td class="text">Other<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_InvestmentProgramProportionalAmortizationMethodElectedIncomeTaxCreditAndOtherIncomeTaxBenefitBeforeAmortizationStatementOfIncomeOrComprehensiveIncomeExtensibleEnumeration', window );">Investment Program, Proportional Amortization Method, Elected, Income Tax Credit and Other Income Tax Benefit, before Amortization, Statement of Income or Comprehensive Income [Extensible Enumeration]</a></td>
+<td class="text">Income tax expense<span></span>
+</td>
+<td class="text">Income tax expense<span></span>
+</td>
+<td class="text">Income tax expense<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_InvestmentProgramProportionalAmortizationMethodElectedIncomeTaxCreditAndOtherIncomeTaxBenefitBeforeAmortizationStatementOfCashFlowsExtensibleEnumeration', window );">Investment Program, Proportional Amortization Method, Elected, Income Tax Credit and Other Income Tax Benefit, before Amortization, Statement of Cash Flows [Extensible Enumeration]</a></td>
+<td class="text">Cash Provided by (Used in) Operating Activity, Including Discontinued Operation<span></span>
+</td>
+<td class="text">Cash Provided by (Used in) Operating Activity, Including Discontinued Operation<span></span>
+</td>
+<td class="text">Cash Provided by (Used in) Operating Activity, Including Discontinued Operation<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_InvestmentProgramProportionalAmortizationMethodElectedCriteriaNotMetIncomeTaxCredit', window );">Income tax credits for investments in programs where the proportional amortization method was elected but the investments do not quality</a></td>
+<td class="nump">$ 1,100,000,000<span></span>
+</td>
+<td class="nump">$ 1,000,000,000.0<span></span>
+</td>
+<td class="nump">$ 0<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl custom" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_jpm_InvestmentProgramProportionalAmortizationMethodElectedCriteriaNotMetAmortizationExpense', window );">Amortization losses for investments in programs where the proportional amortization method was elected but the investments do not quality</a></td>
+<td class="num">$ (1,400,000,000)<span></span>
+</td>
+<td class="num">$ (1,200,000,000)<span></span>
+</td>
+<td class="nump">$ 0<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedNonIncomeTaxRelatedActivityAndOtherReturnStatementOfIncomeOrComprehensiveIncomeExtensibleEnumeration', window );">Investment Program, Proportional Amortization Method, Applied, Non-Income-Tax-Related Activity and Other Return, Statement of Income or Comprehensive Income [Extensible Enumeration]</a></td>
+<td class="text">Other income<span></span>
+</td>
+<td class="text">Other income<span></span>
+</td>
+<td class="text">Other income<span></span>
+</td>
+</tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedNonIncomeTaxRelatedActivityAndOtherReturnStatementOfCashFlowsExtensibleEnumeration', window );">Investment Program, Proportional Amortization Method, Applied, Non-Income-Tax-Related Activity and Other Return, Statement of Cash Flows [Extensible Enumeration]</a></td>
+<td class="text">Cash Provided by (Used in) Operating Activity, Including Discontinued Operation<span></span>
+</td>
+<td class="text">Cash Provided by (Used in) Operating Activity, Including Discontinued Operation<span></span>
+</td>
+<td class="text">Cash Provided by (Used in) Operating Activity, Including Discontinued Operation<span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_InvestmentProgramProportionalAmortizationMethodAppliedIncomeTaxCreditAndOtherTaxBenefitAmortizationStatementOfCashFlowsExtensibleEnumerationNotDisclosedFlag">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Investment Program, Proportional Amortization Method, Applied, Income Tax Credit And Other Tax Benefit Amortization, Statement Of Cash Flows, Extensible Enumeration, Not Disclosed Flag</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_InvestmentProgramProportionalAmortizationMethodAppliedIncomeTaxCreditAndOtherTaxBenefitAmortizationStatementOfCashFlowsExtensibleEnumerationNotDisclosedFlag</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_InvestmentProgramProportionalAmortizationMethodElectedAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Investment Program, Proportional Amortization Method, Elected</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_InvestmentProgramProportionalAmortizationMethodElectedAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_InvestmentProgramProportionalAmortizationMethodElectedCriteriaNotMetAmortizationExpense">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Investment Program, Proportional Amortization Method, Elected, Criteria Not Met, Amortization Expense</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_InvestmentProgramProportionalAmortizationMethodElectedCriteriaNotMetAmortizationExpense</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>debit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_InvestmentProgramProportionalAmortizationMethodElectedCriteriaNotMetIncomeTaxCredit">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Investment Program, Proportional Amortization Method, Elected, Criteria Not Met, Income Tax Credit</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_InvestmentProgramProportionalAmortizationMethodElectedCriteriaNotMetIncomeTaxCredit</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_jpm_InvestmentProportionalAmortizationMethodElectedAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Investment, Proportional Amortization Method, Elected</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">jpm_InvestmentProportionalAmortizationMethodElectedAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>jpm_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_AffordableHousingTaxCreditsAndOtherTaxBenefitsAmount">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Amount, before amortization expense, of income tax credit and other tax benefit generated by investment under tax credit program elected to be accounted for using proportional amortization method. Includes, but is not limited to, investment under tax credit program not meeting condition for accounting under proportional amortization method.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://fasb.org/us-gaap/role/ref/otherTransitionRef<br> -Topic 323<br> -SubTopic 740<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 2<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/323-740-50-2<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-1A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_AffordableHousingTaxCreditsAndOtherTaxBenefitsAmount</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_AmortizationMethodQualifiedAffordableHousingProjectInvestments">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Amount of investment that generates income tax credit and other income tax benefit under tax credit program elected to be accounted for using proportional amortization method. Includes, but is not limited to, investment under program not meeting condition for accounting under proportional amortization method.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://fasb.org/us-gaap/role/ref/otherTransitionRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 2<br> -Subparagraph (b)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-2<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (b)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-1A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_AmortizationMethodQualifiedAffordableHousingProjectInvestments</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>debit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_AmortizationMethodQualifiedAffordableHousingProjectInvestmentsAmortization">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Amount of amortization expense for investment that generates income tax credit and other income tax benefit under tax credit program accounted for using proportional amortization method.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://fasb.org/us-gaap/role/ref/otherTransitionRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 2<br> -Subparagraph (c)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-2<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (c)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-1A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_AmortizationMethodQualifiedAffordableHousingProjectInvestmentsAmortization</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>debit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedIncomeTaxCreditAndOtherTaxBenefitAmortizationStatementOfIncomeOrComprehensiveIncomeExtensibleEnumeration">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Indicates line item in statement of income or comprehensive income that includes amortization expense for investment that generates income tax credit and other income tax benefit under tax credit program accounted for using proportional amortization method.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-1A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedIncomeTaxCreditAndOtherTaxBenefitAmortizationStatementOfIncomeOrComprehensiveIncomeExtensibleEnumeration</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>enum2:enumerationSetItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedNonIncomeTaxRelatedActivityAndOtherReturn">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Amount of income (loss) from non-income-tax-related activity and other return on investment under tax credit program accounted for using proportional amortization method, not recognized in income tax expense (benefit).</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (d)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-1A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedNonIncomeTaxRelatedActivityAndOtherReturn</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:monetaryItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>credit</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedNonIncomeTaxRelatedActivityAndOtherReturnStatementOfCashFlowsExtensibleEnumeration">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Indicates line item in statement of cash flows that includes income (loss) from non-income-tax-related activity and other return on investment under tax credit program accounted for using proportional amortization method, not recognized in income tax expense (benefit).</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (d)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-1A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedNonIncomeTaxRelatedActivityAndOtherReturnStatementOfCashFlowsExtensibleEnumeration</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>enum2:enumerationSetItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedNonIncomeTaxRelatedActivityAndOtherReturnStatementOfIncomeOrComprehensiveIncomeExtensibleEnumeration">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Indicates line item in statement of income or comprehensive income that includes income (loss) from non-income-tax-related activity and other return on investment under tax credit program accounted for using proportional amortization method, not recognized in income tax expense (benefit).</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (d)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-1A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_InvestmentProgramProportionalAmortizationMethodAppliedNonIncomeTaxRelatedActivityAndOtherReturnStatementOfIncomeOrComprehensiveIncomeExtensibleEnumeration</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>enum2:enumerationSetItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_InvestmentProgramProportionalAmortizationMethodElectedIncomeTaxCreditAndOtherIncomeTaxBenefitBeforeAmortizationStatementOfCashFlowsExtensibleEnumeration">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Indicates line item in statement of cash flows that includes income tax credit and other income tax benefit, before amortization expense, generated by investment under tax credit program elected to be accounted for using proportional amortization method. Includes, but is not limited to, investment under tax credit program not meeting condition for accounting under proportional amortization method.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-1A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_InvestmentProgramProportionalAmortizationMethodElectedIncomeTaxCreditAndOtherIncomeTaxBenefitBeforeAmortizationStatementOfCashFlowsExtensibleEnumeration</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>enum2:enumerationSetItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_InvestmentProgramProportionalAmortizationMethodElectedIncomeTaxCreditAndOtherIncomeTaxBenefitBeforeAmortizationStatementOfIncomeOrComprehensiveIncomeExtensibleEnumeration">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Indicates line item in statement of income or comprehensive income that includes income tax credit and other income tax benefit, before amortization expense, generated by investment under tax credit program elected to be accounted for using proportional amortization method. Includes, but is not limited to, investment under tax credit program not meeting condition for accounting under proportional amortization method.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (a)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-1A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_InvestmentProgramProportionalAmortizationMethodElectedIncomeTaxCreditAndOtherIncomeTaxBenefitBeforeAmortizationStatementOfIncomeOrComprehensiveIncomeExtensibleEnumeration</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>enum2:enumerationSetItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_InvestmentProportionalAmortizationMethodElectedStatementOfFinancialPositionExtensibleEnumeration">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>Indicates line item in statement of financial position that includes investment that generates income tax credit and other income tax benefit under tax credit program elected to be accounted for using proportional amortization method. Includes, but is not limited to, investment under tax credit program not meeting condition for accounting under proportional amortization method.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2003/role/disclosureRef<br> -Topic 740<br> -SubTopic 323<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1A<br> -Subparagraph (b)<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147478156/740-323-50-1A<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_InvestmentProportionalAmortizationMethodElectedStatementOfFinancialPositionExtensibleEnumeration</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>enum2:enumerationSetItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>instant</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

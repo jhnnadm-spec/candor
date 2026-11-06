@@ -1,0 +1,98 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>58
+<FILENAME>R25.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.25.4</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="2"><div style="width: 200px;"><strong>Premises and Equipment<br></strong></div></th>
+<th class="th" colspan="1">12 Months Ended</th>
+</tr>
+<tr><th class="th"><div>Dec. 31, 2025</div></th></tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_PropertyPlantAndEquipmentAbstract', window );"><strong>Property, Plant and Equipment [Abstract]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_PropertyPlantAndEquipmentDisclosureTextBlock', window );">Premises and Equipment</a></td>
+<td class="text">Premises and equipment<div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">Premises and equipment includes land carried at cost, as well as buildings, leasehold improvements, internal-use software and furniture and equipment carried at cost less accumulated depreciation and amortization. The Firm&#8217;s operating lease right-of-use assets are also included in Premises and equipment. Refer to Note 18 for a further discussion of the Firm&#8217;s right-of-use assets.</span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">The following table presents certain components of Premises and equipment.</span></div><div><table style="border-collapse:collapse;display:inline-table;margin-bottom:5pt;vertical-align:text-bottom;width:100.000%"><tr><td style="width:1.0%"></td><td style="width:61.245%"></td><td style="width:0.1%"></td><td style="width:0.1%"></td><td style="width:1.343%"></td><td style="width:0.1%"></td><td style="width:1.0%"></td><td style="width:16.183%"></td><td style="width:0.1%"></td><td style="width:0.1%"></td><td style="width:1.343%"></td><td style="width:0.1%"></td><td style="width:1.0%"></td><td style="width:16.186%"></td><td style="width:0.1%"></td></tr><tr><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:2px 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">December 31, (in millions)</span></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:0 1pt"></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:2px 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">2025</span></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:0 1pt"></td><td colspan="3" style="background-color:#f4efe7;border-top:1pt solid #000000;padding:2px 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">2024</span></td></tr><tr><td colspan="3" style="border-top:1pt solid #000;padding:2px 1pt 2px 5.5pt;text-align:left;text-indent:-4.5pt;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Land, buildings and leasehold improvements</span></td><td colspan="3" style="border-top:1pt solid #000000;padding:0 1pt"></td><td style="border-top:1pt solid #000000;padding:2px 0 2px 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">$</span></td><td style="border-top:1pt solid #000000;padding:2px 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">19,041</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="border-top:1pt solid #000000;padding:2px 1pt 2px 0;text-align:right;vertical-align:bottom"></td><td colspan="3" style="border-top:1pt solid #000000;padding:0 1pt"></td><td style="border-top:1pt solid #000000;padding:2px 0 2px 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">$</span></td><td style="border-top:1pt solid #000000;padding:2px 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">16,874&#160;</span></td><td style="border-top:1pt solid #000000;padding:2px 1pt 2px 0;text-align:right;vertical-align:bottom"></td></tr><tr><td colspan="3" style="padding:2px 1pt;text-align:left;vertical-align:bottom"><div><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Right-of-use assets</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:5.2pt;font-weight:400;line-height:100%;position:relative;top:-2.8pt;vertical-align:baseline">(a)</span></div></td><td colspan="3" style="padding:0 1pt"></td><td colspan="2" style="padding:2px 0 2px 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">8,424</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="padding:2px 1pt 2px 0;text-align:right;vertical-align:bottom"></td><td colspan="3" style="padding:0 1pt"></td><td colspan="2" style="padding:2px 0 2px 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">7,930&#160;</span></td><td style="padding:2px 1pt 2px 0;text-align:right;vertical-align:bottom"></td></tr><tr><td colspan="3" style="padding:2px 1pt;text-align:left;vertical-align:bottom"><div><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">Other premises and equipment</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:5.2pt;font-weight:400;line-height:100%;position:relative;top:-2.8pt;vertical-align:baseline">(b)</span></div></td><td colspan="3" style="padding:0 1pt"></td><td colspan="2" style="padding:2px 0 2px 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">8,779</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="padding:2px 1pt 2px 0;text-align:right;vertical-align:bottom"></td><td colspan="3" style="padding:0 1pt"></td><td colspan="2" style="padding:2px 0 2px 1pt;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">7,419&#160;</span></td><td style="padding:2px 1pt 2px 0;text-align:right;vertical-align:bottom"></td></tr><tr><td colspan="3" style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:2px 1pt;text-align:left;vertical-align:bottom"><div><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">Total premises and equipment</span></div></td><td colspan="3" style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:0 1pt"></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:2px 0 2px 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">$</span></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:2px 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:700;line-height:100%">36,244</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">&#160;</span></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:2px 1pt 2px 0;text-align:right;vertical-align:bottom"></td><td colspan="3" style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:0 1pt"></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:2px 0 2px 1pt;text-align:left;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">$</span></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:2px 0;text-align:right;vertical-align:bottom"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:100%">32,223&#160;</span></td><td style="border-bottom:1.5pt solid #000000;border-top:1pt solid #000000;padding:2px 1pt 2px 0;text-align:right;vertical-align:bottom"></td></tr></table></div><div style="padding-left:13.5pt;text-indent:-13.5pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:120%">(a)</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:120%;padding-left:4.3pt">Excluded $477&#160;million and $564&#160;million of right-of-use assets that were recorded in Other assets at December&#160;31, 2025 and 2024, respectively.</span></div><div style="margin-bottom:4pt;padding-left:13.5pt;text-indent:-13.5pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:120%">(b)</span><span style="color:#000000;font-family:'Sons',sans-serif;font-size:8pt;font-weight:400;line-height:120%;padding-left:3.75pt">Other premises and equipment is comprised of internal-use software and furniture and equipment.</span></div><div style="margin-bottom:4pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">JPMorganChase computes depreciation using the straight-line method over the estimated useful life for buildings and furniture and equipment. The Firm depreciates leasehold improvements over the lesser of the remainder of the lease term or the estimated useful life. The Firm also capitalizes certain costs associated with the acquisition or development of internal-use software. Once the software is ready for its intended use, these costs are amortized on a straight-line basis over the software&#8217;s expected useful life. The estimated useful lives range from 10 to 50 years for buildings and leasehold improvements, and 3 to 10 years for internal-use software and furniture and equipment.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Sons',sans-serif;font-size:10pt;font-weight:400;line-height:120%">Impairment is assessed when events or changes in circumstances indicate that the carrying value of an asset may not be fully recoverable.</span></div><span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_PropertyPlantAndEquipmentAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_PropertyPlantAndEquipmentAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_PropertyPlantAndEquipmentDisclosureTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The entire disclosure for long-lived, physical asset used in normal conduct of business and not intended for resale. Includes, but is not limited to, work of art, historical treasure, and similar asset classified as collections.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://fasb.org/us-gaap/role/ref/legacyRef<br> -Topic 360<br> -Name Accounting Standards Codification<br> -Publisher FASB<br> -URI https://asc.fasb.org/360/tableOfContent<br><br>Reference 2: http://www.xbrl.org/2003/role/disclosureRef<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 6<br> -SubTopic 360<br> -Topic 958<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147477798/958-360-50-6<br><br>Reference 3: http://www.xbrl.org/2003/role/disclosureRef<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 1<br> -Subparagraph (d)<br> -SubTopic 360<br> -Topic 958<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147477798/958-360-50-1<br><br>Reference 4: http://www.xbrl.org/2003/role/disclosureRef<br> -Name Accounting Standards Codification<br> -Section 50<br> -Paragraph 7<br> -SubTopic 360<br> -Topic 958<br> -Publisher FASB<br> -URI https://asc.fasb.org/1943274/2147477798/958-360-50-7<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_PropertyPlantAndEquipmentDisclosureTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

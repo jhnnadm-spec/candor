@@ -1,0 +1,98 @@
+<DOCUMENT>
+<TYPE>XML
+<SEQUENCE>33
+<FILENAME>R18.htm
+<DESCRIPTION>IDEA: XBRL DOCUMENT
+<TEXT>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" type="text/css" href="include/report.css">
+<script type="text/javascript" src="Show.js">/* Do Not Remove This Comment */</script><script type="text/javascript">
+							function toggleNextSibling (e) {
+							if (e.nextSibling.style.display=='none') {
+							e.nextSibling.style.display='block';
+							} else { e.nextSibling.style.display='none'; }
+							}</script>
+</head>
+<body>
+<span style="display: none;">v3.26.3</span><table class="report" border="0" cellspacing="2" id="id2">
+<tr>
+<th class="tl" colspan="1" rowspan="2"><div style="width: 200px;"><strong>SIGNIFICANT OPERATING AND NONOPERATING ITEMS<br></strong></div></th>
+<th class="th" colspan="1">9 Months Ended</th>
+</tr>
+<tr><th class="th"><div>Oct. 02, 2026</div></th></tr>
+<tr class="re">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_OtherIncomeAndExpensesAbstract', window );"><strong>Other Income and Expenses [Abstract]</strong></a></td>
+<td class="text">&#160;<span></span>
+</td>
+</tr>
+<tr class="ro">
+<td class="pl" style="border-bottom: 0px;" valign="top"><a class="a" href="javascript:void(0);" onclick="Show.showAR( this, 'defref_us-gaap_OtherIncomeAndOtherExpenseDisclosureTextBlock', window );">SIGNIFICANT OPERATING AND NONOPERATING ITEMS</a></td>
+<td class="text">SIGNIFICANT OPERATING AND NONOPERATING ITEMS<div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-style:italic;font-weight:700;line-height:120%">Other Operating Charges</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During the three months ended October&#160;2, 2026, the Company recorded other operating charges of $10&#160;million. These charges consisted of $6&#160;million related to North America modernization initiatives and $4&#160;million for the amortization of noncompete agreements related to the BA Sports Nutrition, LLC (&#8220;BodyArmor&#8221;) acquisition in 2021.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During the nine months ended October&#160;2, 2026, the Company recorded other operating charges of $54 million. These charges consisted of $19&#160;million related to an indemnification agreement entered into as a part of the refranchising of certain of our bottling operations, $16&#160;million related to North America modernization initiatives, $11&#160;million for the amortization of noncompete agreements related to the BodyArmor acquisition and $8&#160;million related to tax litigation expense.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During the three months ended September&#160;26, 2025, the Company recorded other operating charges of $58 million. These charges included $27 million related to an indemnification agreement entered into as a part of the refranchising of certain of our bottling operations, $24 million related to the Company&#8217;s productivity and reinvestment program, $4 million for the amortization of noncompete agreements related to the BodyArmor acquisition and $3 million related to tax litigation expense. </span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During the nine months ended September&#160;26, 2025, the Company recorded other operating charges of $202 million. These charges consisted of $47 million related to the remeasurement of our contingent consideration liability to fair value in conjunction with our acquisition of fairlife, LLC (&#8220;fairlife&#8221;) in 2020, which brought the total liability to $6,173&#160;million and was paid in March 2025. Additionally, other operating charges included $63&#160;million related to the Company&#8217;s productivity and reinvestment program, $35&#160;million related to an indemnification agreement entered into as a part of the refranchising of certain of our bottling operations, $31 million related to the impairment of a trademark that impacted the Latin America operating segment, $11&#160;million for the amortization of noncompete agreements related to the BodyArmor acquisition, $8&#160;million related to tax litigation expense and $7 million of transaction costs related to the refranchising of our bottling operations in certain territories in India.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">Refer to Note&#160;2 for additional information on our divestiture activities. Refer to Note&#160;9 for additional information on the tax litigation. Refer to Note 15 for additional information on the impairment charge.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-style:italic;font-weight:700;line-height:120%">Other Nonoperating Items</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-style:italic;font-weight:400;line-height:120%">Equity Income (Loss)&#160;&#8212; Net</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During the three and nine months ended October&#160;2, 2026, the Company recorded net charges of $8&#160;million and $30&#160;million, respectively. During the three and nine months ended September&#160;26, 2025, the Company recorded a net gain of $7&#160;million and a net charge of $21&#160;million, respectively. These amounts represent the Company&#8217;s proportionate share of significant operating and nonoperating items recorded by certain of our equity method investees. </span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-style:italic;font-weight:400;line-height:120%">Other Income (Loss)&#160;&#8212; Net</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During the three months ended October&#160;2, 2026, the Company recognized a net gain of $37&#160;million related to realized and unrealized gains and losses on equity securities and trading debt securities as well as realized gains and losses on available-for-sale debt securities. Additionally, the Company recorded charges of $167&#160;million and $25&#160;million for a settlement loss and special termination benefits, respectively, related to a non-U.S. pension plan. The Company also recorded a reduction in the previously recorded impairment charge of $5&#160;million related to our bottling operations in Africa, which are held for sale. This reduction is based on management&#8217;s revised estimates.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During the nine months ended October&#160;2, 2026, the Company recognized a net gain of $338&#160;million related to realized and unrealized gains and losses on equity securities and trading debt securities as well as realized gains and losses on available-for-sale debt securities. Additionally, the Company recorded charges of $167&#160;million and $25&#160;million for a settlement loss and special termination benefits, respectively, related to a non-U.S. pension plan. The Company also recorded a reduction in the previously recorded impairment charge of $61&#160;million related to our bottling operations in Africa, which are held for sale. This reduction is based on management&#8217;s revised estimates.</span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During the three months ended September&#160;26, 2025, the Company recognized a net gain of $151&#160;million related to realized and unrealized gains and losses on equity securities and trading debt securities as well as realized gains and losses on available-for-sale debt securities, a charge of $393&#160;million related to certain operations held for sale in Nigeria and a charge of $8&#160;million related to the refranchising of certain bottling operations in Ghana. </span></div><div style="margin-bottom:6pt"><span style="color:#000000;font-family:'Times New Roman',serif;font-size:10pt;font-weight:400;line-height:120%">During the nine months ended September&#160;26, 2025, the Company recognized a gain of $331&#160;million related to the sale of a portion of our ownership interest in CCEP, a net gain of $295&#160;million related to realized and unrealized gains and losses on equity securities and trading debt securities as well as realized gains and losses on available-for-sale debt securities and a gain of $102&#160;million related to the refranchising of our bottling operations in certain territories in India. The Company also recorded a charge of $393&#160;million related to certain operations held for sale in Nigeria and recorded other-than-temporary impairment charges of $40&#160;million related to an equity method investee in Latin America and $25&#160;million related to a joint venture in Latin America. Additionally, the Company recorded a charge of $36&#160;million related to the refranchising of certain bottling operations in Ghana, and charges of $25&#160;million and $11&#160;million for special termination benefits and a curtailment loss, respectively, related to non-U.S. pension activity.</span></div>Refer to Note&#160;2 for additional information on our bottling operations in Africa and our divestiture activities. Refer to Note&#160;4 for additional information on equity and debt securities. Refer to Note&#160;13 for additional information on our pension activities. Refer to Note 15 for additional information on the impairment charges and the bottling operations in Ghana<span></span>
+</td>
+</tr>
+</table>
+<div style="display: none;">
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_OtherIncomeAndExpensesAbstract">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- References</a><div><p>No definition available.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_OtherIncomeAndExpensesAbstract</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>xbrli:stringItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="authRefData" style="display: none;" id="defref_us-gaap_OtherIncomeAndOtherExpenseDisclosureTextBlock">
+<tr><td class="hide"><a style="color: white;" href="javascript:void(0);" onclick="Show.hideAR();">X</a></td></tr>
+<tr><td><div class="body" style="padding: 2px;">
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">- Definition</a><div><p>The entire disclosure for other income or other expense items (both operating and nonoperating). Sources of nonoperating income or nonoperating expense that may be disclosed, include amounts earned from dividends, interest on securities, profits (losses) on securities, net and miscellaneous other income or income deductions.</p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ References</a><div style="display: none;"><p>Reference 1: http://www.xbrl.org/2009/role/commonPracticeRef<br> -Topic 720<br> -Name Accounting Standards Codification<br> -Publisher FASB<br> -URI https://asc.fasb.org/720/tableOfContent<br><br>Reference 2: http://www.xbrl.org/2009/role/commonPracticeRef<br> -Name Accounting Standards Codification<br> -Topic 610<br> -Publisher FASB<br> -URI https://asc.fasb.org/610/tableOfContent<br></p></div>
+<a href="javascript:void(0);" onclick="Show.toggleNext( this );">+ Details</a><div style="display: none;"><table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td><strong> Name:</strong></td>
+<td style="white-space:nowrap;">us-gaap_OtherIncomeAndOtherExpenseDisclosureTextBlock</td>
+</tr>
+<tr>
+<td style="padding-right: 4px;white-space:nowrap;"><strong> Namespace Prefix:</strong></td>
+<td>us-gaap_</td>
+</tr>
+<tr>
+<td><strong> Data Type:</strong></td>
+<td>dtr-types:textBlockItemType</td>
+</tr>
+<tr>
+<td><strong> Balance Type:</strong></td>
+<td>na</td>
+</tr>
+<tr>
+<td><strong> Period Type:</strong></td>
+<td>duration</td>
+</tr>
+</table></div>
+</div></td></tr>
+</table>
+</div>
+<script type="text/javascript"  src="/7lZ1Ku/BO/Vw/Fq7R/M779h-6pJM/pOpOzL4DcbLNGt9D/MENZaywUEwE/JzUgeAU/PGhQ"></script></body>
+</html>
+</TEXT>
+</DOCUMENT>

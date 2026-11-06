@@ -32,6 +32,8 @@ import { KeyMap } from "@/components/KeyMap";
 import { CompanySidebar } from "@/components/CompanySidebar";
 import { accentVars, BRAND, stepAccent } from "@/lib/accents";
 import { BigAnswer, KeepBar, LiteCard, MiniBars, MiniGauge, MiniPair, SaidAnswer, UsesBar } from "@/components/Lite";
+import { CompanyTabs } from "@/components/company/CompanyTabs";
+import { FilingsGrid } from "@/components/company/FilingsGrid";
 
 export async function generateMetadata(props: PageProps<"/stock/[ticker]">): Promise<Metadata> {
   const { ticker } = await props.params;
@@ -59,6 +61,7 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
     return (
       <div className="mx-auto flex w-full max-w-[800px] flex-col gap-10 px-5 py-10 sm:py-14">
         <Hero report={report} profile={profile} company={shortCompany(report.company.name)} />
+        <CompanyTabs ticker={report.company.ticker} />
         <Unsupported reason={report.support.reason} name={report.company.name} />
       </div>
     );
@@ -83,6 +86,7 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
     <DepthProvider>
       <div className="mx-auto flex w-full max-w-[1360px] flex-col gap-6 px-5 pb-16 pt-6 sm:pt-8 lg:px-10">
         <Hero report={report} profile={profile} company={company} />
+        <CompanyTabs ticker={report.company.ticker} />
         <SharePrice report={report} company={company} />
         <PageNav items={nav} />
         <KeyMap nodes={nodes} links={links} company={company} stepTitles={stepTitles} />
@@ -105,6 +109,7 @@ async function Report({ params }: { params: Promise<{ ticker: string }> }) {
                 deep={deeperBody(step, ctx, "deep", profile)}
               />
             ))}
+            <FilingsGrid ticker={report.company.ticker} company={company} />
             <section id="numbers" data-part="All the numbers" className="flex scroll-mt-20 flex-col gap-3 rounded-2xl border border-line bg-white px-5 py-6 sm:px-6">
               <div>
                 <h2 className="font-display text-[22px] font-semibold tracking-[-0.03em]">All the numbers</h2>

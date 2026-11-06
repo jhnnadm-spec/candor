@@ -301,16 +301,3 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .candor-reveal, .candor-drawer-in > *, .candor-bar-in { animation: none; }
 }
-
-/* The front page banner: colours drifting slowly through the sky, and the coloured ridge line drawing in. */
-@keyframes candor-drift {
-  0% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(6%, 8%, 0) scale(1.12); }
-  100% { transform: translate3d(-5%, 3%, 0) scale(0.95); }
-}
-.candor-glow { filter: blur(70px); animation: candor-drift 28s ease-in-out infinite alternate; will-change: transform; }
-@keyframes candor-ridge-in { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
-.candor-ridge { stroke-dasharray: 1; animation: candor-ridge-in 2.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both; }
-@media (prefers-reduced-motion: reduce) {
-  .candor-glow, .candor-ridge { animation: none; }
-}
